@@ -14,6 +14,7 @@
 		CD9D732C24B2D19A006D3103 /* TestRename.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD9D732A24B2D19A006D3103 /* TestRename.xcdatamodeld */; };
 		CD9D732E24B2D19B006D3103 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD9D732D24B2D19B006D3103 /* Assets.xcassets */; };
 		CD9D733124B2D19B006D3103 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD9D732F24B2D19B006D3103 /* LaunchScreen.storyboard */; };
+		CDFB09CD24B2DE6E008FC602 /* Feature1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB09CC24B2DE6E008FC602 /* Feature1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		CD9D732D24B2D19B006D3103 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD9D733024B2D19B006D3103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD9D733224B2D19B006D3103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDFB09CC24B2DE6E008FC602 /* Feature1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		CD9D732024B2D19A006D3103 /* Rename2 */ = {
 			isa = PBXGroup;
 			children = (
+				CDFB09CB24B2DE59008FC602 /* Feature1 */,
 				CD9D732124B2D19A006D3103 /* AppDelegate.swift */,
 				CD9D732324B2D19A006D3103 /* SceneDelegate.swift */,
 				CD9D732524B2D19A006D3103 /* ViewController.swift */,
@@ -68,6 +71,14 @@
 				CD9D732A24B2D19A006D3103 /* TestRename.xcdatamodeld */,
 			);
 			path = Rename2;
+			sourceTree = "<group>";
+		};
+		CDFB09CB24B2DE59008FC602 /* Feature1 */ = {
+			isa = PBXGroup;
+			children = (
+				CDFB09CC24B2DE6E008FC602 /* Feature1.swift */,
+			);
+			path = Feature1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +156,7 @@
 				CD9D732624B2D19A006D3103 /* ViewController.swift in Sources */,
 				CD9D732224B2D19A006D3103 /* AppDelegate.swift in Sources */,
 				CD9D732424B2D19A006D3103 /* SceneDelegate.swift in Sources */,
+				CDFB09CD24B2DE6E008FC602 /* Feature1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
