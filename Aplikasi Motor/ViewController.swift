@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print("gak jadi gaes, soalnya jalan")
+        print("gak jadi gaes, soalnya jalans")
     }
 
 

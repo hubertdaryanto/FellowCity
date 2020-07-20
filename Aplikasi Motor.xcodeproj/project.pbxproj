@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CD9D731E24B2D19A006D3103 /* Rename2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rename2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD9D731E24B2D19A006D3103 /* Aplikasi Motor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aplikasi Motor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9D732124B2D19A006D3103 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD9D732324B2D19A006D3103 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CD9D732524B2D19A006D3103 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,7 +44,7 @@
 		CD9D731524B2D19A006D3103 = {
 			isa = PBXGroup;
 			children = (
-				CD9D732024B2D19A006D3103 /* Rename2 */,
+				CD9D732024B2D19A006D3103 /* Aplikasi Motor */,
 				CD9D731F24B2D19A006D3103 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,12 +52,12 @@
 		CD9D731F24B2D19A006D3103 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CD9D731E24B2D19A006D3103 /* Rename2.app */,
+				CD9D731E24B2D19A006D3103 /* Aplikasi Motor.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CD9D732024B2D19A006D3103 /* Rename2 */ = {
+		CD9D732024B2D19A006D3103 /* Aplikasi Motor */ = {
 			isa = PBXGroup;
 			children = (
 				CDFB09CB24B2DE59008FC602 /* Feature1 */,
@@ -70,7 +70,7 @@
 				CD9D733224B2D19B006D3103 /* Info.plist */,
 				CD9D732A24B2D19A006D3103 /* TestRename.xcdatamodeld */,
 			);
-			path = Rename2;
+			path = "Aplikasi Motor";
 			sourceTree = "<group>";
 		};
 		CDFB09CB24B2DE59008FC602 /* Feature1 */ = {
@@ -84,9 +84,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CD9D731D24B2D19A006D3103 /* Rename2 */ = {
+		CD9D731D24B2D19A006D3103 /* Aplikasi Motor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CD9D733524B2D19B006D3103 /* Build configuration list for PBXNativeTarget "Rename2" */;
+			buildConfigurationList = CD9D733524B2D19B006D3103 /* Build configuration list for PBXNativeTarget "Aplikasi Motor" */;
 			buildPhases = (
 				CD9D731A24B2D19A006D3103 /* Sources */,
 				CD9D731B24B2D19A006D3103 /* Frameworks */,
@@ -96,9 +96,9 @@
 			);
 			dependencies = (
 			);
-			name = Rename2;
+			name = "Aplikasi Motor";
 			productName = BisaRenameGakYa;
-			productReference = CD9D731E24B2D19A006D3103 /* Rename2.app */;
+			productReference = CD9D731E24B2D19A006D3103 /* Aplikasi Motor.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -116,7 +116,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CD9D731924B2D19A006D3103 /* Build configuration list for PBXProject "Rename2" */;
+			buildConfigurationList = CD9D731924B2D19A006D3103 /* Build configuration list for PBXProject "Aplikasi Motor" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -129,7 +129,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CD9D731D24B2D19A006D3103 /* Rename2 */,
+				CD9D731D24B2D19A006D3103 /* Aplikasi Motor */,
 			);
 		};
 /* End PBXProject section */
@@ -302,13 +302,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AB6S3CVVK7;
-				INFOPLIST_FILE = Rename2/Info.plist;
+				INFOPLIST_FILE = "Aplikasi Motor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Rename2;
-				PRODUCT_NAME = Rename2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aplikasimotor;
+				PRODUCT_NAME = "Aplikasi Motor";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -320,13 +320,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AB6S3CVVK7;
-				INFOPLIST_FILE = Rename2/Info.plist;
+				INFOPLIST_FILE = "Aplikasi Motor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Rename2;
-				PRODUCT_NAME = Rename2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aplikasimotor;
+				PRODUCT_NAME = "Aplikasi Motor";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -335,7 +335,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CD9D731924B2D19A006D3103 /* Build configuration list for PBXProject "Rename2" */ = {
+		CD9D731924B2D19A006D3103 /* Build configuration list for PBXProject "Aplikasi Motor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CD9D733324B2D19B006D3103 /* Debug */,
@@ -344,7 +344,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CD9D733524B2D19B006D3103 /* Build configuration list for PBXNativeTarget "Rename2" */ = {
+		CD9D733524B2D19B006D3103 /* Build configuration list for PBXNativeTarget "Aplikasi Motor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CD9D733624B2D19B006D3103 /* Debug */,
