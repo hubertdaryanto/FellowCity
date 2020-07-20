@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		573F0DCC24C5B92D0092642E /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573F0DCB24C5B92D0092642E /* ExploreView.swift */; };
 		CD9D732224B2D19A006D3103 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9D732124B2D19A006D3103 /* AppDelegate.swift */; };
 		CD9D732424B2D19A006D3103 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9D732324B2D19A006D3103 /* SceneDelegate.swift */; };
 		CD9D732624B2D19A006D3103 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9D732524B2D19A006D3103 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		573F0DCB24C5B92D0092642E /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		CD9D731E24B2D19A006D3103 /* Aplikasi Motor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aplikasi Motor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9D732124B2D19A006D3103 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD9D732324B2D19A006D3103 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +43,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		573F0DC824C5B8CF0092642E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		573F0DC924C5B8EE0092642E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				573F0DCB24C5B92D0092642E /* ExploreView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		573F0DCA24C5B8FB0092642E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		CD9D731524B2D19A006D3103 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +84,9 @@
 		CD9D732024B2D19A006D3103 /* Aplikasi Motor */ = {
 			isa = PBXGroup;
 			children = (
+				573F0DCA24C5B8FB0092642E /* Controller */,
+				573F0DC924C5B8EE0092642E /* View */,
+				573F0DC824C5B8CF0092642E /* Model */,
 				CDFB09CB24B2DE59008FC602 /* Feature1 */,
 				CD9D732124B2D19A006D3103 /* AppDelegate.swift */,
 				CD9D732324B2D19A006D3103 /* SceneDelegate.swift */,
@@ -156,6 +183,7 @@
 				CD9D732624B2D19A006D3103 /* ViewController.swift in Sources */,
 				CD9D732224B2D19A006D3103 /* AppDelegate.swift in Sources */,
 				CD9D732424B2D19A006D3103 /* SceneDelegate.swift in Sources */,
+				573F0DCC24C5B92D0092642E /* ExploreView.swift in Sources */,
 				CDFB09CD24B2DE6E008FC602 /* Feature1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
