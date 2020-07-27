@@ -30,7 +30,7 @@ struct AppView: View {
                     Text("Friends")
             }.tag(2)
             
-            ExploreView()
+            ExploreView(explore: exploreData[0])
                 .tabItem {
                     Image(systemName: "arrow.right.arrow.left.circle.fill")
                     Text("Ride")
