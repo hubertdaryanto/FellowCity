@@ -9,6 +9,7 @@
 import Foundation
 import SwiftUI
 
+
 struct ExploreView: View {
     
     var explore:Explore
@@ -22,35 +23,85 @@ struct ExploreView: View {
     
     @State var showProfileView = false
     @State private var selectedRide = 0
-
-    @State var ExploreList = [
-        ExploreLocation(name: "Vespa Park", province: "South Jakarta", rating: 4.3, reviewCount: 13, maxPeople: 20),
-        ExploreLocation(name: "Kota Tua", province: "North Jakarta", rating: 4.1, reviewCount: 18, maxPeople: 40),
-        ExploreLocation(name: "Taman Mini", province: "South Jakarta", rating: 4.5, reviewCount: 25, maxPeople: 50)
-    ]
+    
     
     private let rideSelection = ["Explore", "Public Events"]
     var body: some View {
         NavigationView {
             VStack(spacing: 10) {
-            Picker("rideSelection", selection: $selectedRide) {
-                ForEach(0 ..< rideSelection.count) { index in
-                    Text(self.rideSelection[index]).tag(index)
+                
+                ZStack {
+                
+                 
+                        
+                Picker("rideSelection", selection: $selectedRide) {
+                    ForEach(0 ..< rideSelection.count) { index in
+                        Text(self.rideSelection[index])
+                            .fontWeight(.bold).tag(index)
+                    }
                 }
+                .pickerStyle(SegmentedPickerStyle())
+                .background(Color.yellow)
+                        
+                    
+                    }
+                
+                if selectedRide == 0 {
+                    List(categories.keys.sorted(), id: \String.self) { key in
+                        ExploreRowView(categoryName: "\(key) Places".uppercased(), explores:
+                            self.categories[key]!)
+                    }
+                } else  {
+                    List {
+                        ExploreItemView(explore: exploreData[4])
+                    }
+                    //                List(categories.keys.sorted(), id: \String.self) { key in
+                    //                    ExploreRowView(categoryName: "\(key) Places".uppercased(), explores:
+                    //                        self.categories[key]!)
+                    //                }
+                }
+                
+                
             }
-            .pickerStyle(SegmentedPickerStyle())
-            
-            
-            if selectedRide == 0 {
-                //Text("Hello")
-                List(categories.keys.sorted(), id: \String.self) { key in
-                    ExploreRowView(categoryName: "\(key) Places".uppercased(), explores:
-                        self.categories[key]!)
+            .navigationBarTitle(Text("Notification"), displayMode: .inline)
+            .navigationBarItems(trailing:
+                Button(action: {
+                    self.showProfileView.toggle()
+                }) {
+                    Image(systemName: "person.crop.circle")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 40, height: 40)
+                        .clipShape(Circle())
+                        .background(Color.white)
+                        .overlay(RoundedRectangle(cornerRadius: 40)
+                            .stroke(Color.gray, lineWidth: 2))
                 }
-            
-                
-                //ExploreRowView(categoryName: "", explores: exploreData)
-                
+            )
+                .sheet(isPresented: $showProfileView) {
+                    TabEventsView()
+            }
+        }
+        
+        
+    }
+}
+
+struct ExploreView_Previews: PreviewProvider {
+    static var previews: some View {
+        ExploreView(explore: exploreData[0])
+    }
+}
+
+
+
+
+
+
+
+
+
+
 //                List {
 //                    ForEach(exploreData) { index in
 //                        //GeometryReader { geometry in
@@ -120,44 +171,3 @@ struct ExploreView: View {
 //                                                  }
 //                    }
 //                }
-            } else  {
-                List {
-                    ExploreItemView(explore: exploreData[4])
-                }
-//                List(categories.keys.sorted(), id: \String.self) { key in
-//                    ExploreRowView(categoryName: "\(key) Places".uppercased(), explores:
-//                        self.categories[key]!)
-//                }
-            }
-            
-            
-        }
-        .navigationBarTitle(Text("Notification"), displayMode: .inline)
-        .navigationBarItems(trailing:
-            Button(action: {
-                self.showProfileView.toggle()
-            }) {
-                Image(systemName: "person.crop.circle")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 40, height: 40)
-                    .clipShape(Circle())
-                    .background(Color.white)
-                    .overlay(RoundedRectangle(cornerRadius: 40)
-                        .stroke(Color.gray, lineWidth: 2))
-            }
-        )
-            .sheet(isPresented: $showProfileView) {
-                TabEventsView()
-        }
-        }
-        
-        
-    }
-}
-
-struct ExploreView_Previews: PreviewProvider {
-    static var previews: some View {
-        ExploreView(explore: exploreData[0])
-    }
-}
