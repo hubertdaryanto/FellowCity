@@ -53,7 +53,7 @@ struct NotificationView: View {
                         .clipShape(Circle())
                         .background(Color.yellow)
                         .cornerRadius(40)
-                            .frame(minWidth: 0, maxWidth: geometry.size.width * 0.5 / 4, minHeight: 0, maxHeight: 50)
+                        .frame(minWidth: 0, maxWidth: geometry.size.width * 0.5 / 4, minHeight: 0, maxHeight: 50)
                         
                         ZStack {
                         NavigationLink(destination: TabFriendsView()) {
