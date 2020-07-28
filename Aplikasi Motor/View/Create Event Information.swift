@@ -60,7 +60,7 @@ struct Create_Event_Information: View {
             }
             VStack{
                 NavigationLink(destination:
-             Create_Event_Invite_Friends())
+             EventInformationInviteFriends())
             {
                 Spacer()
                 Text("Next").foregroundColor(Color(red: 0.96484375, green: 0.7421875, blue: 0)).padding(20)

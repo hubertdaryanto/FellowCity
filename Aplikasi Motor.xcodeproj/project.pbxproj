@@ -7,82 +7,71 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		572F32D424CE756F00F24A6E /* explores.json in Resources */ = {isa = PBXBuildFile; fileRef = 572F32D324CE756F00F24A6E /* explores.json */; };
-		572F32D624CE767E00F24A6E /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32D524CE767E00F24A6E /* Data.swift */; };
-		572F32D824CE78F900F24A6E /* Explore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32D724CE78F900F24A6E /* Explore.swift */; };
-		572F32DA24CE859C00F24A6E /* ExploreItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32D924CE859C00F24A6E /* ExploreItemView.swift */; };
-		572F32DC24CE874400F24A6E /* ExploreRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32DB24CE874400F24A6E /* ExploreRowView.swift */; };
-		572F32DE24CEC72D00F24A6E /* MainEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32DD24CEC72D00F24A6E /* MainEvent.swift */; };
-		572F32E024CEC7FA00F24A6E /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32DF24CEC7FA00F24A6E /* EventData.swift */; };
-		572F32E224CEC82800F24A6E /* PeopleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32E124CEC82800F24A6E /* PeopleData.swift */; };
-		572F32E424CEF17400F24A6E /* StatusRiderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32E324CEF17400F24A6E /* StatusRiderView.swift */; };
-		572F32E624CFBA3700F24A6E /* CreateEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32E524CFBA3700F24A6E /* CreateEventView.swift */; };
-		572F32E824CFC37600F24A6E /* CreateEventOptionalRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32E724CFC37600F24A6E /* CreateEventOptionalRouteView.swift */; };
-		572F32EA24CFCE1700F24A6E /* EventInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32E924CFCE1700F24A6E /* EventInformationView.swift */; };
-		572F32EC24CFD11F00F24A6E /* EventInformationInviteFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32EB24CFD11F00F24A6E /* EventInformationInviteFriends.swift */; };
-		573F0DCC24C5B92D0092642E /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573F0DCB24C5B92D0092642E /* AppView.swift */; };
-		573F0DD424C6AAB70092642E /* RidingLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573F0DD324C6AAB70092642E /* RidingLocation.swift */; };
-		573F0DD624C710570092642E /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573F0DD524C710570092642E /* ExploreView.swift */; };
-		573F0DD824C868BA0092642E /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573F0DD724C868BA0092642E /* NotificationView.swift */; };
-		573F0DFC24C8A0310092642E /* FriendInvitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573F0DFB24C8A0310092642E /* FriendInvitation.swift */; };
-		CD9D732224B2D19A006D3103 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9D732124B2D19A006D3103 /* AppDelegate.swift */; };
-		CD9D732424B2D19A006D3103 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9D732324B2D19A006D3103 /* SceneDelegate.swift */; };
-		CD9D732624B2D19A006D3103 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9D732524B2D19A006D3103 /* ViewController.swift */; };
-		CD9D732924B2D19A006D3103 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD9D732724B2D19A006D3103 /* Main.storyboard */; };
-		CD9D732C24B2D19A006D3103 /* TestRename.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD9D732A24B2D19A006D3103 /* TestRename.xcdatamodeld */; };
-		CD9D732E24B2D19B006D3103 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD9D732D24B2D19B006D3103 /* Assets.xcassets */; };
-		CD9D733124B2D19B006D3103 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD9D732F24B2D19B006D3103 /* LaunchScreen.storyboard */; };
-		CDFB09CD24B2DE6E008FC602 /* Feature1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB09CC24B2DE6E008FC602 /* Feature1.swift */; };
+		CD75737C24CFDE9100EABFC9 /* TestRename.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD75735024CFDE9000EABFC9 /* TestRename.xcdatamodeld */; };
+		CD75737D24CFDE9100EABFC9 /* LoadSwiftUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75735324CFDE9000EABFC9 /* LoadSwiftUIViewController.swift */; };
+		CD75737E24CFDE9100EABFC9 /* Availability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75735424CFDE9000EABFC9 /* Availability.swift */; };
+		CD75737F24CFDE9100EABFC9 /* MainEvents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD75735524CFDE9000EABFC9 /* MainEvents.storyboard */; };
+		CD75738124CFDE9100EABFC9 /* List Tempat.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CD75735824CFDE9000EABFC9 /* List Tempat.rtf */; };
+		CD75738224CFDE9100EABFC9 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75735A24CFDE9000EABFC9 /* ExploreView.swift */; };
+		CD75738324CFDE9100EABFC9 /* StatusRiderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75735B24CFDE9000EABFC9 /* StatusRiderView.swift */; };
+		CD75738424CFDE9100EABFC9 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75735C24CFDE9000EABFC9 /* AppView.swift */; };
+		CD75738524CFDE9100EABFC9 /* EventInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75735D24CFDE9000EABFC9 /* EventInformationView.swift */; };
+		CD75738624CFDE9100EABFC9 /* ExploreRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75735E24CFDE9100EABFC9 /* ExploreRowView.swift */; };
+		CD75738724CFDE9100EABFC9 /* ExploreItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75735F24CFDE9100EABFC9 /* ExploreItemView.swift */; };
+		CD75738824CFDE9100EABFC9 /* Create Event Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75736024CFDE9100EABFC9 /* Create Event Information.swift */; };
+		CD75738924CFDE9100EABFC9 /* CreateEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75736124CFDE9100EABFC9 /* CreateEventView.swift */; };
+		CD75738A24CFDE9100EABFC9 /* EventInformationInviteFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75736224CFDE9100EABFC9 /* EventInformationInviteFriends.swift */; };
+		CD75738C24CFDE9100EABFC9 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75736424CFDE9100EABFC9 /* NotificationView.swift */; };
+		CD75738E24CFDE9100EABFC9 /* MainEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75736624CFDE9100EABFC9 /* MainEvent.swift */; };
+		CD75738F24CFDE9100EABFC9 /* CreateEventOptionalRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75736724CFDE9100EABFC9 /* CreateEventOptionalRouteView.swift */; };
+		CD75739024CFDE9100EABFC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75736824CFDE9100EABFC9 /* AppDelegate.swift */; };
+		CD75739124CFDE9100EABFC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD75736924CFDE9100EABFC9 /* Assets.xcassets */; };
+		CD75739324CFDE9100EABFC9 /* explores.json in Resources */ = {isa = PBXBuildFile; fileRef = CD75736B24CFDE9100EABFC9 /* explores.json */; };
+		CD75739424CFDE9100EABFC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75736C24CFDE9100EABFC9 /* SceneDelegate.swift */; };
+		CD75739524CFDE9100EABFC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD75736E24CFDE9100EABFC9 /* LaunchScreen.storyboard */; };
+		CD75739624CFDE9100EABFC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD75737024CFDE9100EABFC9 /* Main.storyboard */; };
+		CD75739724CFDE9100EABFC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75737224CFDE9100EABFC9 /* ViewController.swift */; };
+		CD75739924CFDE9100EABFC9 /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75737524CFDE9100EABFC9 /* EventData.swift */; };
+		CD75739A24CFDE9100EABFC9 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75737624CFDE9100EABFC9 /* Data.swift */; };
+		CD75739B24CFDE9100EABFC9 /* FriendInvitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75737724CFDE9100EABFC9 /* FriendInvitation.swift */; };
+		CD75739C24CFDE9100EABFC9 /* PeopleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75737824CFDE9100EABFC9 /* PeopleData.swift */; };
+		CD75739D24CFDE9100EABFC9 /* RidingLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75737924CFDE9100EABFC9 /* RidingLocation.swift */; };
+		CD75739F24CFDE9100EABFC9 /* Explore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75737B24CFDE9100EABFC9 /* Explore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		572F32D324CE756F00F24A6E /* explores.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = explores.json; sourceTree = "<group>"; };
-		572F32D524CE767E00F24A6E /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		572F32D724CE78F900F24A6E /* Explore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explore.swift; sourceTree = "<group>"; };
-		572F32D924CE859C00F24A6E /* ExploreItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreItemView.swift; sourceTree = "<group>"; };
-		572F32DB24CE874400F24A6E /* ExploreRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreRowView.swift; sourceTree = "<group>"; };
-		572F32DD24CEC72D00F24A6E /* MainEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEvent.swift; sourceTree = "<group>"; };
-		572F32DF24CEC7FA00F24A6E /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
-		572F32E124CEC82800F24A6E /* PeopleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleData.swift; sourceTree = "<group>"; };
-		572F32E324CEF17400F24A6E /* StatusRiderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusRiderView.swift; sourceTree = "<group>"; };
-		572F32E524CFBA3700F24A6E /* CreateEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventView.swift; sourceTree = "<group>"; };
-		572F32E724CFC37600F24A6E /* CreateEventOptionalRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventOptionalRouteView.swift; sourceTree = "<group>"; };
-		572F32E924CFCE1700F24A6E /* EventInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInformationView.swift; sourceTree = "<group>"; };
-		572F32EB24CFD11F00F24A6E /* EventInformationInviteFriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInformationInviteFriends.swift; sourceTree = "<group>"; };
-		573F0DCB24C5B92D0092642E /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
-		573F0DD324C6AAB70092642E /* RidingLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidingLocation.swift; sourceTree = "<group>"; };
-		573F0DD524C710570092642E /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
-		573F0DD724C868BA0092642E /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
-		573F0DFB24C8A0310092642E /* FriendInvitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInvitation.swift; sourceTree = "<group>"; };
+		CD75735124CFDE9000EABFC9 /* BisaRenameGakYa.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BisaRenameGakYa.xcdatamodel; sourceTree = "<group>"; };
+		CD75735324CFDE9000EABFC9 /* LoadSwiftUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadSwiftUIViewController.swift; sourceTree = "<group>"; };
+		CD75735424CFDE9000EABFC9 /* Availability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Availability.swift; sourceTree = "<group>"; };
+		CD75735524CFDE9000EABFC9 /* MainEvents.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainEvents.storyboard; sourceTree = "<group>"; };
+		CD75735824CFDE9000EABFC9 /* List Tempat.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "List Tempat.rtf"; sourceTree = "<group>"; };
+		CD75735A24CFDE9000EABFC9 /* ExploreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		CD75735B24CFDE9000EABFC9 /* StatusRiderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusRiderView.swift; sourceTree = "<group>"; };
+		CD75735C24CFDE9000EABFC9 /* AppView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		CD75735D24CFDE9000EABFC9 /* EventInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInformationView.swift; sourceTree = "<group>"; };
+		CD75735E24CFDE9100EABFC9 /* ExploreRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreRowView.swift; sourceTree = "<group>"; };
+		CD75735F24CFDE9100EABFC9 /* ExploreItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreItemView.swift; sourceTree = "<group>"; };
+		CD75736024CFDE9100EABFC9 /* Create Event Information.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Create Event Information.swift"; sourceTree = "<group>"; };
+		CD75736124CFDE9100EABFC9 /* CreateEventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventView.swift; sourceTree = "<group>"; };
+		CD75736224CFDE9100EABFC9 /* EventInformationInviteFriends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInformationInviteFriends.swift; sourceTree = "<group>"; };
+		CD75736424CFDE9100EABFC9 /* NotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		CD75736624CFDE9100EABFC9 /* MainEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainEvent.swift; sourceTree = "<group>"; };
+		CD75736724CFDE9100EABFC9 /* CreateEventOptionalRouteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventOptionalRouteView.swift; sourceTree = "<group>"; };
+		CD75736824CFDE9100EABFC9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CD75736924CFDE9100EABFC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD75736A24CFDE9100EABFC9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD75736B24CFDE9100EABFC9 /* explores.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = explores.json; sourceTree = "<group>"; };
+		CD75736C24CFDE9100EABFC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CD75736F24CFDE9100EABFC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CD75737124CFDE9100EABFC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		CD75737224CFDE9100EABFC9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CD75737524CFDE9100EABFC9 /* EventData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
+		CD75737624CFDE9100EABFC9 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		CD75737724CFDE9100EABFC9 /* FriendInvitation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendInvitation.swift; sourceTree = "<group>"; };
+		CD75737824CFDE9100EABFC9 /* PeopleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleData.swift; sourceTree = "<group>"; };
+		CD75737924CFDE9100EABFC9 /* RidingLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RidingLocation.swift; sourceTree = "<group>"; };
+		CD75737B24CFDE9100EABFC9 /* Explore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Explore.swift; sourceTree = "<group>"; };
 		CD9D731E24B2D19A006D3103 /* Aplikasi Motor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aplikasi Motor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDC3C88224CFCEEE0070E9DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CDC3C88324CFCEEE0070E9DE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CDC3C88424CFCEEE0070E9DE /* List Tempat.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "List Tempat.rtf"; sourceTree = "<group>"; };
-		CDC3C88724CFCEEE0070E9DE /* LoadSwiftUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadSwiftUIViewController.swift; sourceTree = "<group>"; };
-		CDC3C88824CFCEEE0070E9DE /* Availability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Availability.swift; sourceTree = "<group>"; };
-		CDC3C88924CFCEEE0070E9DE /* MainEvents.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainEvents.storyboard; sourceTree = "<group>"; };
-		CDC3C88B24CFCEEE0070E9DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CDC3C88D24CFCEEE0070E9DE /* BisaRenameGakYa.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BisaRenameGakYa.xcdatamodel; sourceTree = "<group>"; };
-		CDC3C88F24CFCEEE0070E9DE /* ExploreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
-		CDC3C89024CFCEEE0070E9DE /* AppView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
-		CDC3C89124CFCEEE0070E9DE /* ExploreRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreRowView.swift; sourceTree = "<group>"; };
-		CDC3C89224CFCEEE0070E9DE /* Create Event Information.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Create Event Information.swift"; sourceTree = "<group>"; };
-		CDC3C89324CFCEEE0070E9DE /* Create_Event_Invite_Friends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Create_Event_Invite_Friends.swift; sourceTree = "<group>"; };
-		CDC3C89424CFCEEE0070E9DE /* NotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
-		CDC3C89524CFCEEE0070E9DE /* Event Information.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event Information.swift"; sourceTree = "<group>"; };
-		CDC3C89624CFCEEE0070E9DE /* MainEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainEvent.swift; sourceTree = "<group>"; };
-		CDC3C89724CFCEEE0070E9DE /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CDC3C89824CFCEEE0070E9DE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CDC3C89B24CFCEEE0070E9DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		CDC3C89D24CFCEEE0070E9DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
-		CDC3C89E24CFCEEE0070E9DE /* explores.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = explores.json; sourceTree = "<group>"; };
-		CDC3C8A024CFCEEE0070E9DE /* Event Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event Data.swift"; sourceTree = "<group>"; };
-		CDC3C8A124CFCEEE0070E9DE /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		CDC3C8A224CFCEEE0070E9DE /* FriendInvitation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendInvitation.swift; sourceTree = "<group>"; };
-		CDC3C8A324CFCEEE0070E9DE /* RidingLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RidingLocation.swift; sourceTree = "<group>"; };
-		CDC3C8A424CFCEEE0070E9DE /* People Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "People Data.swift"; sourceTree = "<group>"; };
-		CDC3C8A524CFCEEE0070E9DE /* Explore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Explore.swift; sourceTree = "<group>"; };
-		CDC3C8A624CFCEEE0070E9DE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,32 +85,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD75735224CFDE9000EABFC9 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				CD75735324CFDE9000EABFC9 /* LoadSwiftUIViewController.swift */,
+				CD75735424CFDE9000EABFC9 /* Availability.swift */,
+				CD75735524CFDE9000EABFC9 /* MainEvents.storyboard */,
+				CD75737024CFDE9100EABFC9 /* Main.storyboard */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		CD75735924CFDE9000EABFC9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD75735A24CFDE9000EABFC9 /* ExploreView.swift */,
+				CD75735B24CFDE9000EABFC9 /* StatusRiderView.swift */,
+				CD75735C24CFDE9000EABFC9 /* AppView.swift */,
+				CD75735D24CFDE9000EABFC9 /* EventInformationView.swift */,
+				CD75735E24CFDE9100EABFC9 /* ExploreRowView.swift */,
+				CD75735F24CFDE9100EABFC9 /* ExploreItemView.swift */,
+				CD75736024CFDE9100EABFC9 /* Create Event Information.swift */,
+				CD75736124CFDE9100EABFC9 /* CreateEventView.swift */,
+				CD75736224CFDE9100EABFC9 /* EventInformationInviteFriends.swift */,
+				CD75736424CFDE9100EABFC9 /* NotificationView.swift */,
+				CD75736624CFDE9100EABFC9 /* MainEvent.swift */,
+				CD75736724CFDE9100EABFC9 /* CreateEventOptionalRouteView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CD75736D24CFDE9100EABFC9 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				CD75736E24CFDE9100EABFC9 /* LaunchScreen.storyboard */,
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		CD75737324CFDE9100EABFC9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD75737524CFDE9100EABFC9 /* EventData.swift */,
+				CD75737624CFDE9100EABFC9 /* Data.swift */,
+				CD75737724CFDE9100EABFC9 /* FriendInvitation.swift */,
+				CD75737824CFDE9100EABFC9 /* PeopleData.swift */,
+				CD75737924CFDE9100EABFC9 /* RidingLocation.swift */,
+				CD75737B24CFDE9100EABFC9 /* Explore.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CD9D731524B2D19A006D3103 = {
 			isa = PBXGroup;
 			children = (
-				573F0DD324C6AAB70092642E /* RidingLocation.swift */,
-				573F0DFB24C8A0310092642E /* FriendInvitation.swift */,
-				572F32D524CE767E00F24A6E /* Data.swift */,
-				572F32D724CE78F900F24A6E /* Explore.swift */,
-				572F32DF24CEC7FA00F24A6E /* EventData.swift */,
-				572F32E124CEC82800F24A6E /* PeopleData.swift */,
+				CD9D732024B2D19A006D3103 /* Aplikasi Motor */,
+				CD9D731F24B2D19A006D3103 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
 		CD9D731F24B2D19A006D3103 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				573F0DCB24C5B92D0092642E /* AppView.swift */,
-				573F0DD524C710570092642E /* ExploreView.swift */,
-				573F0DD724C868BA0092642E /* NotificationView.swift */,
-				572F32D924CE859C00F24A6E /* ExploreItemView.swift */,
-				572F32DB24CE874400F24A6E /* ExploreRowView.swift */,
-				572F32DD24CEC72D00F24A6E /* MainEvent.swift */,
-				572F32E324CEF17400F24A6E /* StatusRiderView.swift */,
-				572F32E524CFBA3700F24A6E /* CreateEventView.swift */,
-				572F32E724CFC37600F24A6E /* CreateEventOptionalRouteView.swift */,
-				572F32E924CFCE1700F24A6E /* EventInformationView.swift */,
-				572F32EB24CFD11F00F24A6E /* EventInformationInviteFriends.swift */,
+				CD9D731E24B2D19A006D3103 /* Aplikasi Motor.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,76 +155,20 @@
 		CD9D732024B2D19A006D3103 /* Aplikasi Motor */ = {
 			isa = PBXGroup;
 			children = (
-				CDC3C8C424CFCF260070E9DE /* Controller */,
-				CDC3C88324CFCEEE0070E9DE /* AppDelegate.swift */,
-				CDC3C88224CFCEEE0070E9DE /* Assets.xcassets */,
-				CDC3C89924CFCEEE0070E9DE /* Base.lproj */,
-				CDC3C88524CFCEEE0070E9DE /* Events */,
-				CDC3C89E24CFCEEE0070E9DE /* explores.json */,
-				CDC3C8A624CFCEEE0070E9DE /* Info.plist */,
-				CDC3C88424CFCEEE0070E9DE /* List Tempat.rtf */,
-				CDC3C89F24CFCEEE0070E9DE /* Model */,
-				CDC3C89724CFCEEE0070E9DE /* SceneDelegate.swift */,
-				CDC3C88C24CFCEEE0070E9DE /* TestRename.xcdatamodeld */,
-				CDC3C88E24CFCEEE0070E9DE /* View */,
-				CDC3C89824CFCEEE0070E9DE /* ViewController.swift */,
+				CD75736824CFDE9100EABFC9 /* AppDelegate.swift */,
+				CD75736924CFDE9100EABFC9 /* Assets.xcassets */,
+				CD75736D24CFDE9100EABFC9 /* Base.lproj */,
+				CD75735224CFDE9000EABFC9 /* Events */,
+				CD75736B24CFDE9100EABFC9 /* explores.json */,
+				CD75736A24CFDE9100EABFC9 /* Info.plist */,
+				CD75735824CFDE9000EABFC9 /* List Tempat.rtf */,
+				CD75737324CFDE9100EABFC9 /* Model */,
+				CD75736C24CFDE9100EABFC9 /* SceneDelegate.swift */,
+				CD75735024CFDE9000EABFC9 /* TestRename.xcdatamodeld */,
+				CD75735924CFDE9000EABFC9 /* View */,
+				CD75737224CFDE9100EABFC9 /* ViewController.swift */,
 			);
 			path = "Aplikasi Motor";
-			sourceTree = "<group>";
-		};
-		CDC3C88524CFCEEE0070E9DE /* Events */ = {
-			isa = PBXGroup;
-			children = (
-				CDC3C88724CFCEEE0070E9DE /* LoadSwiftUIViewController.swift */,
-				CDC3C88824CFCEEE0070E9DE /* Availability.swift */,
-				CDC3C88924CFCEEE0070E9DE /* MainEvents.storyboard */,
-				CDC3C88A24CFCEEE0070E9DE /* Main.storyboard */,
-			);
-			path = Events;
-			sourceTree = "<group>";
-		};
-		CDC3C88E24CFCEEE0070E9DE /* View */ = {
-			isa = PBXGroup;
-			children = (
-				CDC3C88F24CFCEEE0070E9DE /* ExploreView.swift */,
-				CDC3C89024CFCEEE0070E9DE /* AppView.swift */,
-				CDC3C89124CFCEEE0070E9DE /* ExploreRowView.swift */,
-				CDC3C89224CFCEEE0070E9DE /* Create Event Information.swift */,
-				CDC3C89324CFCEEE0070E9DE /* Create_Event_Invite_Friends.swift */,
-				CDC3C89424CFCEEE0070E9DE /* NotificationView.swift */,
-				CDC3C89524CFCEEE0070E9DE /* Event Information.swift */,
-				CDC3C89624CFCEEE0070E9DE /* MainEvent.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		CDC3C89924CFCEEE0070E9DE /* Base.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				CDC3C89A24CFCEEE0070E9DE /* LaunchScreen.storyboard */,
-				CDC3C89C24CFCEEE0070E9DE /* Main.storyboard */,
-			);
-			path = Base.lproj;
-			sourceTree = "<group>";
-		};
-		CDC3C89F24CFCEEE0070E9DE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				CDC3C8A024CFCEEE0070E9DE /* Event Data.swift */,
-				CDC3C8A124CFCEEE0070E9DE /* Data.swift */,
-				CDC3C8A224CFCEEE0070E9DE /* FriendInvitation.swift */,
-				CDC3C8A324CFCEEE0070E9DE /* RidingLocation.swift */,
-				CDC3C8A424CFCEEE0070E9DE /* People Data.swift */,
-				CDC3C8A524CFCEEE0070E9DE /* Explore.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		CDC3C8C424CFCF260070E9DE /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,12 +230,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDC3C8A924CFCEEE0070E9DE /* List Tempat.rtf in Resources */,
-				CDC3C8AD24CFCEEE0070E9DE /* MainEvents.storyboard in Resources */,
-				CDC3C8A724CFCEEE0070E9DE /* Assets.xcassets in Resources */,
-				CDC3C8BC24CFCEEE0070E9DE /* explores.json in Resources */,
-				CDC3C8BB24CFCEEE0070E9DE /* Main.storyboard in Resources */,
-				CDC3C8BA24CFCEEE0070E9DE /* LaunchScreen.storyboard in Resources */,
+				CD75737F24CFDE9100EABFC9 /* MainEvents.storyboard in Resources */,
+				CD75739324CFDE9100EABFC9 /* explores.json in Resources */,
+				CD75738124CFDE9100EABFC9 /* List Tempat.rtf in Resources */,
+				CD75739624CFDE9100EABFC9 /* Main.storyboard in Resources */,
+				CD75739124CFDE9100EABFC9 /* Assets.xcassets in Resources */,
+				CD75739524CFDE9100EABFC9 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,54 +246,48 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				572F32EC24CFD11F00F24A6E /* EventInformationInviteFriends.swift in Sources */,
-				573F0DFC24C8A0310092642E /* FriendInvitation.swift in Sources */,
-				CD9D732C24B2D19A006D3103 /* TestRename.xcdatamodeld in Sources */,
-				CD9D732624B2D19A006D3103 /* ViewController.swift in Sources */,
-				572F32E824CFC37600F24A6E /* CreateEventOptionalRouteView.swift in Sources */,
-				572F32E224CEC82800F24A6E /* PeopleData.swift in Sources */,
-				CD9D732224B2D19A006D3103 /* AppDelegate.swift in Sources */,
-				572F32D624CE767E00F24A6E /* Data.swift in Sources */,
-				572F32EA24CFCE1700F24A6E /* EventInformationView.swift in Sources */,
-				CD9D732424B2D19A006D3103 /* SceneDelegate.swift in Sources */,
-				572F32E024CEC7FA00F24A6E /* EventData.swift in Sources */,
-				572F32DE24CEC72D00F24A6E /* MainEvent.swift in Sources */,
-				573F0DCC24C5B92D0092642E /* AppView.swift in Sources */,
-				572F32E624CFBA3700F24A6E /* CreateEventView.swift in Sources */,
-				573F0DD424C6AAB70092642E /* RidingLocation.swift in Sources */,
-				573F0DD624C710570092642E /* ExploreView.swift in Sources */,
-				CDFB09CD24B2DE6E008FC602 /* Feature1.swift in Sources */,
-				572F32E424CEF17400F24A6E /* StatusRiderView.swift in Sources */,
-				573F0DD824C868BA0092642E /* NotificationView.swift in Sources */,
-				572F32D824CE78F900F24A6E /* Explore.swift in Sources */,
-				572F32DA24CE859C00F24A6E /* ExploreItemView.swift in Sources */,
-				572F32DC24CE874400F24A6E /* ExploreRowView.swift in Sources */,
+				CD75738A24CFDE9100EABFC9 /* EventInformationInviteFriends.swift in Sources */,
+				CD75738E24CFDE9100EABFC9 /* MainEvent.swift in Sources */,
+				CD75738524CFDE9100EABFC9 /* EventInformationView.swift in Sources */,
+				CD75738624CFDE9100EABFC9 /* ExploreRowView.swift in Sources */,
+				CD75739C24CFDE9100EABFC9 /* PeopleData.swift in Sources */,
+				CD75739924CFDE9100EABFC9 /* EventData.swift in Sources */,
+				CD75738724CFDE9100EABFC9 /* ExploreItemView.swift in Sources */,
+				CD75739D24CFDE9100EABFC9 /* RidingLocation.swift in Sources */,
+				CD75738924CFDE9100EABFC9 /* CreateEventView.swift in Sources */,
+				CD75737E24CFDE9100EABFC9 /* Availability.swift in Sources */,
+				CD75737D24CFDE9100EABFC9 /* LoadSwiftUIViewController.swift in Sources */,
+				CD75739724CFDE9100EABFC9 /* ViewController.swift in Sources */,
+				CD75738424CFDE9100EABFC9 /* AppView.swift in Sources */,
+				CD75739A24CFDE9100EABFC9 /* Data.swift in Sources */,
+				CD75739B24CFDE9100EABFC9 /* FriendInvitation.swift in Sources */,
+				CD75738C24CFDE9100EABFC9 /* NotificationView.swift in Sources */,
+				CD75739F24CFDE9100EABFC9 /* Explore.swift in Sources */,
+				CD75739024CFDE9100EABFC9 /* AppDelegate.swift in Sources */,
+				CD75738224CFDE9100EABFC9 /* ExploreView.swift in Sources */,
+				CD75738324CFDE9100EABFC9 /* StatusRiderView.swift in Sources */,
+				CD75738F24CFDE9100EABFC9 /* CreateEventOptionalRouteView.swift in Sources */,
+				CD75739424CFDE9100EABFC9 /* SceneDelegate.swift in Sources */,
+				CD75737C24CFDE9100EABFC9 /* TestRename.xcdatamodeld in Sources */,
+				CD75738824CFDE9100EABFC9 /* Create Event Information.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CDC3C88A24CFCEEE0070E9DE /* Main.storyboard */ = {
+		CD75736E24CFDE9100EABFC9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CDC3C88B24CFCEEE0070E9DE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CDC3C89A24CFCEEE0070E9DE /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CDC3C89B24CFCEEE0070E9DE /* Base */,
+				CD75736F24CFDE9100EABFC9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		CDC3C89C24CFCEEE0070E9DE /* Main.storyboard */ = {
+		CD75737024CFDE9100EABFC9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CDC3C89D24CFCEEE0070E9DE /* Base */,
+				CD75737124CFDE9100EABFC9 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -508,12 +472,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		CDC3C88C24CFCEEE0070E9DE /* TestRename.xcdatamodeld */ = {
+		CD75735024CFDE9000EABFC9 /* TestRename.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				CDC3C88D24CFCEEE0070E9DE /* BisaRenameGakYa.xcdatamodel */,
+				CD75735124CFDE9000EABFC9 /* BisaRenameGakYa.xcdatamodel */,
 			);
-			currentVersion = CDC3C88D24CFCEEE0070E9DE /* BisaRenameGakYa.xcdatamodel */;
+			currentVersion = CD75735124CFDE9000EABFC9 /* BisaRenameGakYa.xcdatamodel */;
 			path = TestRename.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

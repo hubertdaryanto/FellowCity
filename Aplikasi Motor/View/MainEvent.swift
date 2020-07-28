@@ -30,7 +30,7 @@ struct MainEvent: View {
                     ForEach(self.attendedEventList) { index in
                 ZStack{
                     NavigationLink(destination:
-                        ExploreView(explore: exploreData[0])
+                        Event_Information()
                     ){
                     EmptyView()
                     }.hidden()
