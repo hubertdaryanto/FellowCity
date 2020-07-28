@@ -127,8 +127,6 @@ struct MainEvent: View {
     }
     
 }
-    
-
 
 struct MainEvent_Previews: PreviewProvider {
     static var previews: some View {
