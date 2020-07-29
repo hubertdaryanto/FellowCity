@@ -79,7 +79,7 @@ struct ExploreView: View {
                 }
             )
                 .sheet(isPresented: $showProfileView) {
-                    TabEventsView()
+                    ProfileView()
             }
         }
         

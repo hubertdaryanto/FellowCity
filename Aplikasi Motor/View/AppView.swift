@@ -51,13 +51,13 @@ struct AppView: View {
 }
 
 
-struct TabEventsView: View {
+struct ProfileView: View {
     var body: some View {
         NavigationView {
             //Form{
             
             VStack{
-                Text("Reserve for Event Page")
+                Text("Reserve for Profile Page")
                                }
                     
             }
@@ -71,8 +71,7 @@ struct TabFriendsView: View {
     @State private var selectedRide = 0
     private let rideSelection = ["Explore", "Public Events"]
     var body: some View {
-        Text("Reserve for Friends List Page")
-        
+        FriendUIView()
         
     }
 }
@@ -80,7 +79,7 @@ struct TabFriendsView: View {
 
 struct TabHistoryView: View {
     var body: some View {
-        Text("For History Events")
+        HistoryUIView(history: dummyHistory)
     }
 }
 

@@ -121,7 +121,7 @@ struct MainEvent: View {
                         }
                 )
                         .sheet(isPresented: $showProfileView) {
-                            TabEventsView()
+                            ProfileView()
                     }
         }
     }

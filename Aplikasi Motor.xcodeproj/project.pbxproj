@@ -29,7 +29,6 @@
 		CD75739324CFDE9100EABFC9 /* explores.json in Resources */ = {isa = PBXBuildFile; fileRef = CD75736B24CFDE9100EABFC9 /* explores.json */; };
 		CD75739424CFDE9100EABFC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75736C24CFDE9100EABFC9 /* SceneDelegate.swift */; };
 		CD75739524CFDE9100EABFC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD75736E24CFDE9100EABFC9 /* LaunchScreen.storyboard */; };
-		CD75739624CFDE9100EABFC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD75737024CFDE9100EABFC9 /* Main.storyboard */; };
 		CD75739724CFDE9100EABFC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75737224CFDE9100EABFC9 /* ViewController.swift */; };
 		CD75739924CFDE9100EABFC9 /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75737524CFDE9100EABFC9 /* EventData.swift */; };
 		CD75739A24CFDE9100EABFC9 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75737624CFDE9100EABFC9 /* Data.swift */; };
@@ -37,6 +36,12 @@
 		CD75739C24CFDE9100EABFC9 /* PeopleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75737824CFDE9100EABFC9 /* PeopleData.swift */; };
 		CD75739D24CFDE9100EABFC9 /* RidingLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75737924CFDE9100EABFC9 /* RidingLocation.swift */; };
 		CD75739F24CFDE9100EABFC9 /* Explore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75737B24CFDE9100EABFC9 /* Explore.swift */; };
+		CD79826724D0FF1600EA93F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD75737124CFDE9100EABFC9 /* Main.storyboard */; };
+		CD79826924D1044800EA93F1 /* FriendUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79826824D1044800EA93F1 /* FriendUIView.swift */; };
+		CD79826B24D1088C00EA93F1 /* HistoryUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79826A24D1088C00EA93F1 /* HistoryUIView.swift */; };
+		CD79826D24D10A8A00EA93F1 /* HistoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79826C24D10A8A00EA93F1 /* HistoryRowView.swift */; };
+		CD79826F24D10AF200EA93F1 /* HistoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79826E24D10AF200EA93F1 /* HistoryItemView.swift */; };
+		CD79827124D141F900EA93F1 /* HistoryNonPublicEventReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79827024D141F900EA93F1 /* HistoryNonPublicEventReview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +68,7 @@
 		CD75736B24CFDE9100EABFC9 /* explores.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = explores.json; sourceTree = "<group>"; };
 		CD75736C24CFDE9100EABFC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CD75736F24CFDE9100EABFC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		CD75737124CFDE9100EABFC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		CD75737124CFDE9100EABFC9 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CD75737224CFDE9100EABFC9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CD75737524CFDE9100EABFC9 /* EventData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
 		CD75737624CFDE9100EABFC9 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -71,6 +76,11 @@
 		CD75737824CFDE9100EABFC9 /* PeopleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleData.swift; sourceTree = "<group>"; };
 		CD75737924CFDE9100EABFC9 /* RidingLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RidingLocation.swift; sourceTree = "<group>"; };
 		CD75737B24CFDE9100EABFC9 /* Explore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Explore.swift; sourceTree = "<group>"; };
+		CD79826824D1044800EA93F1 /* FriendUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendUIView.swift; sourceTree = "<group>"; };
+		CD79826A24D1088C00EA93F1 /* HistoryUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryUIView.swift; sourceTree = "<group>"; };
+		CD79826C24D10A8A00EA93F1 /* HistoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRowView.swift; sourceTree = "<group>"; };
+		CD79826E24D10AF200EA93F1 /* HistoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemView.swift; sourceTree = "<group>"; };
+		CD79827024D141F900EA93F1 /* HistoryNonPublicEventReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryNonPublicEventReview.swift; sourceTree = "<group>"; };
 		CD9D731E24B2D19A006D3103 /* Aplikasi Motor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aplikasi Motor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -91,7 +101,7 @@
 				CD75735324CFDE9000EABFC9 /* LoadSwiftUIViewController.swift */,
 				CD75735424CFDE9000EABFC9 /* Availability.swift */,
 				CD75735524CFDE9000EABFC9 /* MainEvents.storyboard */,
-				CD75737024CFDE9100EABFC9 /* Main.storyboard */,
+				CD75737124CFDE9100EABFC9 /* Main.storyboard */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -111,6 +121,11 @@
 				CD75736424CFDE9100EABFC9 /* NotificationView.swift */,
 				CD75736624CFDE9100EABFC9 /* MainEvent.swift */,
 				CD75736724CFDE9100EABFC9 /* CreateEventOptionalRouteView.swift */,
+				CD79826824D1044800EA93F1 /* FriendUIView.swift */,
+				CD79826A24D1088C00EA93F1 /* HistoryUIView.swift */,
+				CD79826C24D10A8A00EA93F1 /* HistoryRowView.swift */,
+				CD79826E24D10AF200EA93F1 /* HistoryItemView.swift */,
+				CD79827024D141F900EA93F1 /* HistoryNonPublicEventReview.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -233,7 +248,7 @@
 				CD75737F24CFDE9100EABFC9 /* MainEvents.storyboard in Resources */,
 				CD75739324CFDE9100EABFC9 /* explores.json in Resources */,
 				CD75738124CFDE9100EABFC9 /* List Tempat.rtf in Resources */,
-				CD75739624CFDE9100EABFC9 /* Main.storyboard in Resources */,
+				CD79826724D0FF1600EA93F1 /* Main.storyboard in Resources */,
 				CD75739124CFDE9100EABFC9 /* Assets.xcassets in Resources */,
 				CD75739524CFDE9100EABFC9 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -246,13 +261,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD79826F24D10AF200EA93F1 /* HistoryItemView.swift in Sources */,
 				CD75738A24CFDE9100EABFC9 /* EventInformationInviteFriends.swift in Sources */,
 				CD75738E24CFDE9100EABFC9 /* MainEvent.swift in Sources */,
 				CD75738524CFDE9100EABFC9 /* EventInformationView.swift in Sources */,
 				CD75738624CFDE9100EABFC9 /* ExploreRowView.swift in Sources */,
 				CD75739C24CFDE9100EABFC9 /* PeopleData.swift in Sources */,
 				CD75739924CFDE9100EABFC9 /* EventData.swift in Sources */,
+				CD79826D24D10A8A00EA93F1 /* HistoryRowView.swift in Sources */,
 				CD75738724CFDE9100EABFC9 /* ExploreItemView.swift in Sources */,
+				CD79827124D141F900EA93F1 /* HistoryNonPublicEventReview.swift in Sources */,
+				CD79826B24D1088C00EA93F1 /* HistoryUIView.swift in Sources */,
 				CD75739D24CFDE9100EABFC9 /* RidingLocation.swift in Sources */,
 				CD75738924CFDE9100EABFC9 /* CreateEventView.swift in Sources */,
 				CD75737E24CFDE9100EABFC9 /* Availability.swift in Sources */,
@@ -263,6 +282,7 @@
 				CD75739B24CFDE9100EABFC9 /* FriendInvitation.swift in Sources */,
 				CD75738C24CFDE9100EABFC9 /* NotificationView.swift in Sources */,
 				CD75739F24CFDE9100EABFC9 /* Explore.swift in Sources */,
+				CD79826924D1044800EA93F1 /* FriendUIView.swift in Sources */,
 				CD75739024CFDE9100EABFC9 /* AppDelegate.swift in Sources */,
 				CD75738224CFDE9100EABFC9 /* ExploreView.swift in Sources */,
 				CD75738324CFDE9100EABFC9 /* StatusRiderView.swift in Sources */,
@@ -282,14 +302,6 @@
 				CD75736F24CFDE9100EABFC9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		CD75737024CFDE9100EABFC9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CD75737124CFDE9100EABFC9 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

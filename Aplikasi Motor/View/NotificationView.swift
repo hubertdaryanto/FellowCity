@@ -266,7 +266,7 @@ struct NotificationView: View {
                 }
             )
                 .sheet(isPresented: $showProfileView) {
-                    TabEventsView()
+                    ProfileView()
             }
         }
     }
