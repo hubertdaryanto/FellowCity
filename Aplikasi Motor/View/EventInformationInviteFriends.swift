@@ -8,25 +8,24 @@
 //
 import SwiftUI
 
+
+var friendList: [FriendList] = [FriendList(id: 1, name: "Alicia Puma"),
+FriendList(id: 2, name: "Claude"),
+FriendList(id: 3, name: "FeFa"),
+FriendList(id: 4, name: "Kevin Timotius"),
+FriendList(id: 5, name: "Hubert"),
+FriendList(id: 6, name: "Raka Widya Prawara")]
 enum FinishState {
     case notyet
     case finish
 }
 
-
 struct EventInformationInviteFriends: View {
     @State var showing : FinishState = .notyet
     
     @State private var isPublic = false
-     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
-    
-    var friendList: [FriendList] = [FriendList(id: 1, name: "Alicia Puma"),
-    FriendList(id: 2, name: "Claude"),
-    FriendList(id: 3, name: "FeFa"),
-    FriendList(id: 4, name: "Kevin Timotius"),
-    FriendList(id: 5, name: "Hubert"),
-    FriendList(id: 6, name: "Raka Widya Prawara")]
-    
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+   
     @State var invitedFriends:[String] = []
     
     var body: some View {
