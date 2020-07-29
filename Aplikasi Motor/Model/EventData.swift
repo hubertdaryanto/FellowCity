@@ -49,3 +49,4 @@ var dummyHistory: [EventInfoHubertHistory] = [EventInfoHubertHistory(id: 1, even
                                               EventInfoHubertHistory(id: 2, eventName: "Monas -> Senopati", startDate: formatter.date(from: "19/07/2020 9:00")!, image: Image("monas"), isPublic: false, isReviewed: true, rating: 4.0),
                                               EventInfoHubertHistory(id: 3, eventName: "Senayan -> m bloc", startDate: formatter.date(from: "26/06/2020 9:00")!, image: Image("m bloc"), isPublic: false, isReviewed: true, rating: 5.0),
                                               EventInfoHubertHistory(id: 4, eventName: "Depok -> Caribou", startDate: formatter.date(from: "24/06/2020 9:00")!, image: Image("caribou"), isPublic: false, isReviewed: true, rating: 5.0)]
+

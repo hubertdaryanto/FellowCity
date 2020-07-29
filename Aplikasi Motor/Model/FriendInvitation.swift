@@ -26,3 +26,4 @@ struct Event: Identifiable {
     var origin: String
     var destination: String
 }
+

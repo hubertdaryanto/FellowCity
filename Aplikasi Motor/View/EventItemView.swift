@@ -1,3 +1,4 @@
+
 //
 //  ExploreItemView.swift
 //  Aplikasi Motor
@@ -8,13 +9,16 @@
 
 import SwiftUI
 
-struct ExploreItemView: View {
+struct EventItemView: View {
     
     var explore:Explore
     
     var body: some View {
 //        ZStack {
-                                NavigationLink(destination: ExploreDetailsView())
+                                NavigationLink(destination:
+                                    EventDetailsView()
+//                                    ExploreDetailsView()
+                                    )
                                 {
         VStack {
             
@@ -117,8 +121,8 @@ struct ExploreItemView: View {
         
 
 }
-struct ExploreItemView_Previews: PreviewProvider {
+struct EventItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ExploreItemView(explore: exploreData[0])
+        EventItemView(explore: exploreData[1])
     }
 }
