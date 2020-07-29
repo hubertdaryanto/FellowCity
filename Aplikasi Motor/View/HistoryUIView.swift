@@ -38,10 +38,11 @@ struct HistoryUIView: View {
                     }
                 
                 if selectedRide == 0 {
-                        HistoryRowView(history: history)
+                    HistoryRowView(history: history, isPublic: false)
                     }
              else  {
-                        HistoryRowView(history: history)
+                    EmptyView()
+                    HistoryRowView(history: history, isPublic: true)
                     //                List(categories.keys.sorted(), id: \String.self) { key in
                     //                    ExploreRowView(categoryName: "\(key) Places".uppercased(), explores:
                     //                        self.categories[key]!)

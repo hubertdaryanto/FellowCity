@@ -48,5 +48,8 @@ struct EventInfoHubertHistory: Identifiable{
 var dummyHistory: [EventInfoHubertHistory] = [EventInfoHubertHistory(id: 1, eventName: "Pertamina Jatiasih -> Lot 9", startDate: formatter.date(from: "18/07/2020 8:00")!, image: Image("lot 9 bintaro"), isPublic: false, isReviewed: false, rating: 0),
                                               EventInfoHubertHistory(id: 2, eventName: "Monas -> Senopati", startDate: formatter.date(from: "19/07/2020 9:00")!, image: Image("monas"), isPublic: false, isReviewed: true, rating: 4.0),
                                               EventInfoHubertHistory(id: 3, eventName: "Senayan -> m bloc", startDate: formatter.date(from: "26/06/2020 9:00")!, image: Image("m bloc"), isPublic: false, isReviewed: true, rating: 5.0),
-                                              EventInfoHubertHistory(id: 4, eventName: "Depok -> Caribou", startDate: formatter.date(from: "24/06/2020 9:00")!, image: Image("caribou"), isPublic: false, isReviewed: true, rating: 5.0)]
+                                              EventInfoHubertHistory(id: 4, eventName: "Depok -> Caribou", startDate: formatter.date(from: "24/06/2020 9:00")!, image: Image("caribou"), isPublic: false, isReviewed: true, rating: 5.0),
+                                              EventInfoHubertHistory(id: 5, eventName: "VesPark", startDate: formatter.date(from: "18/07/2020 8:00")!, image: Image("caribou"), isPublic: true, isReviewed: false, rating: 0.0),
+EventInfoHubertHistory(id: 6, eventName: "Gentleman's Ride", startDate: formatter.date(from: "19/07/2020 9:00")!, image: Image("caribou"), isPublic: true, isReviewed: true, rating: 5.0),
+EventInfoHubertHistory(id: 7, eventName: "Cool Ride", startDate: formatter.date(from: "26/06/2020 9:00")!, image: Image("caribou"), isPublic: true, isReviewed: true, rating: 5.0)]
 

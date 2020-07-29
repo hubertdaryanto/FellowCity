@@ -32,13 +32,7 @@ struct ParticipantView: View {
         participant.image.resizable().clipShape(Circle()).frame(width: 30, height: 30).clipped()
     }
 }
-var formatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.timeZone = .current
-    formatter.locale = .current
-    formatter.dateFormat = "dd/MM/yyyy h:mm"
-    return formatter
-}()
+
 
 
 
