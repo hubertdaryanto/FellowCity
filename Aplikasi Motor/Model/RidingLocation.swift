@@ -26,3 +26,4 @@ struct EventLocation: Identifiable {
     var reviewCount: Int
     var maxPeople: Int
 }
+

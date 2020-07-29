@@ -13,7 +13,9 @@ struct ExploreItemView: View {
     var explore:Explore
     
     var body: some View {
-        
+//        ZStack {
+                                NavigationLink(destination: ExploreDetailsView())
+                                {
         VStack {
             
             Image(self.explore.imageName)
@@ -62,24 +64,55 @@ struct ExploreItemView: View {
                 }
                 Spacer()
                 
-                Button(action: {
-                    print("Ubah State Ride Disini")
-                    //self.deleteEventInvitationsList(at:self.EventInvitationsList.firstIndex(where: { $0.id == index.id })!)
-                }){
+//                Button(action: {
+//                    print("Ubah State Ride Disini")
+//                    //self.deleteEventInvitationsList(at:self.EventInvitationsList.firstIndex(where: { $0.id == index.id })!)
+//                }){
                     Text("Ride").font(.system(size: 10)).fontWeight(.heavy)
+                        .foregroundColor(Color.black)
                         .frame(minWidth: 0, maxWidth: 55, maxHeight: 30)
                         .background(Color.yellow).cornerRadius(30)
-                }
-                .buttonStyle(PlainButtonStyle())
+//                }
+//                .buttonStyle(PlainButtonStyle())
                 .shadow(radius: 2, x: 1, y: 2)
-            }
-            .padding()
+                
+                
+//                ZStack{
+//                    NavigationLink(destination: CreateEventView()){
+//                        EmptyView()
+//                    }
+
+                    
+                
+//                ZStack {
+//                        NavigationLink(destination: CreateEventView())
+//                        {
+//                            Image(systemName: "plus.circle.fill").resizable().foregroundColor(Color(red: 0.96484375, green: 0.7421875, blue: 0)).frame(width: 50, height: 50, alignment: .center)
+//                            .shadow(radius: 2, x: 1, y: 2)
+//                        }
+//
+//                    }
+             
+                
+                
+//            }
+            
+                                    }
+            
+            
+            
         }
+
+        
+        //.padding()
+//        }
     }
+
+    
+    }
+        
+
 }
-
-
-
 struct ExploreItemView_Previews: PreviewProvider {
     static var previews: some View {
         ExploreItemView(explore: exploreData[0])

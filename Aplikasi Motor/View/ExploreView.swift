@@ -25,10 +25,10 @@ struct ExploreView: View {
     @State private var selectedRide = 0
     
     
-    private let rideSelection = ["Explore", "Public Events"]
+    private let rideSelection = ["Recommended", "Public Events"]
     var body: some View {
         NavigationView {
-            VStack(spacing: 10) {
+            VStack(alignment: .leading) {
                 
                 ZStack {
                 
@@ -47,10 +47,11 @@ struct ExploreView: View {
                     }
                 
                 if selectedRide == 0 {
+//                    Text("adad")
                     List(categories.keys.sorted(), id: \String.self) { key in
                         ExploreRowView(categoryName: "\(key) Places".uppercased(), explores:
                             self.categories[key]!)
-                    }
+                    }.frame(alignment: .leading)
                 } else  {
                     List {
                         ExploreItemView(explore: exploreData[4])
@@ -63,23 +64,24 @@ struct ExploreView: View {
                 
                 
             }
-            .navigationBarTitle(Text("Notification"), displayMode: .inline)
+            .navigationBarTitle(Text("Ride"), displayMode: .inline)
             .navigationBarItems(trailing:
                 Button(action: {
                     self.showProfileView.toggle()
                 }) {
-                    Image(systemName: "person.crop.circle")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 40, height: 40)
-                        .clipShape(Circle())
-                        .background(Color.white)
-                        .overlay(RoundedRectangle(cornerRadius: 40)
-                            .stroke(Color.gray, lineWidth: 2))
+                    Image("rossi")
+                    .resizable()
+                    .renderingMode(.original)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 36, height: 36)
+                    .clipShape(Circle())
+//                    .background(Color.white)
+                    .overlay(RoundedRectangle(cornerRadius: 40)
+                        .stroke(Color.gray, lineWidth: 2))
                 }
             )
                 .sheet(isPresented: $showProfileView) {
-                    TabEventsView()
+                    ProfileView()
             }
         }
         

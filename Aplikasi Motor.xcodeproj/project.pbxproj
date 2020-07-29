@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		572F32F424D111E000F24A6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD75737124CFDE9100EABFC9 /* Main.storyboard */; };
+		572F32F624D112ED00F24A6E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32F524D112ED00F24A6E /* ProfileView.swift */; };
+		572F32F824D119E800F24A6E /* ExploreDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32F724D119E800F24A6E /* ExploreDetailsView.swift */; };
 		CD75737C24CFDE9100EABFC9 /* TestRename.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD75735024CFDE9000EABFC9 /* TestRename.xcdatamodeld */; };
 		CD75737D24CFDE9100EABFC9 /* LoadSwiftUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75735324CFDE9000EABFC9 /* LoadSwiftUIViewController.swift */; };
 		CD75737E24CFDE9100EABFC9 /* Availability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75735424CFDE9000EABFC9 /* Availability.swift */; };
@@ -29,7 +32,6 @@
 		CD75739324CFDE9100EABFC9 /* explores.json in Resources */ = {isa = PBXBuildFile; fileRef = CD75736B24CFDE9100EABFC9 /* explores.json */; };
 		CD75739424CFDE9100EABFC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75736C24CFDE9100EABFC9 /* SceneDelegate.swift */; };
 		CD75739524CFDE9100EABFC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD75736E24CFDE9100EABFC9 /* LaunchScreen.storyboard */; };
-		CD75739624CFDE9100EABFC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD75737024CFDE9100EABFC9 /* Main.storyboard */; };
 		CD75739724CFDE9100EABFC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75737224CFDE9100EABFC9 /* ViewController.swift */; };
 		CD75739924CFDE9100EABFC9 /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75737524CFDE9100EABFC9 /* EventData.swift */; };
 		CD75739A24CFDE9100EABFC9 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75737624CFDE9100EABFC9 /* Data.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		572F32F524D112ED00F24A6E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		572F32F724D119E800F24A6E /* ExploreDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreDetailsView.swift; sourceTree = "<group>"; };
 		CD75735124CFDE9000EABFC9 /* BisaRenameGakYa.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BisaRenameGakYa.xcdatamodel; sourceTree = "<group>"; };
 		CD75735324CFDE9000EABFC9 /* LoadSwiftUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadSwiftUIViewController.swift; sourceTree = "<group>"; };
 		CD75735424CFDE9000EABFC9 /* Availability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Availability.swift; sourceTree = "<group>"; };
@@ -63,7 +67,7 @@
 		CD75736B24CFDE9100EABFC9 /* explores.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = explores.json; sourceTree = "<group>"; };
 		CD75736C24CFDE9100EABFC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CD75736F24CFDE9100EABFC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		CD75737124CFDE9100EABFC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		CD75737124CFDE9100EABFC9 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CD75737224CFDE9100EABFC9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CD75737524CFDE9100EABFC9 /* EventData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
 		CD75737624CFDE9100EABFC9 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -91,7 +95,7 @@
 				CD75735324CFDE9000EABFC9 /* LoadSwiftUIViewController.swift */,
 				CD75735424CFDE9000EABFC9 /* Availability.swift */,
 				CD75735524CFDE9000EABFC9 /* MainEvents.storyboard */,
-				CD75737024CFDE9100EABFC9 /* Main.storyboard */,
+				CD75737124CFDE9100EABFC9 /* Main.storyboard */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -111,6 +115,8 @@
 				CD75736424CFDE9100EABFC9 /* NotificationView.swift */,
 				CD75736624CFDE9100EABFC9 /* MainEvent.swift */,
 				CD75736724CFDE9100EABFC9 /* CreateEventOptionalRouteView.swift */,
+				572F32F524D112ED00F24A6E /* ProfileView.swift */,
+				572F32F724D119E800F24A6E /* ExploreDetailsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -233,7 +239,7 @@
 				CD75737F24CFDE9100EABFC9 /* MainEvents.storyboard in Resources */,
 				CD75739324CFDE9100EABFC9 /* explores.json in Resources */,
 				CD75738124CFDE9100EABFC9 /* List Tempat.rtf in Resources */,
-				CD75739624CFDE9100EABFC9 /* Main.storyboard in Resources */,
+				572F32F424D111E000F24A6E /* Main.storyboard in Resources */,
 				CD75739124CFDE9100EABFC9 /* Assets.xcassets in Resources */,
 				CD75739524CFDE9100EABFC9 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -253,11 +259,13 @@
 				CD75739C24CFDE9100EABFC9 /* PeopleData.swift in Sources */,
 				CD75739924CFDE9100EABFC9 /* EventData.swift in Sources */,
 				CD75738724CFDE9100EABFC9 /* ExploreItemView.swift in Sources */,
+				572F32F624D112ED00F24A6E /* ProfileView.swift in Sources */,
 				CD75739D24CFDE9100EABFC9 /* RidingLocation.swift in Sources */,
 				CD75738924CFDE9100EABFC9 /* CreateEventView.swift in Sources */,
 				CD75737E24CFDE9100EABFC9 /* Availability.swift in Sources */,
 				CD75737D24CFDE9100EABFC9 /* LoadSwiftUIViewController.swift in Sources */,
 				CD75739724CFDE9100EABFC9 /* ViewController.swift in Sources */,
+				572F32F824D119E800F24A6E /* ExploreDetailsView.swift in Sources */,
 				CD75738424CFDE9100EABFC9 /* AppView.swift in Sources */,
 				CD75739A24CFDE9100EABFC9 /* Data.swift in Sources */,
 				CD75739B24CFDE9100EABFC9 /* FriendInvitation.swift in Sources */,
@@ -282,14 +290,6 @@
 				CD75736F24CFDE9100EABFC9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		CD75737024CFDE9100EABFC9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CD75737124CFDE9100EABFC9 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -415,7 +415,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AB6S3CVVK7;
+				DEVELOPMENT_TEAM = 8K222RH5FM;
 				INFOPLIST_FILE = "Aplikasi Motor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -435,7 +435,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AB6S3CVVK7;
+				DEVELOPMENT_TEAM = 8K222RH5FM;
 				INFOPLIST_FILE = "Aplikasi Motor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
