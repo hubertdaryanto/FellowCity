@@ -51,22 +51,6 @@ struct AppView: View {
 }
 
 
-struct ProfileView: View {
-    var body: some View {
-        NavigationView {
-            //Form{
-            
-            VStack{
-                Text("Reserve for Profile Page")
-                               }
-                    
-            }
-            //}
-                    .navigationBarTitle(Text("Riding"), displayMode: .inline)
-        }
-    }
-
-
 struct TabFriendsView: View {
     @State private var selectedRide = 0
     private let rideSelection = ["Explore", "Public Events"]
