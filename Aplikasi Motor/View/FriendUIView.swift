@@ -52,7 +52,7 @@ struct FriendUIView: View {
         NavigationView{
         VStack(alignment: .leading){
             
-            Section(header: Text("FRIENDS - \(friendList.count)").padding(.leading, 20).font(.custom("SFProText-Regular", size: 17)).foregroundColor(Color(UIColor(red: 0.78, green: 0.78, blue: 0.8, alpha: 1))))
+            Section(header: Text("FRIENDS - \(friendList.count)").padding(.leading, 20).font(.custom("SF-Pro-Text-Regular", size: 17)).foregroundColor(Color(UIColor(red: 0.78, green: 0.78, blue: 0.8, alpha: 1))))
             {
                 List(friendList){ index in
                     HStack{

@@ -10,13 +10,17 @@ import SwiftUI
 
 struct HistoryRowView: View {
     var history:[EventInfoHubertHistory]
+    @State var isPublic: Bool
     
     var body: some View {
         VStack(alignment: .leading) {
             
             ScrollView {
                 ForEach (self.history) { index in
-                    HistoryItemView(history: index)
+                    if (index.isPublic == self.isPublic)
+                    {
+                        HistoryItemView(history: index, isPublic: self.isPublic)
+                    }
                 }
             }
         }
@@ -26,6 +30,6 @@ struct HistoryRowView: View {
 
 struct HistoryRowView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryRowView(history: dummyHistory)
+        HistoryRowView(history: dummyHistory, isPublic: true)
     }
 }
