@@ -100,7 +100,9 @@ struct EventInformationInviteFriends: View {
                 HStack{
                     Spacer()
                 Button(action: {
-                    self.showing = .finish
+                    
+                    
+//                    self.showing = .finish
                     
                     AppView()
                 }) {

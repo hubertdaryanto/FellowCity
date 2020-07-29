@@ -10,6 +10,9 @@
 		572F32F424D111E000F24A6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD75737124CFDE9100EABFC9 /* Main.storyboard */; };
 		572F32F624D112ED00F24A6E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32F524D112ED00F24A6E /* ProfileView.swift */; };
 		572F32F824D119E800F24A6E /* ExploreDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32F724D119E800F24A6E /* ExploreDetailsView.swift */; };
+		572F32FA24D11D3000F24A6E /* ListEventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32F924D11D3000F24A6E /* ListEventDetailsView.swift */; };
+		572F32FC24D1238000F24A6E /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32FB24D1238000F24A6E /* EventDetailsView.swift */; };
+		572F32FE24D1243F00F24A6E /* EventItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32FD24D1243F00F24A6E /* EventItemView.swift */; };
 		CD75737C24CFDE9100EABFC9 /* TestRename.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD75735024CFDE9000EABFC9 /* TestRename.xcdatamodeld */; };
 		CD75737D24CFDE9100EABFC9 /* LoadSwiftUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75735324CFDE9000EABFC9 /* LoadSwiftUIViewController.swift */; };
 		CD75737E24CFDE9100EABFC9 /* Availability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75735424CFDE9000EABFC9 /* Availability.swift */; };
@@ -44,6 +47,9 @@
 /* Begin PBXFileReference section */
 		572F32F524D112ED00F24A6E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		572F32F724D119E800F24A6E /* ExploreDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreDetailsView.swift; sourceTree = "<group>"; };
+		572F32F924D11D3000F24A6E /* ListEventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEventDetailsView.swift; sourceTree = "<group>"; };
+		572F32FB24D1238000F24A6E /* EventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsView.swift; sourceTree = "<group>"; };
+		572F32FD24D1243F00F24A6E /* EventItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItemView.swift; sourceTree = "<group>"; };
 		CD75735124CFDE9000EABFC9 /* BisaRenameGakYa.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BisaRenameGakYa.xcdatamodel; sourceTree = "<group>"; };
 		CD75735324CFDE9000EABFC9 /* LoadSwiftUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadSwiftUIViewController.swift; sourceTree = "<group>"; };
 		CD75735424CFDE9000EABFC9 /* Availability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Availability.swift; sourceTree = "<group>"; };
@@ -117,6 +123,9 @@
 				CD75736724CFDE9100EABFC9 /* CreateEventOptionalRouteView.swift */,
 				572F32F524D112ED00F24A6E /* ProfileView.swift */,
 				572F32F724D119E800F24A6E /* ExploreDetailsView.swift */,
+				572F32F924D11D3000F24A6E /* ListEventDetailsView.swift */,
+				572F32FB24D1238000F24A6E /* EventDetailsView.swift */,
+				572F32FD24D1243F00F24A6E /* EventItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -258,6 +267,7 @@
 				CD75738624CFDE9100EABFC9 /* ExploreRowView.swift in Sources */,
 				CD75739C24CFDE9100EABFC9 /* PeopleData.swift in Sources */,
 				CD75739924CFDE9100EABFC9 /* EventData.swift in Sources */,
+				572F32FA24D11D3000F24A6E /* ListEventDetailsView.swift in Sources */,
 				CD75738724CFDE9100EABFC9 /* ExploreItemView.swift in Sources */,
 				572F32F624D112ED00F24A6E /* ProfileView.swift in Sources */,
 				CD75739D24CFDE9100EABFC9 /* RidingLocation.swift in Sources */,
@@ -271,8 +281,10 @@
 				CD75739B24CFDE9100EABFC9 /* FriendInvitation.swift in Sources */,
 				CD75738C24CFDE9100EABFC9 /* NotificationView.swift in Sources */,
 				CD75739F24CFDE9100EABFC9 /* Explore.swift in Sources */,
+				572F32FC24D1238000F24A6E /* EventDetailsView.swift in Sources */,
 				CD75739024CFDE9100EABFC9 /* AppDelegate.swift in Sources */,
 				CD75738224CFDE9100EABFC9 /* ExploreView.swift in Sources */,
+				572F32FE24D1243F00F24A6E /* EventItemView.swift in Sources */,
 				CD75738324CFDE9100EABFC9 /* StatusRiderView.swift in Sources */,
 				CD75738F24CFDE9100EABFC9 /* CreateEventOptionalRouteView.swift in Sources */,
 				CD75739424CFDE9100EABFC9 /* SceneDelegate.swift in Sources */,

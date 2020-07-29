@@ -202,9 +202,9 @@ struct MainEvent: View {
                 ZStack{
                     NavigationLink(destination:
 //                        ExploreView(explore: exploreData[0])
-                        TabFriendsView()
+//                        TabFriendsView()
 
-//                        ListEventDetailsView(eventDate: self.eventDate, eventName: self.eventName, eventMeetingPoint: self.eventMeetingPoint, eventDestinastion: self.eventDestinastion, sselectedRoute: self.sselectedRoute)
+                        ListEventDetailsView(eventDate: self.eventDate, eventName: self.eventName, eventMeetingPoint: self.eventMeetingPoint, eventDestinastion: self.eventDestinastion, sselectedRoute: self.sselectedRoute)
 
                     ){
                     EmptyView()

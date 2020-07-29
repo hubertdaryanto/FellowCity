@@ -37,11 +37,13 @@ struct ExploreView: View {
                 Picker("rideSelection", selection: $selectedRide) {
                     ForEach(0 ..< rideSelection.count) { index in
                         Text(self.rideSelection[index])
-                            .fontWeight(.bold).tag(index)
+                            .font(.system(size: 14))
+                            .fontWeight(.semibold).tag(index)
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
-                .background(Color.yellow)
+                .background(Color(hex: 0xf7b500, alpha: 1))
+                .frame(height: 28)
                         
                     
                     }
@@ -51,10 +53,11 @@ struct ExploreView: View {
                     List(categories.keys.sorted(), id: \String.self) { key in
                         ExploreRowView(categoryName: "\(key) Places".uppercased(), explores:
                             self.categories[key]!)
-                    }.frame(alignment: .leading)
+                    }
+                    .frame(alignment: .leading)
                 } else  {
                     List {
-                        ExploreItemView(explore: exploreData[4])
+                        EventItemView(explore: exploreData[1])
                     }
                     //                List(categories.keys.sorted(), id: \String.self) { key in
                     //                    ExploreRowView(categoryName: "\(key) Places".uppercased(), explores:
@@ -84,7 +87,7 @@ struct ExploreView: View {
                     ProfileView()
             }
         }
-        
+//    .padding()
         
     }
 }

@@ -1,3 +1,5 @@
+
+
 //
 //  ExploreDetailsView.swift
 //  Aplikasi Motor
@@ -8,7 +10,7 @@
 
 import SwiftUI
 
-struct ExploreDetailsView: View {
+struct EventDetailsView: View {
     var body: some View {
 //        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
 //        VStack{
@@ -25,7 +27,7 @@ struct ExploreDetailsView: View {
             Spacer()
             
             VStack{
-            Image(exploreData[4].imageName)
+            Image(exploreData[1].imageName)
             .resizable()
             .renderingMode(.original)
             .aspectRatio(contentMode: .fill)
@@ -39,12 +41,12 @@ struct ExploreDetailsView: View {
             Spacer()
             
             VStack(alignment: .leading){
-            Text(exploreData[4].name)
+            Text(exploreData[1].name)
                 .font(.system(size: 25))
                 .fontWeight(.bold)
                 .foregroundColor(Color(hex: 0xf7b500, alpha: 1))
             
-            Text(exploreData[4].province)
+            Text(exploreData[1].province)
                 .font(.system(size: 16))
                 .fontWeight(.thin)
 //                .foregroundColor(Color.gray)
@@ -74,7 +76,7 @@ struct ExploreDetailsView: View {
                 }
                 
                 
-                Text("(\(exploreData[4].reviewCount) Reviews)").font(.caption).foregroundColor(Color.gray)
+                Text("(\(exploreData[3].reviewCount) Reviews)").font(.caption).foregroundColor(Color.gray)
                 
             }
                 
@@ -120,8 +122,9 @@ struct ExploreDetailsView: View {
             Spacer()
             
             NavigationLink(destination:
-                CreateEventView(eventDestinastion: exploreData[4].name)
+                CreateEventView(eventDestinastion: exploreData[1].name)
 //                AppView()
+//                MainEvent()
                 )
             {
                 HStack{
@@ -155,8 +158,8 @@ struct ExploreDetailsView: View {
     }
 }
 
-struct ExploreDetailsView_Previews: PreviewProvider {
+struct EventDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        ExploreDetailsView()
+        EventDetailsView()
     }
 }
