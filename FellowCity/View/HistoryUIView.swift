@@ -52,23 +52,24 @@ struct HistoryUIView: View {
                 
             }
             .navigationBarTitle(Text("History"), displayMode: .inline)
-            .navigationBarItems(trailing:
-                Button(action: {
-                    self.showProfileView.toggle()
-                }) {
-                    Image(systemName: "person.crop.circle")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 40, height: 40)
-                        .clipShape(Circle())
-                        .background(Color.white)
-                        .overlay(RoundedRectangle(cornerRadius: 40)
-                            .stroke(Color.gray, lineWidth: 2))
-                }
-            )
-                .sheet(isPresented: $showProfileView) {
-                    ProfileView()
-            }
+                        .navigationBarItems(trailing:
+                            Button(action: {
+                                self.showProfileView.toggle()
+                            }) {
+                                Image("rossi")
+                                .resizable()
+                                .renderingMode(.original)
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 36, height: 36)
+                                .clipShape(Circle())
+            //                    .background(Color.white)
+                                .overlay(RoundedRectangle(cornerRadius: 40)
+                                    .stroke(Color.gray, lineWidth: 2))
+                            }
+                        )
+                            .sheet(isPresented: $showProfileView) {
+                                ProfileView()
+                        }
         }
         
         

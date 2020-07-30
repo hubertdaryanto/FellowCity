@@ -22,14 +22,24 @@ struct SplashScreenView: View {
                 AppView()
             } else {
                 // 4.
-                ZStack{
-                Color(hex: 0xF7B500, alpha: 1).edgesIgnoringSafeArea(.all)
-                    Image("FellowCity")
-                    .resizable()
-                        .renderingMode(.original)
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 120, height: 60, alignment: .center)
-                }
+         ZStack{
+                                //Color(hex: 0xF7B500, alpha: 1).edgesIgnoringSafeArea(.all)
+                                 LinearGradient(gradient: Gradient(
+                                    colors: [Color(hex: 0xF7B500, alpha: 0.6), Color(hex: 0xF7B500, alpha: 1)]
+                                    )
+                                    
+                //                    , startPoint: .leading, endPoint: .trailing)
+                                    , startPoint: .top, endPoint: .bottom)
+                                    
+                                    
+                                    .edgesIgnoringSafeArea(.all)
+                                    
+                                    Image("FellowCity")
+                                    .resizable()
+                                        .renderingMode(.original)
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: 120, height: 60, alignment: .center)
+                                }
             }
         }
         // 5.
