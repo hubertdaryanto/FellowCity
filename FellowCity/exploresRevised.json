@@ -1,0 +1,84 @@
+[
+    {
+    "id" : 1001,
+    "name" : "Kota Tua",
+    "province" : "North Jakarta",
+    "imageName" : "kotatua",
+    "latitude" : -6.139954,
+    "longitude" : 106.8253265,
+    "description" : "Jakarta’s old town, Kota Tua centers on Fatahillah Square, a lively plaza with regular traditional dance shows. The Jakarta History Museum is a Dutch-era building with paintings and antiques, while the Wayang Museum displays Javanese wooden puppets. Glodok village, or Chinatown, is popular for street food like dumplings and fried noodles. Nearby, schooners and fishing vessels ply old-world Sunda Kelapa port.",
+    "review" : ["Great place to hang out and play. Has many sport courts (futsal, basketball, volleyball). They also have many photoshoot spots. Overall, a great place to spent your leisure time. Please maintain physical distancing as we are still in the COVID-19 pandemic situation.", "Too crowded in here."],
+    "maximumPeople" : 100,
+    "rating" : 4.8,
+    "category" : "Outdoor"
+    },
+
+    {
+    "id" : 1002,
+    "name" : "Taman Menteng",
+    "province" : "Central Jakarta",
+    "imageName" : "tamanmenteng",
+    "latitude" : -6.196355,
+    "longitude" : 106.829203,
+    "description" : "Menteng Park is a park located at Menteng, Central Jakarta, Indonesia. This park was formerly occupied by Menteng Stadium. In October 2006 the stadium was demolished and the park was built on the area by the administration of Sutiyoso. The park is located at the center of Menteng residential area.",
+    "review" : ["Great place to hang out and play. Has many sport courts (futsal, basketball, volleyball). They also have many photoshoot spots. Overall, a great place to spent your leisure time. Please maintain physical distancing as we are still in the COVID-19 pandemic situation.", "Taman Menteng."],
+    "maximumPeople" : 100,
+    "rating" : 4.4,
+    "category" : "Outdoor"
+    },
+
+    {
+    "id" : 1003,
+    "name" : "Setu Babakan",
+    "province" : "South Jakarta",
+    "imageName" : "setubabakan",
+    "latitude" : -6.341864,
+    "longitude" : 106.823243,
+    "description" : "Setu Babakan Betawi Cultural Village or Setu Babakan is a cultural park of Betawi people, which is located at Srengseng Sawah, Jagakarsa, Jakarta in Indonesia",
+    "review" : ["One of big artificial lake build by Jakarta goverment  in the year 2000. This area function as betawi cultural settlement. If you Looking something Special and uniqe about Jakarta, whether the foods, drinks, culture, and the people. You can visit this lake, which is located at Srengseng Sawah, South Jakarta. You have to pay the entry ticket only 5k for motorcylce, inside if you want to ride a horse or rent duck boat you can paid to the loket area."],
+    "maximumPeople" : 100,
+    "rating" : 4.4,
+    "category" : "Outdoor"
+    },
+
+    {
+    "id" : 1004,
+    "name" : "QQ Kopitiam Patal Senayan",
+    "province" : "South Jakarta",
+    "imageName" : "qqkopitiampatalsenayan",
+    "latitude" : -6.219958,
+    "longitude" : 106.792138,
+    "description" : "Destination that has a lot of variety of food and also a great parkir spot for groups and photogenic",
+    "review" : ["Came here twice, and has a good ambient also a cool air so we can rest and eat with ease"],
+    "maximumPeople" : 20,
+    "rating" : 4.0,
+    "category" : "Indoor"
+    },
+
+    {
+    "id" : 1005,
+    "name" : "Roti Bakar Eddy Haji Nawi",
+    "province" : "South Jakarta",
+    "imageName" : "rotibakareddyhajinawi",
+    "latitude" : -6.264265,
+    "longitude" : 106.792727,
+    "description" : "Airy, relaxed haunt turning out familiar Indonesian fare including fried rice, noodles & toast.",
+    "review" :  ["We had a pretty good breakfast here. We ordered a corned beef toast, toasted banana and melon juice. They had a decent taste, the portioning was good as well. But we waited quite long for the food, little bit dissapointed because of that."],
+    "maximumPeople" : 15,
+    "rating" : 4.5,
+    "category" : "Indoor"
+    },
+    {
+    "id" : 1006,
+    "name" : "Lot 9 Bintaro",
+    "province" : "South Jakarta",
+    "imageName" : "lot 9 bintaro",
+    "latitude" : -6.2808073,
+    "longitude" : 106.7122415,
+    "description" : "Airy, relaxed haunt turning out familiar Indonesian fare including fried rice, noodles & toast.",
+    "review" :  ["We had a pretty good breakfast here. We ordered a corned beef toast, toasted banana and melon juice. They had a decent taste, the portioning was good as well. But we waited quite long for the food, little bit dissapointed because of that."],
+    "maximumPeople" : 15,
+    "rating" : 4.5,
+    "category" : "Indoor"
+    }
+]

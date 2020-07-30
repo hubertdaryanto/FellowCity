@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct HistoryRowView: View {
-    var history:[EventInfoHubertHistory]
+    @State var history:[EventInfoHubertHistory]
     @State var isPublic: Bool
     
     var body: some View {
@@ -19,7 +19,7 @@ struct HistoryRowView: View {
                 ForEach (self.history) { index in
                     if (index.isPublic == self.isPublic)
                     {
-                        HistoryItemView(history: index, isPublic: self.isPublic)
+                        HistoryItemView(history: index, isPublic: self.isPublic, isReviewed: index.isReviewed)
                     }
                 }
             }

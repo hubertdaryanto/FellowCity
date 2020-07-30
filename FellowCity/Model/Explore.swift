@@ -46,3 +46,26 @@ struct Explore: Hashable, Codable, Identifiable {
     }
     
 }
+
+
+struct ExploreRevised: Hashable, Codable, Identifiable {
+    var id: Int
+    var name:String
+    var province:String
+    var imageName:String
+    var latitude:Double
+    var longitude:Double
+    var description:String
+    //var reviewer:String
+    var review: [String]
+    var maximumPeople:Int
+    var rating:Float
+    var category:Category
+    
+    enum Category: String, CaseIterable, Codable, Hashable {
+        case indoor = "Indoor"
+        case outdoor = "Outdoor"
+    }
+    
+}
+

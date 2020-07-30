@@ -8,7 +8,8 @@
 
 import Foundation
 
-let exploreData:[Explore] = load("explores.json")
+//let exploreData:[Explore] = load("explores.json")
+var exploreData:[ExploreRevised] = load("exploresRevised.json")
 
 func load<T:Decodable>(_ filename:String, as type:T.Type = T.self) -> T {
     let data:Data

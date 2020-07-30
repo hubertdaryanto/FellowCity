@@ -12,8 +12,8 @@ import SwiftUI
 
 struct ExploreView: View {
     
-    var explore:Explore
-    var categories:[String:[Explore]] {
+    var explore:ExploreRevised
+    var categories:[String:[ExploreRevised]] {
         .init(
             grouping: exploreData,
             by : {$0.category.rawValue}
