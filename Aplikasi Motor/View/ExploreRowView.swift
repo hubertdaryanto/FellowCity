@@ -11,7 +11,7 @@ import SwiftUI
 struct ExploreRowView: View {
     
     var categoryName:String
-    var explores:[Explore]
+    var explores:[ExploreRevised]
     
     var body: some View {
         VStack(alignment: .leading) {

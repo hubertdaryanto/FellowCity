@@ -76,7 +76,7 @@ struct EventDetailsView: View {
                 }
                 
                 
-                Text("(\(exploreData[3].reviewCount) Reviews)").font(.caption).foregroundColor(Color.gray)
+                Text("(\(exploreData[3].review.count) Reviews)").font(.caption).foregroundColor(Color.gray)
                 
             }
                 
@@ -111,7 +111,7 @@ struct EventDetailsView: View {
             .font(.system(size: 16))
             .fontWeight(.semibold)
             
-            Text("\(exploreData[4].review) people")
+            Text("\(exploreData[4].review[0]) people")
             .font(.system(size: 16))
                 .fontWeight(.light)
 //            .foregroundColor(.secondary)

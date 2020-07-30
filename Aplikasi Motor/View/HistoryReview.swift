@@ -34,6 +34,10 @@ struct HistoryReview: View {
             TextField("Enter your review", text: $reviewText).textFieldStyle(CustomTextFieldStyle()).font(.custom("SFProDisplay-Light", size: 14))
             Button(action: {
                 //ini buat nambahin list review ke dalam data list event / tempat tujuan
+                exploreData[5].review.append(self.reviewText)
+                exploreData[5].rating = ((exploreData[5].rating * Float((exploreData[5].review.count - 1))) + Float(self.rating)) / Float(exploreData[5].review.count)
+                dummyHistory[0].isReviewed = true
+                dummyHistory[0].rating = Double(self.rating)
                 
                 self.mode.wrappedValue.dismiss()
             })

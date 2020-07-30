@@ -45,6 +45,7 @@ var DateFormatterForHistory: DateFormatter = {
 struct HistoryItemView: View {
     var history: EventInfoHubertHistory
     @State var isPublic: Bool
+    @State var isReviewed: Bool
     var body: some View {
         
         VStack(alignment: .leading) {
@@ -133,6 +134,6 @@ struct HistoryItemView: View {
 
 struct HistoryItemView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryItemView(history: dummyHistory[0], isPublic: false)
+        HistoryItemView(history: dummyHistory[0], isPublic: false, isReviewed: false)
     }
 }

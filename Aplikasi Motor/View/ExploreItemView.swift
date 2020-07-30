@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ExploreItemView: View {
     
-    var explore:Explore
+    var explore:ExploreRevised
     
     var body: some View {
 //        ZStack {
@@ -58,7 +58,7 @@ struct ExploreItemView: View {
                         }
                         
                         
-                        Text("(\(self.explore.reviewCount) Reviews)").font(.system(size: 10))
+                        Text("(\(self.explore.review.count) Reviews)").font(.system(size: 10))
                             .fontWeight(.semibold)
                         .foregroundColor(Color(hex: 0xd8d8d8, alpha: 1))
                         

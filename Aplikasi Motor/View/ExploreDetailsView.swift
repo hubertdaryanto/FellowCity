@@ -74,7 +74,7 @@ struct ExploreDetailsView: View {
                 }
                 
                 
-                Text("(\(exploreData[4].reviewCount) Reviews)").font(.caption).foregroundColor(Color.gray)
+                Text("(\(exploreData[4].review.count) Reviews)").font(.caption).foregroundColor(Color.gray)
                 
             }
                 
@@ -109,7 +109,7 @@ struct ExploreDetailsView: View {
             .font(.system(size: 16))
             .fontWeight(.semibold)
             
-            Text("\(exploreData[4].review) people")
+            Text("\(exploreData[4].review[0]) people")
             .font(.system(size: 16))
                 .fontWeight(.light)
 //            .foregroundColor(.secondary)

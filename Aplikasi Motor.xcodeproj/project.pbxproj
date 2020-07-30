@@ -15,6 +15,7 @@
 		572F32FC24D1238000F24A6E /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32FB24D1238000F24A6E /* EventDetailsView.swift */; };
 		572F32FE24D1243F00F24A6E /* EventItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32FD24D1243F00F24A6E /* EventItemView.swift */; };
 		CD585D3124D1636D00B89C8C /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD585D3024D1636D00B89C8C /* RatingView.swift */; };
+		CD5C121F24D254750076402C /* exploresRevised.json in Resources */ = {isa = PBXBuildFile; fileRef = CD5C121E24D254750076402C /* exploresRevised.json */; };
 		CD75737C24CFDE9100EABFC9 /* TestRename.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD75735024CFDE9000EABFC9 /* TestRename.xcdatamodeld */; };
 		CD75737D24CFDE9100EABFC9 /* LoadSwiftUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75735324CFDE9000EABFC9 /* LoadSwiftUIViewController.swift */; };
 		CD75737E24CFDE9100EABFC9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75735424CFDE9000EABFC9 /* Extension.swift */; };
@@ -63,6 +64,7 @@
 		572F32FB24D1238000F24A6E /* EventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsView.swift; sourceTree = "<group>"; };
 		572F32FD24D1243F00F24A6E /* EventItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItemView.swift; sourceTree = "<group>"; };
 		CD585D3024D1636D00B89C8C /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		CD5C121E24D254750076402C /* exploresRevised.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = exploresRevised.json; sourceTree = "<group>"; };
 		CD75735124CFDE9000EABFC9 /* BisaRenameGakYa.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BisaRenameGakYa.xcdatamodel; sourceTree = "<group>"; };
 		CD75735324CFDE9000EABFC9 /* LoadSwiftUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadSwiftUIViewController.swift; sourceTree = "<group>"; };
 		CD75735424CFDE9000EABFC9 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				CD75735024CFDE9000EABFC9 /* TestRename.xcdatamodeld */,
 				CD75735924CFDE9000EABFC9 /* View */,
 				CD75737224CFDE9100EABFC9 /* ViewController.swift */,
+				CD5C121E24D254750076402C /* exploresRevised.json */,
 			);
 			path = "Aplikasi Motor";
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				CD75739324CFDE9100EABFC9 /* explores.json in Resources */,
 				CD75738124CFDE9100EABFC9 /* List Tempat.rtf in Resources */,
 				CDA392DC24D1A98D00E4AD07 /* SF-Pro-Display-Semibold.otf in Resources */,
+				CD5C121F24D254750076402C /* exploresRevised.json in Resources */,
 				572F32F424D111E000F24A6E /* Main.storyboard in Resources */,
 				CD75739124CFDE9100EABFC9 /* Assets.xcassets in Resources */,
 				CDA392E224D1AC9C00E4AD07 /* SF-Pro-Display-Light.otf in Resources */,
