@@ -101,7 +101,7 @@
 		CD79826C24D10A8A00EA93F1 /* HistoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRowView.swift; sourceTree = "<group>"; };
 		CD79826E24D10AF200EA93F1 /* HistoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemView.swift; sourceTree = "<group>"; };
 		CD79827024D141F900EA93F1 /* HistoryReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryReview.swift; sourceTree = "<group>"; };
-		CD9D731E24B2D19A006D3103 /* Aplikasi Motor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aplikasi Motor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD9D731E24B2D19A006D3103 /* FellowCity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FellowCity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA392DB24D1A98D00E4AD07 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		CDA392DD24D1A9A500E4AD07 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		CDA392DF24D1AB8B00E4AD07 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
@@ -186,7 +186,7 @@
 		CD9D731524B2D19A006D3103 = {
 			isa = PBXGroup;
 			children = (
-				CD9D732024B2D19A006D3103 /* Aplikasi Motor */,
+				CD9D732024B2D19A006D3103 /* FellowCity */,
 				CD9D731F24B2D19A006D3103 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -194,12 +194,12 @@
 		CD9D731F24B2D19A006D3103 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CD9D731E24B2D19A006D3103 /* Aplikasi Motor.app */,
+				CD9D731E24B2D19A006D3103 /* FellowCity.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CD9D732024B2D19A006D3103 /* Aplikasi Motor */ = {
+		CD9D732024B2D19A006D3103 /* FellowCity */ = {
 			isa = PBXGroup;
 			children = (
 				CDA392DA24D1A95600E4AD07 /* Fonts */,
@@ -216,7 +216,7 @@
 				CD75735924CFDE9000EABFC9 /* View */,
 				CD75737224CFDE9100EABFC9 /* ViewController.swift */,
 			);
-			path = "Aplikasi Motor";
+			path = FellowCity;
 			sourceTree = "<group>";
 		};
 		CDA392DA24D1A95600E4AD07 /* Fonts */ = {
@@ -233,9 +233,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CD9D731D24B2D19A006D3103 /* Aplikasi Motor */ = {
+		CD9D731D24B2D19A006D3103 /* FellowCity */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CD9D733524B2D19B006D3103 /* Build configuration list for PBXNativeTarget "Aplikasi Motor" */;
+			buildConfigurationList = CD9D733524B2D19B006D3103 /* Build configuration list for PBXNativeTarget "FellowCity" */;
 			buildPhases = (
 				CD9D731A24B2D19A006D3103 /* Sources */,
 				CD9D731B24B2D19A006D3103 /* Frameworks */,
@@ -245,9 +245,9 @@
 			);
 			dependencies = (
 			);
-			name = "Aplikasi Motor";
+			name = FellowCity;
 			productName = BisaRenameGakYa;
-			productReference = CD9D731E24B2D19A006D3103 /* Aplikasi Motor.app */;
+			productReference = CD9D731E24B2D19A006D3103 /* FellowCity.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -266,7 +266,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CD9D731924B2D19A006D3103 /* Build configuration list for PBXProject "Aplikasi Motor" */;
+			buildConfigurationList = CD9D731924B2D19A006D3103 /* Build configuration list for PBXProject "FellowCity" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -279,7 +279,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CD9D731D24B2D19A006D3103 /* Aplikasi Motor */,
+				CD9D731D24B2D19A006D3103 /* FellowCity */,
 			);
 		};
 /* End PBXProject section */
@@ -484,13 +484,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AB6S3CVVK7;
-				INFOPLIST_FILE = "Aplikasi Motor/Info.plist";
+				INFOPLIST_FILE = FellowCity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.aplikasimotor;
-				PRODUCT_NAME = "Aplikasi Motor";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fellowCity;
+				PRODUCT_NAME = FellowCity;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -504,13 +504,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AB6S3CVVK7;
-				INFOPLIST_FILE = "Aplikasi Motor/Info.plist";
+				INFOPLIST_FILE = FellowCity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.aplikasimotor;
-				PRODUCT_NAME = "Aplikasi Motor";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fellowCity;
+				PRODUCT_NAME = FellowCity;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -519,7 +519,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CD9D731924B2D19A006D3103 /* Build configuration list for PBXProject "Aplikasi Motor" */ = {
+		CD9D731924B2D19A006D3103 /* Build configuration list for PBXProject "FellowCity" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CD9D733324B2D19B006D3103 /* Debug */,
@@ -528,7 +528,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CD9D733524B2D19B006D3103 /* Build configuration list for PBXNativeTarget "Aplikasi Motor" */ = {
+		CD9D733524B2D19B006D3103 /* Build configuration list for PBXNativeTarget "FellowCity" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CD9D733624B2D19B006D3103 /* Debug */,
