@@ -102,8 +102,8 @@ struct EventInformationInviteFriends: View {
                     
                     
 //                    self.showing = .finish
-                    
-                    AppView()
+                    self.mode.wrappedValue.dismiss()
+//                    AppView()
                 }) {
                     Text("Finish").foregroundColor(Color(red: 0.96484375, green: 0.7421875, blue: 0)).padding(20)
                 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2CCE0AC024D13D3100E53BCD /* Structure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCE0ABF24D13D3100E53BCD /* Structure.swift */; };
+		57220D1224D269C100BD7FCD /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57220D1124D269C100BD7FCD /* SplashScreenView.swift */; };
 		572F32F424D111E000F24A6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD75737124CFDE9100EABFC9 /* Main.storyboard */; };
 		572F32F624D112ED00F24A6E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32F524D112ED00F24A6E /* ProfileView.swift */; };
 		572F32F824D119E800F24A6E /* ExploreDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32F724D119E800F24A6E /* ExploreDetailsView.swift */; };
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		2CCE0ABF24D13D3100E53BCD /* Structure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structure.swift; sourceTree = "<group>"; };
+		57220D1124D269C100BD7FCD /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		572F32F524D112ED00F24A6E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		572F32F724D119E800F24A6E /* ExploreDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreDetailsView.swift; sourceTree = "<group>"; };
 		572F32F924D11D3000F24A6E /* ListEventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEventDetailsView.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				572F32FB24D1238000F24A6E /* EventDetailsView.swift */,
 				572F32FD24D1243F00F24A6E /* EventItemView.swift */,
 				CD585D3024D1636D00B89C8C /* RatingView.swift */,
+				57220D1124D269C100BD7FCD /* SplashScreenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				572F32F624D112ED00F24A6E /* ProfileView.swift in Sources */,
 				CD75739D24CFDE9100EABFC9 /* RidingLocation.swift in Sources */,
 				CD75738924CFDE9100EABFC9 /* CreateEventView.swift in Sources */,
+				57220D1224D269C100BD7FCD /* SplashScreenView.swift in Sources */,
 				CD75737E24CFDE9100EABFC9 /* Extension.swift in Sources */,
 				CD75737D24CFDE9100EABFC9 /* LoadSwiftUIViewController.swift in Sources */,
 				CD75739724CFDE9100EABFC9 /* ViewController.swift in Sources */,

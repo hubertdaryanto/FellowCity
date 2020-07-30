@@ -11,6 +11,8 @@
 import SwiftUI
 
 struct EventDetailsView: View {
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    
     var body: some View {
 //        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
 //        VStack{
@@ -121,33 +123,46 @@ struct EventDetailsView: View {
             
             Spacer()
             
-            NavigationLink(destination:
-                CreateEventView(eventDestinastion: exploreData[1].name)
+//            NavigationLink(destination:
+////                CreateEventView(eventDestinastion: exploreData[1].name)
 //                AppView()
-//                MainEvent()
-                )
-            {
+////                MainEvent()
+//                )
+//            {
                 HStack{
                     Spacer()
-//                    Text("Join").foregroundColor(Color.black)
-//
-//                        .frame(width: 100, height: 50, alignment: .center).cornerRadius(50)
-//
-//                        .background(Color.yellow)
                     
-                    Text("Join").foregroundColor(Color.black)
-                        .font(.system(size: 15)).fontWeight(.heavy)
-                    .frame(minWidth: 0, maxWidth: 120, maxHeight: 40)
+                    Button(action: {
+                        //ini buat nambahin list review ke dalam data list event / tempat tujuan
+
+                        self.mode.wrappedValue.dismiss()
+                    })
+                    {
+                                                                    Text("Join").foregroundColor(Color.black)
+                                                .font(.system(size: 15)).fontWeight(.heavy)
+                                            .frame(minWidth: 0, maxWidth: 120, maxHeight: 40)
+                                            
+                        //                    .background(Color.yellow)
+                                            .background(Color(hex: 0xF7B500, alpha: 1))
+                                            .cornerRadius(15)
+                    }
+
+//                                            Text("Join").foregroundColor(Color.black)
+//                                                .font(.system(size: 15)).fontWeight(.heavy)
+//                                            .frame(minWidth: 0, maxWidth: 120, maxHeight: 40)
+//                                            
+//                        //                    .background(Color.yellow)
+//                                            .background(Color(hex: 0xF7B500, alpha: 1))
+//                                            .cornerRadius(15)
+//                    }
+                    .padding()
                     
-//                    .background(Color.yellow)
-                    .background(Color(hex: 0xF7B500, alpha: 1))
-                    .cornerRadius(15)
-                    
+
 
                         
                     Spacer()
                 }
-            }
+//            }
             
             Spacer()
         }
