@@ -9,11 +9,11 @@
 import SwiftUI
 
 extension Date {
-
+    
     func dateFormatWithSuffix() -> String {
         return "dd'\(self.daySuffix())' MMMM yyyy / h a"
     }
-
+    
     func daySuffix() -> String {
         let calendar = Calendar.current
         let components = (calendar as NSCalendar).components(.day, from: self)
@@ -81,53 +81,62 @@ struct HistoryItemView: View {
                                     .foregroundColor(Color.yellow)
                             }
                         }.padding(.leading, 3)
-
+                        
                     }
                 }
                 
             }
             HStack{
-            Button(action: {
-                //self.deleteEventInvitationsList(at:self.EventInvitationsList.firstIndex(where: { $0.id == index.id })!)
-            }){
-                if self.history.isReviewed{
-                    Text("Reviewed").font(.custom("SFProDisplay-Bold", size: 14)).fontWeight(.bold)
-                        .frame(width: 101, height: 34, alignment: .center)
-                        .background(Color.white).cornerRadius(10).lineSpacing(16)
-                }
-                else
-                {
-                    NavigationLink(destination: HistoryReview(history: self.history))
-                    {
-                        Text("Give Review").font(.custom("SFProDisplay-Bold", size: 14)).fontWeight(.bold)
+                Button(action: {
+                    //self.deleteEventInvitationsList(at:self.EventInvitationsList.firstIndex(where: { $0.id == index.id })!)
+                }){
+                    if self.history.isReviewed{
+                        Text("Reviewed").font(.custom("SFProDisplay-Bold", size: 14)).fontWeight(.bold)
                             .frame(width: 101, height: 34, alignment: .center)
-                            .background(Color.yellow).cornerRadius(10).lineSpacing(16).foregroundColor(Color.black)
+                            .background(Color.white).cornerRadius(10).lineSpacing(16)
                     }
+                    else
+                    {
+                        NavigationLink(destination: HistoryReview(history: self.history))
+                        {
+                            Text("Give Review").font(.custom("SFProDisplay-Bold", size: 14)).fontWeight(.bold)
+                                .frame(width: 101, height: 34, alignment: .center)
+                                .background(Color.yellow).cornerRadius(10).lineSpacing(16).foregroundColor(Color.black)
+                        }
+                    }
+                    
+                }
+                .buttonStyle(PlainButtonStyle())
+                .shadow(radius: 2, x: 1, y: 2).padding(.leading, 16).padding(.top, 23)
+                
+                if isPublic == false
+                {
+                    Button(action: {
+                        print("Ubah State Ride Disini")
+                        //self.deleteEventInvitationsList(at:self.EventInvitationsList.firstIndex(where: { $0.id == index.id })!)
+                        //                    CreateEventView(eventName: self.history.eventName)
+                        
+                        
+                    }){
+                        NavigationLink(destination: CreateEventView(eventName: self.history.eventName))
+                        {
+                            Text("Ride Again")
+                                .font(.custom("SFProDisplay-Bold", size: 14)).fontWeight(.bold)
+                                .frame(width: 101, height: 34, alignment: .center)
+                                .background(Color.yellow).cornerRadius(10).lineSpacing(16)
+                            
+                        }
+                        .accentColor(.black)
+                        //                    Text("Ride Again").font(.custom("SFProDisplay-Bold", size: 14)).fontWeight(.bold)
+                        //                        .frame(width: 101, height: 34, alignment: .center)
+                        //                    .background(Color.yellow).cornerRadius(10).lineSpacing(16)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    .shadow(radius: 2, x: 1, y: 2).padding(.top, 23).padding(.leading, 12)
                 }
                 
             }
-            .buttonStyle(PlainButtonStyle())
-            .shadow(radius: 2, x: 1, y: 2).padding(.leading, 16).padding(.top, 23)
-                
-            if isPublic == false
-            {
-                Button(action: {
-                                    print("Ubah State Ride Disini")
-                                    //self.deleteEventInvitationsList(at:self.EventInvitationsList.firstIndex(where: { $0.id == index.id })!)
-                                }){
-                                    Text("Ride Again").font(.custom("SFProDisplay-Bold", size: 14)).fontWeight(.bold)
-                                        .frame(width: 101, height: 34, alignment: .center)
-                                    .background(Color.yellow).cornerRadius(10).lineSpacing(16)
-                //                    Text("Ride Again").font(.custom("SFProDisplay-Bold", size: 14)).fontWeight(.bold)
-                //                        .frame(width: 101, height: 34, alignment: .center)
-                //                    .background(Color.yellow).cornerRadius(10).lineSpacing(16)
-                                }
-                                .buttonStyle(PlainButtonStyle())
-                .shadow(radius: 2, x: 1, y: 2).padding(.top, 23).padding(.leading, 12)
-                }
             
-        }
-        
         }
     }
 }
