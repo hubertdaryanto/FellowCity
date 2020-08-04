@@ -55,6 +55,9 @@
 		CDA392DE24D1A9A500E4AD07 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CDA392DD24D1A9A500E4AD07 /* SF-Pro-Display-Bold.otf */; };
 		CDA392E024D1AB8B00E4AD07 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CDA392DF24D1AB8B00E4AD07 /* SF-Pro-Text-Regular.otf */; };
 		CDA392E224D1AC9C00E4AD07 /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = CDA392E124D1AC9C00E4AD07 /* SF-Pro-Display-Light.otf */; };
+		CDA9E66724D2EA9F00905FCE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA9E66624D2EA9F00905FCE /* MapKit.framework */; };
+		CDA9E66A24D2EACB00905FCE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA9E66924D2EACB00905FCE /* CloudKit.framework */; };
+		CDC4890224D7B4AD0001C2A4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC4890124D7B4AD0001C2A4 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +111,10 @@
 		CDA392DD24D1A9A500E4AD07 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		CDA392DF24D1AB8B00E4AD07 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		CDA392E124D1AC9C00E4AD07 /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
+		CDA9E66624D2EA9F00905FCE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CDA9E66824D2EABE00905FCE /* FellowCity.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FellowCity.entitlements; sourceTree = "<group>"; };
+		CDA9E66924D2EACB00905FCE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		CDC4890124D7B4AD0001C2A4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +122,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDA9E66724D2EA9F00905FCE /* MapKit.framework in Frameworks */,
+				CDA9E66A24D2EACB00905FCE /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +168,7 @@
 				572F32FD24D1243F00F24A6E /* EventItemView.swift */,
 				CD585D3024D1636D00B89C8C /* RatingView.swift */,
 				57220D1124D269C100BD7FCD /* SplashScreenView.swift */,
+				CDC4890124D7B4AD0001C2A4 /* MapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -190,6 +200,7 @@
 			children = (
 				CD9D732024B2D19A006D3103 /* FellowCity */,
 				CD9D731F24B2D19A006D3103 /* Products */,
+				CDA9E66524D2EA9F00905FCE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -204,6 +215,7 @@
 		CD9D732024B2D19A006D3103 /* FellowCity */ = {
 			isa = PBXGroup;
 			children = (
+				CDA9E66824D2EABE00905FCE /* FellowCity.entitlements */,
 				CDA392DA24D1A95600E4AD07 /* Fonts */,
 				CD75736824CFDE9100EABFC9 /* AppDelegate.swift */,
 				CD75736924CFDE9100EABFC9 /* Assets.xcassets */,
@@ -231,6 +243,15 @@
 				CDA392E124D1AC9C00E4AD07 /* SF-Pro-Display-Light.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CDA9E66524D2EA9F00905FCE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDA9E66924D2EACB00905FCE /* CloudKit.framework */,
+				CDA9E66624D2EA9F00905FCE /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +349,7 @@
 				572F32FA24D11D3000F24A6E /* ListEventDetailsView.swift in Sources */,
 				572F32F624D112ED00F24A6E /* ProfileView.swift in Sources */,
 				CD75739D24CFDE9100EABFC9 /* RidingLocation.swift in Sources */,
+				CDC4890224D7B4AD0001C2A4 /* MapView.swift in Sources */,
 				CD75738924CFDE9100EABFC9 /* CreateEventView.swift in Sources */,
 				57220D1224D269C100BD7FCD /* SplashScreenView.swift in Sources */,
 				CD75737E24CFDE9100EABFC9 /* Extension.swift in Sources */,
@@ -486,6 +508,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = FellowCity/FellowCity.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AB6S3CVVK7;
 				INFOPLIST_FILE = FellowCity/Info.plist;
@@ -493,7 +516,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fellowCity;
+				PRODUCT_BUNDLE_IDENTIFIER = Grup13MC3.fellowCity;
 				PRODUCT_NAME = FellowCity;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -506,6 +529,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = FellowCity/FellowCity.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AB6S3CVVK7;
 				INFOPLIST_FILE = FellowCity/Info.plist;
@@ -513,7 +537,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fellowCity;
+				PRODUCT_BUNDLE_IDENTIFIER = Grup13MC3.fellowCity;
 				PRODUCT_NAME = FellowCity;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

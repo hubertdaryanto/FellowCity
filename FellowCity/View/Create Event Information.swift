@@ -54,7 +54,10 @@ struct Create_Event_Information: View {
                 Spacer()
             }
             //ini tempat buat MapKit Skip Dulu, kita buat a.k.a TableView nya dulu
-            MapView(locationmanager: $locationManager, totaltime: self.$saveRouteDetail.totaltime, totaldistance: self.$saveRouteDetail.totaldistance)
+            MapView(locationmanager: $locationManager, MeetingPoint: CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469), LocationToBeVisited: [CLLocation(latitude: -6.3298786, longitude: 106.9439469),
+                                                CLLocation(latitude: -6.258080, longitude: 106.808391),
+                                                CLLocation(latitude: -6.2808073, longitude: 106.7122415)
+            ], LocationToBeVisitedName: ["Pertamina Jatiasih", "Moto Village", "Lot 9 Bintaro"], totaltime: self.$saveRouteDetail.totaltime, totaldistance: self.$saveRouteDetail.totaldistance)
             List(RouteInfoDummy) { index in
                 Text(index.place)
             }
