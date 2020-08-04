@@ -121,6 +121,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57D8DC5224D907FB001C4B8A /* Ride */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Ride;
+			sourceTree = "<group>";
+		};
+		57D8DC5424D9085A001C4B8A /* StatusRider */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StatusRider;
+			sourceTree = "<group>";
+		};
+		57D8DC5524D90871001C4B8A /* History */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		57D8DC5624D90892001C4B8A /* Events */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		57D8DC5724D908AD001C4B8A /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		57D8DC5824D908BE001C4B8A /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		57D8DC5924D90958001C4B8A /* App */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		CD75735224CFDE9000EABFC9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,29 +184,36 @@
 		CD75735924CFDE9000EABFC9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CD75735A24CFDE9000EABFC9 /* ExploreView.swift */,
-				CD75735B24CFDE9000EABFC9 /* StatusRiderView.swift */,
-				CD75735C24CFDE9000EABFC9 /* AppView.swift */,
+				57D8DC5624D90892001C4B8A /* Events */,
+				CD75736624CFDE9100EABFC9 /* MainEvent.swift */,
+				CD75736124CFDE9100EABFC9 /* CreateEventView.swift */,
+				CD75736724CFDE9100EABFC9 /* CreateEventOptionalRouteView.swift */,
 				CD75735D24CFDE9000EABFC9 /* EventInformationView.swift */,
+				CD75736224CFDE9100EABFC9 /* EventInformationInviteFriends.swift */,
+				CD585D3024D1636D00B89C8C /* RatingView.swift */,
+				CD75736024CFDE9100EABFC9 /* Create Event Information.swift */,
+				57D8DC5724D908AD001C4B8A /* Friends */,
+				CD79826824D1044800EA93F1 /* FriendUIView.swift */,
+				572F32F524D112ED00F24A6E /* ProfileView.swift */,
+				57D8DC5224D907FB001C4B8A /* Ride */,
+				CD75735A24CFDE9000EABFC9 /* ExploreView.swift */,
 				CD75735E24CFDE9100EABFC9 /* ExploreRowView.swift */,
 				CD75735F24CFDE9100EABFC9 /* ExploreItemView.swift */,
-				CD75736024CFDE9100EABFC9 /* Create Event Information.swift */,
-				CD75736124CFDE9100EABFC9 /* CreateEventView.swift */,
-				CD75736224CFDE9100EABFC9 /* EventInformationInviteFriends.swift */,
-				CD75736424CFDE9100EABFC9 /* NotificationView.swift */,
-				CD75736624CFDE9100EABFC9 /* MainEvent.swift */,
-				CD75736724CFDE9100EABFC9 /* CreateEventOptionalRouteView.swift */,
-				CD79826824D1044800EA93F1 /* FriendUIView.swift */,
-				CD79826A24D1088C00EA93F1 /* HistoryUIView.swift */,
-				CD79826C24D10A8A00EA93F1 /* HistoryRowView.swift */,
-				CD79826E24D10AF200EA93F1 /* HistoryItemView.swift */,
-				CD79827024D141F900EA93F1 /* HistoryReview.swift */,
-				572F32F524D112ED00F24A6E /* ProfileView.swift */,
 				572F32F724D119E800F24A6E /* ExploreDetailsView.swift */,
 				572F32F924D11D3000F24A6E /* ListEventDetailsView.swift */,
 				572F32FB24D1238000F24A6E /* EventDetailsView.swift */,
 				572F32FD24D1243F00F24A6E /* EventItemView.swift */,
-				CD585D3024D1636D00B89C8C /* RatingView.swift */,
+				57D8DC5824D908BE001C4B8A /* Notification */,
+				CD75736424CFDE9100EABFC9 /* NotificationView.swift */,
+				57D8DC5524D90871001C4B8A /* History */,
+				CD79826A24D1088C00EA93F1 /* HistoryUIView.swift */,
+				CD79826C24D10A8A00EA93F1 /* HistoryRowView.swift */,
+				CD79826E24D10AF200EA93F1 /* HistoryItemView.swift */,
+				CD79827024D141F900EA93F1 /* HistoryReview.swift */,
+				57D8DC5424D9085A001C4B8A /* StatusRider */,
+				CD75735B24CFDE9000EABFC9 /* StatusRiderView.swift */,
+				57D8DC5924D90958001C4B8A /* App */,
+				CD75735C24CFDE9000EABFC9 /* AppView.swift */,
 				57220D1124D269C100BD7FCD /* SplashScreenView.swift */,
 			);
 			path = View;

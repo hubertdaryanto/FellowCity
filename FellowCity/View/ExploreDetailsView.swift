@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct ExploreDetailsView: View {
+    
+     @State var popToHome : Bool = false
+    
     var body: some View {
 //        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
 //        VStack{
@@ -120,7 +123,8 @@ struct ExploreDetailsView: View {
             Spacer()
             
             NavigationLink(destination:
-                CreateEventView(eventDestinastion: exploreData[4].name)
+                CreateEventView(popToHome: self.$popToHome, eventDestinastion: exploreData[4].name)
+                ,isActive: self.$popToHome
 //                AppView()
                 )
             {
@@ -144,7 +148,7 @@ struct ExploreDetailsView: View {
                         
                     Spacer()
                 }
-            }
+            }.isDetailLink(false)
             
             Spacer()
         }

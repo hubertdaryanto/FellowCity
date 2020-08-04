@@ -11,6 +11,9 @@
 import SwiftUI
 
 struct CreateEventOptionalRouteView: View {
+    
+//    @EnvironmentObject var popToHome:PopToHome
+    @Binding var popToHome : Bool
 
     //@State var explores:[Explore]
     @State private var optionalRoute: [Item] = (0..<exploreData.count).map { Item(title: "Location #\($0)") }
@@ -85,7 +88,7 @@ struct CreateEventOptionalRouteView: View {
                                       Spacer()
                         NavigationLink(destination:
 //                            Event_Information()
-                            Event_Information(eventDate: eventDate, eventName: eventName, eventMeetingPoint: eventMeetingPoint, eventDestinastion: eventDestinastion, sselectedRoute: sselectedRoute)
+                            Event_Information(popToHome: self.$popToHome, eventDate: eventDate, eventName: eventName, eventMeetingPoint: eventMeetingPoint, eventDestinastion: eventDestinastion, sselectedRoute: sselectedRoute)
 
 //                            @State var eventDate = Date()
 //                            @State var eventName: String = ""
@@ -110,7 +113,7 @@ struct CreateEventOptionalRouteView: View {
 
 
 //                        End of NavigationView
-//                .navigationBarTitle(Text("Create Event"), displayMode: .inline)
+                .navigationBarTitle(Text("Optional Route"), displayMode: .inline)
 //                .navigationBarItems(trailing: EditButton())
 //                    }
 
@@ -129,12 +132,12 @@ struct CreateEventOptionalRouteView: View {
 
 }
 
-struct CreateEventOptionalRouteView_Previews: PreviewProvider {
-    static var previews: some View {
-//        CreateEventOptionalRouteView(explores: exploreData)
-        CreateEventOptionalRouteView()
-    }
-}
+//struct CreateEventOptionalRouteView_Previews: PreviewProvider {
+//    static var previews: some View {
+////        CreateEventOptionalRouteView(explores: exploreData)
+//        CreateEventOptionalRouteView()
+//    }
+//}
 
 struct Item: Identifiable {
     let id = UUID()
