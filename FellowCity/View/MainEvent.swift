@@ -145,8 +145,7 @@
 //
 
 import SwiftUI
-
-
+import CoreLocation
 
 struct MainEvent: View {
 
@@ -155,14 +154,17 @@ struct MainEvent: View {
     @State var showProfileView = false
 //    var attendedEventList: [AttendEventList] = [AttendEventList(id: 1, name: "Pertamina Jatiasih -> Lot 9 Bintaro", date: "04/08/2020", time: "7:00")]
     
-    var attendedEventList: [AttendEventList] = [AttendEventList(id: 1, name: "Shell Tebet -> Ancol", date: "04/08/2020", time: "7:00")]
+    var attendedEventList: [AttendEventList] = [AttendEventList(id: 1, name: "Pertamina Jatiasih -> Lot 9 Bintaro", date: "04/08/2020", time: "7:00")]
 
 
     @State var eventDate = Date()
     @State var eventName: String = "Pertamina Jatiasih -> Lot 9 Bintaro"
     @State var eventMeetingPoint: String = "Pertamina Jatiasih"
     @State var eventDestinastion: String = "Lot 9 Bintaro"
-    @State var sselectedRoute: [String] = ["Moto Village"]
+    @State var sselectedRoute: [String] = ["Pertamina Jatiasih", "Moto Village", "Lot 9 Bintaro"]
+    @State var MeetingPoint: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469)
+       @State var LocationToBeVisited: [CLLocation] = [CLLocation(latitude: -6.3298786, longitude: 106.9439469), CLLocation(latitude: -6.258080, longitude: 106.808391), CLLocation(latitude: -6.2808073, longitude: 106.7122415)]
+       @State var LocationToBeVisitedName: [String] = ["Pertamina Jatiasih", "Moto Village", "Lot 9 Bintaro"]
 
 
     private let statusRider = ["Busy", "Available"]
@@ -204,7 +206,8 @@ struct MainEvent: View {
 //                        ExploreView(explore: exploreData[0])
 //                        TabFriendsView()
 
-                        ListEventDetailsView(eventDate: self.eventDate, eventName: self.eventName, eventMeetingPoint: self.eventMeetingPoint, eventDestinastion: self.eventDestinastion, sselectedRoute: self.sselectedRoute)
+                        ListEventDetailsView(eventDate: self.eventDate, eventName: self.eventName, eventMeetingPoint: self.eventMeetingPoint, eventDestinastion: self.eventDestinastion, sselectedRoute: self.sselectedRoute,
+                            MeetingPoint: self.MeetingPoint, LocationToBeVisited: self.LocationToBeVisited, LocationToBeVisitedName: self.LocationToBeVisitedName)
 
                     ){
                     EmptyView()

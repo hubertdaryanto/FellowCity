@@ -148,19 +148,8 @@ struct Event_Information: View {
                                     OptionalRouteViewer(title: item)
                                     {
                                         
-//                                        if self.sselectedRoute.contains(item.name)
-//                                        {
-//                                            self.sselectedRoute.removeAll(where: { $0 == item.name })
-//                                        }
-//                                        else
-//                                        {
-//                                            self.sselectedRoute.append(item.name)
-//                                        }
                                     }
-                                    
-                                    
                                 }
-                //                Text($0)
                                 
                             }
             }
