@@ -14,7 +14,7 @@ struct ExploreItemView: View {
     
     var body: some View {
 //        ZStack {
-                                NavigationLink(destination: ExploreDetailsView())
+        NavigationLink(destination: ExploreDetailsView(explore: explore))
                                 {
         VStack {
             

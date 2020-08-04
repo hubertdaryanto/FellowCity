@@ -15,6 +15,7 @@ FriendList(id: 3, name: "FeFa"),
 FriendList(id: 4, name: "Kevin Timotius"),
 FriendList(id: 5, name: "Hubert"),
 FriendList(id: 6, name: "Raka Widya Prawara")]
+
 enum FinishState {
     case notyet
     case finish

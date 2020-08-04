@@ -10,6 +10,8 @@ import SwiftUI
 struct EventDetailsView: View {
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
+    var explore:ExploreRevised
+    
     var body: some View {
 //        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
 //        VStack{
@@ -26,7 +28,7 @@ struct EventDetailsView: View {
             Spacer()
             
             VStack{
-            Image(exploreData[1].imageName)
+            Image(explore.imageName)
             .resizable()
             .renderingMode(.original)
             .aspectRatio(contentMode: .fill)
@@ -40,12 +42,12 @@ struct EventDetailsView: View {
             Spacer()
             
             VStack(alignment: .leading){
-            Text(exploreData[1].name)
+            Text(explore.name)
                 .font(.system(size: 25))
                 .fontWeight(.bold)
                 .foregroundColor(Color(hex: 0xf7b500, alpha: 1))
             
-            Text(exploreData[1].province)
+            Text(explore.province)
                 .font(.system(size: 16))
                 .fontWeight(.thin)
 //                .foregroundColor(Color.gray)
@@ -55,14 +57,14 @@ struct EventDetailsView: View {
             
             HStack(spacing:0){
                 
-                ForEach(0..<Int(modf(exploreData[4].rating).0)) { numstar in
+                ForEach(0..<Int(modf(explore.rating).0)) { numstar in
                     Image(systemName: "star.fill")
                         .resizable()
                         .frame(width: 15, height: 15)
                         .foregroundColor(Color(hex: 0xf7b500, alpha: 1))
                 }
                 
-                if (round(modf(exploreData[4].rating).1 * 2) / 2 ) == 1 {
+                if (round(modf(explore.rating).1 * 2) / 2 ) == 1 {
                     Image(systemName: "star.fill")
                         .resizable()
                         .frame(width: 15, height: 15)
@@ -75,7 +77,7 @@ struct EventDetailsView: View {
                 }
                 
                 
-                Text("(\(exploreData[3].review.count) Reviews)").font(.caption).foregroundColor(Color.gray)
+                Text("(\(explore.review.count) Reviews)").font(.caption).foregroundColor(Color.gray)
                 
             }
                 
@@ -90,7 +92,7 @@ struct EventDetailsView: View {
             .font(.system(size: 16))
                 .fontWeight(.semibold)
             
-            Text(exploreData[4].description)
+            Text(explore.description)
              .font(.system(size: 16))
                 .fontWeight(.light)
             
@@ -100,7 +102,7 @@ struct EventDetailsView: View {
             .font(.system(size: 16))
             .fontWeight(.semibold)
             
-            Text("\(exploreData[4].maximumPeople) people")
+            Text("\(explore.maximumPeople) people")
                 .font(.system(size: 16))
                     .fontWeight(.light)
                 
@@ -110,7 +112,7 @@ struct EventDetailsView: View {
             .font(.system(size: 16))
             .fontWeight(.semibold)
             
-            Text("\(exploreData[4].review[0]) people")
+            Text("\(explore.review[0]) people")
             .font(.system(size: 16))
                 .fontWeight(.light)
 //            .foregroundColor(.secondary)
@@ -171,6 +173,6 @@ struct EventDetailsView: View {
 
 struct EventDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        EventDetailsView()
+        EventDetailsView(explore: exploreData[2])
     }
 }

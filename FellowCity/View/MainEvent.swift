@@ -50,14 +50,14 @@ struct MainEvent: View {
 
 
                     Section(header: HStack {
-                        Text("EVENTS - \(self.attendedEventList.count)")
+                        Text("MY EVENTS - \(self.attendedEventList.count)")
                             .font(.footnote)
                             .foregroundColor(Color(hex: 0x3c3c43, alpha: 0.6))
-                            .padding(5)
+                            .padding()
 //                            .clipped()
                             Spacer()
                     }
-                    .background(Color(hex: 0xF2F2F7, alpha: 0.2))
+                    .background(Color(hex: 0xF2F2F7, alpha: 1))
                     .listRowInsets(EdgeInsets(
                         top: 0,
                         leading: 0,

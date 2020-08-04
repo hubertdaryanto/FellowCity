@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2CCE0AC024D13D3100E53BCD /* Structure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCE0ABF24D13D3100E53BCD /* Structure.swift */; };
+		57052F9F24D9CC6F001199F5 /* AddFriendsAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57052F9E24D9CC6F001199F5 /* AddFriendsAlertView.swift */; };
 		57220D1224D269C100BD7FCD /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57220D1124D269C100BD7FCD /* SplashScreenView.swift */; };
 		572F32F424D111E000F24A6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD75737124CFDE9100EABFC9 /* Main.storyboard */; };
 		572F32F624D112ED00F24A6E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32F524D112ED00F24A6E /* ProfileView.swift */; };
@@ -62,6 +63,7 @@
 
 /* Begin PBXFileReference section */
 		2CCE0ABF24D13D3100E53BCD /* Structure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structure.swift; sourceTree = "<group>"; };
+		57052F9E24D9CC6F001199F5 /* AddFriendsAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsAlertView.swift; sourceTree = "<group>"; };
 		57220D1124D269C100BD7FCD /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		572F32F524D112ED00F24A6E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		572F32F724D119E800F24A6E /* ExploreDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreDetailsView.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				CD75736024CFDE9100EABFC9 /* Create Event Information.swift */,
 				57D8DC5724D908AD001C4B8A /* Friends */,
 				CD79826824D1044800EA93F1 /* FriendUIView.swift */,
+				57052F9E24D9CC6F001199F5 /* AddFriendsAlertView.swift */,
 				572F32F524D112ED00F24A6E /* ProfileView.swift */,
 				57D8DC5224D907FB001C4B8A /* Ride */,
 				CD75735A24CFDE9000EABFC9 /* ExploreView.swift */,
@@ -399,6 +402,7 @@
 				CD75739C24CFDE9100EABFC9 /* PeopleData.swift in Sources */,
 				CD75739924CFDE9100EABFC9 /* EventData.swift in Sources */,
 				CD79826D24D10A8A00EA93F1 /* HistoryRowView.swift in Sources */,
+				57052F9F24D9CC6F001199F5 /* AddFriendsAlertView.swift in Sources */,
 				CD75738724CFDE9100EABFC9 /* ExploreItemView.swift in Sources */,
 				CD79827124D141F900EA93F1 /* HistoryReview.swift in Sources */,
 				CD79826B24D1088C00EA93F1 /* HistoryUIView.swift in Sources */,

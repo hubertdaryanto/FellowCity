@@ -17,7 +17,7 @@ struct ExploreRowView: View {
         VStack(alignment: .leading) {
             
             ScrollView {
-                ForEach (self.explores) { explore in
+                ForEach (self.explores, id: \.name) { explore in
                     ExploreItemView(explore: explore)
                 }
             }

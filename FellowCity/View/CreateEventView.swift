@@ -11,12 +11,18 @@
 
 import SwiftUI
 
+
+
 struct CreateEventView: View {
     
 //    @EnvironmentObject var popToHome:PopToHome
     @Binding var popToHome : Bool
     
     ///
+    
+    
+    
+    
     
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()

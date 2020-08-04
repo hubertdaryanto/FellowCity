@@ -12,6 +12,9 @@ struct ExploreDetailsView: View {
     
      @State var popToHome : Bool = false
     
+    var explore:ExploreRevised
+//    @State var exploreIndex: Int
+    
     var body: some View {
 //        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
 //        VStack{
@@ -28,7 +31,7 @@ struct ExploreDetailsView: View {
             Spacer()
             
             VStack{
-            Image(exploreData[4].imageName)
+            Image(explore.imageName)
             .resizable()
             .renderingMode(.original)
             .aspectRatio(contentMode: .fill)
@@ -42,12 +45,12 @@ struct ExploreDetailsView: View {
             Spacer()
             
             VStack(alignment: .leading){
-            Text(exploreData[4].name)
+            Text(explore.name)
                 .font(.system(size: 25))
                 .fontWeight(.bold)
                 .foregroundColor(Color(hex: 0xf7b500, alpha: 1))
             
-            Text(exploreData[4].province)
+            Text(explore.province)
                 .font(.system(size: 16))
                 .fontWeight(.thin)
 //                .foregroundColor(Color.gray)
@@ -57,14 +60,14 @@ struct ExploreDetailsView: View {
             
             HStack(spacing:0){
                 
-                ForEach(0..<Int(modf(exploreData[4].rating).0)) { numstar in
+                ForEach(0..<Int(modf(explore.rating).0)) { numstar in
                     Image(systemName: "star.fill")
                         .resizable()
                         .frame(width: 15, height: 15)
                         .foregroundColor(Color(hex: 0xf7b500, alpha: 1))
                 }
                 
-                if (round(modf(exploreData[4].rating).1 * 2) / 2 ) == 1 {
+                if (round(modf(explore.rating).1 * 2) / 2 ) == 1 {
                     Image(systemName: "star.fill")
                         .resizable()
                         .frame(width: 15, height: 15)
@@ -77,7 +80,7 @@ struct ExploreDetailsView: View {
                 }
                 
                 
-                Text("(\(exploreData[4].review.count) Reviews)").font(.caption).foregroundColor(Color.gray)
+                Text("(\(explore.review.count) Reviews)").font(.caption).foregroundColor(Color.gray)
                 
             }
                 
@@ -92,7 +95,7 @@ struct ExploreDetailsView: View {
             .font(.system(size: 16))
                 .fontWeight(.semibold)
             
-            Text(exploreData[4].description)
+            Text(explore.description)
              .font(.system(size: 16))
                 .fontWeight(.light)
             
@@ -102,7 +105,7 @@ struct ExploreDetailsView: View {
             .font(.system(size: 16))
             .fontWeight(.semibold)
             
-            Text("\(exploreData[4].maximumPeople) people")
+            Text("\(explore.maximumPeople) people")
                 .font(.system(size: 16))
                     .fontWeight(.light)
                 
@@ -112,7 +115,7 @@ struct ExploreDetailsView: View {
             .font(.system(size: 16))
             .fontWeight(.semibold)
             
-            Text("\(exploreData[4].review[0]) people")
+            Text("\(explore.review[0]) people")
             .font(.system(size: 16))
                 .fontWeight(.light)
 //            .foregroundColor(.secondary)
@@ -123,7 +126,7 @@ struct ExploreDetailsView: View {
             Spacer()
             
             NavigationLink(destination:
-                CreateEventView(popToHome: self.$popToHome, eventDestinastion: exploreData[4].name)
+                CreateEventView(popToHome: self.$popToHome, eventDestinastion: explore.name)
                 ,isActive: self.$popToHome
 //                AppView()
                 )
@@ -161,6 +164,6 @@ struct ExploreDetailsView: View {
 
 struct ExploreDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        ExploreDetailsView()
+        ExploreDetailsView(explore: exploreData[2])
     }
 }

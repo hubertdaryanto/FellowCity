@@ -59,6 +59,9 @@ struct ExploreView: View {
                     List {
                         EventItemView(explore: exploreData[1])
                     }
+
+                    
+                    
                     //                List(categories.keys.sorted(), id: \String.self) { key in
                     //                    ExploreRowView(categoryName: "\(key) Places".uppercased(), explores:
                     //                        self.categories[key]!)

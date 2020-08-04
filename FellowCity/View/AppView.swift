@@ -55,7 +55,7 @@ struct TabFriendsView: View {
     @State private var selectedRide = 0
     private let rideSelection = ["Explore", "Public Events"]
     var body: some View {
-        FriendUIView()
+        FriendUIView( userID: "")
         
     }
 }

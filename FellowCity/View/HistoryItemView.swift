@@ -92,6 +92,7 @@ struct HistoryItemView: View {
             HStack{
                 Button(action: {
                     //self.deleteEventInvitationsList(at:self.EventInvitationsList.firstIndex(where: { $0.id == index.id })!)
+                    
                 }){
                     if self.history.isReviewed{
                         Text("Reviewed").font(.custom("SFProDisplay-Bold", size: 14)).fontWeight(.bold)
