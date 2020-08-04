@@ -21,6 +21,10 @@ enum FinishState {
 }
 
 struct EventInformationInviteFriends: View {
+    
+//    @EnvironmentObject var popToHome:PopToHome
+    @Binding var popToHome : Bool
+    
     @State var showing : FinishState = .notyet
     
     @State private var isPublic = false
@@ -100,9 +104,10 @@ struct EventInformationInviteFriends: View {
                     Spacer()
                 Button(action: {
                     
-                    
+//                self.popToHome.homeIsActive = false
+                    self.popToHome = false
 //                    self.showing = .finish
-                    self.mode.wrappedValue.dismiss()
+//                    self.mode.wrappedValue.dismiss()
 //                    AppView()
                 }) {
                     Text("Finish").foregroundColor(Color(red: 0.96484375, green: 0.7421875, blue: 0)).padding(20)
@@ -118,7 +123,7 @@ struct EventInformationInviteFriends: View {
             }
             
 //                //End of NavigationView
-//            .navigationBarTitle("Event Information", displayMode: .inline)
+            .navigationBarTitle("Invite Friends", displayMode: .inline)
 ////                .navigationBarBackButtonHidden(false)
 ////            .navigationBarItems(leading: Button(action : {
 ////                self.mode.wrappedValue.dismiss()
@@ -131,11 +136,11 @@ struct EventInformationInviteFriends: View {
 }
 
 
-struct EventInformationInviteFriends_Previews: PreviewProvider {
-    static var previews: some View {
-        EventInformationInviteFriends()
-    }
-}
+//struct EventInformationInviteFriends_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EventInformationInviteFriends()
+//    }
+//}
 
 
 

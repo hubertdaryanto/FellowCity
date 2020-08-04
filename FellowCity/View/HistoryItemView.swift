@@ -44,6 +44,9 @@ var DateFormatterForHistory: DateFormatter = {
 
 struct HistoryItemView: View {
     var history: EventInfoHubertHistory
+    
+     @State var popToHome : Bool = false
+    
     @State var isPublic: Bool
     @State var isReviewed: Bool
     var body: some View {
@@ -118,7 +121,7 @@ struct HistoryItemView: View {
                         
                         
                     }){
-                        NavigationLink(destination: CreateEventView(eventName: self.history.eventName))
+                        NavigationLink(destination: CreateEventView(popToHome: self.$popToHome, eventName: self.history.eventName))
                         {
                             Text("Ride Again")
                                 .font(.custom("SFProDisplay-Bold", size: 14)).fontWeight(.bold)

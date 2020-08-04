@@ -43,6 +43,10 @@ var RouteInfoDummy: [RouteInformation] = [RouteInformation(id: 1, place: "Pertam
                                           RouteInformation(id: 3, place: "Pondok Indah"),
                                           RouteInformation(id: 4, place: "Lot 9 Bintaro")]
 struct Event_Information: View {
+    
+//    @EnvironmentObject var popToHome:PopToHome
+    @Binding var popToHome : Bool
+    
     @State var locationManager = CLLocationManager()
     @ObservedObject var saveRouteDetail = SaveRouteDetail()
     
@@ -163,7 +167,7 @@ struct Event_Information: View {
             
             HStack{
                 Spacer()
-                NavigationLink(destination: EventInformationInviteFriends())
+                NavigationLink(destination: EventInformationInviteFriends(popToHome: self.$popToHome))
                 {
                     Text("Next")
                         .font(.body)
@@ -176,7 +180,7 @@ struct Event_Information: View {
         
         // End of Navigation View
         
-        //            .navigationBarTitle("Event Information", displayMode: .inline)
+                    .navigationBarTitle("Event Information", displayMode: .inline)
         //            //            .navigationBarBackButtonHidden(true)
         //            //            .navigationBarItems(leading: Button(action : {
         //            //                self.mode.wrappedValue.dismiss()
@@ -189,11 +193,11 @@ struct Event_Information: View {
     }
 }
 
-struct Event_Information_Previews: PreviewProvider {
-    static var previews: some View {
-        Event_Information(eventName: "Pertamina Jatiasih -> Lot 9 Bintaro", MeetingPoint: CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469), LocationToBeVisited: [CLLocation(latitude: -6.3298786, longitude: 106.9439469), CLLocation(latitude: -6.258080, longitude: 106.808391), CLLocation(latitude: -6.2808073, longitude: 106.7122415)], LocationToBeVisitedName: ["Pertamina Jatiasih", "Moto Village", "Lot 9 Bintaro"])
-    }
-}
+// struct Event_Information_Previews: PreviewProvider {
+//     static var previews: some View {
+//         Event_Information(eventName: "Pertamina Jatiasih -> Lot 9 Bintaro", MeetingPoint: CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469), LocationToBeVisited: [CLLocation(latitude: -6.3298786, longitude: 106.9439469), CLLocation(latitude: -6.258080, longitude: 106.808391), CLLocation(latitude: -6.2808073, longitude: 106.7122415)], LocationToBeVisitedName: ["Pertamina Jatiasih", "Moto Village", "Lot 9 Bintaro"])
+//     }
+// }
 
 struct OptionalRouteViewer: View {
     var title: String
