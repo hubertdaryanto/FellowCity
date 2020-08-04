@@ -7,7 +7,6 @@
 //  Created by Feri Fajri on 27/07/20.
 //  Copyright © 2020 Hubert Daryanto. All rights reserved.
 //
-
 import SwiftUI
 import CoreLocation
 
@@ -71,7 +70,6 @@ struct MainEvent: View {
                     NavigationLink(destination:
 //                        ExploreView(explore: exploreData[0])
 //                        TabFriendsView()
-
                         ListEventDetailsView(eventDate: self.eventDate, eventName: self.eventName, eventMeetingPoint: self.eventMeetingPoint, eventDestinastion: self.eventDestinastion, sselectedRoute: self.sselectedRoute,
                             MeetingPoint: self.MeetingPoint, LocationToBeVisited: self.LocationToBeVisited, LocationToBeVisitedName: self.LocationToBeVisitedName)
 
@@ -101,7 +99,6 @@ struct MainEvent: View {
 
                 }}
 //                    .background(Color.blue)
-
 
 
             }
@@ -140,12 +137,10 @@ struct MainEvent: View {
 //                    Spacer()
 //                } //.edgesIgnoringSafeArea(.all)
 
-
             }
 
 
             //End of NavigationView
-
 
         .navigationBarTitle(
 
@@ -171,7 +166,6 @@ struct MainEvent: View {
                         .frame(height: 50, alignment: .leading)
                     }
 //                    .offset(x: 50, y: 0)
-
                 }
                 , trailing:
 

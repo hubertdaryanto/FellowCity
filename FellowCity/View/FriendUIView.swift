@@ -157,7 +157,7 @@ extension View{
 
 
 
-struct FrriendUIView_Previews: PreviewProvider {
+struct FriendUIView_Previews: PreviewProvider {
     static var previews: some View {
         FriendUIView()
     }

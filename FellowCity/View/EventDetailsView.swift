@@ -1,5 +1,3 @@
-
-
 //
 //  ExploreDetailsView.swift
 //  Aplikasi Motor
@@ -7,7 +5,6 @@
 //  Created by Feri Fajri on 28/07/20.
 //  Copyright © 2020 Hubert Daryanto. All rights reserved.
 //
-
 import SwiftUI
 
 struct EventDetailsView: View {
@@ -134,7 +131,6 @@ struct EventDetailsView: View {
                     
                     Button(action: {
                         //ini buat nambahin list review ke dalam data list event / tempat tujuan
-
                         self.mode.wrappedValue.dismiss()
                     })
                     {
@@ -150,7 +146,7 @@ struct EventDetailsView: View {
 //                                            Text("Join").foregroundColor(Color.black)
 //                                                .font(.system(size: 15)).fontWeight(.heavy)
 //                                            .frame(minWidth: 0, maxWidth: 120, maxHeight: 40)
-//                                            
+//
 //                        //                    .background(Color.yellow)
 //                                            .background(Color(hex: 0xF7B500, alpha: 1))
 //                                            .cornerRadius(15)
