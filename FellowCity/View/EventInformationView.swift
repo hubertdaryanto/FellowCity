@@ -59,6 +59,9 @@ struct Event_Information: View {
     @State var eventDestinastion: String = ""
     
     @State var selectedRoute: [SelectedRoute] = []
+    @State var MeetingPoint: CLLocationCoordinate2D
+    @State var LocationToBeVisited: [CLLocation]
+    @State var LocationToBeVisitedName: [String]
     
     @State var sselectedRoute:[String] = []
     
@@ -125,7 +128,11 @@ struct Event_Information: View {
                 Spacer()
             }
             
-            MapView(locationmanager: $locationManager, totaltime: self.$saveRouteDetail.totaltime, totaldistance: self.$saveRouteDetail.totaldistance)
+//            MapView(locationmanager: $locationManager, MeetingPoint: CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469), LocationToBeVisited: [CLLocation(latitude: -6.3298786, longitude: 106.9439469),
+//                                                CLLocation(latitude: -6.258080, longitude: 106.808391),
+//                                                CLLocation(latitude: -6.2808073, longitude: 106.7122415)
+//            ], LocationToBeVisitedName: ["Pertamina Jatiasih", "Moto Village", "Lot 9 Bintaro"], totaltime: self.$saveRouteDetail.totaltime, totaldistance: self.$saveRouteDetail.totaldistance)
+                MapView(locationmanager: $locationManager, MeetingPoint: MeetingPoint, LocationToBeVisited: LocationToBeVisited, LocationToBeVisitedName: LocationToBeVisitedName, totaltime: self.$saveRouteDetail.totaltime, totaldistance: self.$saveRouteDetail.totaldistance)
                 .padding()
             
             //                List(RouteInfoDummy) { index in
@@ -139,7 +146,18 @@ struct Event_Information: View {
                 Spacer()
             }
             
-            List(sselectedRoute, id:\.self) { Text($0) }
+            VStack{
+                List{
+                                ForEach(sselectedRoute, id: \.self) { item in
+                                    OptionalRouteViewer(title: item)
+                                    {
+                                        
+                                    }
+                                }
+                                
+                            }
+            }
+            
             
             //                List(selectedRoute) { index in
             //                    Text(index.name)
@@ -175,141 +193,22 @@ struct Event_Information: View {
     }
 }
 
-//struct Event_Information_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Event_Information(eventName: "Pertamina Jatiasih -> Lot 9 Bintaro")
-//    }
-//}
+// struct Event_Information_Previews: PreviewProvider {
+//     static var previews: some View {
+//         Event_Information(eventName: "Pertamina Jatiasih -> Lot 9 Bintaro", MeetingPoint: CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469), LocationToBeVisited: [CLLocation(latitude: -6.3298786, longitude: 106.9439469), CLLocation(latitude: -6.258080, longitude: 106.808391), CLLocation(latitude: -6.2808073, longitude: 106.7122415)], LocationToBeVisitedName: ["Pertamina Jatiasih", "Moto Village", "Lot 9 Bintaro"])
+//     }
+// }
 
-struct MapView: UIViewRepresentable {
-    @Binding var locationmanager: CLLocationManager
-    
-    @Binding var totaltime: Double
-    @Binding var totaldistance: Double
-    
-    let region = MKCoordinateRegion.init(center: CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469), latitudinalMeters: 10000, longitudinalMeters: 10000)
-    let dummylocations: [CLLocation] = [CLLocation(latitude: -6.3298786, longitude: 106.9439469),
-                                        CLLocation(latitude: -6.258080, longitude: 106.808391),
-                                        CLLocation(latitude: -6.2808073, longitude: 106.7122415)
-    ]
-    let nameOfLocation: [String] = ["Pertamina Jatiasih", "Moto Village", "Lot 9 Bintaro"]
-    
-    func makeCoordinator() -> MapController {
-        MapController(parent1: self)
-    }
-    
-    func makeUIView(context: Context) -> MKMapView
-    {
-        let mapView = MKMapView()
-        var distance: CLLocationDistance = 0
-        var time: CLLocationDistance = 0
-        //        var totaldistance: Double = 0
-        //        var totaltime: Double = 0
-        //        var previousLocation: CLLocation?
-        mapView.delegate = context.coordinator
-        mapView.setRegion(region, animated: true)
-        mapView.mapType = MKMapType.standard
-        mapView.showsTraffic = true
-        func getCenterLocation(for mapView: MKMapView) -> CLLocation {
-            let latitude = mapView.centerCoordinate.latitude
-            let longitude = mapView.centerCoordinate.longitude
-            return CLLocation(latitude: latitude, longitude: longitude)
-        }
-        
-        func getTotalEstimationTimeAndDistance(location: [CLLocation], nameOfLocation: [String])
-        {
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = CLLocationCoordinate2D(latitude: location[0].coordinate.latitude, longitude: location[0].coordinate.longitude)
-            annotation.title = nameOfLocation[0]
-            mapView.addAnnotation(annotation)
-            for i in 0...location.count - 2{
-                getDirections(from: location[i], to: location[i+1], nameOfLocation: nameOfLocation[i+1])
-                
+struct OptionalRouteViewer: View {
+    var title: String
+    var action: () -> Void
+    var order: Int = 0
+
+    var body: some View {
+        Button(action: self.action) {
+            HStack {
+                Text(self.title)
             }
-        }
-        
-        func getDirections(from: CLLocation, to: CLLocation, nameOfLocation: String)
-        {
-            
-            let request = createDirectionsRequest(from: from, to: to)
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = CLLocationCoordinate2D(latitude: to.coordinate.latitude, longitude: to.coordinate.longitude)
-            annotation.title = nameOfLocation
-            mapView.addAnnotation(annotation)
-            let directions = MKDirections(request: request)
-            
-            directions.calculate{
-                (response, error) in
-                //handle error if needed
-                guard let response = response else { return }//show response not available in an alert
-                
-                for route in response.routes {
-                    if route.advisoryNotices .isEmpty
-                    {
-                        mapView.addOverlay(route.polyline, level: .aboveRoads)
-                        mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
-                        distance = route.distance
-                        time = route.expectedTravelTime
-                        
-                        self.totaldistance +=  distance
-                        self.totaltime +=  time
-                    }
-                }
-                self.totaldistance = self.totaldistance / 1000
-                self.totaltime = self.totaltime / 60
-                
-                //                 distanceLabel.text = "\( totaldistance / 1000) km"
-                //                 timeLabel.text = "\( totaltime / 60) minutes"
-            }
-        }
-        
-        func createDirectionsRequest(from: CLLocation, to: CLLocation) -> MKDirections.Request {
-            let startingLocation = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: from.coordinate.latitude, longitude: from.coordinate.longitude))
-            let destination = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: to.coordinate.latitude, longitude: to.coordinate.longitude))
-            
-            let request = MKDirections.Request()
-            request.source = MKMapItem(placemark: startingLocation)
-            request.destination = MKMapItem(placemark: destination)
-            request.transportType = .automobile
-            request.requestsAlternateRoutes = true
-            return request
-        }
-        //        previousLocation = getCenterLocation(for: mapView)
-        getTotalEstimationTimeAndDistance(location: dummylocations, nameOfLocation: nameOfLocation)
-        
-        
-        return mapView
-    }
-    
-    func updateUIView(_ view: MKMapView, context: Context) {
-        
-    }
-    
-    class MapController: NSObject, CLLocationManagerDelegate, MKMapViewDelegate{
-        var parent: MapView
-        
-        init(parent1: MapView){
-            parent = parent1
-        }
-        
-        
-        
-        //        func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-        //            let center = getCenterLocation(for: mapView)
-        //            let geoCoder = CLGeocoder()
-        //
-        //            guard let previousLocation = self.previousLocation else { return }
-        //
-        //            guard center.distance(from: previousLocation) > 50 else { return }
-        //            self.previousLocation = center
-        //
-        //        }
-        
-        func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-            let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
-            renderer.strokeColor = .blue
-            
-            return renderer
         }
     }
 }

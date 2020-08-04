@@ -9,6 +9,7 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct CreateEventOptionalRouteView: View {
     
@@ -29,9 +30,12 @@ struct CreateEventOptionalRouteView: View {
     @State var selectedRoute: [SelectedRoute] = []
 
     @State var sselectedRoute:[String] = []
-
+    @State var MeetingPoint: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469)
+    @State var LocationToBeVisited: [CLLocation] = [CLLocation(latitude: -6.3298786, longitude: 106.9439469), CLLocation(latitude: -6.258080, longitude: 106.808391), CLLocation(latitude: -6.2808073, longitude: 106.7122415)]
+    @State var LocationToBeVisitedName: [String] = ["Pertamina Jatiasih", "Moto Village", "Lot 9 Bintaro"]
 
      var body: some View {
+        
 
 //            NavigationView{
 
@@ -69,10 +73,19 @@ struct CreateEventOptionalRouteView: View {
                             MultipleSelectionRow(title: item.name, isSelected: self.sselectedRoute.contains(item.name)) {
                                 if self.sselectedRoute.contains(item.name) {
                                     self.sselectedRoute.removeAll(where: { $0 == item.name })
+                                    
                                 }
                                 else {
+                                    if self.sselectedRoute.isEmpty
+                                    {
+                                        self.MeetingPoint = CLLocationCoordinate2D(latitude: item.latitude, longitude: item.longitude)
+                                        self.LocationToBeVisited.removeAll()
+                                        self.LocationToBeVisitedName.removeAll()
+                                    }
                                     self.sselectedRoute.append(item.name)
-                                    //                                    print(self.selectedRoute)
+                                    self.LocationToBeVisited.append(CLLocation(latitude: item.latitude, longitude: item.longitude))
+                                    self.LocationToBeVisitedName.append(item.name)
+//                                                                        print(self.selectedRoute)
                                 }
                             }
                         }
@@ -88,7 +101,8 @@ struct CreateEventOptionalRouteView: View {
                                       Spacer()
                         NavigationLink(destination:
 //                            Event_Information()
-                            Event_Information(popToHome: self.$popToHome, eventDate: eventDate, eventName: eventName, eventMeetingPoint: eventMeetingPoint, eventDestinastion: eventDestinastion, sselectedRoute: sselectedRoute)
+                            Event_Information(popToHome: self.$popToHome, eventDate: eventDate, eventName: eventName, eventMeetingPoint: eventMeetingPoint, eventDestinastion: eventDestinastion,
+                                              MeetingPoint: MeetingPoint, LocationToBeVisited: LocationToBeVisited, LocationToBeVisitedName: LocationToBeVisitedName, sselectedRoute: sselectedRoute)
 
 //                            @State var eventDate = Date()
 //                            @State var eventName: String = ""
