@@ -54,8 +54,7 @@ struct FriendUIView: View {
     var body: some View {
         NavigationView{
             ZStack{
-                VStack(alignment: .leading){
-                    
+                List{
                     Section(header: HStack {
                         Text("MY FRIENDS - \(friendList.count)")
                             .font(.footnote)
@@ -72,7 +71,8 @@ struct FriendUIView: View {
                         trailing: 0))
                         )
                     {
-                        List(friendList){ index in
+//                        List(friendList){ index in
+                            ForEach(friendList) { index in
                             HStack{
                                 Text(index.name)
                                 Spacer()
@@ -83,8 +83,15 @@ struct FriendUIView: View {
                         
                         
                     }
+                }
+                    
+                VStack(){
+                    Spacer()
                     HStack{
                         Spacer()
+
+                        ZStack {
+//                        Spacer()
                         
                         Button(action:
                             {
@@ -93,27 +100,16 @@ struct FriendUIView: View {
                         }
                             )
                         {
-                            Image(systemName: "plus.circle.fill").resizable().foregroundColor(Color(red: 0.96484375, green: 0.7421875, blue: 0)).frame(width: 50, height: 50, alignment: .center)
-                                .shadow(radius: 2, x: 1, y: 2).padding(20)
+                            Image(systemName: "plus.circle.fill").resizable().foregroundColor(Color(hex: 0xF7B500, alpha: 1)).frame(width: 58, height: 58, alignment: .center)
+                            .shadow(radius: 1, x: 1, y: 1)
                         }
-                            
-                            
-                            
-                        .padding()
-                        //                        .background(Color.blue)
-                        //                        .alert(isPresented: $isAlert) { () -> Alert in
-                        //                            Alert(
-                        //                                title: Text("Add Friends"),
-                        //                                message: TextField("Your Event Name...", text: $friendID ?? ""), primaryButton: .default(Text("Okay"), action: {
-                        //                                    print("Okay Click")
-                        //                                }), secondaryButton: .default(Text("Dismiss")))
-                        //                    }
-                        
-                        //                    .textFieldAlert(isShowing: $isShowingAlert, text: $alertInput, title: "Alert!")
+
                         
                         
                         
-                    }
+                        
+                        
+                        }}.padding(30)
                     
                     
                     
@@ -145,24 +141,24 @@ struct FriendUIView: View {
                             //                    .offset(x: 50, y: 0)
                         }
                         , trailing:
-                        
-                        Button(action: {
-                            self.showProfileView.toggle()
-                        }) {
-                            Image("rossi")
-                                .resizable()
-                                .renderingMode(.original)
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 36, height: 36)
-                                .clipShape(Circle())
-                                //                                .background(Color.white)
-                                .overlay(RoundedRectangle(cornerRadius: 40)
-                                    .stroke(Color.gray, lineWidth: 2))
-                        }
-                )
-                    .sheet(isPresented: $showProfileView) {
-                        ProfileView()
-                }
+
+                                                Button(action: {
+                                                    self.showProfileView.toggle()
+                                                }) {
+                                                    Image("rossi")
+                                                        .resizable()
+                                                        .renderingMode(.original)
+                                                        .aspectRatio(contentMode: .fill)
+                                                        .frame(width: 36, height: 36)
+                                                        .clipShape(Circle())
+                        //                                .background(Color.white)
+                                                        .overlay(RoundedRectangle(cornerRadius: 40)
+                                                            .stroke(Color.gray, lineWidth: 2))
+                                                }
+                                        )
+                                                .sheet(isPresented: $showProfileView) {
+                                                    ProfileView()
+                                            }
                 
                 
                 

@@ -43,7 +43,8 @@ struct ExploreView: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .background(Color(hex: 0xf7b500, alpha: 1))
-                .frame(height: 28)
+                .padding()
+//                .frame(height: 28)
                         
                     
                     }
