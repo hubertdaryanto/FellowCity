@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2CCE0AC024D13D3100E53BCD /* Structure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCE0ABF24D13D3100E53BCD /* Structure.swift */; };
 		57052F9F24D9CC6F001199F5 /* AddFriendsAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57052F9E24D9CC6F001199F5 /* AddFriendsAlertView.swift */; };
+		57052FA224DAD67F001199F5 /* FellowCity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57052FA024DAD67E001199F5 /* FellowCity.xcdatamodeld */; };
 		57220D1224D269C100BD7FCD /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57220D1124D269C100BD7FCD /* SplashScreenView.swift */; };
 		572F32F424D111E000F24A6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD75737124CFDE9100EABFC9 /* Main.storyboard */; };
 		572F32F624D112ED00F24A6E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32F524D112ED00F24A6E /* ProfileView.swift */; };
@@ -18,7 +19,6 @@
 		572F32FE24D1243F00F24A6E /* EventItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32FD24D1243F00F24A6E /* EventItemView.swift */; };
 		CD585D3124D1636D00B89C8C /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD585D3024D1636D00B89C8C /* RatingView.swift */; };
 		CD5C121F24D254750076402C /* exploresRevised.json in Resources */ = {isa = PBXBuildFile; fileRef = CD5C121E24D254750076402C /* exploresRevised.json */; };
-		CD75737C24CFDE9100EABFC9 /* TestRename.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD75735024CFDE9000EABFC9 /* TestRename.xcdatamodeld */; };
 		CD75737D24CFDE9100EABFC9 /* LoadSwiftUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75735324CFDE9000EABFC9 /* LoadSwiftUIViewController.swift */; };
 		CD75737E24CFDE9100EABFC9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75735424CFDE9000EABFC9 /* Extension.swift */; };
 		CD75737F24CFDE9100EABFC9 /* MainEvents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD75735524CFDE9000EABFC9 /* MainEvents.storyboard */; };
@@ -64,6 +64,7 @@
 /* Begin PBXFileReference section */
 		2CCE0ABF24D13D3100E53BCD /* Structure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structure.swift; sourceTree = "<group>"; };
 		57052F9E24D9CC6F001199F5 /* AddFriendsAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsAlertView.swift; sourceTree = "<group>"; };
+		57052FA124DAD67F001199F5 /* FellowCity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FellowCity.xcdatamodel; sourceTree = "<group>"; };
 		57220D1124D269C100BD7FCD /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		572F32F524D112ED00F24A6E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		572F32F724D119E800F24A6E /* ExploreDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreDetailsView.swift; sourceTree = "<group>"; };
@@ -72,7 +73,6 @@
 		572F32FD24D1243F00F24A6E /* EventItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItemView.swift; sourceTree = "<group>"; };
 		CD585D3024D1636D00B89C8C /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		CD5C121E24D254750076402C /* exploresRevised.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = exploresRevised.json; sourceTree = "<group>"; };
-		CD75735124CFDE9000EABFC9 /* BisaRenameGakYa.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BisaRenameGakYa.xcdatamodel; sourceTree = "<group>"; };
 		CD75735324CFDE9000EABFC9 /* LoadSwiftUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadSwiftUIViewController.swift; sourceTree = "<group>"; };
 		CD75735424CFDE9000EABFC9 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		CD75735524CFDE9000EABFC9 /* MainEvents.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainEvents.storyboard; sourceTree = "<group>"; };
@@ -277,6 +277,7 @@
 				CDA9E66824D2EABE00905FCE /* FellowCity.entitlements */,
 				CDA392DA24D1A95600E4AD07 /* Fonts */,
 				CD75736824CFDE9100EABFC9 /* AppDelegate.swift */,
+				CD75736C24CFDE9100EABFC9 /* SceneDelegate.swift */,
 				CD75736924CFDE9100EABFC9 /* Assets.xcassets */,
 				CD75736D24CFDE9100EABFC9 /* Base.lproj */,
 				CD75735224CFDE9000EABFC9 /* Controller */,
@@ -284,11 +285,10 @@
 				CD75736A24CFDE9100EABFC9 /* Info.plist */,
 				CD75735824CFDE9000EABFC9 /* List Tempat.rtf */,
 				CD75737324CFDE9100EABFC9 /* Model */,
-				CD75736C24CFDE9100EABFC9 /* SceneDelegate.swift */,
-				CD75735024CFDE9000EABFC9 /* TestRename.xcdatamodeld */,
 				CD75735924CFDE9000EABFC9 /* View */,
 				CD75737224CFDE9100EABFC9 /* ViewController.swift */,
 				CD5C121E24D254750076402C /* exploresRevised.json */,
+				57052FA024DAD67E001199F5 /* FellowCity.xcdatamodeld */,
 			);
 			path = FellowCity;
 			sourceTree = "<group>";
@@ -410,6 +410,7 @@
 				572F32F624D112ED00F24A6E /* ProfileView.swift in Sources */,
 				CD75739D24CFDE9100EABFC9 /* RidingLocation.swift in Sources */,
 				CDC4890224D7B4AD0001C2A4 /* MapView.swift in Sources */,
+				57052FA224DAD67F001199F5 /* FellowCity.xcdatamodeld in Sources */,
 				CD75738924CFDE9100EABFC9 /* CreateEventView.swift in Sources */,
 				57220D1224D269C100BD7FCD /* SplashScreenView.swift in Sources */,
 				CD75737E24CFDE9100EABFC9 /* Extension.swift in Sources */,
@@ -430,7 +431,6 @@
 				CD75738324CFDE9100EABFC9 /* StatusRiderView.swift in Sources */,
 				CD75738F24CFDE9100EABFC9 /* CreateEventOptionalRouteView.swift in Sources */,
 				CD75739424CFDE9100EABFC9 /* SceneDelegate.swift in Sources */,
-				CD75737C24CFDE9100EABFC9 /* TestRename.xcdatamodeld in Sources */,
 				CD75738824CFDE9100EABFC9 /* Create Event Information.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -628,13 +628,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		CD75735024CFDE9000EABFC9 /* TestRename.xcdatamodeld */ = {
+		57052FA024DAD67E001199F5 /* FellowCity.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				CD75735124CFDE9000EABFC9 /* BisaRenameGakYa.xcdatamodel */,
+				57052FA124DAD67F001199F5 /* FellowCity.xcdatamodel */,
 			);
-			currentVersion = CD75735124CFDE9000EABFC9 /* BisaRenameGakYa.xcdatamodel */;
-			path = TestRename.xcdatamodeld;
+			currentVersion = 57052FA124DAD67F001199F5 /* FellowCity.xcdatamodel */;
+			path = FellowCity.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

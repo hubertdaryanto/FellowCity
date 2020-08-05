@@ -27,11 +27,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        //add Environtment Object through all views
 //        let appView = AppView().environmentObject(popToHome)
         
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else {
+            fatalError("Unable to read managed object context.")
+        }
+        let appView = AppView().environment(\.managedObjectContext, context)
+        
         
         if let windowScene = scene as? UIWindowScene{
         let window = UIWindow(windowScene: windowScene)
 //        window.rootViewController = UIHostingController(rootView: SplashScreenView())
-        window.rootViewController = UIHostingController(rootView: SplashScreenView())
+//        window.rootViewController = UIHostingController(rootView: SplashScreenView())
+            window.rootViewController = UIHostingController(rootView: appView)
         self.window = window
         window.makeKeyAndVisible()
         }
