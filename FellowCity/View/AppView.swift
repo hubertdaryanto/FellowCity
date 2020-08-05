@@ -19,7 +19,7 @@ struct AppView: View {
             MainEvent()
                 .tabItem {
                     Image(systemName: "flag.circle.fill")
-                    Text("Events")
+                    Text("My Events")
             }.tag(1)
             
             TabFriendsView()

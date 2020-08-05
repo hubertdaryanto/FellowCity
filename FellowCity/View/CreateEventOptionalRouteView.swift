@@ -42,7 +42,7 @@ struct CreateEventOptionalRouteView: View {
 
                 VStack(alignment: .leading){
                     Spacer()
-                    Text("Select Your Optional Route")
+                    Text("Select Your Additional Routes")
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
@@ -127,7 +127,7 @@ struct CreateEventOptionalRouteView: View {
 
 
 //                        End of NavigationView
-                .navigationBarTitle(Text("Optional Route"), displayMode: .inline)
+                .navigationBarTitle(Text("Additional Routes"), displayMode: .inline)
 //                .navigationBarItems(trailing: EditButton())
 //                    }
 

@@ -117,7 +117,7 @@ struct FriendUIView: View {
                 }
                 .navigationBarTitle(
                     
-                    Text("")
+                    Text("Friends")
                     
                     
                     
@@ -140,7 +140,8 @@ struct FriendUIView: View {
                             }
                             //                    .offset(x: 50, y: 0)
                         }
-                        , trailing:
+                        ,
+                        trailing:
 
                                                 Button(action: {
                                                     self.showProfileView.toggle()

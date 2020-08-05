@@ -130,7 +130,7 @@ struct MainEvent: View {
                 
                 .navigationBarTitle(
                     
-                    Text("")
+                    Text("My Events")
                     
                     
                     
@@ -140,20 +140,21 @@ struct MainEvent: View {
                 
                 
                 .navigationBarItems(
-                    leading:
-                    HStack() {
-                        //                    Spacer()
-                        //
-                        VStack(alignment: .leading) {
-                            HStack{
-                                StatusRiderView()
-                                Image(systemName: "chevron.down")
-                            }
-                            .frame(height: 50, alignment: .leading)
-                        }
-                        //                    .offset(x: 50, y: 0)
-                    }
-                    , trailing:
+//                    leading:
+//                    HStack() {
+//                        //                    Spacer()
+//                        //
+//                        VStack(alignment: .leading) {
+//                            HStack{
+//                                StatusRiderView()
+//                                Image(systemName: "chevron.down")
+//                            }
+//                            .frame(height: 50, alignment: .leading)
+//                        }
+//                        //                    .offset(x: 50, y: 0)
+//                    }
+//                    ,
+                    trailing:
                     
                     Button(action: {
                         self.showProfileView.toggle()

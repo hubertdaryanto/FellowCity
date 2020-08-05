@@ -20,11 +20,11 @@ struct StatusRiderView: View {
             
             if pickerVisible {
                 VStack(alignment: .leading) {
-                    Spacer()
+//                    Spacer()
                     Picker(selection: $selection, label: Text("") ) {
                         ForEach (0..<colours.count) {
 //                            HStack {
-                                Text(self.colours[$0]).foregroundColor(.secondary)
+                        Text(self.colours[$0]).foregroundColor(.secondary)
                                     .frame(height: 10, alignment: .leading)
                                 
                             
@@ -41,7 +41,7 @@ struct StatusRiderView: View {
                         self.pickerVisible.toggle()
                     }
 
-                    Spacer()
+//                    Spacer()
                     
                 }
             } else {
