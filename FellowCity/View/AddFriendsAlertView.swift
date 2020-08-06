@@ -10,6 +10,8 @@ import SwiftUI
 
 struct AddFriendsAlertView: View {
     
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
     let screenSize = UIScreen.main.bounds
     @Binding var isShown: Bool
     @Binding var userID: String
@@ -43,8 +45,22 @@ struct AddFriendsAlertView: View {
                 Divider()
                 Spacer()
                 Button("Add"){
-                    self.isShown = false
+                    
                     self.onAdd(self.userID)
+                    
+                    // Add Friends to List
+                    let myFriends = FriendLists(context: self.managedObjectContext)
+                    myFriends.name = "\(self.userID)"
+                    do {
+                        try self.managedObjectContext.save()
+                    } catch {
+                        // handle the Core Data error
+                    }
+                    
+                    // Move Alert to Background
+                    self.isShown = false
+                    
+                    
                 }
                 Spacer()
             }

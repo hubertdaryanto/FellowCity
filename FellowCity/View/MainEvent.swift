@@ -171,7 +171,7 @@ struct MainEvent: View {
                     }
             )
                 .sheet(isPresented: $showProfileView) {
-                    ProfileView()
+                    ProfileView(rideLevel: rideLevels)
             }
         }
         .statusBar(hidden: true)

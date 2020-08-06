@@ -325,7 +325,7 @@ struct NotificationView: View {
                 }
             )
                 .sheet(isPresented: $showProfileView) {
-                    ProfileView()
+                    ProfileView(rideLevel: rideLevels)
             }
         }
     }

@@ -50,13 +50,19 @@ struct FriendUIView: View {
     @State var isPresented: Bool = false
     @State var userID: String
     
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(entity: FriendLists.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \FriendLists.name, ascending: true)]) var myFriends: FetchedResults<FriendLists>
+    
     
     var body: some View {
         NavigationView{
             ZStack{
                 List{
+                    
+                   
+                    
                     Section(header: HStack {
-                        Text("MY FRIENDS - \(friendList.count)")
+                        Text("MY FRIENDS - \(myFriends.count)")
                             .font(.footnote)
                             .foregroundColor(Color(hex: 0x3c3c43, alpha: 0.6))
                             .padding()
@@ -71,14 +77,27 @@ struct FriendUIView: View {
                         trailing: 0))
                         )
                     {
-//                        List(friendList){ index in
-                            ForEach(friendList) { index in
+////                        List(friendList){ index in
+//                            ForEach(friendList) { index in
+//                            HStack{
+//                                Text(index.name)
+//                                Spacer()
+//                                Image(systemName: "info.circle").foregroundColor(Color(red: 0.96484375, green: 0.7421875, blue: 0))
+//                            }
+//                        }
+                        
+                        //                        List(friendList){ index in
+                            ForEach(myFriends, id: \.self) { (index: FriendLists) in
                             HStack{
-                                Text(index.name)
+                                Text("\(index.name ?? "")")
                                 Spacer()
                                 Image(systemName: "info.circle").foregroundColor(Color(red: 0.96484375, green: 0.7421875, blue: 0))
                             }
-                        }
+                        }.onDelete(perform: removeFriends)
+                        
+//                        List(myFriend, id: \.self) { myFriend in
+//                                               Text(myFriend.name ?? "Unknown")
+//                                           }
                         
                         
                         
@@ -142,8 +161,10 @@ struct FriendUIView: View {
                         }
                         ,
                         trailing:
-
-                                                Button(action: {
+                        HStack{
+                                                EditButton()
+                        
+                                                    Button(action: {
                                                     self.showProfileView.toggle()
                                                 }) {
                                                     Image("rossi")
@@ -156,9 +177,13 @@ struct FriendUIView: View {
                                                         .overlay(RoundedRectangle(cornerRadius: 40)
                                                             .stroke(Color.gray, lineWidth: 2))
                                                 }
+                        
+            }
+                        
+                                                
                                         )
                                                 .sheet(isPresented: $showProfileView) {
-                                                    ProfileView()
+                                                    ProfileView(rideLevel: rideLevels)
                                             }
                 
                 
@@ -177,7 +202,25 @@ struct FriendUIView: View {
             
         }
     }
+    
+    func removeFriends(at offsets: IndexSet) {
+        for index in offsets {
+            let friend = myFriends[index]
+            managedObjectContext.delete(friend)
+            do {
+                try managedObjectContext.save()
+            } catch {
+                // handle the Core Data error
+            }
+        }
+    }
+    
+    
 }
+
+
+
+
 
 //public struct TextAlert {
 //    public var title: String
@@ -210,11 +253,7 @@ struct FriendUIView: View {
 //
 
 
-struct FriendUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        FriendUIView( userID: "")
-    }
-}
+
 
 
 //"struct TextFieldAlert<Presenting>: View where Presenting: View {
@@ -269,3 +308,10 @@ struct FriendUIView_Previews: PreviewProvider {
 //
 //}
 //"
+
+struct FriendUIView_Previews: PreviewProvider {
+    static var previews: some View {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        return FriendUIView( userID: "").environment(\.managedObjectContext, context)
+    }
+}
