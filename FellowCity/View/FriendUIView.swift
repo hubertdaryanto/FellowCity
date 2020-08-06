@@ -50,13 +50,17 @@ struct FriendUIView: View {
     @State var isPresented: Bool = false
     @State var userID: String
     
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(entity: Friends.entity() , sortDescriptors: [NSSortDescriptor(keyPath: \Friends.friendName, ascending: true)])
+    var allFriends: FetchedResults<Friends>
+    
     
     var body: some View {
         NavigationView{
             ZStack{
                 List{
                     Section(header: HStack {
-                        Text("MY FRIENDS - \(friendList.count)")
+                        Text("MY FRIENDS - \(allFriends.count)")
                             .font(.footnote)
                             .foregroundColor(Color(hex: 0x3c3c43, alpha: 0.6))
                             .padding()
@@ -72,13 +76,21 @@ struct FriendUIView: View {
                         )
                     {
 //                        List(friendList){ index in
-                            ForEach(friendList) { index in
+                            /*ForEach(friendList) { index in
                             HStack{
                                 Text(index.name)
                                 Spacer()
                                 Image(systemName: "info.circle").foregroundColor(Color(red: 0.96484375, green: 0.7421875, blue: 0))
                             }
-                        }
+                        }*/
+                        ForEach(allFriends, id: \.self){ (index: Friends) in
+                            HStack{
+                                Text("\(index.friendName ?? "")")
+                                Spacer()
+                                Image(systemName: "info.circle").foregroundColor(Color(red: 0.96484375, green: 0.7421875, blue: 0))
+
+                            }
+                        }.onDelete(perform: deleteFriends)
                         
                         
                         
@@ -177,6 +189,17 @@ struct FriendUIView: View {
             
         }
     }
+    func deleteFriends(at offsets: IndexSet) {
+        for index in offsets {
+            let friend = allFriends[index]
+            moc.delete(friend)
+            do{
+                try moc.save()
+            } catch{
+                
+            }
+        }
+    }
 }
 
 //public struct TextAlert {
@@ -212,7 +235,10 @@ struct FriendUIView: View {
 
 struct FriendUIView_Previews: PreviewProvider {
     static var previews: some View {
-        FriendUIView( userID: "")
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        return FriendUIView( userID: "").environment(\.managedObjectContext, context)
     }
 }
 
