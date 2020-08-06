@@ -47,6 +47,7 @@ struct AddFriendsAlertView: View {
                 Button("Add"){
                     
                     self.onAdd(self.userID)
+                    
                     // Add Friends to List
                     let myFriends = FriendLists(context: self.managedObjectContext)
                     myFriends.name = "\(self.userID)"
@@ -56,6 +57,7 @@ struct AddFriendsAlertView: View {
                         // handle the Core Data error
                     }
                     
+                    // Move Alert to Background
                     self.isShown = false
                     
                     

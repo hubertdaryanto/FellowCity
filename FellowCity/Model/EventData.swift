@@ -54,3 +54,18 @@ var dummyHistory: [EventInfoHubertHistory] = [EventInfoHubertHistory(id: 1, even
 EventInfoHubertHistory(id: 6, eventName: "Gentleman's Ride", startDate: formatter.date(from: "19/07/2020 9:00")!, image: Image("caribou"), isPublic: true, isReviewed: true, rating: 5.0),
 EventInfoHubertHistory(id: 7, eventName: "Cool Ride", startDate: formatter.date(from: "26/06/2020 9:00")!, image: Image("caribou"), isPublic: true, isReviewed: true, rating: 5.0)]
 
+
+struct RideLevel: Hashable, Identifiable{
+    var id: Int
+    var level: Int
+    var numOfRide: Int
+}
+
+var rideLevels: [RideLevel] = [
+RideLevel(id: 1, level: 1, numOfRide: 10),
+RideLevel(id: 2, level: 2, numOfRide: 20),
+RideLevel(id: 3, level: 3, numOfRide: 30),
+RideLevel(id: 4, level: 4, numOfRide: 40),
+RideLevel(id: 5, level: 5, numOfRide: 50),
+RideLevel(id: 6, level: 6, numOfRide: 100)
+]

@@ -183,7 +183,7 @@ struct FriendUIView: View {
                                                 
                                         )
                                                 .sheet(isPresented: $showProfileView) {
-                                                    ProfileView()
+                                                    ProfileView(rideLevel: rideLevels)
                                             }
                 
                 
@@ -214,6 +214,8 @@ struct FriendUIView: View {
             }
         }
     }
+    
+    
 }
 
 
@@ -251,13 +253,7 @@ struct FriendUIView: View {
 //
 
 
-struct FriendUIView_Previews: PreviewProvider {
-    static var previews: some View {
-//        FriendUIView( userID: "")
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        return FriendUIView( userID: "").environment(\.managedObjectContext, context)
-    }
-}
+
 
 
 //"struct TextFieldAlert<Presenting>: View where Presenting: View {
@@ -312,3 +308,10 @@ struct FriendUIView_Previews: PreviewProvider {
 //
 //}
 //"
+
+struct FriendUIView_Previews: PreviewProvider {
+    static var previews: some View {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        return FriendUIView( userID: "").environment(\.managedObjectContext, context)
+    }
+}

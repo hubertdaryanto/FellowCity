@@ -88,7 +88,7 @@ struct ExploreView: View {
                 }
             )
                 .sheet(isPresented: $showProfileView) {
-                    ProfileView()
+                    ProfileView(rideLevel: rideLevels)
             }
         }
 //    .padding()

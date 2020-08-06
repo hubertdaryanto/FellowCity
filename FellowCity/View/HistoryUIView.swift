@@ -68,7 +68,7 @@ struct HistoryUIView: View {
                             }
                         )
                             .sheet(isPresented: $showProfileView) {
-                                ProfileView()
+                                ProfileView(rideLevel: rideLevels)
                         }
         }
         
