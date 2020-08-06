@@ -16,16 +16,16 @@ struct MapView: UIViewRepresentable {
     @State var MeetingPoint: CLLocationCoordinate2D
     @State var LocationToBeVisited: [CLLocation]
     @State var LocationToBeVisitedName: [String]
-
+    
     @Binding var totaltime: Double
     @Binding var totaldistance: Double
-
+    
     @State private var isDirected = false
-//    let region = MKCoordinateRegion.init(center: MeetingPoint, latitudinalMeters: 10000, longitudinalMeters: 10000)
-//
-//    let dummylocations: [CLLocation] = LocationToBeVisited
-//
-//    let nameOfLocation: [String] = LocationToBeVisitedName
+    //    let region = MKCoordinateRegion.init(center: MeetingPoint, latitudinalMeters: 10000, longitudinalMeters: 10000)
+    //
+    //    let dummylocations: [CLLocation] = LocationToBeVisited
+    //
+    //    let nameOfLocation: [String] = LocationToBeVisitedName
     
     func makeCoordinator() -> MapController {
         MapController(parent1: self)
@@ -36,9 +36,9 @@ struct MapView: UIViewRepresentable {
         self.totaltime = 0
         self.totaldistance = 0
         let region = MKCoordinateRegion.init(center: MeetingPoint, latitudinalMeters: 10000, longitudinalMeters: 10000)
-
+        
         let dummylocations: [CLLocation] = LocationToBeVisited
-
+        
         let nameOfLocation: [String] = LocationToBeVisitedName
         let mapView = MKMapView()
         var distance: CLLocationDistance = 0
@@ -135,18 +135,6 @@ struct MapView: UIViewRepresentable {
             parent = parent1
         }
         
-        
-        
-        //        func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-        //            let center = getCenterLocation(for: mapView)
-        //            let geoCoder = CLGeocoder()
-        //
-        //            guard let previousLocation = self.previousLocation else { return }
-        //
-        //            guard center.distance(from: previousLocation) > 50 else { return }
-        //            self.previousLocation = center
-        //
-        //        }
         
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
             let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)

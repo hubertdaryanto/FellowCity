@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct AddFriendsAlertView: View {
+struct AddLocationAlertView: View {
  
     // MARK: - Variable for Dummy Data
     
@@ -21,10 +21,15 @@ struct AddFriendsAlertView: View {
     
     // Search Term
     @State var searchTerm: String = ""
-    @Binding var userID: String
-    // List All User
-    @State var allRideUser:[AllRideUser]
-    let nameArrayOfAllRideUsers = allRideUsers.map { $0.name }
+    @Binding var locationName: String
+    
+//    // List All User
+//    @State var allRideUser:[AllRideUser]
+//    let nameArrayOfAllRideUsers = allRideUsers.map { $0.name }
+    
+    // List All Location
+    @State var explores:[ExploreRevised]
+//    let nameArrayOfAllRideUsers = explore.map { $0.name }
     
     // MARK: - Variable for Core Data
     @Environment(\.managedObjectContext) var managedObjectContext
@@ -33,35 +38,35 @@ struct AddFriendsAlertView: View {
 
     var body: some View {
         VStack{
-                Text("Add Friend")
+                Text("Choose Riding Location")
                     .font(.body)
                     .fontWeight(.bold)
             
-                Text("Increase your riding buddies!")
+                Text("or pick our recomended places below")
                     .font(.footnote)
 
-                TextField("Friend Name", text: $userID)
+                TextField("Location Name", text: $locationName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             
                 SearchBarList(textSearch: $searchTerm)
             
             List {
                 
-                ForEach(self.myFriends.filter {
+                ForEach(self.explores.filter {
                     self.searchTerm.isEmpty ? true :
                         
 //                        Using Dummy Data | self.nameArrayOfAllRideUsers.filter
-//                        $0.localizedCaseInsensitiveContains(self.searchTerm)
+                        $0.name.contains(self.searchTerm)
                         
-                        //Using CoreData
-                        $0.name!.contains(self.searchTerm)
+//                        //Using CoreData | self.myFriends.filter
+//                        $0.name!.contains(self.searchTerm)
 
                     }, id: \.self)
                 { index in
                     Button(action: {
-                        self.userID = index.name!
+                        self.locationName = index.name
                     }) {
-                        Text("\(index.name!)")
+                        Text("\(index.name)")
                     }
                 }
             }.frame(height: 150)
@@ -80,16 +85,16 @@ struct AddFriendsAlertView: View {
                     Button("Add"){
                         
                         
-                        self.onAdd(self.userID)
+                        self.onAdd(self.locationName)
                         
-                        // Add Friends to List in Core Data
-                        let myFriends = FriendLists(context: self.managedObjectContext)
-                        myFriends.name = "\(self.userID)"
-                        do {
-                            try self.managedObjectContext.save()
-                        } catch {
-                            // handle the Core Data error
-                        }
+//                        // Add Friends to List in Core Data
+//                        let myFriends = FriendLists(context: self.managedObjectContext)
+//                        myFriends.name = "\(self.locationName)"
+//                        do {
+//                            try self.managedObjectContext.save()
+//                        } catch {
+//                            // handle the Core Data error
+//                        }
                         
                         // Move Alert to Background
                         self.isShown = false
@@ -111,9 +116,9 @@ struct AddFriendsAlertView: View {
     }
 }
 
-struct AddFriendsAlertView_Previews: PreviewProvider {
+struct AddLocationAlertView_Previews: PreviewProvider {
     static var previews: some View {
-        AddFriendsAlertView(isShown: .constant(true), userID: .constant(""), allRideUser: allRideUsers)
+        AddLocationAlertView(isShown: .constant(true), locationName: .constant(""),  explores: exploreData)
     }
 }
 

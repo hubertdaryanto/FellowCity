@@ -1,6 +1,3 @@
-
-
-
 //
 //  Event Information.swift
 //  Aplikasi Motor
@@ -42,7 +39,7 @@ var RouteInfoDummy: [RouteInformation] = [RouteInformation(id: 1, place: "Pertam
                                           RouteInformation(id: 2, place: "Kemang"),
                                           RouteInformation(id: 3, place: "Pondok Indah"),
                                           RouteInformation(id: 4, place: "Lot 9 Bintaro")]
-struct Event_Information: View {
+struct EventInformationView: View {
     
 //    @EnvironmentObject var popToHome:PopToHome
     @Binding var popToHome : Bool
@@ -66,6 +63,7 @@ struct Event_Information: View {
     @State var sselectedRoute:[String] = []
     
     var body: some View {
+//        ScrollView {
         //        NavigationView{
         VStack{
             Spacer()
@@ -96,30 +94,16 @@ struct Event_Information: View {
                     //                        Text(eventInfo.eventName)
                     Text(eventName).bold().font(.body)
                         .fontWeight(.bold).foregroundColor(Color(hex: 0xF7B500, alpha: 1)).padding(.bottom, 1)
+                    Text("\(eventMeetingPoint) -> \(eventDestinastion)").bold().font(.body)
+                    .fontWeight(.bold)
+//                        .foregroundColor(Color(hex: 0xF7B500, alpha: 1)).padding(.bottom, 1)
                     //                        Text(formatter.string(from: eventInfo.startDate))
                     Text(formatter.string(from: eventDate)).font(.body)
                         .padding(.bottom, 1)
                 }
                 Spacer()
             }.padding()
-            //            Spacer().frame(width: 0, height: 30)
-            
-            //            HStack{
-            //                Spacer().frame(width: 20, height: 0)
-            //                VStack(alignment: .leading){
-            //                    Text("Participants").bold().font(.system(size: 20, weight: .bold)).foregroundColor(Color(red: 0.96484375, green: 0.7421875, blue: 0)).padding(.bottom, 1)
-            //
-            //                    ScrollView(.horizontal)
-            //                    {
-            //                        HStack{
-            //                    ForEach(eventInfo.attendee){ attend in
-            //                                ParticipantView(participant: attend)
-            //                    }
-            //                        }
-            //                    }
-            //
-            //                }
-            //            }
+
             Spacer()
             
             HStack{
@@ -134,6 +118,7 @@ struct Event_Information: View {
 //                                                CLLocation(latitude: -6.2808073, longitude: 106.7122415)
 //            ], LocationToBeVisitedName: ["Pertamina Jatiasih", "Moto Village", "Lot 9 Bintaro"], totaltime: self.$saveRouteDetail.totaltime, totaldistance: self.$saveRouteDetail.totaldistance)
             MapView(locationmanager: $locationManager, MeetingPoint: MeetingPoint, LocationToBeVisited: getLocationData(locationName: sselectedRoute).location, LocationToBeVisitedName: getLocationData(locationName: sselectedRoute).nameOfLocation, totaltime: self.$saveRouteDetail.totaltime, totaldistance: self.$saveRouteDetail.totaldistance)
+//                .frame(height: 200)
                 .padding()
             
             //                List(RouteInfoDummy) { index in
@@ -142,7 +127,7 @@ struct Event_Information: View {
             
             HStack{
                 Spacer().frame(width: 20, height: 0)
-                Text("Selected Routes").bold().font(.body)
+                Text("Additional Routes").bold().font(.body)
                     .fontWeight(.bold).foregroundColor(Color(hex: 0xF7B500, alpha: 1)).padding(.bottom, 1)
                 Spacer()
             }
@@ -151,46 +136,54 @@ struct Event_Information: View {
                 List{
                                 ForEach(sselectedRoute, id: \.self) { item in
                                     OptionalRouteViewer(title: item)
-                                    {
-                                        
-                                    }
-                                }
-                                
-                            }
-            }
-            
-            
-            //                List(selectedRoute) { index in
-            //                    Text(index.name)
-            //                }
-            
-            
-            
-            HStack{
-                Spacer()
-                NavigationLink(destination: EventInformationInviteFriends(popToHome: self.$popToHome))
-                {
-                    Text("Next")
-                        .font(.body)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                                    {}
+                                    
+                    }
                 }
-            }.padding()
+            }
+ 
+//            HStack{
+//                Spacer()
+//                NavigationLink(destination: EventInformationInviteFriends(popToHome: self.$popToHome))
+//                {
+//                    Text("Next")
+//                        .font(.body)
+//                        .fontWeight(.bold)
+//                        .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+//                }
+//            }.padding()
             
         }
         
         // End of Navigation View
         
                     .navigationBarTitle("Event Information", displayMode: .inline)
-        //            //            .navigationBarBackButtonHidden(true)
-        //            //            .navigationBarItems(leading: Button(action : {
-        //            //                self.mode.wrappedValue.dismiss()
-        //            //            }){
-        //            //                Image(systemName: "chevron.left").foregroundColor(Color(red: 0.96484375, green: 0.7421875, blue: 0))
-        //            //                Text("Back").foregroundColor(Color(red: 0.96484375, green: 0.7421875, blue: 0))
-        //            //            })
-        //        }
+                   .navigationBarItems(
+                trailing:
+            
+            ZStack {
+                NavigationLink(
+                     // MARK: - Next Page
+                                   destination: EventInformationInviteFriends(popToHome: self.$popToHome)
+                ){
+                    
+                    HStack{
+                    Text("Next")
+                    .font(.body)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                    Image(systemName: "chevron.right")
+                    .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                    
+                }
+                // End of Next Page
+            }
+
+                
+            }
+        )
         
+//    }
     }
     
     func getLocationData(locationName: [String]) -> (location: [CLLocation], nameOfLocation: [String])
@@ -253,7 +246,6 @@ extension ExploreRevised: Reorderable {
 }
 
 //EOF
-
 // struct Event_Information_Previews: PreviewProvider {
 //     static var previews: some View {
 //         Event_Information(eventName: "Pertamina Jatiasih -> Lot 9 Bintaro", MeetingPoint: CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469), LocationToBeVisited: [CLLocation(latitude: -6.3298786, longitude: 106.9439469), CLLocation(latitude: -6.258080, longitude: 106.808391), CLLocation(latitude: -6.2808073, longitude: 106.7122415)], LocationToBeVisitedName: ["Pertamina Jatiasih", "Moto Village", "Lot 9 Bintaro"])
@@ -273,6 +265,3 @@ struct OptionalRouteViewer: View {
         }
     }
 }
-
-
-

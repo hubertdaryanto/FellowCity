@@ -1,4 +1,3 @@
-
 //
 //  Create_Event_Invite_Friends.swift
 //  Aplikasi Motor
@@ -37,10 +36,7 @@ struct EventInformationInviteFriends: View {
 //        NavigationView{
             VStack{
                 HStack{
-//                    Text("Invite Your Friends").bold().font(.system(size: 20, weight: .bold)).foregroundColor(Color(red: 0.96484375, green: 0.7421875, blue: 0)).padding(20)
                     
-
-
                         Text("Invite Your Friends").bold().font(.title)
                         .fontWeight(.bold).foregroundColor(Color(hex: 0xF7B500, alpha: 1)).padding(20)
  
@@ -86,53 +82,40 @@ struct EventInformationInviteFriends: View {
                     
                 }.padding()
                 
-//                VStack{
+//                // Tombol Finish Kanan Bawah
+//                HStack{
+//                    Spacer()
 //                Button(action: {
-//                    eventInfo.isPublic = self.$isPublic.wrappedValue
-//                })
 //
-//                {
-//                    NavigationLink(destination: MainEvent())
-//                    {
-//                       Spacer()
-//                        Text("Finish").foregroundColor(Color(red: 0.96484375, green: 0.7421875, blue: 0)).padding(20)
-//                    }
+//                    self.popToHome = false
 //
+//                }) {
+//                    Text("Finish").foregroundColor(Color(red: 0.96484375, green: 0.7421875, blue: 0)).padding(20)
 //                }
-//
 //                }
-                HStack{
-                    Spacer()
-                Button(action: {
-                    
-//                self.popToHome.homeIsActive = false
-                    self.popToHome = false
-//                    self.showing = .finish
-//                    self.mode.wrappedValue.dismiss()
-//                    AppView()
-                }) {
-                    Text("Finish").foregroundColor(Color(red: 0.96484375, green: 0.7421875, blue: 0)).padding(20)
-                }
-                }
-                
-//
-                
-                
-                
                 
                 Spacer()
             }
             
 //                //End of NavigationView
             .navigationBarTitle("Invite Friends", displayMode: .inline)
-////                .navigationBarBackButtonHidden(false)
-////            .navigationBarItems(leading: Button(action : {
-////                self.mode.wrappedValue.dismiss()
-////            }){
-////                Image(systemName: "chevron.left").foregroundColor(Color(red: 0.96484375, green: 0.7421875, blue: 0))
-////                Text("Back").foregroundColor(Color(red: 0.96484375, green: 0.7421875, blue: 0))
-////            })
-//        }
+        .navigationBarItems(
+                trailing:
+            
+            HStack{
+                                Spacer()
+                            Button(action: {
+                                
+            //                self.popToHome.homeIsActive = false
+                                self.popToHome = false
+            //                    self.showing = .finish
+            //                    self.mode.wrappedValue.dismiss()
+            //                    AppView()
+                            }) {
+                                Text("Finish").foregroundColor(Color(red: 0.96484375, green: 0.7421875, blue: 0)).padding(20)
+                            }
+                            }
+        )
     }
 }
 
@@ -142,6 +125,3 @@ struct EventInformationInviteFriends: View {
 //        EventInformationInviteFriends()
 //    }
 //}
-
-
-
