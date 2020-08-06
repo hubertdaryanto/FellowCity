@@ -196,7 +196,7 @@ struct FriendUIView: View {
                     AddFriendsAlertView(isShown: $isPresented, userID: $userID, onAdd: { text in
                         //Append userID to friendList array here
                         //friendList.append(FriendList(id: 10, name: "adadad"))
-                    })
+                    }, allRideUser: allRideUsers)
                 }
                 }
             

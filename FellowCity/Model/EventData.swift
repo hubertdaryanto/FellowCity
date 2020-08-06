@@ -69,3 +69,20 @@ RideLevel(id: 4, level: 4, numOfRide: 40),
 RideLevel(id: 5, level: 5, numOfRide: 50),
 RideLevel(id: 6, level: 6, numOfRide: 100)
 ]
+
+
+
+struct AllRideUser: Hashable, Identifiable{
+    var id: Int
+    var name: String
+    var userID: String
+}
+
+var allRideUsers: [AllRideUser] = [
+AllRideUser(id: 1, name: "Rossi", userID: "VR46"),
+AllRideUser(id: 2, name: "Marquez", userID: "M93"),
+AllRideUser(id: 3, name: "Doni Tata", userID: "DT90"),
+AllRideUser(id: 4, name: "Lorenzo", userID: "L99"),
+AllRideUser(id: 5, name: "Vinales", userID: "V20"),
+AllRideUser(id: 6, name: "Biaggi", userID: "B30")
+]

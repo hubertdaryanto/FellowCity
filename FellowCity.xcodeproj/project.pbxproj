@@ -11,6 +11,8 @@
 		57052F9F24D9CC6F001199F5 /* AddFriendsAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57052F9E24D9CC6F001199F5 /* AddFriendsAlertView.swift */; };
 		57052FA224DAD67F001199F5 /* FellowCity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57052FA024DAD67E001199F5 /* FellowCity.xcdatamodeld */; };
 		571ED2BB24DC1F1100C89B55 /* ColorSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571ED2BA24DC1F1100C89B55 /* ColorSetting.swift */; };
+		571ED2BD24DC269000C89B55 /* SearchFriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571ED2BC24DC269000C89B55 /* SearchFriendsView.swift */; };
+		571ED2C124DC42C300C89B55 /* SearchBarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571ED2C024DC42C300C89B55 /* SearchBarList.swift */; };
 		57220D1224D269C100BD7FCD /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57220D1124D269C100BD7FCD /* SplashScreenView.swift */; };
 		572F32F424D111E000F24A6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD75737124CFDE9100EABFC9 /* Main.storyboard */; };
 		572F32F624D112ED00F24A6E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32F524D112ED00F24A6E /* ProfileView.swift */; };
@@ -69,6 +71,8 @@
 		57052F9E24D9CC6F001199F5 /* AddFriendsAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsAlertView.swift; sourceTree = "<group>"; };
 		57052FA124DAD67F001199F5 /* FellowCity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FellowCity.xcdatamodel; sourceTree = "<group>"; };
 		571ED2BA24DC1F1100C89B55 /* ColorSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSetting.swift; sourceTree = "<group>"; };
+		571ED2BC24DC269000C89B55 /* SearchFriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFriendsView.swift; sourceTree = "<group>"; };
+		571ED2C024DC42C300C89B55 /* SearchBarList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarList.swift; sourceTree = "<group>"; };
 		57220D1124D269C100BD7FCD /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		572F32F524D112ED00F24A6E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		572F32F724D119E800F24A6E /* ExploreDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreDetailsView.swift; sourceTree = "<group>"; };
@@ -215,6 +219,8 @@
 				572F32F524D112ED00F24A6E /* ProfileView.swift */,
 				57D256A824DBBE9400B53E37 /* LevelRowView.swift */,
 				57D256A624DBB89600B53E37 /* LevelItemView.swift */,
+				571ED2BC24DC269000C89B55 /* SearchFriendsView.swift */,
+				571ED2C024DC42C300C89B55 /* SearchBarList.swift */,
 				57D8DC5224D907FB001C4B8A /* Ride */,
 				CD75735A24CFDE9000EABFC9 /* ExploreView.swift */,
 				CD75735E24CFDE9100EABFC9 /* ExploreRowView.swift */,
@@ -411,6 +417,7 @@
 				571ED2BB24DC1F1100C89B55 /* ColorSetting.swift in Sources */,
 				CD75739C24CFDE9100EABFC9 /* PeopleData.swift in Sources */,
 				CD75739924CFDE9100EABFC9 /* EventData.swift in Sources */,
+				571ED2C124DC42C300C89B55 /* SearchBarList.swift in Sources */,
 				CD79826D24D10A8A00EA93F1 /* HistoryRowView.swift in Sources */,
 				57052F9F24D9CC6F001199F5 /* AddFriendsAlertView.swift in Sources */,
 				CD75738724CFDE9100EABFC9 /* ExploreItemView.swift in Sources */,
@@ -427,6 +434,7 @@
 				CD75737D24CFDE9100EABFC9 /* LoadSwiftUIViewController.swift in Sources */,
 				CD75739724CFDE9100EABFC9 /* ViewController.swift in Sources */,
 				572F32F824D119E800F24A6E /* ExploreDetailsView.swift in Sources */,
+				571ED2BD24DC269000C89B55 /* SearchFriendsView.swift in Sources */,
 				57D256A724DBB89600B53E37 /* LevelItemView.swift in Sources */,
 				CD75738424CFDE9100EABFC9 /* AppView.swift in Sources */,
 				CD75739A24CFDE9100EABFC9 /* Data.swift in Sources */,
