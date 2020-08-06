@@ -60,8 +60,8 @@ struct Event_Information: View {
     
     @State var selectedRoute: [SelectedRoute] = []
     @State var MeetingPoint: CLLocationCoordinate2D
-    @State var LocationToBeVisited: [CLLocation]
-    @State var LocationToBeVisitedName: [String]
+//    @State var LocationToBeVisited: [CLLocation] = get
+//    @State var LocationToBeVisitedName: [String]
     
     @State var sselectedRoute:[String] = []
     
@@ -69,6 +69,7 @@ struct Event_Information: View {
         //        NavigationView{
         VStack{
             Spacer()
+            
             HStack{
                 VStack(alignment: .center){
                     Text("Total Distance").bold().font(.body)
@@ -132,7 +133,7 @@ struct Event_Information: View {
 //                                                CLLocation(latitude: -6.258080, longitude: 106.808391),
 //                                                CLLocation(latitude: -6.2808073, longitude: 106.7122415)
 //            ], LocationToBeVisitedName: ["Pertamina Jatiasih", "Moto Village", "Lot 9 Bintaro"], totaltime: self.$saveRouteDetail.totaltime, totaldistance: self.$saveRouteDetail.totaldistance)
-                MapView(locationmanager: $locationManager, MeetingPoint: MeetingPoint, LocationToBeVisited: LocationToBeVisited, LocationToBeVisitedName: LocationToBeVisitedName, totaltime: self.$saveRouteDetail.totaltime, totaldistance: self.$saveRouteDetail.totaldistance)
+            MapView(locationmanager: $locationManager, MeetingPoint: MeetingPoint, LocationToBeVisited: getLocationData(locationName: sselectedRoute).location, LocationToBeVisitedName: getLocationData(locationName: sselectedRoute).nameOfLocation, totaltime: self.$saveRouteDetail.totaltime, totaldistance: self.$saveRouteDetail.totaldistance)
                 .padding()
             
             //                List(RouteInfoDummy) { index in
@@ -191,7 +192,67 @@ struct Event_Information: View {
         //        }
         
     }
+    
+    func getLocationData(locationName: [String]) -> (location: [CLLocation], nameOfLocation: [String])
+    {
+        var temp: [ExploreRevised] = []
+        var returnData: [CLLocation] = []
+        var returnNameLocation: [String] = []
+//        for index in exploreData
+//        {
+//            if locationName.contains(index.name)
+//            {
+//                temp.append(index)
+//                returnData.append(CLLocation(latitude: index.latitude, longitude: index.longitude))
+//                returnNameLocation.append(index.name)
+//            }
+//        }
+    
+        for index in locationName{
+            for index2 in exploreData
+            {
+                if index == index2.name
+                {
+                    temp.append(index2)
+                    returnData.append(CLLocation(latitude: index2.latitude, longitude: index2.longitude))
+                    returnNameLocation.append(index2.name)
+                }
+            }
+        }
+        return (returnData, returnNameLocation)
+    }
 }
+
+
+//get ordering array of struct method from https://stackoverflow.com/questions/43056807/sorting-a-swift-array-by-ordering-from-another-array
+protocol Reorderable {
+    associatedtype OrderElement: Equatable
+    var orderElement: OrderElement { get }
+}
+
+extension Array where Element: Reorderable {
+
+    func reorder(by preferredOrder: [Element.OrderElement]) -> [Element] {
+        sorted {
+            guard let first = preferredOrder.firstIndex(of: $0.orderElement) else {
+                return false
+            }
+
+            guard let second = preferredOrder.firstIndex(of: $1.orderElement) else {
+                return true
+            }
+
+            return first < second
+        }
+    }
+}
+
+extension ExploreRevised: Reorderable {
+    typealias OrderElement = String
+    var orderElement: OrderElement { name }
+}
+
+//EOF
 
 // struct Event_Information_Previews: PreviewProvider {
 //     static var previews: some View {

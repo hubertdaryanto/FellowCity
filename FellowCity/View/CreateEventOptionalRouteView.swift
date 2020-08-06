@@ -73,6 +73,7 @@ struct CreateEventOptionalRouteView: View {
                             MultipleSelectionRow(title: item.name, isSelected: self.sselectedRoute.contains(item.name)) {
                                 if self.sselectedRoute.contains(item.name) {
                                     self.sselectedRoute.removeAll(where: { $0 == item.name })
+                                    self.LocationToBeVisitedName.removeAll(where: { $0 == item.name })
                                     
                                 }
                                 else {
@@ -102,7 +103,7 @@ struct CreateEventOptionalRouteView: View {
                         NavigationLink(destination:
 //                            Event_Information()
                             Event_Information(popToHome: self.$popToHome, eventDate: eventDate, eventName: eventName, eventMeetingPoint: eventMeetingPoint, eventDestinastion: eventDestinastion,
-                                              MeetingPoint: MeetingPoint, LocationToBeVisited: LocationToBeVisited, LocationToBeVisitedName: LocationToBeVisitedName, sselectedRoute: sselectedRoute)
+                                              MeetingPoint: MeetingPoint, sselectedRoute: sselectedRoute)
 
 //                            @State var eventDate = Date()
 //                            @State var eventName: String = ""
