@@ -33,6 +33,8 @@ struct MapView: UIViewRepresentable {
     
     func makeUIView(context: Context) -> MKMapView
     {
+        self.totaltime = 0
+        self.totaldistance = 0
         let region = MKCoordinateRegion.init(center: MeetingPoint, latitudinalMeters: 10000, longitudinalMeters: 10000)
 
         let dummylocations: [CLLocation] = LocationToBeVisited
