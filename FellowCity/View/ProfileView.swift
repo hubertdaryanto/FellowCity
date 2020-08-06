@@ -22,7 +22,7 @@ struct ProfileView: View {
     //@State var userImage: Image
     
     @State var isAvailable: Bool = false
-    
+
     //
     
     var body: some View {
