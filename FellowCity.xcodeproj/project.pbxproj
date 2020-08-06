@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C391E1124DC6E640068EA5A /* Events+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C391E0F24DC6E640068EA5A /* Events+CoreDataClass.swift */; };
+		2C391E1224DC6E640068EA5A /* Events+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C391E1024DC6E640068EA5A /* Events+CoreDataProperties.swift */; };
 		2C466DE924DBBEB9001965B3 /* FellowCityData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2C466DE724DBBEB9001965B3 /* FellowCityData.xcdatamodeld */; };
 		2CCE0AC024D13D3100E53BCD /* Structure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCE0ABF24D13D3100E53BCD /* Structure.swift */; };
 		57052F9F24D9CC6F001199F5 /* AddFriendsAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57052F9E24D9CC6F001199F5 /* AddFriendsAlertView.swift */; };
@@ -62,6 +64,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C391E0F24DC6E640068EA5A /* Events+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Events+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2C391E1024DC6E640068EA5A /* Events+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Events+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2C466DE824DBBEB9001965B3 /* FellowCityData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FellowCityData.xcdatamodel; sourceTree = "<group>"; };
 		2CCE0ABF24D13D3100E53BCD /* Structure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structure.swift; sourceTree = "<group>"; };
 		57052F9E24D9CC6F001199F5 /* AddFriendsAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsAlertView.swift; sourceTree = "<group>"; };
@@ -257,6 +261,8 @@
 		CD9D731524B2D19A006D3103 = {
 			isa = PBXGroup;
 			children = (
+				2C391E0F24DC6E640068EA5A /* Events+CoreDataClass.swift */,
+				2C391E1024DC6E640068EA5A /* Events+CoreDataProperties.swift */,
 				CD9D732024B2D19A006D3103 /* FellowCity */,
 				CD9D731F24B2D19A006D3103 /* Products */,
 				CDA9E66524D2EA9F00905FCE /* Frameworks */,
@@ -397,8 +403,10 @@
 				CD75738A24CFDE9100EABFC9 /* EventInformationInviteFriends.swift in Sources */,
 				CD75738E24CFDE9100EABFC9 /* MainEvent.swift in Sources */,
 				CD585D3124D1636D00B89C8C /* RatingView.swift in Sources */,
+				2C391E1224DC6E640068EA5A /* Events+CoreDataProperties.swift in Sources */,
 				CD75738524CFDE9100EABFC9 /* EventInformationView.swift in Sources */,
 				CD75738624CFDE9100EABFC9 /* ExploreRowView.swift in Sources */,
+				2C391E1124DC6E640068EA5A /* Events+CoreDataClass.swift in Sources */,
 				CD75739C24CFDE9100EABFC9 /* PeopleData.swift in Sources */,
 				CD75739924CFDE9100EABFC9 /* EventData.swift in Sources */,
 				CD79826D24D10A8A00EA93F1 /* HistoryRowView.swift in Sources */,

@@ -12,6 +12,15 @@ import CoreLocation
 
 struct MainEvent: View {
     
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(entity: Events.entity(), sortDescriptors:[
+        NSSortDescriptor(keyPath: \Events.eventName, ascending: true),
+        NSSortDescriptor(keyPath: \Events.eventMeetingPoint, ascending: true),
+        NSSortDescriptor(keyPath: \Events.eventDestination, ascending: true),
+        NSSortDescriptor(keyPath: \Events.eventDate, ascending: true),
+
+    ]) var allEventsInfo: FetchedResults<Events>
+    
     //    @EnvironmentObject var popToHome:PopToHome
     @State var popToHome : Bool = false
     
@@ -49,7 +58,7 @@ struct MainEvent: View {
                 List{
                     Section(header: HStack {
                         Text("MY EVENTS - \(self.attendedEventList.count)")
-                            .font(.footnote)
+                        .font(.footnote)
                             .foregroundColor(Color(hex: 0x3c3c43, alpha: 0.6))
                             .padding()
                         Spacer()
@@ -62,8 +71,10 @@ struct MainEvent: View {
                         trailing: 0))
                         )
                     {
-                        ForEach(self.attendedEventList) { index in
+                        //ForEach(self.attendedEventList) { index in
+                        ForEach(allEventsInfo, id: \.self) { (index: Events) in
                             ZStack{
+                                
                                 NavigationLink(destination:
                                     //                        ExploreView(explore: exploreData[0])
                                     //                        TabFriendsView()
@@ -76,13 +87,13 @@ struct MainEvent: View {
                                 
                                 HStack{
                                     VStack(alignment: .leading){
-                                        Text(index.name).font(.body)
+                                        Text("\(index.eventName ?? "")").font(.body)
                                         HStack{
-                                            Text(index.date).font(.subheadline)
+                                            Text("\(index.eventMeetingPoint ?? "")").font(.subheadline)
                                                 .foregroundColor(.gray)
                                             Text("-").font(.subheadline)
                                                 .foregroundColor(.gray)
-                                            Text(index.time).font(.subheadline)
+                                            Text("\(index.eventDestination ?? "")").font(.subheadline)
                                                 .foregroundColor(.gray)
                                         }
                                     }

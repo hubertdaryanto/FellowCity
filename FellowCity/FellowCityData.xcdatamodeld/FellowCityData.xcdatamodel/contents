@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Events" representedClassName="Events" syncable="YES" codeGenerationType="class"/>
+    <entity name="Events" representedClassName="Events" syncable="YES">
+        <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="eventDestination" optional="YES" attributeType="String"/>
+        <attribute name="eventMeetingPoint" optional="YES" attributeType="String"/>
+        <attribute name="eventName" optional="YES" attributeType="String"/>
+        <attribute name="saved" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="selectedRoute" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="Friends" representedClassName="Friends" syncable="YES" codeGenerationType="class">
         <attribute name="friendName" optional="YES" attributeType="String"/>
     </entity>
     <elements>
+        <element name="Events" positionX="164.0390625" positionY="182.37890625" width="128" height="133"/>
         <element name="Friends" positionX="-63" positionY="-18" width="128" height="58"/>
-        <element name="Events" positionX="-54" positionY="0" width="128" height="43"/>
     </elements>
 </model>
