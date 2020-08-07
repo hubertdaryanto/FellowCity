@@ -43,7 +43,7 @@ struct AddFriendsAlertView: View {
                 TextField("Friend Name", text: $userID)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             
-                SearchBarList(textSearch: $searchTerm)
+                SearchBarList(textSearch: $searchTerm, placeholder: "Search here...")
             
             List {
                 

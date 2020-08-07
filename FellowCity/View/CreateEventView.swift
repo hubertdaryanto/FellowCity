@@ -41,10 +41,14 @@ struct CreateEventView: View {
             VStack(alignment: .leading){
                 Spacer()
                 VStack(alignment: .leading){
+                    HStack {
+                    Image(systemName: "pencil").resizable().foregroundColor(Color(hex: 0xF7B500, alpha: 1)).frame(width: 20, height: 20, alignment: .center)
+                    .shadow(radius: 1, x: 1, y: 1)
                     Text("Event Name")
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                    }
                     
                     TextField("Your Event Name...", text: $eventName, onEditingChanged: { (changed) in
                         print("Username onEditingChanged - \(changed)")
@@ -52,7 +56,8 @@ struct CreateEventView: View {
                         print("Username onCommit")
                     }
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                }
+                    
+                    }
                 Spacer()
                 VStack(alignment: .leading){
                     
@@ -113,11 +118,16 @@ struct CreateEventView: View {
                 }
                 Spacer()
                 VStack(alignment: .leading){
+                    HStack {
+                    Image(systemName: "calendar").resizable().foregroundColor(Color(hex: 0xF7B500, alpha: 1)).frame(width: 20, height: 20, alignment: .center)
+                    .shadow(radius: 1, x: 1, y: 1)
+                        
                     Text("Schedule")
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
-                        .padding(.bottom)
+//                        .padding(.bottom)
+                    }.padding(.bottom)
                     //DatePicker("", selection: $eventDate,, in: ...Date() displayedComponents: [.date, .hourAndMinute]){
                     DatePicker(selection: $eventDate, in: ...Date(), displayedComponents: [.date, .hourAndMinute]) {
                         Text("")

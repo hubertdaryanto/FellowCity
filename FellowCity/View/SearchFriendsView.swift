@@ -55,7 +55,7 @@ struct SearchFriendsView: View {
                                 Divider()
 //            }
             
-            SearchBarList(textSearch: $searchTerm)
+            SearchBarList(textSearch: $searchTerm, placeholder: "Search here ...")
             
             List {
                 

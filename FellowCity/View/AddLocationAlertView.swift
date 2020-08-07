@@ -48,7 +48,7 @@ struct AddLocationAlertView: View {
                 TextField("Location Name", text: $locationName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             
-                SearchBarList(textSearch: $searchTerm)
+                SearchBarList(textSearch: $searchTerm, placeholder: "Search here...")
             
             List {
                 
