@@ -195,7 +195,12 @@ struct MainEvent: View {
 
 struct MainEvent_Previews: PreviewProvider {
     static var previews: some View {
-        MainEvent()
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        return MainEvent( eventName: "").environment(\.managedObjectContext, context)
+
+
+        //MainEvent()
     }
 }
 
