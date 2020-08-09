@@ -23,6 +23,14 @@ enum FinishState {
 
 struct EventInformationInviteFriends: View {
     
+    @Environment(\.managedObjectContext) var moc
+    
+    @State var eventDate = Date()
+    @State var eventName: String = ""
+    @State var eventMeetingPoint: String = ""
+    @State var eventDestinastion: String = ""
+
+    
 //    @EnvironmentObject var popToHome:PopToHome
     @Binding var popToHome : Bool
     
@@ -104,6 +112,21 @@ struct EventInformationInviteFriends: View {
                 HStack{
                     Spacer()
                 Button(action: {
+                    let add = Events(context: self.moc)
+                    add.eventName = self.eventName
+                    add.eventMeetingPoint = self.eventMeetingPoint
+                    add.eventDestination = self.eventDestinastion
+                    add.eventDate = self.eventDate
+                    //add.saved = self.saved
+                    
+                    try? self.moc.save()
+                    
+                    self.eventName = ""
+                    self.eventMeetingPoint = ""
+                    self.eventDestinastion = ""
+                    self.eventDate = Date()
+                    
+                    
                     
 //                self.popToHome.homeIsActive = false
                     self.popToHome = false

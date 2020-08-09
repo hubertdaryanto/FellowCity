@@ -57,7 +57,7 @@ struct MainEvent: View {
                 
                 List{
                     Section(header: HStack {
-                        Text("MY EVENTS - \(self.attendedEventList.count)")
+                        Text("MY EVENTS - \(self.allEventsInfo.count)")
                         .font(.footnote)
                             .foregroundColor(Color(hex: 0x3c3c43, alpha: 0.6))
                             .padding()
@@ -75,7 +75,7 @@ struct MainEvent: View {
                         ForEach(allEventsInfo, id: \.self) { (index: Events) in
                             ZStack{
                                 
-                                NavigationLink(destination:
+                                /*NavigationLink(destination:
                                     //                        ExploreView(explore: exploreData[0])
                                     //                        TabFriendsView()
                                     ListEventDetailsView(eventDate: self.eventDate, eventName: self.eventName, eventMeetingPoint: self.eventMeetingPoint, eventDestinastion: self.eventDestinastion, sselectedRoute: self.sselectedRoute,
@@ -83,7 +83,7 @@ struct MainEvent: View {
                                     
                                 ){
                                     EmptyView()
-                                }.hidden()
+                                }.hidden()*/
                                 
                                 HStack{
                                     VStack(alignment: .leading){
@@ -117,6 +117,7 @@ struct MainEvent: View {
                             NavigationLink(
                                 destination: CreateEventView(popToHome: self.$popToHome),
                                 isActive: self.$popToHome
+                                
                             ){
                                 
                                 Image(systemName: "plus.circle.fill").resizable().foregroundColor(Color(hex: 0xF7B500, alpha: 1)).frame(width: 58, height: 58, alignment: .center)

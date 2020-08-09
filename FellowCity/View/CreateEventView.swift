@@ -15,7 +15,6 @@ import SwiftUI
 
 struct CreateEventView: View {
     
-    @Environment(\.managedObjectContext) var moc
     
 //    @EnvironmentObject var popToHome:PopToHome
     @Binding var popToHome : Bool
@@ -114,29 +113,14 @@ struct CreateEventView: View {
                 HStack{
                     Spacer()
 //                        NavigationLink(destination: CreateEventOptionalRouteView())
-                    //NavigationLink(destination: CreateEventOptionalRouteView(popToHome: self.$popToHome, eventDate: eventDate, eventName: eventName, eventMeetingPoint: eventMeetingPoint, eventDestinastion: eventDestinastion))
-                        
-                    Button(action: {
-                        let add = Events(context: self.moc)
-                        add.eventName = self.eventName
-                        add.eventMeetingPoint = self.eventMeetingPoint
-                        add.eventDestination = self.eventDestinastion
-                        add.eventDate = self.eventDate
-                        //add.saved = self.saved
-                        
-                        try? self.moc.save()
-                        
-                        self.eventName = ""
-                        self.eventMeetingPoint = ""
-                        self.eventDestinastion = ""
-                        self.eventDate = Date()
-                    })
-                {
+                    NavigationLink(destination: CreateEventOptionalRouteView(popToHome: self.$popToHome, eventDate: eventDate, eventName: eventName, eventMeetingPoint: eventMeetingPoint, eventDestinastion: eventDestinastion))
+        
+                    {
                     Text("Next")
                     .font(.body)
                     .fontWeight(.bold)
                     .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
-                }
+                    }
                 }.padding()
             
             }
@@ -157,9 +141,9 @@ struct CreateEventView: View {
         
         //End of NavigationView
                     .navigationBarTitle(Text("Create Event"), displayMode: .inline)
-            .sheet(isPresented: $popToHome){
-                CreateEventOptionalRouteView(popToHome: self.$eventName).environment(\.managedObjectContext, self.moc)
-        }
+           // .sheet(isPresented: $popToHome){
+                //CreateEventOptionalRouteView(popToHome: self.$popToHome).environment(\.managedObjectContext, self.moc)
+        //}
         
         //}
         
