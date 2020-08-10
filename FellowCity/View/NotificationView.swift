@@ -71,35 +71,41 @@ struct NotificationView: View {
                 //                {
                 ForEach(FriendInvitationsList) { index in
                     GeometryReader { geometry in
-                        HStack {
-                            Image(systemName: "person.3.fill")
-                                .resizable()
+                        HStack (spacing:0){
+                            Image(systemName: "person.fill")
+                                .font(.system(size: 35, weight: .thin))
+                                .frame(width: 45,height: 45)
+                                .background(Color.yellow)
+                                .clipShape(Circle())
+                                .aspectRatio(contentMode: .fill)
+                                /*.resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 45, height: 45)
+                                .font(.system(size: 35, weight: .thin))
+                                .frame(width: 50, height: 50)
                                 .clipShape(Circle())
                                 .background(Color.yellow)
                                 .cornerRadius(40)
-                                .frame(minWidth: 0, maxWidth: geometry.size.width * 0.5 / 4, minHeight: 0, maxHeight: 50)
+                                .frame(minWidth: 0, maxWidth: geometry.size.width * 0.5 / 4, minHeight: 0, maxHeight: 50)*/
                             
                             ZStack {
                                 NavigationLink(destination: TabFriendsView()) {
                                     EmptyView()
                                 }.hidden()
                                 
-                                VStack(alignment: .leading) {
+                                VStack(alignment: .leading, spacing: 3) {
                                     Text(index.name)
-                                        .font(.system(size: 12))
+                                        .font(.headline)
                                         //                                .font(.body)
                                         .fontWeight(.bold)
                                         .frame(maxWidth: 200, alignment: .leading)
                                     Text("\(index.mutualFriend) Mutual Friend ")
                                         //                                .font(.caption)
-                                        .font(.system(size: 12))
+                                        .font(.subheadline)
                                         //                                .font(.body)
                                         .fontWeight(.light)
                                         .foregroundColor(.gray)
                                         .frame(maxWidth: 200, alignment: .leading)
-                                }
+                                }.padding()
                             }.frame(minWidth: 0, maxWidth: geometry.size.width * 2 / 4, minHeight: 0, maxHeight: 50, alignment: .leading)
                             
                             Spacer()
@@ -156,7 +162,14 @@ struct NotificationView: View {
                 List{
                                         ForEach(EventInvitationsList) { index in
                                             GeometryReader { geometry in
-                                                HStack {
+                                                HStack (spacing:0){
+                                                Image(systemName: "person.fill")
+                                                    .font(.system(size: 35, weight: .thin))
+                                                    .frame(width: 45,height: 45)
+                                                    .background(Color.yellow)
+                                                    .clipShape(Circle())
+                                                    .aspectRatio(contentMode: .fill)
+                                                /*HStack {
                                                     Image(systemName: "person.3.fill")
                                                         .resizable()
                                                         .aspectRatio(contentMode: .fit)
@@ -164,27 +177,27 @@ struct NotificationView: View {
                                                         .clipShape(Circle())
                                                         .background(Color.yellow)
                                                         .cornerRadius(40)
-                                                        .frame(minWidth: 0, maxWidth: geometry.size.width * 0.5 / 4, minHeight: 0, maxHeight: 50)
+                                                        .frame(minWidth: 0, maxWidth: geometry.size.width * 0.5 / 4, minHeight: 0, maxHeight: 50)*/
                                                     
                                                     ZStack {
                                                         NavigationLink(destination: TabFriendsView()) {
                                                             EmptyView()
                                                         }.hidden()
                                                         
-                                                        VStack(alignment: .leading) {
+                                                        VStack(alignment: .leading, spacing: 3) {
                                                             Text(index.name)
-                                                                .font(.system(size: 12))
+                                                                .font(.headline)
                                                                 //                                .font(.body)
                                                                 .fontWeight(.bold)
                                                                 .frame(maxWidth: 200, alignment: .leading)
                                                             Text("\(index.origin) -> \(index.destination) ")
-                                                                .font(.caption)
-                                                                .font(.system(size: 12))
+                                                                .font(.subheadline)
+                                                                //.font(.system(size: 12))
                                                                 //                                .font(.body)
                                                                 .fontWeight(.light)
                                                                 .foregroundColor(.gray)
                                                                 .frame(maxWidth: 200, alignment: .leading)
-                                                        }
+                                                        }.padding()
                                                     }.frame(minWidth: 0, maxWidth: geometry.size.width * 2 / 4, minHeight: 0, maxHeight: 50, alignment: .leading)
                                                     
                                                     Spacer()
@@ -215,7 +228,7 @@ struct NotificationView: View {
                                                             .overlay(RoundedRectangle(cornerRadius: 20)
                                                                 .stroke(Color.yellow, lineWidth: 1))
                                                         
-                                                    }
+                                                        }
                                                     .buttonStyle(PlainButtonStyle())
                                                     .frame(width: geometry.size.width * 0.75 / 4, height: 50)
                                                     .shadow(radius: 2, x: 1, y: 2)
@@ -236,7 +249,14 @@ struct NotificationView: View {
                 List{
                                         ForEach(EventRequestsList) { index in
                                             GeometryReader { geometry in
-                                                HStack {
+                                                HStack (spacing:0){
+                                                Image(systemName: "person.fill")
+                                                    .font(.system(size: 35, weight: .thin))
+                                                    .frame(width: 45,height: 45)
+                                                    .background(Color.yellow)
+                                                    .clipShape(Circle())
+                                                    .aspectRatio(contentMode: .fill)
+                                               /* HStack {
                                                     Image(systemName: "person.3.fill")
                                                         .resizable()
                                                         .aspectRatio(contentMode: .fit)
@@ -244,27 +264,26 @@ struct NotificationView: View {
                                                         .clipShape(Circle())
                                                         .background(Color.yellow)
                                                         .cornerRadius(40)
-                                                        .frame(minWidth: 0, maxWidth: geometry.size.width * 0.5 / 4, minHeight: 0, maxHeight: 50)
+                                                        .frame(minWidth: 0, maxWidth: geometry.size.width * 0.5 / 4, minHeight: 0, maxHeight: 50)*/
                                                     
                                                     ZStack {
                                                         NavigationLink(destination: TabFriendsView()) {
                                                             EmptyView()
                                                         }.hidden()
                                                         
-                                                        VStack(alignment: .leading) {
+                                                        VStack(alignment: .leading,spacing: 3) {
                                                             Text(index.name)
-                                                                .font(.system(size: 12))
+                                                                .font(.headline)
                                                                 //                                .font(.body)
                                                                 .fontWeight(.bold)
                                                                 .frame(maxWidth: 200, alignment: .leading)
                                                             Text("\(index.origin) -> \(index.destination) ")
-                                                                .font(.caption)
-                                                                .font(.system(size: 12))
+                                                                .font(.subheadline)
                                                                 //                                .font(.body)
                                                                 .fontWeight(.light)
                                                                 .foregroundColor(.gray)
                                                                 .frame(maxWidth: 200, alignment: .leading)
-                                                        }
+                                                        }.padding()
                                                     }.frame(minWidth: 0, maxWidth: geometry.size.width * 2 / 4, minHeight: 0, maxHeight: 50, alignment: .leading)
                                                     
                                                     Spacer()

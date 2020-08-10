@@ -24,21 +24,39 @@ struct FriendUIView: View {
                     }
                     .background(Color(hex: 0xf2f2f7, alpha: 1))
                     .listRowInsets(EdgeInsets(
-                        top: 0,
+                        top: 4,
                         leading: 0,
-                        bottom: 0,
+                        bottom: 4,
                         trailing: 0))
                         )
                     {
                         ForEach(myFriends, id: \.self) { (index: FriendLists) in
                             HStack{
-                                Text("\(index.name ?? "")")
+                                Image(systemName: "person.fill")
+                                    .font(.system(size: 35, weight: .thin))
+                                    .frame(width: 50,height: 50)
+                                    .background(Color.yellow)
+                                    .clipShape(Circle())
+
+
+                                
+                                VStack(alignment: .leading,spacing: 3){
+                                    Text("\(index.name ?? "")")
+                                        .font(.headline)
+                                    Text("Available to Ride")
+                                        .font(.subheadline)
+                                        .foregroundColor(.gray)
+
+                                }
+                              
                                 Spacer()
                                 Image(systemName: "info.circle").foregroundColor(Color(red: 0.96484375, green: 0.7421875, blue: 0))
                             }
                         }.onDelete(perform: removeFriends)
                     }
                 }
+                .onAppear { UITableView.appearance().separatorStyle = .none }
+                .onDisappear { UITableView.appearance().separatorStyle = .singleLine }
                 
                 VStack(){
                     Spacer()
