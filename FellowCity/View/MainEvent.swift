@@ -10,6 +10,8 @@
 import SwiftUI
 import CoreLocation
 
+
+
 struct MainEvent: View {
     
     // MARK: - Variable for Navigation and conditional
@@ -50,6 +52,9 @@ struct MainEvent: View {
                         ){
                             ForEach(self.attendedEventList) { index in
                                 ZStack{
+                                    
+                                    
+                                    
                                     NavigationLink(destination:
                                         // Go to EventInformationView
                                         ListEventDetailsView(eventDate: self.eventDate, eventName: self.eventName, eventMeetingPoint: self.eventMeetingPoint, eventDestinastion: self.eventDestinastion, sselectedRoute: self.sselectedRoute,
@@ -60,6 +65,10 @@ struct MainEvent: View {
                                         EmptyView()
                                     }.hidden()
                                     
+                                    
+                                    
+                         
+
                                     HStack{
                                         VStack(alignment: .leading){
                                             Text(index.name).font(.body)
@@ -79,32 +88,39 @@ struct MainEvent: View {
                                             .frame(width: 25, height: 25, alignment: .center)
                                     }
                                     
-                                }}}}
+                                }
+                                    
+                                
+                                
+                                
+                            }}}
+                        .onAppear { UITableView.appearance().separatorStyle = .none }
+                        .onDisappear { UITableView.appearance().separatorStyle = .singleLine }
                 }
                 // End of List Event
                 Group {
                     VStack(){
-                    Spacer()
-                    HStack {
-                        Group{
-                            Spacer()
-                            ZStack {
-                                NavigationLink(
-                                    // MARK: - popToHome
-                                    destination: CreateEventView(popToHome: self.$popToHome),
-                                    isActive: self.$popToHome
-                                ){
-                                    
-                                    Image(systemName: "plus.circle.fill").resizable().foregroundColor(Color(hex: 0xF7B500, alpha: 1)).frame(width: 58, height: 58, alignment: .center)
-                                        .shadow(radius: 1, x: 1, y: 1)
-                                    
-                                }.isDetailLink(false)
-                                // End of popToHome
+                        Spacer()
+                        HStack {
+                            Group{
+                                Spacer()
+                                ZStack {
+                                    NavigationLink(
+                                        // MARK: - popToHome
+                                        destination: CreateEventView(popToHome: self.$popToHome),
+                                        isActive: self.$popToHome
+                                    ){
+                                        
+                                        Image(systemName: "plus.circle.fill").resizable().foregroundColor(Color(hex: 0xF7B500, alpha: 1)).frame(width: 58, height: 58, alignment: .center)
+                                            .shadow(radius: 1, x: 1, y: 1)
+                                        
+                                    }.isDetailLink(false)
+                                    // End of popToHome
+                                }
                             }
-                        }
-                    }.padding(30)
+                        }.padding(30)
+                    }
                 }
-            }
             }
                 //End of NavigationView
                 
@@ -128,7 +144,7 @@ struct MainEvent: View {
                     ProfileView(rideLevel: rideLevels)
             }
         }
-//        .statusBar(hidden: true)
+        //        .statusBar(hidden: true)
     }
     
 }
