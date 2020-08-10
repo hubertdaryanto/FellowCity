@@ -30,8 +30,7 @@ struct MainEvent: View {
     @State var MeetingPoint: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469)
     @State var LocationToBeVisited: [CLLocation] = [CLLocation(latitude: -6.3298786, longitude: 106.9439469), CLLocation(latitude: -6.258080, longitude: 106.808391), CLLocation(latitude: -6.2808073, longitude: 106.7122415)]
     @State var LocationToBeVisitedName: [String] = ["Pertamina Jatiasih", "Moto Village", "Lot 9 Bintaro"]
-    
-    
+        
     var body: some View {
         
         NavigationView{
@@ -44,25 +43,34 @@ struct MainEvent: View {
                                 .foregroundColor(Color(hex: 0x3c3c43, alpha: 0.6))
                                 .padding()
                             Spacer()
+                            
                         }
                         .background(Color(hex: 0xF2F2F7, alpha: 1))
                         .listRowInsets(EdgeInsets(top: 0,leading: 0,bottom: 0,trailing: 0))
                         ){
                             ForEach(self.attendedEventList) { index in
                                 ZStack{
+                                    Rectangle().fill(Color.yellow)
+                                    .frame(width: UIScreen.main.bounds.width - 60, height: 80)
+                                    .cornerRadius(10).shadow(color: .gray, radius: 4)
+                                        .padding(10)
+                                    
+                                    
                                     NavigationLink(destination:
                                         // Go to EventInformationView
                                         ListEventDetailsView(eventDate: self.eventDate, eventName: self.eventName, eventMeetingPoint: self.eventMeetingPoint, eventDestinastion: self.eventDestinastion, sselectedRoute: self.sselectedRoute,
                                                              MeetingPoint: self.MeetingPoint, LocationToBeVisited: self.LocationToBeVisited, LocationToBeVisitedName: self.LocationToBeVisitedName)
                                         //
                                         
-                                    ){
+                                    )
+                                    {
                                         EmptyView()
                                     }.hidden()
                                     
                                     HStack{
+                                        
                                         VStack(alignment: .leading){
-                                            Text(index.name).font(.body)
+                                            Text(index.name).font(.headline)
                                             HStack{
                                                 Text(index.date).font(.subheadline)
                                                     .foregroundColor(.gray)
@@ -73,13 +81,15 @@ struct MainEvent: View {
                                             }
                                         }
                                         Spacer()
-                                        
+                                        //red: 0.96484375, green: 0.7421875, blue: 0)
                                         Image(systemName: "info.circle").resizable()
-                                            .foregroundColor(Color(red: 0.96484375, green: 0.7421875, blue: 0))
+                                            .foregroundColor(Color(.darkGray))
                                             .frame(width: 25, height: 25, alignment: .center)
-                                    }
+                                    }.padding()
                                     
-                                }}}}
+                        }}}}
+                        .onAppear { UITableView.appearance().separatorStyle = .none }
+                        .onDisappear { UITableView.appearance().separatorStyle = .singleLine }
                 }
                 // End of List Event
                 Group {
