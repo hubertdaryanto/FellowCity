@@ -10,7 +10,8 @@ import SwiftUI
 struct EventDetailsView: View {
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
-    var explore:ExploreRevised
+//    var explore:ExploreRevised
+    var allPublicEvent:AllEvent
     
     var body: some View {
 //        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
@@ -22,13 +23,16 @@ struct EventDetailsView: View {
 //
 //        }
         
+            
+//            NavigationView{
+                ScrollView {
         
         VStack(alignment: .leading, spacing: 5.0) {
             
             Spacer()
             
             VStack{
-            Image(explore.imageName)
+            Image(allPublicEvent.eventImageName)
             .resizable()
             .renderingMode(.original)
             .aspectRatio(contentMode: .fill)
@@ -37,17 +41,18 @@ struct EventDetailsView: View {
 //            .cornerRadius(10)
 //            .shadow(radius: 5)
             }
+                .padding(.top, 20)
             .padding(.bottom, 25)
             
             Spacer()
             
             VStack(alignment: .leading){
-            Text(explore.name)
+            Text(allPublicEvent.eventName)
                 .font(.system(size: 25))
                 .fontWeight(.bold)
                 .foregroundColor(Color("baseColor").opacity(1))
             
-            Text(explore.province)
+            Text(allPublicEvent.creatorEvent)
                 .font(.system(size: 16))
                 .fontWeight(.thin)
 //                .foregroundColor(Color.gray)
@@ -57,14 +62,14 @@ struct EventDetailsView: View {
             
             HStack(spacing:0){
                 
-                ForEach(0..<Int(modf(explore.rating).0)) { numstar in
+                ForEach(0..<Int(modf(allPublicEvent.rating).0)) { numstar in
                     Image(systemName: "star.fill")
                         .resizable()
                         .frame(width: 15, height: 15)
                         .foregroundColor(Color("baseColor").opacity(1))
                 }
                 
-                if (round(modf(explore.rating).1 * 2) / 2 ) == 1 {
+                if (round(modf(allPublicEvent.rating).1 * 2) / 2 ) == 1 {
                     Image(systemName: "star.fill")
                         .resizable()
                         .frame(width: 15, height: 15)
@@ -77,48 +82,70 @@ struct EventDetailsView: View {
                 }
                 
                 
-                Text("(\(explore.review.count) Reviews)").font(.caption).foregroundColor(Color.gray)
+                Text("(\(allPublicEvent.review.count) Reviews)").font(.caption).foregroundColor(Color.gray)
                 
             }
                 
             }
-            .padding()
+            .padding(.leading)
+            .padding(.trailing)
             // End of headline
             
-//            Spacer()
+            Spacer()
             
             VStack(alignment: .leading){
             Text("Description")
             .font(.system(size: 16))
                 .fontWeight(.semibold)
             
-            Text(explore.description)
+            Text(allPublicEvent.description)
              .font(.system(size: 16))
                 .fontWeight(.light)
-            
+                .frame(height: 90)
+                .multilineTextAlignment(.leading)
                 Spacer()
                 
             Text("Maximum People")
             .font(.system(size: 16))
             .fontWeight(.semibold)
             
-            Text("\(explore.maximumPeople) people")
+            Text("\(allPublicEvent.maximumPeople) people")
                 .font(.system(size: 16))
                     .fontWeight(.light)
-                
+                .frame(height: 30)
                 Spacer()
+                
+                
             
             Text("Review")
             .font(.system(size: 16))
             .fontWeight(.semibold)
-            
-            Text("\(explore.review[0]) people")
-            .font(.system(size: 16))
-                .fontWeight(.light)
-//            .foregroundColor(.secondary)
                 
-            }.padding()
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 20) {
+                ForEach(self.allPublicEvent.review, id: \.self) { review in
+                    HStack{
+                        ReviewItemView(allPublicEvent: self.allPublicEvent)
+                    }
+                    .frame(width: 150, height: 120)
+                
+                    
+                }
+                    
+                }
+                
+            }
             
+//            Text("\(allPublicEvent.review[0]) people")
+//            .font(.system(size: 16))
+//                .fontWeight(.light)
+////            .foregroundColor(.secondary)
+//            .frame(height: 85)
+//                .multilineTextAlignment(.leading)
+                
+            }
+            .padding(.leading)
+            .padding(.trailing)
             
             Spacer()
             
@@ -153,7 +180,7 @@ struct EventDetailsView: View {
 //                                            .background(Color(hex: 0xF7B500, alpha: 1))
 //                                            .cornerRadius(15)
 //                    }
-                    .padding()
+                    
                     
 
 
@@ -166,13 +193,15 @@ struct EventDetailsView: View {
         }
         
         
-        
-        
+            }
+                
+                .navigationBarTitle(Text("Public Events"), displayMode: .inline)
+//        }
     }
 }
 
 struct EventDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        EventDetailsView(explore: exploreData[2])
+        EventDetailsView(allPublicEvent: publicEvents[0])
     }
 }

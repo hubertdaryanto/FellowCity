@@ -31,6 +31,7 @@
 		57D256A924DBBE9400B53E37 /* LevelRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D256A824DBBE9400B53E37 /* LevelRowView.swift */; };
 		57E39A5324E1C69600E348BE /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E39A5224E1C69600E348BE /* UserSettings.swift */; };
 		57E39A5524E1D39C00E348BE /* FriendProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E39A5424E1D39C00E348BE /* FriendProfileView.swift */; };
+		57FA285124E1F20C00EBF3B5 /* ReviewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FA285024E1F20C00EBF3B5 /* ReviewItemView.swift */; };
 		CD585D3124D1636D00B89C8C /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD585D3024D1636D00B89C8C /* RatingView.swift */; };
 		CD5C121F24D254750076402C /* exploresRevised.json in Resources */ = {isa = PBXBuildFile; fileRef = CD5C121E24D254750076402C /* exploresRevised.json */; };
 		CD75737D24CFDE9100EABFC9 /* LoadSwiftUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75735324CFDE9000EABFC9 /* LoadSwiftUIViewController.swift */; };
@@ -99,6 +100,7 @@
 		57D256A824DBBE9400B53E37 /* LevelRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelRowView.swift; sourceTree = "<group>"; };
 		57E39A5224E1C69600E348BE /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		57E39A5424E1D39C00E348BE /* FriendProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileView.swift; sourceTree = "<group>"; };
+		57FA285024E1F20C00EBF3B5 /* ReviewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewItemView.swift; sourceTree = "<group>"; };
 		CD585D3024D1636D00B89C8C /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		CD5C121E24D254750076402C /* exploresRevised.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = exploresRevised.json; sourceTree = "<group>"; };
 		CD75735324CFDE9000EABFC9 /* LoadSwiftUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadSwiftUIViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				572F32F924D11D3000F24A6E /* ListEventDetailsView.swift */,
 				572F32FB24D1238000F24A6E /* EventDetailsView.swift */,
 				572F32FD24D1243F00F24A6E /* EventItemView.swift */,
+				57FA285024E1F20C00EBF3B5 /* ReviewItemView.swift */,
 				57D8DC5824D908BE001C4B8A /* Notification */,
 				CD75736424CFDE9100EABFC9 /* NotificationView.swift */,
 				57D8DC5524D90871001C4B8A /* History */,
@@ -460,6 +463,7 @@
 				CD79826D24D10A8A00EA93F1 /* HistoryRowView.swift in Sources */,
 				57052F9F24D9CC6F001199F5 /* AddFriendsAlertView.swift in Sources */,
 				CD75738724CFDE9100EABFC9 /* ExploreItemView.swift in Sources */,
+				57FA285124E1F20C00EBF3B5 /* ReviewItemView.swift in Sources */,
 				CD79827124D141F900EA93F1 /* HistoryReview.swift in Sources */,
 				57E39A5324E1C69600E348BE /* UserSettings.swift in Sources */,
 				CD79826B24D1088C00EA93F1 /* HistoryUIView.swift in Sources */,

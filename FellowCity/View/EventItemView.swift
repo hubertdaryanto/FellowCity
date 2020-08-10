@@ -11,18 +11,21 @@ import SwiftUI
 
 struct EventItemView: View {
     
-    var explore:ExploreRevised
+//    var explore:ExploreRevised
+    var allPublicEvent:AllEvent
+
+
     
     var body: some View {
 //        ZStack {
                                 NavigationLink(destination:
-                                    EventDetailsView(explore: explore)
+                                    EventDetailsView(allPublicEvent: self.allPublicEvent)
 //                                    ExploreDetailsView()
                                     )
                                 {
         VStack {
             
-            Image(self.explore.imageName)
+            Image(self.allPublicEvent.eventImageName)
                 .resizable()
                 .renderingMode(.original)
                 .aspectRatio(contentMode: .fill)
@@ -35,21 +38,28 @@ struct EventItemView: View {
                 
                 VStack(alignment: .leading, spacing: 5.0) {
                     
-                    Text(self.explore.name).font(.system(size: 16)).bold()
+                    Text(self.allPublicEvent.eventName).font(.system(size: 16)).bold()
                     .foregroundColor(Color("baseColor").opacity(1))
-                    Text(self.explore.province).font(.system(size: 12))
+                    
+                    HStack {
+                    Text("@\(self.allPublicEvent.creatorEvent)").font(.system(size: 12))
                         .fontWeight(.light).foregroundColor(Color.black)
+                    Image(systemName: "checkmark.circle.fill")
+                        .resizable()
+                        .frame(width: 9, height: 9)
+                        .foregroundColor(.green)
+                    }
                     
                     HStack(spacing:0){
                         
-                        ForEach(0..<Int(modf(self.explore.rating).0)) { numstar in
+                        ForEach(0..<Int(modf(self.allPublicEvent.rating).0)) { numstar in
                             Image(systemName: "star.fill")
                                 .resizable()
                                 .frame(width: 10, height: 10)
                                 .foregroundColor(Color("baseColor").opacity(1))
                         }
                         
-                        if (round(modf(self.explore.rating).1 * 2) / 2 ) == 1 {
+                        if (round(modf(self.allPublicEvent.rating).1 * 2) / 2 ) == 1 {
                             Image(systemName: "star.fill")
                                 .resizable()
                                 .frame(width: 10, height: 10)
@@ -62,13 +72,13 @@ struct EventItemView: View {
                         }
                         
                         
-                        Text("(\(self.explore.review.count) Reviews)").font(.system(size: 10))
+                        Text("(\(self.allPublicEvent.review.count) Reviews)").font(.system(size: 10))
                             .fontWeight(.semibold)
-                            .foregroundColor(Color("backgroundGrey").opacity(0.5))
+                            .foregroundColor(Color(.gray).opacity(1))
                         
                     }
                     
-                    Text("Maximum \(self.explore.maximumPeople) of people").font(.caption).foregroundColor(.secondary)
+                    Text("Maximum \(self.allPublicEvent.maximumPeople) of people").font(.caption).foregroundColor(.secondary)
                 }
                 Spacer()
                 
@@ -123,6 +133,6 @@ struct EventItemView: View {
 }
 struct EventItemView_Previews: PreviewProvider {
     static var previews: some View {
-        EventItemView(explore: exploreData[1])
+        EventItemView(allPublicEvent: publicEvents[0])
     }
 }

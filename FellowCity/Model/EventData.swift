@@ -23,6 +23,7 @@ struct EventInfo{
     var isPublic: Bool
 }
 
+
 struct RouteInformation: Identifiable{
     var id: Int
     let place: String
@@ -55,6 +56,9 @@ EventInfoHubertHistory(id: 6, eventName: "Gentleman's Ride", startDate: formatte
 EventInfoHubertHistory(id: 7, eventName: "Cool Ride", startDate: formatter.date(from: "26/06/2020 9:00")!, image: Image("caribou"), isPublic: true, isReviewed: true, rating: 5.0)]
 
 
+
+// MARK: - Ride Level
+
 struct RideLevel: Hashable, Identifiable{
     var id = UUID()
     var level: Int
@@ -69,6 +73,37 @@ RideLevel(level: 3, numOfRide: 30),
 RideLevel(level: 4, numOfRide: 40),
 RideLevel(level: 5, numOfRide: 50),
 RideLevel(level: 6, numOfRide: 100)
+]
+
+
+// MARK: - List Public Event
+
+struct AllEvent: Hashable, Codable, Identifiable {
+    var id = UUID()
+    var creatorEvent: String
+    var eventName: String
+    var eventImageName: String
+    var eventMeetingPoint: [String]
+    var eventDestination: [String]
+    var eventDate: Date
+//    var eventTotalDistance: Int
+//    var eventEstimation: Int
+    var AdditionalRoutes: [[String]]
+//    var latitude:Double
+//    var longitude:Double
+    var description: String
+    //var reviewer:String
+    var review: [String]
+    var maximumPeople: Int
+    var rating: Float
+    var category: String
+    var isPublic: Bool
+    var participant: [String]
+    
+}
+
+var publicEvents:[AllEvent] = [
+    AllEvent(creatorEvent: "arshad-khan", eventName: "Sunmori 16/08", eventImageName: "monas",eventMeetingPoint: ["Setu Babakan","-6.341864","106.823243"],  eventDestination: ["Indonesia National Monument","-6.175456","106.827421"], eventDate: formatter.date(from: "16/08/2020 8:00")!, AdditionalRoutes: [["Moto Village Jakarta","-6.258080","106.808391"]], description: "Hello Vespa lovers, to All of you who have an interest on vespa, come and join our riding event from Setu Babakan to Monas, see you there Vespa Mania!!!", review: ["the event on GBK last month was amazing, looking forward for other event","The member of this community are very nice","Cant wait to ride together again"], maximumPeople: 15, rating: 4.3, category: "Outdoor", isPublic: true, participant: ["austin-wade","sergio-de-paula","lucas-sankey"])
 ]
 
 

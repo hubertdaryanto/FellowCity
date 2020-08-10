@@ -65,7 +65,7 @@ struct ExploreView: View {
 //                    .frame(alignment: .leading)
                 } else  {
                     List {
-                        EventItemView(explore: exploreData[1])
+                        EventItemView(allPublicEvent: publicEvents[0])
                     }
 
                     
