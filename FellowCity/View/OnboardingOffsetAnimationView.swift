@@ -27,7 +27,7 @@ struct OnboardingOffsetAnimationView: View {
                     ZStack {
                         
                         RoundedRectangle(cornerRadius: 30, style: .continuous)
-                            .fill(Color(hex: 0xF7B500, alpha: 1))
+                            .fill(Color("baseColor").opacity(1))
 //                            .padding()
 //                            .frame(width: reader.frame(in: .global).width * 0.95, height: reader.frame(in: .global).height * 0.8 )
                             
@@ -64,7 +64,7 @@ struct OnboardingOffsetAnimationView: View {
                                         ZStack {
                                             
                                             RoundedRectangle(cornerRadius: 30, style: .continuous)
-                                                .fill(Color(hex: 0xF7B500, alpha: 1))
+                                                .fill(Color("baseColor").opacity(1))
                     //                            .padding()
                     //                            .frame(width: reader.frame(in: .global).width * 0.95, height: reader.frame(in: .global).height * 0.8 )
                                                 
@@ -98,7 +98,7 @@ struct OnboardingOffsetAnimationView: View {
                                         ZStack {
                                             
                                             RoundedRectangle(cornerRadius: 30, style: .continuous)
-                                                .fill(Color(hex: 0xF7B500, alpha: 1))
+                                                .fill(Color("baseColor").opacity(1))
                     //                            .padding()
                     //                            .frame(width: reader.frame(in: .global).width * 0.95, height: reader.frame(in: .global).height * 0.8 )
                                                 
@@ -133,7 +133,7 @@ struct OnboardingOffsetAnimationView: View {
                                                             ZStack {
 
                                                                 RoundedRectangle(cornerRadius: 30, style: .continuous)
-                                                                    .fill(Color(hex: 0xF7B500, alpha: 1))
+                                                                    .fill(Color("baseColor").opacity(1))
                                         //                            .padding()
                                         //                            .frame(width: reader.frame(in: .global).width * 0.95, height: reader.frame(in: .global).height * 0.8 )
 

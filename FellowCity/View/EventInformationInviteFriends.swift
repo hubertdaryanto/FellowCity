@@ -38,7 +38,7 @@ struct EventInformationInviteFriends: View {
                 HStack{
                     
                         Text("Invite Your Friends").bold().font(.title)
-                        .fontWeight(.bold).foregroundColor(Color(hex: 0xF7B500, alpha: 1)).padding(20)
+                        .fontWeight(.bold).foregroundColor(Color("baseColor").opacity(1)).padding(20)
  
                     
                     
@@ -68,7 +68,7 @@ struct EventInformationInviteFriends: View {
                             Text("Public Event")
                             Text("Maximum 15 people to \(eventInfo.eventName)")
                                 .font(.caption)
-                                .foregroundColor(Color(hex: 0x3C3C43, alpha: 0.6))
+                                .foregroundColor(Color("foregroundGrey").opacity(0.6))
                             
                     }
 //                    .frame(width: 200)
@@ -77,8 +77,9 @@ struct EventInformationInviteFriends: View {
                     
                     Toggle(isOn: $isPublic)
                     {
+                        Text("Status Ride")
                         Spacer()
-                    }
+                    }.labelsHidden()
                     
                 }.padding()
                 
@@ -112,7 +113,7 @@ struct EventInformationInviteFriends: View {
             //                    self.mode.wrappedValue.dismiss()
             //                    AppView()
                             }) {
-                                Text("Finish").foregroundColor(Color(red: 0.96484375, green: 0.7421875, blue: 0)).padding(20)
+                                Text("Finish").foregroundColor(Color("baseColor").opacity(1)).padding(20)
                             }
                             }
         )
@@ -120,8 +121,8 @@ struct EventInformationInviteFriends: View {
 }
 
 
-//struct EventInformationInviteFriends_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EventInformationInviteFriends()
-//    }
-//}
+struct EventInformationInviteFriends_Previews: PreviewProvider {
+    static var previews: some View {
+        EventInformationInviteFriends(popToHome: .constant(false))
+    }
+}

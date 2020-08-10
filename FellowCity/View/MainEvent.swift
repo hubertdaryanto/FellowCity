@@ -43,11 +43,12 @@ struct MainEvent: View {
                         Section(header: HStack {
                             Text("MY EVENTS - \(self.attendedEventList.count)")
                                 .font(.footnote)
-                                .foregroundColor(Color(hex: 0x3c3c43, alpha: 0.6))
+                                .foregroundColor(Color("foregroundGrey").opacity(0.6))
                                 .padding()
                             Spacer()
                         }
-                        .background(Color(hex: 0xF2F2F7, alpha: 1))
+//                        .background(Color(hex: 0xF2F2F7, alpha: 1))
+                            .background(Color("backgroundGrey").opacity(1))
                         .listRowInsets(EdgeInsets(top: 0,leading: 0,bottom: 0,trailing: 0))
                         ){
                             ForEach(self.attendedEventList) { index in
@@ -84,7 +85,7 @@ struct MainEvent: View {
                                         Spacer()
                                         
                                         Image(systemName: "info.circle").resizable()
-                                            .foregroundColor(Color(red: 0.96484375, green: 0.7421875, blue: 0))
+                                            .foregroundColor(Color("baseColor").opacity(1))
                                             .frame(width: 25, height: 25, alignment: .center)
                                     }
                                     
@@ -111,7 +112,7 @@ struct MainEvent: View {
                                         isActive: self.$popToHome
                                     ){
                                         
-                                        Image(systemName: "plus.circle.fill").resizable().foregroundColor(Color(hex: 0xF7B500, alpha: 1)).frame(width: 58, height: 58, alignment: .center)
+                                        Image(systemName: "plus.circle.fill").resizable().foregroundColor(Color("baseColor").opacity(1)).frame(width: 58, height: 58, alignment: .center)
                                             .shadow(radius: 1, x: 1, y: 1)
                                         
                                     }.isDetailLink(false)

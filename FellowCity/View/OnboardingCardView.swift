@@ -33,7 +33,7 @@ struct OnboardingCardView: View {
                             ZStack {
                                 
                                 RoundedRectangle(cornerRadius: 30, style: .continuous)
-                                    .fill(Color(hex: 0xF7B500, alpha: 1))
+                                    .fill(Color("baseColor").opacity(1))
                                 
                             VStack(spacing: 0) {
                                 Spacer()

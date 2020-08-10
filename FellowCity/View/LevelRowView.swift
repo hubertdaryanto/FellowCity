@@ -37,15 +37,15 @@ struct LevelRowView: View {
             ScrollView(.horizontal, showsIndicators: false, content: {
                 ZStack{
                     Rectangle().frame(width: 550, height: 1)
-                        .offset(y: -13).foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                        .offset(y: -13).foregroundColor(Color("baseColor").opacity(1))
                     HStack {
                         // multiple status view here
                         ForEach (self.rideLevel) { index in
                             
                             if index.level == self.currentLevel {
-                                LevelItemView(rideLevel: index).foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                                LevelItemView(rideLevel: index).foregroundColor(Color("baseColor").opacity(1))
                             } else {
-                                LevelItemView(rideLevel: index).foregroundColor(Color(hex: 0x3c3c43, alpha: 1))
+                                LevelItemView(rideLevel: index).foregroundColor(Color("foregroundGrey").opacity(1))
                             }
                             
                             

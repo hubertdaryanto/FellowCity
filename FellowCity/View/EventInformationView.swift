@@ -71,7 +71,7 @@ struct EventInformationView: View {
             HStack{
                 VStack(alignment: .center){
                     Text("Total Distance").bold().font(.body)
-                        .fontWeight(.bold).foregroundColor(Color(hex: 0xF7B500, alpha: 1)).padding(.bottom, 1)
+                        .fontWeight(.bold).foregroundColor(Color("baseColor").opacity(1)).padding(.bottom, 1)
                     //                Text("\(saveRouteDetail.totaldistance) Km")
                     Text("\(String(format: "%.2f", saveRouteDetail.totaldistance)) Km")
                 }
@@ -80,7 +80,7 @@ struct EventInformationView: View {
                 VStack(alignment: .center)
                 {
                     Text("Estimation").bold().font(.body)
-                        .fontWeight(.bold).foregroundColor(Color(hex: 0xF7B500, alpha: 1)).padding(.bottom, 1)
+                        .fontWeight(.bold).foregroundColor(Color("baseColor").opacity(1)).padding(.bottom, 1)
                     
                     
                     //                Text("\(saveRouteDetail.totaltime) Mins")
@@ -93,7 +93,7 @@ struct EventInformationView: View {
                 VStack(alignment: .leading){
                     //                        Text(eventInfo.eventName)
                     Text(eventName).bold().font(.body)
-                        .fontWeight(.bold).foregroundColor(Color(hex: 0xF7B500, alpha: 1)).padding(.bottom, 1)
+                        .fontWeight(.bold).foregroundColor(Color("baseColor").opacity(1)).padding(.bottom, 1)
                     Text("\(eventMeetingPoint) -> \(eventDestinastion)").bold().font(.body)
                     .fontWeight(.bold)
 //                        .foregroundColor(Color(hex: 0xF7B500, alpha: 1)).padding(.bottom, 1)
@@ -109,7 +109,7 @@ struct EventInformationView: View {
             HStack{
                 Spacer().frame(width: 20, height: 0)
                 Text("Routes").bold().font(.body)
-                    .fontWeight(.bold).foregroundColor(Color(hex: 0xF7B500, alpha: 1)).padding(.bottom, 1)
+                    .fontWeight(.bold).foregroundColor(Color("baseColor").opacity(1)).padding(.bottom, 1)
                 Spacer()
             }
             
@@ -128,7 +128,7 @@ struct EventInformationView: View {
             HStack{
                 Spacer().frame(width: 20, height: 0)
                 Text("Additional Routes").bold().font(.body)
-                    .fontWeight(.bold).foregroundColor(Color(hex: 0xF7B500, alpha: 1)).padding(.bottom, 1)
+                    .fontWeight(.bold).foregroundColor(Color("baseColor").opacity(1)).padding(.bottom, 1)
                 Spacer()
             }
             
@@ -171,9 +171,9 @@ struct EventInformationView: View {
                     Text("Next")
                     .font(.body)
                     .fontWeight(.bold)
-                    .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                    .foregroundColor(Color("baseColor").opacity(1))
                     Image(systemName: "chevron.right")
-                    .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                    .foregroundColor(Color("baseColor").opacity(1))
                     
                 }
                 // End of Next Page

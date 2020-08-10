@@ -12,7 +12,7 @@ import SwiftUI
 struct SplashScreenView: View {
     
     @EnvironmentObject var viewRouter: ViewRouter
-    
+    @State var isScaled: Bool = false
     // 1.
     @State var isActive:Bool = false
     
@@ -38,7 +38,7 @@ struct SplashScreenView: View {
                 ZStack{
                     //Color(hex: 0xF7B500, alpha: 1).edgesIgnoringSafeArea(.all)
                     LinearGradient(gradient: Gradient(
-                        colors: [Color(hex: 0xF7B500, alpha: 0.6), Color(hex: 0xF7B500, alpha: 1)]
+                        colors: [Color("baseColor").opacity(0.6), Color("baseColor").opacity(1)]
                         )
                         
                         //                    , startPoint: .leading, endPoint: .trailing)
@@ -51,14 +51,22 @@ struct SplashScreenView: View {
                         .resizable()
                         .renderingMode(.original)
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 120, height: 60, alignment: .center)
+//                        .frame(width: 120, height: 60, alignment: .center)
+                        .scaleEffect(isScaled ? 0.1 : 0, anchor: .center)
+                        .animation(Animation.easeOut(duration: 0.6))
+                        .scaleEffect(isScaled ? 1 : 1.2, anchor: .center)
+                        .animation(Animation.easeOut(duration: 0.2).delay(0.6))
+                        
+                        .onAppear() {
+                            self.isScaled.toggle()
+                        }
                 }
             }
         }
             // 5.
             .onAppear {
                 // 6.
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                     // 7.
                     withAnimation {
                         self.isActive = true

@@ -45,7 +45,7 @@ struct CreateEventOptionalRouteView: View {
             Text("Select Your Additional Routes")
                 .font(.title)
                 .fontWeight(.bold)
-                .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                .foregroundColor(Color("baseColor").opacity(1))
                 .padding()
             
             List {
@@ -111,9 +111,9 @@ struct CreateEventOptionalRouteView: View {
                     Text("Next")
                     .font(.body)
                     .fontWeight(.bold)
-                    .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                    .foregroundColor(Color("baseColor").opacity(1))
                     Image(systemName: "chevron.right")
-                    .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                    .foregroundColor(Color("baseColor").opacity(1))
                     
                 }
                 // End of Next Page
@@ -169,7 +169,7 @@ struct MultipleSelectionRow: View {
                 if self.isSelected {
                     
                     Spacer()
-                    Image(systemName: "checkmark").foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                    Image(systemName: "checkmark").foregroundColor(Color("baseColor").opacity(1))
                     //                    Text(String(order))
                 }
             }

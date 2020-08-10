@@ -18,11 +18,11 @@ struct FriendUIView: View {
                     Section(header: HStack {
                         Text("MY FRIENDS - \(myFriends.count)")
                             .font(.footnote)
-                            .foregroundColor(Color(hex: 0x3c3c43, alpha: 0.6))
+                            .foregroundColor(Color("foregroundGrey").opacity(1))
                             .padding()
                         Spacer()
                     }
-                    .background(Color(hex: 0xf2f2f7, alpha: 1))
+                    .background(Color("backgroundGrey").opacity(1))
                     .listRowInsets(EdgeInsets(
                         top: 0,
                         leading: 0,
@@ -34,12 +34,13 @@ struct FriendUIView: View {
                             HStack{
                                 Text("\(index.name ?? "")")
                                 Spacer()
-                                Image(systemName: "info.circle").foregroundColor(Color(red: 0.96484375, green: 0.7421875, blue: 0))
+                                Image(systemName: "info.circle").foregroundColor(Color("baseColor").opacity(1))
                             }
                         }.onDelete(perform: removeFriends)
                     }
                 }
-                
+                .onAppear { UITableView.appearance().separatorStyle = .none }
+                .onDisappear { UITableView.appearance().separatorStyle = .singleLine }
                 VStack(){
                     Spacer()
                     HStack{
@@ -50,7 +51,7 @@ struct FriendUIView: View {
                                 self.isPresented = true
                             })
                             {
-                                Image(systemName: "plus.circle.fill").resizable().foregroundColor(Color(hex: 0xF7B500, alpha: 1)).frame(width: 58, height: 58, alignment: .center)
+                                Image(systemName: "plus.circle.fill").resizable().foregroundColor(Color("baseColor").opacity(1)).frame(width: 58, height: 58, alignment: .center)
                                     .shadow(radius: 1, x: 1, y: 1)
                             }
                         }}.padding(30)

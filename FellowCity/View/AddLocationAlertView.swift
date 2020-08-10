@@ -107,7 +107,7 @@ struct AddLocationAlertView: View {
         }
         .padding()
         .frame(width: screenSize.width * 0.8, height: screenSize.height * 0.45)
-        .background(Color(hex: 0xF2f2f2, alpha: 1))
+        .background(Color("backgroundGrey").opacity(1))
         .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         .offset(y: isShown ? 0 : screenSize.height)
         .animation(.spring())

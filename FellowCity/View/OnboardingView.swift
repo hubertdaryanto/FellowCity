@@ -87,7 +87,7 @@ struct ButtonContent: View {
     
 var body: some View {
     Text("\(self.texta)")
-            .foregroundColor(.orange)
+            .foregroundColor(Color("baseColor").opacity(1))
             .frame(width: 50, height: 50)
             .padding()
     }

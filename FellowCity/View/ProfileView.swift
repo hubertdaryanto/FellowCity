@@ -10,20 +10,16 @@ import SwiftUI
 
 struct ProfileView: View {
     
-    //    var user:Profile
-    // var rideLevels: [LevelGamification]
-    //    @State var rideLevels: [RideLevel]
+    //
     var rideLevel: [RideLevel]
     
     @State var name = "Valentino Rossi"
     @State var motorcycle: String = "Yamaha YZR M1"
     @State var userID: String = "VR46"
     @State var contact: String = "+628178912345"
-    //@State var userImage: Image
     
     @State var isAvailable: Bool = false
 
-    //
     
     var body: some View {
         NavigationView {
@@ -37,26 +33,10 @@ struct ProfileView: View {
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 82, height: 82)
                             .clipShape(Circle())
-                        //                    .background(Color.white)
-                        //                    .overlay(RoundedRectangle(cornerRadius: 40)
-                        //                        .stroke(Color.gray, lineWidth: 2))
                         Spacer()
                     }
-                    //                                Spacer()
                     VStack{
-                        //                Circle()
-                        //                    .fill(Color.yellow)
-                        //                    .frame(width: 50, height: 50)
-                        //                Text("10 Rides")
-                        
-                        //                ScrollView {
-                        //                    LevelRowView(level: listLevel)
-                        //                }
-                        
                         LevelRowView(rideLevel: rideLevel)
-                        
-                        
-                        
                     }
                     
                     //            Spacer()
@@ -66,7 +46,7 @@ struct ProfileView: View {
                         Text("Name")
                             .font(.title)
                             //                    .fontWeight(.bold)
-                            .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                            .foregroundColor(Color("baseColor").opacity(1))
                         
                         //                TextField("Your Event Name...", text: $name, onEditingChanged: { (changed) in
                         //                    print("Username onEditingChanged - \(changed)")
@@ -81,30 +61,11 @@ struct ProfileView: View {
                         
                     }
                     
-                    
-                    
-                    //                    Spacer()
-                    
-                    //            // Motorcycle
-                    //                    VStack(alignment: .leading){
-                    //                    Text("Motorcycle")
-                    //                        .font(.title)
-                    //                        .fontWeight(.bold)
-                    //                        .foregroundColor(Color.yellow)
-                    //                    TextField("Your Meeting Point...", text: $motorcycle, onEditingChanged: { (changed) in
-                    //                        print("Username onEditingChanged - \(changed)")
-                    //                    }) {
-                    //                        print("Username onCommit")
-                    //                    }
-                    //                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    //                    }
-                    ////                    Spacer()
-                    
                     VStack(alignment: .leading){
                         Text("ID")
                             .font(.title)
                             //                    .fontWeight(.bold)
-                            .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                            .foregroundColor(Color("baseColor").opacity(1))
                         //                TextField("Your User ID...", text: $userID, onEditingChanged: { (changed) in
                         //                    print("Username onEditingChanged - \(changed)")
                         //                }) {
@@ -122,7 +83,7 @@ struct ProfileView: View {
                         Text("Contact")
                             .font(.title)
                             //                    .fontWeight(.bold)
-                            .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                            .foregroundColor(Color("baseColor").opacity(1))
                         //                TextField("Your Contact Number...", text: $contact, onEditingChanged: { (changed) in
                         //                    print("Username onEditingChanged - \(changed)")
                         //                }) {
@@ -134,14 +95,11 @@ struct ProfileView: View {
                         Divider()
                     }
                     
-                    //Text("Date is \(eventDate, formatter: dateFormatter)")
-                    //                    Spacer()
-                    
                     VStack(alignment: .leading){
                         Text("")
                             .font(.title)
                             .fontWeight(.bold)
-                            .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                            .foregroundColor(Color("baseColor").opacity(1))
                         HStack {
                             VStack(alignment: .leading) {
                                 Text("Available to Ride").font(.body)
@@ -153,29 +111,21 @@ struct ProfileView: View {
                                     Text("Status Ride")
                                     //                        self.isAvailable.toggle()
                                 }
+                                    //Change Toogle Color using HueRotation
+                                    //.hueRotation(Angle.degrees(270))
+                                    // Change Toogle color post WWDC20, ios 14
                                     //                    .toggleStyle(SwitchToggleStyle(tint: Color.blue))
-                                    
                                     .labelsHidden()
                             }
                         }
-                        
-                        
-                        //                    .textFieldStyle(RoundedBorderTextFieldStyle())
                         Divider()
                         
                     }.frame(height: 130)
                     
-                    //Text("Date is \(eventDate, formatter: dateFormatter)")
-                    //            Spacer()
-                    
-                    
-                    
-                    
-                    
-                    //            Spacer()
                 }
             }
             .navigationBarTitle(Text("Create Event"), displayMode: .inline)
+            
         }
         
         
@@ -194,7 +144,6 @@ struct ClearButton: ViewModifier {
     
     public func body(content: Content) -> some View {
         HStack {
-            //        ZStack(alignment: .trailing){
             content
             if !text.isEmpty {
                 Button(action: {
@@ -203,32 +152,13 @@ struct ClearButton: ViewModifier {
                     Image(systemName: "multiply.circle.fill")
                         .foregroundColor(.secondary)
                 }
-                //            .padding()
-                
-                
             }
-            
         }
-        //            .padding(.trailing, 8)
-        
     }
 }
 
 
-extension UIColor {
-    convenience init(colorCode: String, alpha: Float = 1.0){
-        let scanner = Scanner(string:colorCode)
-        var color:UInt32 = 0;
-        scanner.scanHexInt32(&color)
-        
-        let mask = 0x000000FF
-        let r = CGFloat(Float(Int(color >> 16) & mask)/255.0)
-        let g = CGFloat(Float(Int(color >> 8) & mask)/255.0)
-        let b = CGFloat(Float(Int(color) & mask)/255.0)
-        
-        self.init(red: r, green: g, blue: b, alpha: CGFloat(alpha))
-    }
-}
+
 
 //struct ClearButton: ViewModifier{
 //    @Binding var text: String

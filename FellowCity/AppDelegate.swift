@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to select a configuration to create the new scene with.
         
         //Change Tint Color of Toggle on Profile View
-        UISwitch.appearance().onTintColor = UIColorFromRGB(colorCode: "F7B500", alpha: 1.0)
+        UISwitch.appearance().onTintColor = UIColor(named: "baseColor")
 
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
@@ -38,23 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
         
     }
-    
-    
-    // MARK: - Change all tint color using hex color of UIKit UIColor
-    
-  func UIColorFromRGB(colorCode: String, alpha: Float = 1.0) -> UIColor{
-    var scanner = Scanner(string:colorCode)
-      var color:UInt32 = 0;
-    scanner.scanHexInt32(&color)
-      
-      let mask = 0x000000FF
-      let r = CGFloat(Float(Int(color >> 16) & mask)/255.0)
-      let g = CGFloat(Float(Int(color >> 8) & mask)/255.0)
-      let b = CGFloat(Float(Int(color) & mask)/255.0)
-      
-      return UIColor(red: r, green: g, blue: b, alpha: CGFloat(alpha))
-  }
-    
 
     // MARK: - Core Data stack
 

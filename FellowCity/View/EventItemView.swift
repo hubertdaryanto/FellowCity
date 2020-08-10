@@ -36,7 +36,7 @@ struct EventItemView: View {
                 VStack(alignment: .leading, spacing: 5.0) {
                     
                     Text(self.explore.name).font(.system(size: 16)).bold()
-                    .foregroundColor(Color(hex: 0xf7b500, alpha: 1))
+                    .foregroundColor(Color("baseColor").opacity(1))
                     Text(self.explore.province).font(.system(size: 12))
                         .fontWeight(.light).foregroundColor(Color.black)
                     
@@ -46,25 +46,25 @@ struct EventItemView: View {
                             Image(systemName: "star.fill")
                                 .resizable()
                                 .frame(width: 10, height: 10)
-                                .foregroundColor(Color(hex: 0xf7b500, alpha: 1))
+                                .foregroundColor(Color("baseColor").opacity(1))
                         }
                         
                         if (round(modf(self.explore.rating).1 * 2) / 2 ) == 1 {
                             Image(systemName: "star.fill")
                                 .resizable()
                                 .frame(width: 10, height: 10)
-                                .foregroundColor(Color(hex: 0xf7b500, alpha: 1))
+                                .foregroundColor(Color("baseColor").opacity(1))
                         } else  {
                             Image(systemName: "star.lefthalf.fill")
                                 .resizable()
                                 .frame(width: 10, height: 10)
-                                .foregroundColor(Color(hex: 0xf7b500, alpha: 1))
+                                .foregroundColor(Color("baseColor").opacity(1))
                         }
                         
                         
                         Text("(\(self.explore.review.count) Reviews)").font(.system(size: 10))
                             .fontWeight(.semibold)
-                        .foregroundColor(Color(hex: 0xd8d8d8, alpha: 1))
+                            .foregroundColor(Color("backgroundGrey").opacity(0.5))
                         
                     }
                     
@@ -79,7 +79,7 @@ struct EventItemView: View {
                     Text("Ride").font(.system(size: 12)).fontWeight(.bold)
                         .foregroundColor(Color.black)
                         .frame(minWidth: 0, maxWidth: 64, maxHeight: 22)
-                        .background(Color(hex: 0xf7b500, alpha: 1)).cornerRadius(30)
+                        .background(Color("baseColor").opacity(1)).cornerRadius(30)
 //                }
 //                .buttonStyle(PlainButtonStyle())
                 .shadow(radius: 2, x: 1, y: 2)

@@ -42,7 +42,7 @@ struct ExploreView: View {
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
-                .background(Color(hex: 0xf7b500, alpha: 1))
+                .background(Color("baseColor").opacity(1))
                 .padding()
 //                .frame(height: 28)
                         
@@ -55,7 +55,7 @@ struct ExploreView: View {
                         ExploreRowView(categoryName: "\(key) Places".uppercased(), explores:
                             self.categories[key]!)
                     }
-                    .frame(alignment: .leading)
+//                    .frame(alignment: .leading)
                 } else  {
                     List {
                         EventItemView(explore: exploreData[1])

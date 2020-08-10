@@ -35,7 +35,7 @@ struct ListEventDetailsView: View {
                 HStack{
                     VStack(alignment: .center){
                         Text("Total Distance").bold().font(.body)
-                            .fontWeight(.bold).foregroundColor(Color(hex: 0xF7B500, alpha: 1)).padding(.bottom, 1)
+                            .fontWeight(.bold).foregroundColor(Color("baseColor").opacity(1)).padding(.bottom, 1)
                         //                Text("\(saveRouteDetail.totaldistance) Km")
 //                        Text("\(String(format: "%.2f", saveRouteDetail.totaldistance)) Km")
                         Text("60 Km")
@@ -45,7 +45,7 @@ struct ListEventDetailsView: View {
                     VStack(alignment: .center)
                     {
                         Text("Estimation").bold().font(.body)
-                        .fontWeight(.bold).foregroundColor(Color(hex: 0xF7B500, alpha: 1)).padding(.bottom, 1)
+                        .fontWeight(.bold).foregroundColor(Color("baseColor").opacity(1)).padding(.bottom, 1)
                         
                         
                         //                Text("\(saveRouteDetail.totaltime) Mins")
@@ -58,7 +58,7 @@ struct ListEventDetailsView: View {
               HStack{
                   Spacer().frame(width: 20, height: 0)
                   Text("Participants").bold().font(.body)
-                  .fontWeight(.bold).foregroundColor(Color(hex: 0xF7B500, alpha: 1)).padding(.bottom, 1)
+                  .fontWeight(.bold).foregroundColor(Color("baseColor").opacity(1)).padding(.bottom, 1)
                   Spacer()
               }
                 
@@ -86,7 +86,7 @@ struct ListEventDetailsView: View {
                     VStack(alignment: .leading){
 //                        Text(eventInfo.eventName)
                         Text(eventName).bold().font(.body)
-                        .fontWeight(.bold).foregroundColor(Color(hex: 0xF7B500, alpha: 1)).padding(.bottom, 1)
+                        .fontWeight(.bold).foregroundColor(Color("baseColor").opacity(1)).padding(.bottom, 1)
 //                        Text(formatter.string(from: eventInfo.startDate))
                         Text(formatter.string(from: eventDate)).font(.body)
                         .padding(.bottom, 1)
@@ -116,7 +116,7 @@ struct ListEventDetailsView: View {
                 HStack{
                     Spacer().frame(width: 20, height: 0)
                     Text("Routes").bold().font(.body)
-                    .fontWeight(.bold).foregroundColor(Color(hex: 0xF7B500, alpha: 1)).padding(.bottom, 1)
+                    .fontWeight(.bold).foregroundColor(Color("baseColor").opacity(1)).padding(.bottom, 1)
                     Spacer()
                 }
                 
@@ -130,7 +130,7 @@ struct ListEventDetailsView: View {
                 HStack{
                     Spacer().frame(width: 20, height: 0)
                     Text("Selected Routes").bold().font(.body)
-                    .fontWeight(.bold).foregroundColor(Color(hex: 0xF7B500, alpha: 1)).padding(.bottom, 1)
+                    .fontWeight(.bold).foregroundColor(Color("baseColor").opacity(1)).padding(.bottom, 1)
                     Spacer()
                 }
                 

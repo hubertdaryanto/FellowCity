@@ -19,6 +19,7 @@ struct ExploreRowView: View {
             ScrollView {
                 ForEach (self.explores, id: \.name) { explore in
                     ExploreItemView(explore: explore)
+//                        .padding(.bottom)
                 }
             }
         }
