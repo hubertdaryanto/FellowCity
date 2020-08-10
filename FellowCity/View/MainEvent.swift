@@ -22,6 +22,9 @@ struct MainEvent: View {
     
     // MARK: - Variable for Dummy Data
     
+    //User Setting
+    @ObservedObject var userSettings = UserSettings()
+    
     var attendedEventList: [AttendEventList] = [AttendEventList(id: 1, name: "Pertamina Jatiasih -> Lot 9 Bintaro", date: "04/08/2020", time: "7:00")]
     
     @State var eventDate = Date()
@@ -65,10 +68,6 @@ struct MainEvent: View {
                                     ){
                                         EmptyView()
                                     }.hidden()
-                                    
-                                    
-                                    
-                         
 
                                     HStack{
                                         VStack(alignment: .leading){
@@ -96,7 +95,7 @@ struct MainEvent: View {
                                 
                             }}}
                         .onAppear { UITableView.appearance().separatorStyle = .none }
-                        .onDisappear { UITableView.appearance().separatorStyle = .singleLine }
+//                        .onDisappear { UITableView.appearance().separatorStyle = .singleLine }
                 }
                 // End of List Event
                 Group {
@@ -131,7 +130,7 @@ struct MainEvent: View {
                     Button(action: {
                         self.showProfileView.toggle()
                     }) {
-                        Image("rossi")
+                        Image("\(userSettings.imageName)")
                             .resizable()
                             .renderingMode(.original)
                             .aspectRatio(contentMode: .fill)

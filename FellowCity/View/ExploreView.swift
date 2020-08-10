@@ -20,6 +20,8 @@ struct ExploreView: View {
         )
     }
     
+    // User Setting
+    @ObservedObject var userSettings = UserSettings()
     
     @State var showProfileView = false
     @State private var selectedRide = 0
@@ -30,7 +32,7 @@ struct ExploreView: View {
         NavigationView {
             VStack(alignment: .leading) {
                 
-                ZStack {
+                VStack {
                 
                  
                         
@@ -51,9 +53,14 @@ struct ExploreView: View {
                 
                 if selectedRide == 0 {
 //                    Text("adad")
-                    List(categories.keys.sorted(), id: \String.self) { key in
-                        ExploreRowView(categoryName: "\(key) Places".uppercased(), explores:
-                            self.categories[key]!)
+//                    List(categories.keys.sorted(), id: \String.self) { key in
+//                        ExploreRowView(categoryName: "\(key) Places".uppercased(), explores:
+//                            self.categories[key]!)
+//
+//                    }
+                        List{
+                            ExploreRowView(categoryName: "Indoor", explore: exploreData)
+                                
                     }
 //                    .frame(alignment: .leading)
                 } else  {
@@ -76,7 +83,7 @@ struct ExploreView: View {
                 Button(action: {
                     self.showProfileView.toggle()
                 }) {
-                    Image("rossi")
+                    Image("\(userSettings.imageName)")
                     .resizable()
                     .renderingMode(.original)
                     .aspectRatio(contentMode: .fill)

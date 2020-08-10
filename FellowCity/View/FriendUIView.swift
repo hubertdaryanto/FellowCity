@@ -7,6 +7,9 @@ struct FriendUIView: View {
     @State var isPresented: Bool = false
     @State var userID: String
     
+    //User Setting
+    @ObservedObject var userSettings = UserSettings()
+    
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(entity: FriendLists.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \FriendLists.name, ascending: true)]) var myFriends: FetchedResults<FriendLists>
     
@@ -31,16 +34,32 @@ struct FriendUIView: View {
                         )
                     {
                         ForEach(myFriends, id: \.self) { (index: FriendLists) in
+                            //End of embed Nav Link
+                            ZStack{
+                            
+                            
+                            
+                            NavigationLink(destination:
+                                // Go to FriendProfileView
+                                FriendProfileView(name: index.name ?? "", allRideUser: allUsers)
+                                //
+                                
+                            ){
+                                EmptyView()
+                            }.hidden()
+                                
                             HStack{
                                 Text("\(index.name ?? "")")
                                 Spacer()
                                 Image(systemName: "info.circle").foregroundColor(Color("baseColor").opacity(1))
                             }
+                            }
+                            //End of embed Nav Link
                         }.onDelete(perform: removeFriends)
                     }
                 }
                 .onAppear { UITableView.appearance().separatorStyle = .none }
-                .onDisappear { UITableView.appearance().separatorStyle = .singleLine }
+                //.onDisappear { UITableView.appearance().separatorStyle = .singleLine }
                 VStack(){
                     Spacer()
                     HStack{
@@ -77,7 +96,7 @@ struct FriendUIView: View {
                             Button(action: {
                                 self.showProfileView.toggle()
                             }) {
-                                Image("rossi")
+                                Image("\(userSettings.imageName)")
                                     .resizable()
                                     .renderingMode(.original)
                                     .aspectRatio(contentMode: .fill)
@@ -94,7 +113,7 @@ struct FriendUIView: View {
                 }
                 VStack{
                     AddFriendsAlertView(isShown: $isPresented, onAdd: { text in
-                    }, userID: $userID, allRideUser: allRideUsers)
+                    }, userID: $userID, allRideUser: allUsers)
                 }
             }
         }

@@ -56,33 +56,21 @@ EventInfoHubertHistory(id: 7, eventName: "Cool Ride", startDate: formatter.date(
 
 
 struct RideLevel: Hashable, Identifiable{
-    var id: Int
+    var id = UUID()
     var level: Int
     var numOfRide: Int
 }
 
 var rideLevels: [RideLevel] = [
-RideLevel(id: 1, level: 1, numOfRide: 10),
-RideLevel(id: 2, level: 2, numOfRide: 20),
-RideLevel(id: 3, level: 3, numOfRide: 30),
-RideLevel(id: 4, level: 4, numOfRide: 40),
-RideLevel(id: 5, level: 5, numOfRide: 50),
-RideLevel(id: 6, level: 6, numOfRide: 100)
+RideLevel(level: 0, numOfRide: 1),
+RideLevel(level: 1, numOfRide: 10),
+RideLevel(level: 2, numOfRide: 20),
+RideLevel(level: 3, numOfRide: 30),
+RideLevel(level: 4, numOfRide: 40),
+RideLevel(level: 5, numOfRide: 50),
+RideLevel(level: 6, numOfRide: 100)
 ]
 
 
 
-struct AllRideUser: Hashable, Identifiable{
-    var id: Int
-    var name: String
-    var userID: String
-}
 
-var allRideUsers: [AllRideUser] = [
-AllRideUser(id: 1, name: "Rossi", userID: "VR46"),
-AllRideUser(id: 2, name: "Marquez", userID: "M93"),
-AllRideUser(id: 3, name: "Doni Tata", userID: "DT90"),
-AllRideUser(id: 4, name: "Lorenzo", userID: "L99"),
-AllRideUser(id: 5, name: "Vinales", userID: "V20"),
-AllRideUser(id: 6, name: "Biaggi", userID: "B30")
-]

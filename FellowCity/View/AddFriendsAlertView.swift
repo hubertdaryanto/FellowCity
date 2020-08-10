@@ -23,8 +23,8 @@ struct AddFriendsAlertView: View {
     @State var searchTerm: String = ""
     @Binding var userID: String
     // List All User
-    @State var allRideUser:[AllRideUser]
-    let nameArrayOfAllRideUsers = allRideUsers.map { $0.name }
+    @State var allRideUser:[User]
+    let nameArrayOfAllRideUsers = allUsers.map { $0.name }
     
     // MARK: - Variable for Core Data
     @Environment(\.managedObjectContext) var managedObjectContext
@@ -47,21 +47,28 @@ struct AddFriendsAlertView: View {
             
             List {
                 
-                ForEach(self.myFriends.filter {
-                    self.searchTerm.isEmpty ? true :
+                ForEach(self.nameArrayOfAllRideUsers.filter {
+//                    ForEach(self.myFriends.filter {
+                    self.searchTerm.isEmpty ? true : $0.localizedStandardContains(self.searchTerm)
                         
 //                        Using Dummy Data | self.nameArrayOfAllRideUsers.filter
 //                        $0.localizedCaseInsensitiveContains(self.searchTerm)
                         
-                        //Using CoreData
-                        $0.name!.contains(self.searchTerm)
+//                        //Using CoreData
+//                        $0.name!.contains(self.searchTerm)
 
                     }, id: \.self)
                 { index in
                     Button(action: {
-                        self.userID = index.name!
+                        //Using Dummy Data
+                        self.userID = index
+                        // Using Core Data
+                        //self.userID = index.name!
                     }) {
-                        Text("\(index.name!)")
+                        //Using Dummy Data
+                        Text("\(index)")
+                        // Using Core Data
+                        // Text("\(index.name!)")
                     }
                 }
             }.frame(height: 150)
@@ -113,7 +120,7 @@ struct AddFriendsAlertView: View {
 
 struct AddFriendsAlertView_Previews: PreviewProvider {
     static var previews: some View {
-        AddFriendsAlertView(isShown: .constant(true), userID: .constant(""), allRideUser: allRideUsers)
+        AddFriendsAlertView(isShown: .constant(true), userID: .constant(""), allRideUser: allUsers)
     }
 }
 

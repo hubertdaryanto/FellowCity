@@ -14,7 +14,9 @@ struct LevelRowView: View {
     //    var rideLevels: [RideLevel]
     //    var rideLevel: RideLevel
     @State var rideLevel:[RideLevel]
-    @State var currentLevel: Int = 1
+    @State var currentLevel: Int
+    
+    @ObservedObject var userSettings = UserSettings()
     
     var body: some View {
         VStack {
@@ -36,12 +38,16 @@ struct LevelRowView: View {
             
             ScrollView(.horizontal, showsIndicators: false, content: {
                 ZStack{
-                    Rectangle().frame(width: 550, height: 1)
+                    Rectangle().frame(width: 650, height: 1)
                         .offset(y: -13).foregroundColor(Color("baseColor").opacity(1))
                     HStack {
                         // multiple status view here
+                        
+                        
+                        
                         ForEach (self.rideLevel) { index in
                             
+//                            if index.level == self.currentLevel {
                             if index.level == self.currentLevel {
                                 LevelItemView(rideLevel: index).foregroundColor(Color("baseColor").opacity(1))
                             } else {
@@ -62,13 +68,41 @@ struct LevelRowView: View {
         }
         
     }
+    
+    
+//    func checkRideLevel(numofRide : Int) -> Int {
+//        if numofRide == 0 {
+//            self.currentLevel = 0
+//        }
+//        if numofRide >= 10 && numofRide < 20 {
+//            self.currentLevel = 1
+//        }
+//        if numofRide >= 20 && numofRide < 30 {
+//            self.currentLevel = 2
+//        }
+//        if numofRide >= 30 && numofRide < 40 {
+//            self.currentLevel = 3
+//        }
+//        if numofRide >= 40 && numofRide < 50 {
+//            self.currentLevel = 4
+//        }
+//        if numofRide >= 50 && numofRide < 100 {
+//            self.currentLevel = 5
+//        }
+//        if numofRide >= 100 {
+//            self.currentLevel = 6
+//        }
+//        return currentLevel
+//    }
+    
 }
 
 struct LevelRowView_Previews: PreviewProvider {
     static var previews: some View {
-        LevelRowView(rideLevel: rideLevels)
+        LevelRowView(rideLevel: rideLevels, currentLevel: 5)
         //        ExploreRowView(categoryName: "Indoor", explores: exploreData)
     }
 }
+
 
 

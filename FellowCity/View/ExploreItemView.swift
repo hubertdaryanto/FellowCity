@@ -15,7 +15,7 @@ struct ExploreItemView: View {
     var body: some View {
 //        ZStack {
 //        GeometryReader { geometry in
-            NavigationLink(destination: ExploreDetailsView(explore: self.explore))
+        NavigationLink(destination: ExploreDetailsView(explore: self.explore))
                                 {
         VStack {
             
@@ -107,12 +107,12 @@ struct ExploreItemView: View {
                                     }
             //.padding()
             
-            
+            .padding(.bottom)
             
         }
 
         
-        .padding()
+//        .padding()
 //        }
             }
 //        }

@@ -29,6 +29,8 @@
 		572F32FE24D1243F00F24A6E /* EventItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32FD24D1243F00F24A6E /* EventItemView.swift */; };
 		57D256A724DBB89600B53E37 /* LevelItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D256A624DBB89600B53E37 /* LevelItemView.swift */; };
 		57D256A924DBBE9400B53E37 /* LevelRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D256A824DBBE9400B53E37 /* LevelRowView.swift */; };
+		57E39A5324E1C69600E348BE /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E39A5224E1C69600E348BE /* UserSettings.swift */; };
+		57E39A5524E1D39C00E348BE /* FriendProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E39A5424E1D39C00E348BE /* FriendProfileView.swift */; };
 		CD585D3124D1636D00B89C8C /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD585D3024D1636D00B89C8C /* RatingView.swift */; };
 		CD5C121F24D254750076402C /* exploresRevised.json in Resources */ = {isa = PBXBuildFile; fileRef = CD5C121E24D254750076402C /* exploresRevised.json */; };
 		CD75737D24CFDE9100EABFC9 /* LoadSwiftUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75735324CFDE9000EABFC9 /* LoadSwiftUIViewController.swift */; };
@@ -95,6 +97,8 @@
 		572F32FD24D1243F00F24A6E /* EventItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItemView.swift; sourceTree = "<group>"; };
 		57D256A624DBB89600B53E37 /* LevelItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelItemView.swift; sourceTree = "<group>"; };
 		57D256A824DBBE9400B53E37 /* LevelRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelRowView.swift; sourceTree = "<group>"; };
+		57E39A5224E1C69600E348BE /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		57E39A5424E1D39C00E348BE /* FriendProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileView.swift; sourceTree = "<group>"; };
 		CD585D3024D1636D00B89C8C /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		CD5C121E24D254750076402C /* exploresRevised.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = exploresRevised.json; sourceTree = "<group>"; };
 		CD75735324CFDE9000EABFC9 /* LoadSwiftUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadSwiftUIViewController.swift; sourceTree = "<group>"; };
@@ -239,6 +243,7 @@
 				CD79826824D1044800EA93F1 /* FriendUIView.swift */,
 				57052F9E24D9CC6F001199F5 /* AddFriendsAlertView.swift */,
 				572F32F524D112ED00F24A6E /* ProfileView.swift */,
+				57E39A5424E1D39C00E348BE /* FriendProfileView.swift */,
 				57D256A824DBBE9400B53E37 /* LevelRowView.swift */,
 				57D256A624DBB89600B53E37 /* LevelItemView.swift */,
 				571ED2BC24DC269000C89B55 /* SearchFriendsView.swift */,
@@ -294,6 +299,7 @@
 				2CCE0ABF24D13D3100E53BCD /* Structure.swift */,
 				571ED2BA24DC1F1100C89B55 /* ColorSetting.swift */,
 				571430CC24E1636C00E851E8 /* ViewRouter.swift */,
+				57E39A5224E1C69600E348BE /* UserSettings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -440,6 +446,7 @@
 				CD79826F24D10AF200EA93F1 /* HistoryItemView.swift in Sources */,
 				571430C924E0FC2F00E851E8 /* PageViewController.swift in Sources */,
 				CD75738A24CFDE9100EABFC9 /* EventInformationInviteFriends.swift in Sources */,
+				57E39A5524E1D39C00E348BE /* FriendProfileView.swift in Sources */,
 				571430BF24DCA17100E851E8 /* AddLocationAlertView.swift in Sources */,
 				CD75738E24CFDE9100EABFC9 /* MainEvent.swift in Sources */,
 				CD585D3124D1636D00B89C8C /* RatingView.swift in Sources */,
@@ -454,6 +461,7 @@
 				57052F9F24D9CC6F001199F5 /* AddFriendsAlertView.swift in Sources */,
 				CD75738724CFDE9100EABFC9 /* ExploreItemView.swift in Sources */,
 				CD79827124D141F900EA93F1 /* HistoryReview.swift in Sources */,
+				57E39A5324E1C69600E348BE /* UserSettings.swift in Sources */,
 				CD79826B24D1088C00EA93F1 /* HistoryUIView.swift in Sources */,
 				572F32FA24D11D3000F24A6E /* ListEventDetailsView.swift in Sources */,
 				572F32F624D112ED00F24A6E /* ProfileView.swift in Sources */,

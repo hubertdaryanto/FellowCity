@@ -151,7 +151,7 @@ struct NotificationView: View {
                     }
                 }
                 .onAppear { UITableView.appearance().separatorStyle = .none }
-                .onDisappear { UITableView.appearance().separatorStyle = .singleLine }
+//                .onDisappear { UITableView.appearance().separatorStyle = .singleLine }
                 
                 Spacer()
                 
