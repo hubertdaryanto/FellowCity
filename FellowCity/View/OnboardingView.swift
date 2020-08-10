@@ -14,6 +14,8 @@ struct OnboardingView: View {
 //    @State private var page = 1
 //    @State private var offset = CGSize.zero
     
+    @EnvironmentObject var viewRouter: ViewRouter
+    
     @State var imagename:String = "flag.circle.fill"
     @State var title:String = "Create Events"
     @State var subtitle:String = "Create your personal events where you can invite your friends and pick custom routes"
@@ -39,7 +41,17 @@ struct OnboardingView: View {
 //                Spacer()
                 Button(action: {
                     if self.currentPageIndex+1 == self.subviews.count {
-                        self.currentPageIndex = 0
+                        //self.currentPageIndex = 0
+//                        MainEvent()
+//                        self.finishOnboarding = true
+//                        if self.finishOnboarding {
+//                            AppView()
+//                        }
+                        
+                        withAnimation {
+                            self.viewRouter.currentPage = "appView"
+                        }
+                        
                     } else {
                         self.currentPageIndex += 1
                     }
