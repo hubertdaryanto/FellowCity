@@ -12,9 +12,11 @@ struct ExploreItemView: View {
     
     var explore:ExploreRevised
     
+    
     var body: some View {
 //        ZStack {
-        NavigationLink(destination: ExploreDetailsView(explore: explore))
+//        GeometryReader { geometry in
+        NavigationLink(destination: ExploreDetailsView(explore: self.explore))
                                 {
         VStack {
             
@@ -25,6 +27,8 @@ struct ExploreItemView: View {
                 .frame(width: 350, height: 220)
                 .cornerRadius(10)
                 .shadow(radius: 5)
+//                .padding(.leading)
+//            .padding(.trailing)
             
             
             HStack {
@@ -32,7 +36,7 @@ struct ExploreItemView: View {
                 VStack(alignment: .leading, spacing: 5.0) {
                     
                     Text(self.explore.name).font(.system(size: 16)).bold()
-                    .foregroundColor(Color(hex: 0xf7b500, alpha: 1))
+                    .foregroundColor(Color("baseColor").opacity(1))
                     Text(self.explore.province).font(.system(size: 12))
                         .fontWeight(.light).foregroundColor(Color.black)
                     
@@ -42,25 +46,25 @@ struct ExploreItemView: View {
                             Image(systemName: "star.fill")
                                 .resizable()
                                 .frame(width: 10, height: 10)
-                                .foregroundColor(Color(hex: 0xf7b500, alpha: 1))
+                                .foregroundColor(Color("baseColor").opacity(1))
                         }
                         
                         if (round(modf(self.explore.rating).1 * 2) / 2 ) == 1 {
                             Image(systemName: "star.fill")
                                 .resizable()
                                 .frame(width: 10, height: 10)
-                                .foregroundColor(Color(hex: 0xf7b500, alpha: 1))
+                                .foregroundColor(Color("baseColor").opacity(1))
                         } else  {
                             Image(systemName: "star.lefthalf.fill")
                                 .resizable()
                                 .frame(width: 10, height: 10)
-                                .foregroundColor(Color(hex: 0xf7b500, alpha: 1))
+                                .foregroundColor(Color("baseColor").opacity(1))
                         }
                         
                         
                         Text("(\(self.explore.review.count) Reviews)").font(.system(size: 10))
                             .fontWeight(.semibold)
-                        .foregroundColor(Color(hex: 0xd8d8d8, alpha: 1))
+                            .foregroundColor(Color("foregroundGrey").opacity(0.4))
                         
                     }
                     
@@ -75,7 +79,7 @@ struct ExploreItemView: View {
                     Text("Ride").font(.system(size: 12)).fontWeight(.bold)
                         .foregroundColor(Color.black)
                         .frame(minWidth: 0, maxWidth: 64, maxHeight: 22)
-                        .background(Color(hex: 0xf7b500, alpha: 1)).cornerRadius(30)
+                        .background(Color("baseColor").opacity(1)).cornerRadius(30)
 //                }
 //                .buttonStyle(PlainButtonStyle())
                 .shadow(radius: 2, x: 1, y: 2)
@@ -101,17 +105,18 @@ struct ExploreItemView: View {
                 
 //            }
             
-                                    }.padding()
+                                    }
+            //.padding()
             
-            
+            .padding(.bottom)
             
         }
 
         
-        //.padding()
+//        .padding()
 //        }
-    }
-
+            }
+//        }
     
     }
         

@@ -13,6 +13,7 @@ import SwiftUI
 struct ExploreView: View {
     
     var explore:ExploreRevised
+     var allPublicEvent:AllEvent
     var categories:[String:[ExploreRevised]] {
         .init(
             grouping: exploreData,
@@ -20,6 +21,8 @@ struct ExploreView: View {
         )
     }
     
+    // User Setting
+    @ObservedObject var userSettings = UserSettings()
     
     @State var showProfileView = false
     @State private var selectedRide = 0
@@ -30,7 +33,7 @@ struct ExploreView: View {
         NavigationView {
             VStack(alignment: .leading) {
                 
-                ZStack {
+                VStack {
                 
                  
                         
@@ -42,7 +45,7 @@ struct ExploreView: View {
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
-                .background(Color(hex: 0xf7b500, alpha: 1))
+                .background(Color("baseColor").opacity(1))
                 .padding()
 //                .frame(height: 28)
                         
@@ -51,14 +54,20 @@ struct ExploreView: View {
                 
                 if selectedRide == 0 {
 //                    Text("adad")
-                    List(categories.keys.sorted(), id: \String.self) { key in
-                        ExploreRowView(categoryName: "\(key) Places".uppercased(), explores:
-                            self.categories[key]!)
+//                    List(categories.keys.sorted(), id: \String.self) { key in
+//                        ExploreRowView(categoryName: "\(key) Places".uppercased(), explores:
+//                            self.categories[key]!)
+//
+//                    }
+                        List{
+                            ExploreRowView(categoryName: "Indoor", explore: exploreData)
+                                
                     }
-                    .frame(alignment: .leading)
+//                    .frame(alignment: .leading)
                 } else  {
                     List {
-                        EventItemView(explore: exploreData[1])
+//                        EventItemView(allPublicEvent: allPublicEvent)
+                        EventRowView(categoryName: "Indoor", allPublicEvent: publicEvents)
                     }
 
                     
@@ -76,7 +85,7 @@ struct ExploreView: View {
                 Button(action: {
                     self.showProfileView.toggle()
                 }) {
-                    Image("rossi")
+                    Image("\(userSettings.imageName)")
                     .resizable()
                     .renderingMode(.original)
                     .aspectRatio(contentMode: .fill)
@@ -98,7 +107,7 @@ struct ExploreView: View {
 
 struct ExploreView_Previews: PreviewProvider {
     static var previews: some View {
-        ExploreView(explore: exploreData[0])
+        ExploreView(explore: exploreData[0], allPublicEvent: publicEvents[0])
     }
 }
 

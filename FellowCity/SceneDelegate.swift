@@ -30,14 +30,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else {
             fatalError("Unable to read managed object context.")
         }
-        let appView = AppView().environment(\.managedObjectContext, context)
+        
+//        let appView = AppView().environment(\.managedObjectContext, context)
+//            .environmentObject(AppView())
+        
+        let initialView = SplashScreenView()
+            // This is for Core Data
+            .environment(\.managedObjectContext, context)
+            // This is for Check user default exist or not. Onboarding check
+            .environmentObject(ViewRouter())
         
         
         if let windowScene = scene as? UIWindowScene{
         let window = UIWindow(windowScene: windowScene)
 //        window.rootViewController = UIHostingController(rootView: SplashScreenView())
-//        window.rootViewController = UIHostingController(rootView: SplashScreenView())
-            window.rootViewController = UIHostingController(rootView: appView)
+//            window.rootViewController = UIHostingController(rootView: appView)
+            window.rootViewController = UIHostingController(rootView: initialView)
         self.window = window
         window.makeKeyAndVisible()
         }

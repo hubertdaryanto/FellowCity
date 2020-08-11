@@ -10,20 +10,21 @@ import SwiftUI
 
 struct ProfileView: View {
     
-    //    var user:Profile
-    // var rideLevels: [LevelGamification]
-    //    @State var rideLevels: [RideLevel]
+    //User(name: "Fitra Eri", imageName: "fitraeri", userID: "fitrakuy", contact: "+6281235328879", isAvailableToRide: false, numOfRide: 20),
+    
+    @ObservedObject var userSettings = UserSettings()
+    
+    
     var rideLevel: [RideLevel]
-    
-    @State var name = "Valentino Rossi"
-    @State var motorcycle: String = "Yamaha YZR M1"
-    @State var userID: String = "VR46"
-    @State var contact: String = "+628178912345"
-    //@State var userImage: Image
-    
-    @State var isAvailable: Bool = false
+    @State var currentLevel = 0
+//    @State var name = ""
+//    @State var motorcycle: String = "Yamaha YZR M1"
+//    @State var userID: String = "VR46"
+//    @State var contact: String = "+628178912345"
+//    
+//    @State var isAvailable: Bool = false
 
-    //
+
     
     var body: some View {
         NavigationView {
@@ -32,31 +33,15 @@ struct ProfileView: View {
                     Spacer()
                     HStack{
                         Spacer()
-                        Image("rossi")
+                        Image("\(userSettings.imageName)")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 82, height: 82)
                             .clipShape(Circle())
-                        //                    .background(Color.white)
-                        //                    .overlay(RoundedRectangle(cornerRadius: 40)
-                        //                        .stroke(Color.gray, lineWidth: 2))
                         Spacer()
                     }
-                    //                                Spacer()
                     VStack{
-                        //                Circle()
-                        //                    .fill(Color.yellow)
-                        //                    .frame(width: 50, height: 50)
-                        //                Text("10 Rides")
-                        
-                        //                ScrollView {
-                        //                    LevelRowView(level: listLevel)
-                        //                }
-                        
-                        LevelRowView(rideLevel: rideLevel)
-                        
-                        
-                        
+                        LevelRowView(rideLevel: rideLevels, currentLevel: checkRideLevel(numofRide: userSettings.numOfRide))
                     }
                     
                     //            Spacer()
@@ -66,7 +51,7 @@ struct ProfileView: View {
                         Text("Name")
                             .font(.title)
                             //                    .fontWeight(.bold)
-                            .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                            .foregroundColor(Color("baseColor").opacity(1))
                         
                         //                TextField("Your Event Name...", text: $name, onEditingChanged: { (changed) in
                         //                    print("Username onEditingChanged - \(changed)")
@@ -74,44 +59,25 @@ struct ProfileView: View {
                         //                {
                         //                    print("Username onCommit")
                         //                }
-                        TextField("Your Display Name..." , text: $name)
+                        TextField("Your Display Name..." , text: $userSettings.name)
                         //                    .modifier(ClearButton(text: $name))
                         //                            .textFieldStyle(RoundedBorderTextFieldStyle())
                         Divider()
                         
                     }
                     
-                    
-                    
-                    //                    Spacer()
-                    
-                    //            // Motorcycle
-                    //                    VStack(alignment: .leading){
-                    //                    Text("Motorcycle")
-                    //                        .font(.title)
-                    //                        .fontWeight(.bold)
-                    //                        .foregroundColor(Color.yellow)
-                    //                    TextField("Your Meeting Point...", text: $motorcycle, onEditingChanged: { (changed) in
-                    //                        print("Username onEditingChanged - \(changed)")
-                    //                    }) {
-                    //                        print("Username onCommit")
-                    //                    }
-                    //                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    //                    }
-                    ////                    Spacer()
-                    
                     VStack(alignment: .leading){
                         Text("ID")
                             .font(.title)
                             //                    .fontWeight(.bold)
-                            .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                            .foregroundColor(Color("baseColor").opacity(1))
                         //                TextField("Your User ID...", text: $userID, onEditingChanged: { (changed) in
                         //                    print("Username onEditingChanged - \(changed)")
                         //                }) {
                         //                    print("Username onCommit")
                         //                }
                         
-                        TextField("Your User ID...", text: $userID)
+                        TextField("Your User ID...", text: $userSettings.userID)
                         
                         //                    .textFieldStyle(RoundedBorderTextFieldStyle())
                         Divider()
@@ -122,26 +88,23 @@ struct ProfileView: View {
                         Text("Contact")
                             .font(.title)
                             //                    .fontWeight(.bold)
-                            .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                            .foregroundColor(Color("baseColor").opacity(1))
                         //                TextField("Your Contact Number...", text: $contact, onEditingChanged: { (changed) in
                         //                    print("Username onEditingChanged - \(changed)")
                         //                }) {
                         //                    print("Username onCommit")
                         //                }
-                        TextField("Your Contact Number...", text: $contact)
+                        TextField("Your Contact Number...", text: $userSettings.contact)
                         //                .modifier(ClearButton(text: $contact))
                         //                    .textFieldStyle(RoundedBorderTextFieldStyle())
                         Divider()
                     }
                     
-                    //Text("Date is \(eventDate, formatter: dateFormatter)")
-                    //                    Spacer()
-                    
                     VStack(alignment: .leading){
                         Text("")
                             .font(.title)
                             .fontWeight(.bold)
-                            .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                            .foregroundColor(Color("baseColor").opacity(1))
                         HStack {
                             VStack(alignment: .leading) {
                                 Text("Available to Ride").font(.body)
@@ -149,37 +112,56 @@ struct ProfileView: View {
                             }
                             Spacer()
                             VStack {
-                                Toggle(isOn: $isAvailable) {
+                                Toggle(isOn: $userSettings.isAvailableToRide) {
                                     Text("Status Ride")
                                     //                        self.isAvailable.toggle()
                                 }
+                                    //Change Toogle Color using HueRotation
+                                    //.hueRotation(Angle.degrees(270))
+                                    // Change Toogle color post WWDC20, ios 14
                                     //                    .toggleStyle(SwitchToggleStyle(tint: Color.blue))
-                                    
                                     .labelsHidden()
                             }
                         }
-                        
-                        
-                        //                    .textFieldStyle(RoundedBorderTextFieldStyle())
                         Divider()
                         
                     }.frame(height: 130)
                     
-                    //Text("Date is \(eventDate, formatter: dateFormatter)")
-                    //            Spacer()
-                    
-                    
-                    
-                    
-                    
-                    //            Spacer()
                 }
             }
             .navigationBarTitle(Text("Create Event"), displayMode: .inline)
+            
         }
         
         
     }
+    
+    func checkRideLevel(numofRide : Int) -> Int {
+           if numofRide == 0 {
+               return 0
+           }
+           if numofRide >= 10 && numofRide < 20 {
+               return  1
+           }
+           if numofRide >= 20 && numofRide < 30 {
+               return  2
+           }
+           if numofRide >= 30 && numofRide < 40 {
+               return  3
+           }
+           if numofRide >= 40 && numofRide < 50 {
+               return  4
+           }
+           if numofRide >= 50 && numofRide < 100 {
+               return  5
+           }
+           if numofRide >= 100 {
+               return  6
+           }
+        return self.currentLevel
+       }
+    
+    
 }
 
 struct ProfileView_Previews: PreviewProvider {
@@ -194,7 +176,6 @@ struct ClearButton: ViewModifier {
     
     public func body(content: Content) -> some View {
         HStack {
-            //        ZStack(alignment: .trailing){
             content
             if !text.isEmpty {
                 Button(action: {
@@ -203,32 +184,13 @@ struct ClearButton: ViewModifier {
                     Image(systemName: "multiply.circle.fill")
                         .foregroundColor(.secondary)
                 }
-                //            .padding()
-                
-                
             }
-            
         }
-        //            .padding(.trailing, 8)
-        
     }
 }
 
 
-extension UIColor {
-    convenience init(colorCode: String, alpha: Float = 1.0){
-        let scanner = Scanner(string:colorCode)
-        var color:UInt32 = 0;
-        scanner.scanHexInt32(&color)
-        
-        let mask = 0x000000FF
-        let r = CGFloat(Float(Int(color >> 16) & mask)/255.0)
-        let g = CGFloat(Float(Int(color >> 8) & mask)/255.0)
-        let b = CGFloat(Float(Int(color) & mask)/255.0)
-        
-        self.init(red: r, green: g, blue: b, alpha: CGFloat(alpha))
-    }
-}
+
 
 //struct ClearButton: ViewModifier{
 //    @Binding var text: String

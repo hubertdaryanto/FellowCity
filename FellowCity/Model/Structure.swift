@@ -19,16 +19,16 @@ struct AllRide{
     var reviewText: String
 }
 
-struct AllEvent {
-    var listEvent: String
-    var dateEvent: Date
-    var timeEvent: Int
-    var nameEvent: String
-    var totalDistance: Int
-    var estTime: Int
-    var routeEvent: String
-    var meetingPoint: String
-}
+//struct AllEvent {
+//    var listEvent: String
+//    var dateEvent: Date
+//    var timeEvent: Int
+//    var nameEvent: String
+//    var totalDistance: Int
+//    var estTime: Int
+//    var routeEvent: String
+//    var meetingPoint: String
+//}
 
 struct CreateEvent {
     var nameEvent: String

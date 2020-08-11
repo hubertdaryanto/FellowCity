@@ -16,7 +16,7 @@ struct AppView: View {
         
         TabView(selection:$selection) {
             
-            MainEvent()
+            MainEvent(allMyEvent: myEvents)
                 .tabItem {
                     Image(systemName: "flag.circle.fill")
                     Text("My Events")
@@ -28,7 +28,7 @@ struct AppView: View {
                     Text("Friends")
             }.tag(2)
             
-            ExploreView(explore: exploreData[0])
+            ExploreView(explore: exploreData[0], allPublicEvent: publicEvents[0])
                 .tabItem {
                     Image(systemName: "arrow.right.arrow.left.circle.fill")
                     Text("Ride")
@@ -46,18 +46,19 @@ struct AppView: View {
                     Text("History")
             }.tag(5)
             
-        }.accentColor(Color(hex: 0xF7BE00))
+        }.accentColor(Color("baseColor").opacity(1))
     }
 }
 
 
 struct TabFriendsView: View {
     @State private var selectedRide = 0
+    @Environment(\.managedObjectContext) var managedObjectContext
     private let rideSelection = ["Explore", "Public Events"]
     var body: some View {
         //        FriendUIView( userID: "")
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        return FriendUIView( userID: "").environment(\.managedObjectContext, context)
+        return FriendUIView(userID: "", allRideUser: allUsers).environment(\.managedObjectContext, context)
         
     }
 }
@@ -80,22 +81,22 @@ struct AppView_Previews: PreviewProvider {
 
 
 /// Extension
-
-extension Color {
-    init(hex: Int, alpha: Double = 1) {
-        let components = (
-            R: Double((hex >> 16) & 0xff) / 255,
-            G: Double((hex >> 08) & 0xff) / 255,
-            B: Double((hex >> 00) & 0xff) / 255
-        )
-        self.init(
-            .sRGB,
-            red: components.R,
-            green: components.G,
-            blue: components.B,
-            opacity: alpha
-        )
-    }
-}
+//
+//extension Color {
+//    init(hex: Int, alpha: Double = 1) {
+//        let components = (
+//            R: Double((hex >> 16) & 0xff) / 255,
+//            G: Double((hex >> 08) & 0xff) / 255,
+//            B: Double((hex >> 00) & 0xff) / 255
+//        )
+//        self.init(
+//            .sRGB,
+//            red: components.R,
+//            green: components.G,
+//            blue: components.B,
+//            opacity: alpha
+//        )
+//    }
+//}
 
 

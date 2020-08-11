@@ -42,12 +42,12 @@ struct CreateEventView: View {
                 Spacer()
                 VStack(alignment: .leading){
                     HStack {
-                    Image(systemName: "pencil").resizable().foregroundColor(Color(hex: 0xF7B500, alpha: 1)).frame(width: 20, height: 20, alignment: .center)
+                    Image(systemName: "pencil").resizable().foregroundColor(Color("baseColor").opacity(1)).frame(width: 20, height: 20, alignment: .center)
                     .shadow(radius: 1, x: 1, y: 1)
                     Text("Event Name")
                         .font(.title)
                         .fontWeight(.bold)
-                        .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                        .foregroundColor(Color("baseColor").opacity(1))
                     }
                     
                     TextField("Your Event Name...", text: $eventName, onEditingChanged: { (changed) in
@@ -68,7 +68,7 @@ struct CreateEventView: View {
                             
                         })
                         {
-                            Image(systemName: "magnifyingglass").resizable().foregroundColor(Color(hex: 0xF7B500, alpha: 1)).frame(width: 20, height: 20, alignment: .center)
+                            Image(systemName: "magnifyingglass").resizable().foregroundColor(Color("baseColor").opacity(1)).frame(width: 20, height: 20, alignment: .center)
                                 .shadow(radius: 1, x: 1, y: 1)
                         }
                         
@@ -76,7 +76,7 @@ struct CreateEventView: View {
                         Text("Meeting Point")
                             .font(.title)
                             .fontWeight(.bold)
-                            .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                            .foregroundColor(Color("baseColor").opacity(1))
                         
                     }
                     
@@ -101,13 +101,13 @@ struct CreateEventView: View {
                         
                     })
                     {
-                        Image(systemName: "magnifyingglass").resizable().foregroundColor(Color(hex: 0xF7B500, alpha: 1)).frame(width: 20, height: 20, alignment: .center)
+                        Image(systemName: "magnifyingglass").resizable().foregroundColor(Color("baseColor").opacity(1)).frame(width: 20, height: 20, alignment: .center)
                             .shadow(radius: 1, x: 1, y: 1)
                     }
                     Text("Destination")
                         .font(.title)
                         .fontWeight(.bold)
-                        .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                        .foregroundColor(Color("baseColor").opacity(1))
                     }
                     TextField("Your Destination...", text: $eventDestinastion, onEditingChanged: { (changed) in
                         print("Username onEditingChanged - \(changed)")
@@ -119,13 +119,13 @@ struct CreateEventView: View {
                 Spacer()
                 VStack(alignment: .leading){
                     HStack {
-                    Image(systemName: "calendar").resizable().foregroundColor(Color(hex: 0xF7B500, alpha: 1)).frame(width: 20, height: 20, alignment: .center)
+                    Image(systemName: "calendar").resizable().foregroundColor(Color("baseColor").opacity(1)).frame(width: 20, height: 20, alignment: .center)
                     .shadow(radius: 1, x: 1, y: 1)
                         
                     Text("Schedule")
                         .font(.title)
                         .fontWeight(.bold)
-                        .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                        .foregroundColor(Color("baseColor").opacity(1))
 //                        .padding(.bottom)
                     }.padding(.bottom)
                     //DatePicker("", selection: $eventDate,, in: ...Date() displayedComponents: [.date, .hourAndMinute]){
@@ -167,9 +167,9 @@ struct CreateEventView: View {
                                 Text("Next")
                                     .font(.body)
                                     .fontWeight(.bold)
-                                    .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                                    .foregroundColor(Color("baseColor").opacity(1))
                                 Image(systemName: "chevron.right")
-                                    .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                                    .foregroundColor(Color("baseColor").opacity(1))
                                 
                             }
                             // End of Next Page

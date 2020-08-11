@@ -61,27 +61,27 @@ struct HistoryItemView: View {
                     .cornerRadius(10)
                     .shadow(radius: 5).padding(.leading, 14).padding(.top, 20)
                 VStack (alignment: .leading){
-                    Text(self.history.eventName).font(.custom("SFProDisplay-Semiold", size: 15)).lineSpacing(17.9).foregroundColor(.yellow).padding(.top, 20).frame(maxWidth: 375, alignment: .leading).padding(.leading, 4)
-                    Text(DateFormatterForHistory.string(from: self.history.startDate)).font(.custom("SFProDisplay-Light", size: 14)).foregroundColor(Color.gray).lineSpacing(16).padding(.leading, 4).padding(.top, 3)
+                    Text(self.history.eventName).font(.custom("SFProDisplay-Semiold", size: 15)).lineSpacing(17.9).foregroundColor(Color("baseColor").opacity(1)).padding(.top, 20).frame(maxWidth: 375, alignment: .leading).padding(.leading, 4)
+                    Text(DateFormatterForHistory.string(from: self.history.startDate)).font(.custom("SFProDisplay-Light", size: 14)).foregroundColor(Color("foregroundGrey").opacity(1)).lineSpacing(16).padding(.leading, 4).padding(.top, 3)
                     if self.history.isReviewed{
                         HStack(spacing:0){
                             ForEach(0..<Int(modf(self.history.rating).0)) { numstar in
                                 Image(systemName: "star.fill")
                                     .resizable()
                                     .frame(width: 12, height: 12)
-                                    .foregroundColor(Color.yellow)
+                                    .foregroundColor(Color("baseColor").opacity(1))
                             }
                             
                             if (round(modf(self.history.rating).1 * 2) / 2 ) == 1 {
                                 Image(systemName: "star.fill")
                                     .resizable()
                                     .frame(width: 12, height: 12)
-                                    .foregroundColor(Color.yellow)
+                                    .foregroundColor(Color("baseColor").opacity(1))
                             } else if ((modf(self.history.rating).1 * 2) / 2)  > 0 && ((modf(self.history.rating).1 * 2) / 2)  < 1  {
                                 Image(systemName: "star.lefthalf.fill")
                                     .resizable()
                                     .frame(width: 12, height: 12)
-                                    .foregroundColor(Color.yellow)
+                                    .foregroundColor(Color("baseColor").opacity(1))
                             }
                         }.padding(.leading, 3)
                         
@@ -105,7 +105,7 @@ struct HistoryItemView: View {
                         {
                             Text("Give Review").font(.custom("SFProDisplay-Bold", size: 14)).fontWeight(.bold)
                                 .frame(width: 101, height: 34, alignment: .center)
-                                .background(Color.yellow).cornerRadius(10).lineSpacing(16).foregroundColor(Color.black)
+                                .background(Color("baseColor").opacity(1)).cornerRadius(10).lineSpacing(16).foregroundColor(Color.black)
                         }
                     }
                     
@@ -127,7 +127,7 @@ struct HistoryItemView: View {
                             Text("Ride Again")
                                 .font(.custom("SFProDisplay-Bold", size: 14)).fontWeight(.bold)
                                 .frame(width: 101, height: 34, alignment: .center)
-                                .background(Color.yellow).cornerRadius(10).lineSpacing(16)
+                                .background(Color("baseColor").opacity(1)).cornerRadius(10).lineSpacing(16)
                             
                         }
                         .accentColor(.black)

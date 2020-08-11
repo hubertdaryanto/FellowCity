@@ -48,7 +48,7 @@ struct ExploreDetailsView: View {
             Text(explore.name)
                 .font(.system(size: 25))
                 .fontWeight(.bold)
-                .foregroundColor(Color(hex: 0xf7b500, alpha: 1))
+                .foregroundColor(Color("baseColor").opacity(1))
             
             Text(explore.province)
                 .font(.system(size: 16))
@@ -64,19 +64,19 @@ struct ExploreDetailsView: View {
                     Image(systemName: "star.fill")
                         .resizable()
                         .frame(width: 15, height: 15)
-                        .foregroundColor(Color(hex: 0xf7b500, alpha: 1))
+                        .foregroundColor(Color("baseColor").opacity(1))
                 }
                 
                 if (round(modf(explore.rating).1 * 2) / 2 ) == 1 {
                     Image(systemName: "star.fill")
                         .resizable()
                         .frame(width: 15, height: 15)
-                        .foregroundColor(Color(hex: 0xf7b500, alpha: 1))
+                        .foregroundColor(Color("baseColor").opacity(1))
                 } else  {
                     Image(systemName: "star.lefthalf.fill")
                         .resizable()
                         .frame(width: 15, height: 15)
-                        .foregroundColor(Color(hex: 0xf7b500, alpha: 1))
+                        .foregroundColor(Color("baseColor").opacity(1))
                 }
                 
                 
@@ -144,7 +144,7 @@ struct ExploreDetailsView: View {
                     .frame(minWidth: 0, maxWidth: 120, maxHeight: 40)
                     
 //                    .background(Color.yellow)
-                    .background(Color(hex: 0xF7B500, alpha: 1))
+                    .background(Color("baseColor").opacity(1))
                     .cornerRadius(15)
                     
 

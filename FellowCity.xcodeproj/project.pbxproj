@@ -11,6 +11,12 @@
 		57052F9F24D9CC6F001199F5 /* AddFriendsAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57052F9E24D9CC6F001199F5 /* AddFriendsAlertView.swift */; };
 		57052FA224DAD67F001199F5 /* FellowCity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57052FA024DAD67E001199F5 /* FellowCity.xcdatamodeld */; };
 		571430BF24DCA17100E851E8 /* AddLocationAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571430BE24DCA17100E851E8 /* AddLocationAlertView.swift */; };
+		571430C324DCEC6D00E851E8 /* OnboardingOffsetAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571430C224DCEC6D00E851E8 /* OnboardingOffsetAnimationView.swift */; };
+		571430C524E0F2B800E851E8 /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571430C424E0F2B800E851E8 /* OnboardingCardView.swift */; };
+		571430C724E0F36F00E851E8 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571430C624E0F36F00E851E8 /* OnboardingView.swift */; };
+		571430C924E0FC2F00E851E8 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571430C824E0FC2F00E851E8 /* PageViewController.swift */; };
+		571430CB24E100D500E851E8 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571430CA24E100D500E851E8 /* PageControl.swift */; };
+		571430CD24E1636C00E851E8 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571430CC24E1636C00E851E8 /* ViewRouter.swift */; };
 		571ED2BB24DC1F1100C89B55 /* ColorSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571ED2BA24DC1F1100C89B55 /* ColorSetting.swift */; };
 		571ED2BD24DC269000C89B55 /* SearchFriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571ED2BC24DC269000C89B55 /* SearchFriendsView.swift */; };
 		571ED2C124DC42C300C89B55 /* SearchBarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571ED2C024DC42C300C89B55 /* SearchBarList.swift */; };
@@ -18,11 +24,17 @@
 		572F32F424D111E000F24A6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD75737124CFDE9100EABFC9 /* Main.storyboard */; };
 		572F32F624D112ED00F24A6E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32F524D112ED00F24A6E /* ProfileView.swift */; };
 		572F32F824D119E800F24A6E /* ExploreDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32F724D119E800F24A6E /* ExploreDetailsView.swift */; };
-		572F32FA24D11D3000F24A6E /* ListEventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32F924D11D3000F24A6E /* ListEventDetailsView.swift */; };
+		572F32FA24D11D3000F24A6E /* MyEventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32F924D11D3000F24A6E /* MyEventDetailsView.swift */; };
 		572F32FC24D1238000F24A6E /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32FB24D1238000F24A6E /* EventDetailsView.swift */; };
 		572F32FE24D1243F00F24A6E /* EventItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32FD24D1243F00F24A6E /* EventItemView.swift */; };
 		57D256A724DBB89600B53E37 /* LevelItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D256A624DBB89600B53E37 /* LevelItemView.swift */; };
 		57D256A924DBBE9400B53E37 /* LevelRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D256A824DBBE9400B53E37 /* LevelRowView.swift */; };
+		57E39A5324E1C69600E348BE /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E39A5224E1C69600E348BE /* UserSettings.swift */; };
+		57E39A5524E1D39C00E348BE /* FriendProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E39A5424E1D39C00E348BE /* FriendProfileView.swift */; };
+		57F7339D24E20BC700347DD5 /* ListParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F7339C24E20BC700347DD5 /* ListParticipantView.swift */; };
+		57F7339F24E247E600347DD5 /* EventRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F7339E24E247E600347DD5 /* EventRowView.swift */; };
+		57FA285124E1F20C00EBF3B5 /* ReviewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FA285024E1F20C00EBF3B5 /* ReviewItemView.swift */; };
+		57FA285324E206B700EBF3B5 /* MyDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FA285224E206B700EBF3B5 /* MyDetailsView.swift */; };
 		CD585D3124D1636D00B89C8C /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD585D3024D1636D00B89C8C /* RatingView.swift */; };
 		CD5C121F24D254750076402C /* exploresRevised.json in Resources */ = {isa = PBXBuildFile; fileRef = CD5C121E24D254750076402C /* exploresRevised.json */; };
 		CD75737D24CFDE9100EABFC9 /* LoadSwiftUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75735324CFDE9000EABFC9 /* LoadSwiftUIViewController.swift */; };
@@ -72,17 +84,29 @@
 		57052F9E24D9CC6F001199F5 /* AddFriendsAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsAlertView.swift; sourceTree = "<group>"; };
 		57052FA124DAD67F001199F5 /* FellowCity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FellowCity.xcdatamodel; sourceTree = "<group>"; };
 		571430BE24DCA17100E851E8 /* AddLocationAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationAlertView.swift; sourceTree = "<group>"; };
+		571430C224DCEC6D00E851E8 /* OnboardingOffsetAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingOffsetAnimationView.swift; sourceTree = "<group>"; };
+		571430C424E0F2B800E851E8 /* OnboardingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
+		571430C624E0F36F00E851E8 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		571430C824E0FC2F00E851E8 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		571430CA24E100D500E851E8 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		571430CC24E1636C00E851E8 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		571ED2BA24DC1F1100C89B55 /* ColorSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSetting.swift; sourceTree = "<group>"; };
 		571ED2BC24DC269000C89B55 /* SearchFriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFriendsView.swift; sourceTree = "<group>"; };
 		571ED2C024DC42C300C89B55 /* SearchBarList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarList.swift; sourceTree = "<group>"; };
 		57220D1124D269C100BD7FCD /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		572F32F524D112ED00F24A6E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		572F32F724D119E800F24A6E /* ExploreDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreDetailsView.swift; sourceTree = "<group>"; };
-		572F32F924D11D3000F24A6E /* ListEventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEventDetailsView.swift; sourceTree = "<group>"; };
+		572F32F924D11D3000F24A6E /* MyEventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventDetailsView.swift; sourceTree = "<group>"; };
 		572F32FB24D1238000F24A6E /* EventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsView.swift; sourceTree = "<group>"; };
 		572F32FD24D1243F00F24A6E /* EventItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItemView.swift; sourceTree = "<group>"; };
 		57D256A624DBB89600B53E37 /* LevelItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelItemView.swift; sourceTree = "<group>"; };
 		57D256A824DBBE9400B53E37 /* LevelRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelRowView.swift; sourceTree = "<group>"; };
+		57E39A5224E1C69600E348BE /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		57E39A5424E1D39C00E348BE /* FriendProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileView.swift; sourceTree = "<group>"; };
+		57F7339C24E20BC700347DD5 /* ListParticipantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListParticipantView.swift; sourceTree = "<group>"; };
+		57F7339E24E247E600347DD5 /* EventRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRowView.swift; sourceTree = "<group>"; };
+		57FA285024E1F20C00EBF3B5 /* ReviewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewItemView.swift; sourceTree = "<group>"; };
+		57FA285224E206B700EBF3B5 /* MyDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetailsView.swift; sourceTree = "<group>"; };
 		CD585D3024D1636D00B89C8C /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		CD5C121E24D254750076402C /* exploresRevised.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = exploresRevised.json; sourceTree = "<group>"; };
 		CD75735324CFDE9000EABFC9 /* LoadSwiftUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadSwiftUIViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +168,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		571430C124DCEC5100E851E8 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		57D8DC5224D907FB001C4B8A /* Ride */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +240,9 @@
 			children = (
 				57D8DC5624D90892001C4B8A /* Events */,
 				CD75736624CFDE9100EABFC9 /* MainEvent.swift */,
+				57FA285224E206B700EBF3B5 /* MyDetailsView.swift */,
+				57F7339C24E20BC700347DD5 /* ListParticipantView.swift */,
+				572F32F924D11D3000F24A6E /* MyEventDetailsView.swift */,
 				CD75736124CFDE9100EABFC9 /* CreateEventView.swift */,
 				571430BE24DCA17100E851E8 /* AddLocationAlertView.swift */,
 				CD75736724CFDE9100EABFC9 /* CreateEventAdditionalRouteView.swift */,
@@ -220,6 +254,7 @@
 				CD79826824D1044800EA93F1 /* FriendUIView.swift */,
 				57052F9E24D9CC6F001199F5 /* AddFriendsAlertView.swift */,
 				572F32F524D112ED00F24A6E /* ProfileView.swift */,
+				57E39A5424E1D39C00E348BE /* FriendProfileView.swift */,
 				57D256A824DBBE9400B53E37 /* LevelRowView.swift */,
 				57D256A624DBB89600B53E37 /* LevelItemView.swift */,
 				571ED2BC24DC269000C89B55 /* SearchFriendsView.swift */,
@@ -229,9 +264,10 @@
 				CD75735E24CFDE9100EABFC9 /* ExploreRowView.swift */,
 				CD75735F24CFDE9100EABFC9 /* ExploreItemView.swift */,
 				572F32F724D119E800F24A6E /* ExploreDetailsView.swift */,
-				572F32F924D11D3000F24A6E /* ListEventDetailsView.swift */,
 				572F32FB24D1238000F24A6E /* EventDetailsView.swift */,
+				57F7339E24E247E600347DD5 /* EventRowView.swift */,
 				572F32FD24D1243F00F24A6E /* EventItemView.swift */,
+				57FA285024E1F20C00EBF3B5 /* ReviewItemView.swift */,
 				57D8DC5824D908BE001C4B8A /* Notification */,
 				CD75736424CFDE9100EABFC9 /* NotificationView.swift */,
 				57D8DC5524D90871001C4B8A /* History */,
@@ -241,6 +277,12 @@
 				CD79827024D141F900EA93F1 /* HistoryReview.swift */,
 				57D8DC5424D9085A001C4B8A /* StatusRider */,
 				CD75735B24CFDE9000EABFC9 /* StatusRiderView.swift */,
+				571430C124DCEC5100E851E8 /* Onboarding */,
+				571430C224DCEC6D00E851E8 /* OnboardingOffsetAnimationView.swift */,
+				571430C624E0F36F00E851E8 /* OnboardingView.swift */,
+				571430C424E0F2B800E851E8 /* OnboardingCardView.swift */,
+				571430C824E0FC2F00E851E8 /* PageViewController.swift */,
+				571430CA24E100D500E851E8 /* PageControl.swift */,
 				57D8DC5924D90958001C4B8A /* App */,
 				CD75735C24CFDE9000EABFC9 /* AppView.swift */,
 				57220D1124D269C100BD7FCD /* SplashScreenView.swift */,
@@ -268,6 +310,8 @@
 				CD75737B24CFDE9100EABFC9 /* Explore.swift */,
 				2CCE0ABF24D13D3100E53BCD /* Structure.swift */,
 				571ED2BA24DC1F1100C89B55 /* ColorSetting.swift */,
+				571430CC24E1636C00E851E8 /* ViewRouter.swift */,
+				57E39A5224E1C69600E348BE /* UserSettings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -412,12 +456,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD79826F24D10AF200EA93F1 /* HistoryItemView.swift in Sources */,
+				571430C924E0FC2F00E851E8 /* PageViewController.swift in Sources */,
 				CD75738A24CFDE9100EABFC9 /* EventInformationInviteFriends.swift in Sources */,
+				57E39A5524E1D39C00E348BE /* FriendProfileView.swift in Sources */,
 				571430BF24DCA17100E851E8 /* AddLocationAlertView.swift in Sources */,
 				CD75738E24CFDE9100EABFC9 /* MainEvent.swift in Sources */,
 				CD585D3124D1636D00B89C8C /* RatingView.swift in Sources */,
+				571430C524E0F2B800E851E8 /* OnboardingCardView.swift in Sources */,
 				CD75738524CFDE9100EABFC9 /* EventInformationView.swift in Sources */,
 				CD75738624CFDE9100EABFC9 /* ExploreRowView.swift in Sources */,
+				57F7339D24E20BC700347DD5 /* ListParticipantView.swift in Sources */,
 				571ED2BB24DC1F1100C89B55 /* ColorSetting.swift in Sources */,
 				CD75739C24CFDE9100EABFC9 /* PeopleData.swift in Sources */,
 				CD75739924CFDE9100EABFC9 /* EventData.swift in Sources */,
@@ -425,18 +473,25 @@
 				CD79826D24D10A8A00EA93F1 /* HistoryRowView.swift in Sources */,
 				57052F9F24D9CC6F001199F5 /* AddFriendsAlertView.swift in Sources */,
 				CD75738724CFDE9100EABFC9 /* ExploreItemView.swift in Sources */,
+				57FA285124E1F20C00EBF3B5 /* ReviewItemView.swift in Sources */,
 				CD79827124D141F900EA93F1 /* HistoryReview.swift in Sources */,
+				57E39A5324E1C69600E348BE /* UserSettings.swift in Sources */,
 				CD79826B24D1088C00EA93F1 /* HistoryUIView.swift in Sources */,
-				572F32FA24D11D3000F24A6E /* ListEventDetailsView.swift in Sources */,
+				572F32FA24D11D3000F24A6E /* MyEventDetailsView.swift in Sources */,
 				572F32F624D112ED00F24A6E /* ProfileView.swift in Sources */,
+				571430CB24E100D500E851E8 /* PageControl.swift in Sources */,
 				CD75739D24CFDE9100EABFC9 /* RidingLocation.swift in Sources */,
+				57FA285324E206B700EBF3B5 /* MyDetailsView.swift in Sources */,
+				57F7339F24E247E600347DD5 /* EventRowView.swift in Sources */,
 				CDC4890224D7B4AD0001C2A4 /* MapView.swift in Sources */,
 				57052FA224DAD67F001199F5 /* FellowCity.xcdatamodeld in Sources */,
+				571430C324DCEC6D00E851E8 /* OnboardingOffsetAnimationView.swift in Sources */,
 				CD75738924CFDE9100EABFC9 /* CreateEventView.swift in Sources */,
 				57220D1224D269C100BD7FCD /* SplashScreenView.swift in Sources */,
 				CD75737E24CFDE9100EABFC9 /* Extension.swift in Sources */,
 				CD75737D24CFDE9100EABFC9 /* LoadSwiftUIViewController.swift in Sources */,
 				CD75739724CFDE9100EABFC9 /* ViewController.swift in Sources */,
+				571430CD24E1636C00E851E8 /* ViewRouter.swift in Sources */,
 				572F32F824D119E800F24A6E /* ExploreDetailsView.swift in Sources */,
 				571ED2BD24DC269000C89B55 /* SearchFriendsView.swift in Sources */,
 				57D256A724DBB89600B53E37 /* LevelItemView.swift in Sources */,
@@ -454,6 +509,7 @@
 				CD75738324CFDE9100EABFC9 /* StatusRiderView.swift in Sources */,
 				CD75738F24CFDE9100EABFC9 /* CreateEventAdditionalRouteView.swift in Sources */,
 				CD75739424CFDE9100EABFC9 /* SceneDelegate.swift in Sources */,
+				571430C724E0F36F00E851E8 /* OnboardingView.swift in Sources */,
 				CD75738824CFDE9100EABFC9 /* Create Event Information.swift in Sources */,
 				57D256A924DBBE9400B53E37 /* LevelRowView.swift in Sources */,
 			);
