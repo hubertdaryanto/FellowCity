@@ -65,6 +65,7 @@ struct MainEvent: View {
                         ){
 //                            ForEach(self.attendedEventList) { index in
                                 ForEach(self.allMyEvent, id: \.self) { index in
+                                    
                                 ZStack{
                                     
                                     Rectangle()
@@ -78,9 +79,15 @@ struct MainEvent: View {
                                     
                                     
                                     NavigationLink(destination:
-                                        // Go to EventInformationView
-                                        MyDetailsView(allMyEvent: index, eventDate: self.eventDate, eventName: self.eventName, eventMeetingPoint: self.eventMeetingPoint, eventDestinastion: self.eventDestinastion, sselectedRoute: self.sselectedRoute,
+                                         //Go to EventInformationView
+                                        MyDetailsView(
+                                            allMyEvent: index,
+                                            eventDate: self.eventDate,
+                                            eventName: self.eventName,
+                                            eventMeetingPoint: self.eventMeetingPoint, eventDestinastion: self.eventDestinastion, sselectedRoute: self.sselectedRoute,
                                                              MeetingPoint: self.MeetingPoint, LocationToBeVisited: self.LocationToBeVisited, LocationToBeVisitedName: self.LocationToBeVisitedName)
+//
+//                                        MyDetailsView(allMyEvent: myEvents, MeetingPoint: CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469), LocationToBeVisited: CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469), LocationToBeVisitedName: [CLLocation(latitude: -6.3298786, longitude: 106.9439469), CLLocation(latitude: -6.258080, longitude: 106.808391), CLLocation(latitude: -6.2808073, longitude: 106.7122415)])
                                         
                                     ){
                                         EmptyView()
@@ -193,7 +200,8 @@ struct MainEvent: View {
 
 struct MainEvent_Previews: PreviewProvider {
     static var previews: some View {
-        MainEvent(allMyEvent: myEvents)
+        MainEvent(allMyEvent: myEvents, MeetingPoint: CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469))
+        //= CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469)
     }
 }
 

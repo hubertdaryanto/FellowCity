@@ -14,6 +14,9 @@ import SwiftUI
 struct NotificationView: View {
     @State var showProfileView = false
     
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(entity: FriendLists.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \FriendLists.name, ascending: true)]) var myFriends: FetchedResults<FriendLists>
+    
     // List All User
     @State var allRideUser:[User]
     
@@ -118,10 +121,21 @@ struct NotificationView: View {
                                 Spacer()
                                 
                                 Button(action: {
-                                    print("Ubah State Accept Disini")
+                                    
+                                    //print("Ubah State Accept Disini")
+                                    // Add Friends to List in Core Data
+                                    let myFriends = FriendLists(context: self.managedObjectContext)
+                                    myFriends.name = "\(index.name)"
+                                    do {
+                                        try self.managedObjectContext.save()
+                                    } catch {
+                                        // handle the Core Data error
+                                    }
+                                    //
                                     self.deleteFriendInvitationsList(at:self.FriendInvitationsList.firstIndex(where: { $0.id == index.id })!)
                                     
                                 }){
+                                    
                                     Text("Accept").font(.system(size: 8)).fontWeight(.bold)
                                         .frame(minWidth: 0, maxWidth: 52, maxHeight: 18)
                                         .background(Color.yellow).cornerRadius(30)
@@ -215,10 +229,13 @@ struct NotificationView: View {
                                 Spacer()
                                 
                                 Button(action: {
-                                    print("Ubah State Accept Disini")
+                                    //print("Ubah State Accept Disini")
+                                    publicEvents[self.checkIndexCreatorofPublicEvent(creatorEvent: index.name)].participant.append("\(index.name)")
+                                    //
                                     self.deleteEventInvitationsList(at:self.EventInvitationsList.firstIndex(where: { $0.id == index.id })!)
                                     
                                 }){
+                                    
                                     Text("Accept").font(.system(size: 8)).fontWeight(.bold)
                                         .frame(minWidth: 0, maxWidth: 52, maxHeight: 18)
                                         .background(Color.yellow).cornerRadius(30)
@@ -308,10 +325,13 @@ struct NotificationView: View {
                                 Spacer()
                                 
                                 Button(action: {
-                                    print("Ubah State Accept Disini")
+                                    //print("Ubah State Accept Disini")
+                                    myEvents[self.checkIndexCreatorofMyEvent(creatorEvent: index.name, origin: index.origin, destination: index.destination)].participant.append("\(index.name)")
+                                    //
                                     self.deleteEventRequestsList(at:self.EventRequestsList.firstIndex(where: { $0.id == index.id })!)
                                     
                                 }){
+                                    Text("\(myEvents[self.checkIndexCreatorofMyEvent(creatorEvent: index.name, origin: index.origin, destination: index.destination)].participant[myEvents[0].participant.count - 1])")
                                     Text("Accept").font(.system(size: 8)).fontWeight(.bold)
                                         .frame(minWidth: 0, maxWidth: 52, maxHeight: 18)
                                         .background(Color.yellow).cornerRadius(30)
@@ -393,6 +413,24 @@ struct NotificationView: View {
             return index
            }
     
+    func checkIndexCreatorofPublicEvent(creatorEvent : String) -> Int {
+    //           let index = allRideUser.index { $0 == "\(name)" } ?? 0
+            guard let index = publicEvents.firstIndex(where: { $0.creatorEvent == "\(creatorEvent)" })
+                else { //
+                return 0
+            }
+            return index
+           }
+    
+    func checkIndexCreatorofMyEvent(creatorEvent : String, origin : String, destination : String) -> Int {
+    //           let index = allRideUser.index { $0 == "\(name)" } ?? 0
+            guard let index = myEvents.firstIndex(where: { $0.creatorEvent == "\(creatorEvent)" && $0.eventMeetingPoint[0] == "\(origin)" && $0.eventDestination[0] == "\(destination)" })
+                else { //
+                return 0
+            }
+            return index
+           }
+    
     
 }
 
@@ -403,4 +441,5 @@ struct NotificationView_Previews: PreviewProvider {
         NotificationView(allRideUser: allUsers)
     }
 }
+
 
