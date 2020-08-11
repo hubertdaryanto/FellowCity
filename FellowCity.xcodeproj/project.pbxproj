@@ -40,7 +40,7 @@
 		CD75738A24CFDE9100EABFC9 /* EventInformationInviteFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75736224CFDE9100EABFC9 /* EventInformationInviteFriends.swift */; };
 		CD75738C24CFDE9100EABFC9 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75736424CFDE9100EABFC9 /* NotificationView.swift */; };
 		CD75738E24CFDE9100EABFC9 /* MainEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75736624CFDE9100EABFC9 /* MainEvent.swift */; };
-		CD75738F24CFDE9100EABFC9 /* CreateEventOptionalRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75736724CFDE9100EABFC9 /* CreateEventOptionalRouteView.swift */; };
+		CD75738F24CFDE9100EABFC9 /* CreateEventAdditionalRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75736724CFDE9100EABFC9 /* CreateEventAdditionalRouteView.swift */; };
 		CD75739024CFDE9100EABFC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75736824CFDE9100EABFC9 /* AppDelegate.swift */; };
 		CD75739124CFDE9100EABFC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD75736924CFDE9100EABFC9 /* Assets.xcassets */; };
 		CD75739324CFDE9100EABFC9 /* explores.json in Resources */ = {isa = PBXBuildFile; fileRef = CD75736B24CFDE9100EABFC9 /* explores.json */; };
@@ -100,7 +100,7 @@
 		CD75736224CFDE9100EABFC9 /* EventInformationInviteFriends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInformationInviteFriends.swift; sourceTree = "<group>"; };
 		CD75736424CFDE9100EABFC9 /* NotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		CD75736624CFDE9100EABFC9 /* MainEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainEvent.swift; sourceTree = "<group>"; };
-		CD75736724CFDE9100EABFC9 /* CreateEventOptionalRouteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventOptionalRouteView.swift; sourceTree = "<group>"; };
+		CD75736724CFDE9100EABFC9 /* CreateEventAdditionalRouteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventAdditionalRouteView.swift; sourceTree = "<group>"; };
 		CD75736824CFDE9100EABFC9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD75736924CFDE9100EABFC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD75736A24CFDE9100EABFC9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -211,7 +211,7 @@
 				CD75736624CFDE9100EABFC9 /* MainEvent.swift */,
 				CD75736124CFDE9100EABFC9 /* CreateEventView.swift */,
 				571430BE24DCA17100E851E8 /* AddLocationAlertView.swift */,
-				CD75736724CFDE9100EABFC9 /* CreateEventOptionalRouteView.swift */,
+				CD75736724CFDE9100EABFC9 /* CreateEventAdditionalRouteView.swift */,
 				CD75735D24CFDE9000EABFC9 /* EventInformationView.swift */,
 				CD75736224CFDE9100EABFC9 /* EventInformationInviteFriends.swift */,
 				CD585D3024D1636D00B89C8C /* RatingView.swift */,
@@ -452,7 +452,7 @@
 				CD75738224CFDE9100EABFC9 /* ExploreView.swift in Sources */,
 				572F32FE24D1243F00F24A6E /* EventItemView.swift in Sources */,
 				CD75738324CFDE9100EABFC9 /* StatusRiderView.swift in Sources */,
-				CD75738F24CFDE9100EABFC9 /* CreateEventOptionalRouteView.swift in Sources */,
+				CD75738F24CFDE9100EABFC9 /* CreateEventAdditionalRouteView.swift in Sources */,
 				CD75739424CFDE9100EABFC9 /* SceneDelegate.swift in Sources */,
 				CD75738824CFDE9100EABFC9 /* Create Event Information.swift in Sources */,
 				57D256A924DBBE9400B53E37 /* LevelRowView.swift in Sources */,

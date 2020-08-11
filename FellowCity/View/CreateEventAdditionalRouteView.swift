@@ -50,7 +50,7 @@ struct CreateEventOptionalRouteView: View {
             
             List {
                 
-                ForEach(exploreData, id: \.self) { item in
+                ForEach(deleteSelectedExploreData(exploreData: exploreData), id: \.self) { item in
                     MultipleSelectionRow(title: item.name, isSelected: self.sselectedRoute.contains(item.name)) {
                         if self.sselectedRoute.contains(item.name) {
                             self.sselectedRoute.removeAll(where: { $0 == item.name })
@@ -125,6 +125,16 @@ struct CreateEventOptionalRouteView: View {
         
     }
     
+    func deleteSelectedExploreData(exploreData: [ExploreRevised]) -> [ExploreRevised]
+    {
+        var temp: [ExploreRevised] = []
+        for item in exploreData{
+            if item.name != eventMeetingPoint && item.name != eventDestinastion{
+                temp.append(item)
+            }
+        }
+        return temp
+    }
     
     private func onDelete(offsets: IndexSet) {
         optionalRoute.remove(atOffsets: offsets)
