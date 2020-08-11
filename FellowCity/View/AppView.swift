@@ -58,7 +58,7 @@ struct TabFriendsView: View {
     var body: some View {
         //        FriendUIView( userID: "")
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        return FriendUIView(userID: "").environment(\.managedObjectContext, context)
+        return FriendUIView(userID: "", allRideUser: allUsers).environment(\.managedObjectContext, context)
         
     }
 }

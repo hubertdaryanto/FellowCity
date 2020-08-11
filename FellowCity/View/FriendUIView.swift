@@ -7,6 +7,9 @@ struct FriendUIView: View {
     @State var isPresented: Bool = false
     @State var userID: String
     
+    // List All User
+    @State var allRideUser:[User]
+    
     //User Setting
     @ObservedObject var userSettings = UserSettings()
     
@@ -49,9 +52,27 @@ struct FriendUIView: View {
                             }.hidden()
                                 
                             HStack{
+                                Image(allUsers[self.checkIndexofUser(name: index.name ?? "")].imageName)
+                                    .resizable()
+                                    .renderingMode(.original)
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 36, height: 36)
+                                    .clipShape(Circle())
+                                    //                                .background(Color.white)
+                                    .overlay(RoundedRectangle(cornerRadius: 40)
+                                        .stroke(Color("baseColor"), lineWidth: 2))
+                                    
+                                
+                                VStack(alignment: .leading){
                                 Text("\(index.name ?? "")")
+                                    if allUsers[self.checkIndexofUser(name: index.name ?? "")].isAvailableToRide == true {
+                                        Text("Available To Ride").foregroundColor(.gray)
+                                            .fontWeight(.light)
+                                            .font(.caption)
+                                    }
+                                }
                                 Spacer()
-                                Image(systemName: "info.circle").foregroundColor(Color("baseColor").opacity(1))
+                                Image(systemName: "chevron.right").foregroundColor(Color("baseColor").opacity(1))
                             }
                             }
                             //End of embed Nav Link
@@ -79,17 +100,17 @@ struct FriendUIView: View {
                 .navigationBarTitle(
                     Text("Friends"), displayMode: .inline)
                     .navigationBarItems(
-                        leading:
-                        HStack() {
-                            VStack(alignment: .leading) {
-                                HStack{
-                                    StatusRiderView()
-                                    Image(systemName: "chevron.down")
-                                }
-                                .frame(height: 50, alignment: .leading)
-                            }
-                        }
-                        ,
+//                        leading:
+//                        HStack() {
+//                            VStack(alignment: .leading) {
+//                                HStack{
+//                                    StatusRiderView()
+//                                    Image(systemName: "chevron.down")
+//                                }
+//                                .frame(height: 50, alignment: .leading)
+//                            }
+//                        }
+//                        ,
                         trailing:
                         HStack{
                             EditButton()
@@ -119,6 +140,15 @@ struct FriendUIView: View {
         }
     }
     
+    func checkIndexofUser(name : String) -> Int {
+    //           let index = allRideUser.index { $0 == "\(name)" } ?? 0
+            guard let index = allRideUser.firstIndex(where: { $0.name == "\(name)" })
+                else { //
+                return 0
+            }
+            return index
+           }
+    
     func removeFriends(at offsets: IndexSet) {
         for index in offsets {
             let friend = myFriends[index]
@@ -137,6 +167,13 @@ struct FriendUIView: View {
 struct FriendUIView_Previews: PreviewProvider {
     static var previews: some View {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        return FriendUIView( userID: "").environment(\.managedObjectContext, context)
+        return FriendUIView( userID: "", allRideUser: allUsers).environment(\.managedObjectContext, context)
+    }
+}
+
+
+extension LocalizedStringKey.StringInterpolation {
+    mutating func appendInterpolation(_ value: Bool) {
+        appendInterpolation(String(value))
     }
 }
