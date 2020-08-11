@@ -91,9 +91,9 @@ struct ExploreView: View {
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 36, height: 36)
                     .clipShape(Circle())
-//                    .background(Color.white)
+                    //                                .background(Color.white)
                     .overlay(RoundedRectangle(cornerRadius: 40)
-                        .stroke(Color.gray, lineWidth: 2))
+                        .stroke(Color("baseColor"), lineWidth: 2))
                 }
             )
                 .sheet(isPresented: $showProfileView) {

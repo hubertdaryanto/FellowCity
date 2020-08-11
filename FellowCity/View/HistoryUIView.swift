@@ -11,7 +11,8 @@ import SwiftUI
 struct HistoryUIView: View {
     var history: [EventInfoHubertHistory]
     
-    
+    // User Setting
+    @ObservedObject var userSettings = UserSettings()
     @State var showProfileView = false
     @State private var selectedRide = 0
     
@@ -56,15 +57,15 @@ struct HistoryUIView: View {
                             Button(action: {
                                 self.showProfileView.toggle()
                             }) {
-                                Image("rossi")
+                                Image("\(userSettings.imageName)")
                                 .resizable()
                                 .renderingMode(.original)
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 36, height: 36)
                                 .clipShape(Circle())
-            //                    .background(Color.white)
+                                //                                .background(Color.white)
                                 .overlay(RoundedRectangle(cornerRadius: 40)
-                                    .stroke(Color.gray, lineWidth: 2))
+                                    .stroke(Color("baseColor"), lineWidth: 2))
                             }
                         )
                             .sheet(isPresented: $showProfileView) {

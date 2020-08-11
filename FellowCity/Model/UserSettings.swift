@@ -50,7 +50,7 @@ class UserSettings: ObservableObject {
     
     init() {
         self.name = UserDefaults.standard.object(forKey: "name") as? String ?? "Fitra Eri"
-        self.imageName = UserDefaults.standard.object(forKey: "imageName") as? String ?? "fitraeri"
+        self.imageName = UserDefaults.standard.object(forKey: "imageName") as? String ?? "oleg-yeltsov"
         self.userID = UserDefaults.standard.object(forKey: "userID") as? String ?? "fitrakuy"
         self.contact = UserDefaults.standard.object(forKey: "contact") as? String ?? "+6281235328879"
         self.isAvailableToRide = UserDefaults.standard.object(forKey: "isAvailableToRide") as? Bool ?? false

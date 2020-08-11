@@ -13,7 +13,8 @@ import SwiftUI
 
 struct NotificationView: View {
     @State var showProfileView = false
-    
+    // User Setting
+    @ObservedObject var userSettings = UserSettings()
     @State var FriendInvitationsList = [
         FriendInvitation(name: "Claudelnr", mutualFriend: 3),
         FriendInvitation(name: "Hubert", mutualFriend: 3),
@@ -338,15 +339,15 @@ struct NotificationView: View {
                 Button(action: {
                     self.showProfileView.toggle()
                 }) {
-                    Image("rossi")
-                        .resizable()
-                        .renderingMode(.original)
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 36, height: 36)
-                        .clipShape(Circle())
-                        //                    .background(Color.white)
-                        .overlay(RoundedRectangle(cornerRadius: 40)
-                            .stroke(Color.gray, lineWidth: 2))
+                    Image("\(userSettings.imageName)")
+                    .resizable()
+                    .renderingMode(.original)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 36, height: 36)
+                    .clipShape(Circle())
+                    //                                .background(Color.white)
+                    .overlay(RoundedRectangle(cornerRadius: 40)
+                        .stroke(Color("baseColor"), lineWidth: 2))
                 }
             )
                 .sheet(isPresented: $showProfileView) {
