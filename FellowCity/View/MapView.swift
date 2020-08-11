@@ -10,6 +10,15 @@ import Foundation
 import MapKit
 import SwiftUI
 
+
+var routeCategory: Int = 0
+var totaldata = 0
+
+struct LocationData{
+    var coordinate: CLLocation
+    var nameOfLocation: String
+}
+
 struct MapView: UIViewRepresentable {
     @Binding var locationmanager: CLLocationManager
     
@@ -21,11 +30,6 @@ struct MapView: UIViewRepresentable {
     @Binding var totaldistance: Double
     
     @State private var isDirected = false
-    //    let region = MKCoordinateRegion.init(center: MeetingPoint, latitudinalMeters: 10000, longitudinalMeters: 10000)
-    //
-    //    let dummylocations: [CLLocation] = LocationToBeVisited
-    //
-    //    let nameOfLocation: [String] = LocationToBeVisitedName
     
     func makeCoordinator() -> MapController {
         MapController(parent1: self)
@@ -35,6 +39,7 @@ struct MapView: UIViewRepresentable {
     {
         self.totaltime = 0
         self.totaldistance = 0
+        totaldata = LocationToBeVisited.count
         let region = MKCoordinateRegion.init(center: MeetingPoint, latitudinalMeters: 10000, longitudinalMeters: 10000)
         
         let dummylocations: [CLLocation] = LocationToBeVisited
@@ -43,9 +48,7 @@ struct MapView: UIViewRepresentable {
         let mapView = MKMapView()
         var distance: CLLocationDistance = 0
         var time: CLLocationDistance = 0
-        //        var totaldistance: Double = 0
-        //        var totaltime: Double = 0
-        //        var previousLocation: CLLocation?
+        var locationCount: Int = 1
         mapView.delegate = context.coordinator
         mapView.setRegion(region, animated: true)
         mapView.mapType = MKMapType.standard
@@ -56,28 +59,33 @@ struct MapView: UIViewRepresentable {
             return CLLocation(latitude: latitude, longitude: longitude)
         }
         
+        //sediakan at least 3 warna untuk membedakan start point, additional point, dan finish point
+        //red = start
+        //green = additional
+//        //blue = finish
+//        let colorCollection: [UIColor] = [.red, .green, .blue]
         func getTotalEstimationTimeAndDistance(location: [CLLocation], nameOfLocation: [String])
         {
             let annotation = MKPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2D(latitude: location[0].coordinate.latitude, longitude: location[0].coordinate.longitude)
-            annotation.title = nameOfLocation[0]
+            annotation.title = "1. " + nameOfLocation[0]
             mapView.addAnnotation(annotation)
             for i in 0...location.count - 2{
-                getDirections(from: location[i], to: location[i+1], nameOfLocation: nameOfLocation[i+1])
+                locationCount += 1
+                getDirections(from: LocationData(coordinate: location[i], nameOfLocation: nameOfLocation[i]), to: LocationData(coordinate: location[i+1], nameOfLocation: nameOfLocation[i+1]))
                 
             }
         }
         
-        func getDirections(from: CLLocation, to: CLLocation, nameOfLocation: String)
+        func getDirections(from: LocationData, to: LocationData)
         {
             
             let request = createDirectionsRequest(from: from, to: to)
             let annotation = MKPointAnnotation()
-            annotation.coordinate = CLLocationCoordinate2D(latitude: to.coordinate.latitude, longitude: to.coordinate.longitude)
-            annotation.title = nameOfLocation
+            annotation.coordinate = CLLocationCoordinate2D(latitude: to.coordinate.coordinate.latitude, longitude: to.coordinate.coordinate.longitude)
+            annotation.title = "\(locationCount). " + to.nameOfLocation
             mapView.addAnnotation(annotation)
             let directions = MKDirections(request: request)
-            
             directions.calculate{
                 (response, error) in
                 //handle error if needed
@@ -88,8 +96,25 @@ struct MapView: UIViewRepresentable {
                     {
                         if !self.isDirected
                         {
-                            mapView.addOverlay(route.polyline, level: .aboveRoads)
-                            mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+                            
+                            if  response.source.name == self.LocationToBeVisitedName.first && self.LocationToBeVisitedName.count > 2
+                            {
+                                let polyline = StartOverlay(points: route.polyline.points(), count: route.polyline.pointCount)
+                                mapView.addOverlay(polyline, level: .aboveRoads)
+                                mapView.setVisibleMapRect(polyline.boundingMapRect, animated: true)
+                                
+                            }
+                            else if response.destination.name == self.LocationToBeVisitedName.last {
+                                let polyline = FinishOverlay(points: route.polyline.points(), count: route.polyline.pointCount)
+                                mapView.addOverlay(polyline, level: .aboveRoads)
+                                mapView.setVisibleMapRect(polyline.boundingMapRect, animated: true)
+                            }
+                            else {
+                                let polyline = AdditionalOverlay(points: route.polyline.points(), count: route.polyline.pointCount)
+                                                              mapView.addOverlay(polyline, level: .aboveRoads)
+                                                              mapView.setVisibleMapRect(polyline.boundingMapRect, animated: true)
+                            }
+                            
                             distance = route.distance
                             time = route.expectedTravelTime
                             
@@ -106,13 +131,14 @@ struct MapView: UIViewRepresentable {
             }
         }
         
-        func createDirectionsRequest(from: CLLocation, to: CLLocation) -> MKDirections.Request {
-            let startingLocation = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: from.coordinate.latitude, longitude: from.coordinate.longitude))
-            let destination = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: to.coordinate.latitude, longitude: to.coordinate.longitude))
-            
+        func createDirectionsRequest(from: LocationData, to: LocationData) -> MKDirections.Request {
+            let startingLocation = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: from.coordinate.coordinate.latitude, longitude: from.coordinate.coordinate.longitude))
+            let destination = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: to.coordinate.coordinate.latitude, longitude: to.coordinate.coordinate.longitude))
             let request = MKDirections.Request()
             request.source = MKMapItem(placemark: startingLocation)
+            request.source?.name = from.nameOfLocation
             request.destination = MKMapItem(placemark: destination)
+            request.destination?.name = to.nameOfLocation
             request.transportType = .automobile
             request.requestsAlternateRoutes = true
             return request
@@ -137,10 +163,138 @@ struct MapView: UIViewRepresentable {
         
         
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-            let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
-            renderer.strokeColor = .blue
+            let renderer = MKPolylineRenderer(overlay: overlay)
+            if overlay is StartOverlay{
+                renderer.strokeColor = .red
+            }
+            else if overlay is AdditionalOverlay{
+                renderer.strokeColor = .green
+            }
+            else if overlay is FinishOverlay{
+                renderer.strokeColor = .blue
+                
+            }
+            
             
             return renderer
         }
     }
 }
+
+fileprivate class StartOverlay: MKPolyline{
+
+}
+fileprivate class AdditionalOverlay: MKPolyline{
+
+}
+fileprivate class FinishOverlay: MKPolyline{
+
+}
+
+
+
+//protocol setNama{
+//    var namaTempat: String { get }
+//}
+//
+//extension MKPlacemark: setNama {
+//    private var nama: String
+//    var namaTempat: String {
+//        get {
+//        return nama
+//        }
+//
+//        set {
+//            nama = newValue
+//        }
+//
+//    }
+//}
+//struct CONSTANT {
+//    static let greenColor = UIColor.green
+//    static let blueColor = UIColor.blue
+//    static let redColor = UIColor.red
+//}
+//
+//struct variables {
+//    // let the default lineColor be green
+//    static var lineColor = CONSTANT.greenColor
+//}
+
+//struct City{
+//    var midCoordinate: CLLocationCoordinate2D
+//    var overlayBoundingMapRect: MKMapRect
+//}
+//
+//class FellowCityMapOverlay: NSObject, MKOverlay {
+//    let coordinate: CLLocationCoordinate2D
+//    let boundingMapRect: MKMapRect
+//
+//    init(city: City)
+//    {
+//        boundingMapRect = city.overlayBoundingMapRect
+//        coordinate = city.midCoordinate
+//    }
+//}
+//
+//class FellowCityMapOverlayView: MKOverlayRenderer{
+//    let overlayImage: UIImage
+//
+//    init(overlay: MKOverlay, overlayImage: UIImage)
+//    {
+//        self.overlayImage = overlayImage
+//        super.init(overlay: overlay)
+//    }
+//
+//    override func draw(
+//      _ mapRect: MKMapRect,
+//      zoomScale: MKZoomScale,
+//      in context: CGContext
+//    ) {
+//      guard let imageReference = overlayImage.cgImage else { return }
+//
+//      let rect = self.rect(for: overlay.boundingMapRect)
+//      context.scaleBy(x: 1.0, y: -1.0)
+//      context.translateBy(x: 0.0, y: -rect.size.height)
+//      context.draw(imageReference, in: rect)
+//    }
+//}
+//
+//enum RouteType: Int{
+//    case start = 0
+//    case additional = 1
+//    case end = 2
+//
+//    func color() -> UIColor {
+//        switch self
+//        {
+//        case .start:
+//            return UIColor.red
+//        case .additional:
+//            return UIColor.green
+//        case .end:
+//            return UIColor.green
+//        }
+//    }
+//}
+//
+////class LocationAnnotation: NSObject, MKPolylineRenderer {
+////  // 3
+////  let coordinate: CLLocationCoordinate2D
+////  let title: String?
+////  let subtitle: String?
+////  let type: RouteType
+////
+////  // 4
+////  init(
+////    coordinate: CLLocationCoordinate2D,
+////    title: String,
+////    subtitle: String,
+////    type: RouteType
+////  ) {
+////    self.coordinate = coordinate
+////    self.title = title
+////    self.subtitle = subtitle
+////    self.type = type
+////  }
+////}

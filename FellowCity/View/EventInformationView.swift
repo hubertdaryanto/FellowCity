@@ -50,6 +50,7 @@ struct EventInformationView: View {
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     
+    //FROM CreateEventView.swift
     @State var eventDate = Date()
     @State var eventName: String = ""
     @State var eventMeetingPoint: String = ""
@@ -63,145 +64,132 @@ struct EventInformationView: View {
     @State var sselectedRoute:[String] = []
     
     var body: some View {
-//        ScrollView {
-        //        NavigationView{
-        VStack{
-            Spacer()
-            
-            HStack{
-                VStack(alignment: .center){
-                    Text("Total Distance").bold().font(.body)
-                        .fontWeight(.bold).foregroundColor(Color("baseColor").opacity(1)).padding(.bottom, 1)
-                    //                Text("\(saveRouteDetail.totaldistance) Km")
-                    Text("\(String(format: "%.2f", saveRouteDetail.totaldistance)) Km")
-                }
-                
-                CenterLine().stroke().frame(width: 100, height: 75)
-                VStack(alignment: .center)
-                {
-                    Text("Estimation").bold().font(.body)
-                        .fontWeight(.bold).foregroundColor(Color("baseColor").opacity(1)).padding(.bottom, 1)
-                    
-                    
-                    //                Text("\(saveRouteDetail.totaltime) Mins")
-                    Text("\(String(format: "%.2f", saveRouteDetail.totaltime)) Mins")
-                }
-            }.padding()
-            
-            HStack{
-                //                Spacer().frame(width: 20, height: 0)
-                VStack(alignment: .leading){
-                    //                        Text(eventInfo.eventName)
-                    Text(eventName).bold().font(.body)
-                        .fontWeight(.bold).foregroundColor(Color("baseColor").opacity(1)).padding(.bottom, 1)
-                    Text("\(eventMeetingPoint) -> \(eventDestinastion)").bold().font(.body)
-                    .fontWeight(.bold)
-//                        .foregroundColor(Color(hex: 0xF7B500, alpha: 1)).padding(.bottom, 1)
-                    //                        Text(formatter.string(from: eventInfo.startDate))
-                    Text(formatter.string(from: eventDate)).font(.body)
-                        .padding(.bottom, 1)
-                }
-                Spacer()
-            }.padding()
+        GeometryReader{ g in
+            ScrollView {
+                    //        NavigationView{
+                    VStack{
+                        Spacer()
+                        
+                        HStack{
+                            VStack(alignment: .center){
+                                Text("Total Distance").bold().font(.body)
+                                    .fontWeight(.bold).foregroundColor(Color(hex: 0xF7B500, alpha: 1)).padding(.bottom, 1)
+                                //                Text("\(saveRouteDetail.totaldistance) Km")
+                                Text("\(String(format: "%.2f", self.saveRouteDetail.totaldistance)) Km")
+                            }
+                            
+                            CenterLine().stroke().frame(width: 100, height: 75)
+                            VStack(alignment: .center)
+                            {
+                                Text("Estimation").bold().font(.body)
+                                    .fontWeight(.bold).foregroundColor(Color(hex: 0xF7B500, alpha: 1)).padding(.bottom, 1)
+                                
+                                
+                                //                Text("\(saveRouteDetail.totaltime) Mins")
+                                Text("\(String(format: "%.2f", self.saveRouteDetail.totaltime)) Mins")
+                            }
+                        }.padding()
+                        
+                        HStack{
+                            //                Spacer().frame(width: 20, height: 0)
+                            VStack(alignment: .leading){
+                                //                        Text(eventInfo.eventName)
+                                Text(self.eventName).bold().font(.body)
+                                    .fontWeight(.bold).foregroundColor(Color(hex: 0xF7B500, alpha: 1)).padding(.bottom, 1)
+                                HStack{
+                                    Text(self.eventMeetingPoint).bold().font(.body).fontWeight(.bold)
+                                    Image(systemName: "arrow.right")
+                                    Text(self.eventDestinastion).bold().font(.body).fontWeight(.bold)
+                                }
+                                Text(formatter.string(from: self.eventDate)).font(.body)
+                                    .padding(.bottom, 1)
+                            }
+                            Spacer()
+                        }.padding()
 
-            Spacer()
-            
-            HStack{
-                Spacer().frame(width: 20, height: 0)
-                Text("Routes").bold().font(.body)
-                    .fontWeight(.bold).foregroundColor(Color("baseColor").opacity(1)).padding(.bottom, 1)
-                Spacer()
-            }
-            
-//            MapView(locationmanager: $locationManager, MeetingPoint: CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469), LocationToBeVisited: [CLLocation(latitude: -6.3298786, longitude: 106.9439469),
-//                                                CLLocation(latitude: -6.258080, longitude: 106.808391),
-//                                                CLLocation(latitude: -6.2808073, longitude: 106.7122415)
-//            ], LocationToBeVisitedName: ["Pertamina Jatiasih", "Moto Village", "Lot 9 Bintaro"], totaltime: self.$saveRouteDetail.totaltime, totaldistance: self.$saveRouteDetail.totaldistance)
-            MapView(locationmanager: $locationManager, MeetingPoint: MeetingPoint, LocationToBeVisited: getLocationData(locationName: sselectedRoute).location, LocationToBeVisitedName: getLocationData(locationName: sselectedRoute).nameOfLocation, totaltime: self.$saveRouteDetail.totaltime, totaldistance: self.$saveRouteDetail.totaldistance)
-//                .frame(height: 200)
-                .padding()
-            
-            //                List(RouteInfoDummy) { index in
-            //                    Text(index.place)
-            //                }
-            
-            HStack{
-                Spacer().frame(width: 20, height: 0)
-                Text("Additional Routes").bold().font(.body)
-                    .fontWeight(.bold).foregroundColor(Color("baseColor").opacity(1)).padding(.bottom, 1)
-                Spacer()
-            }
-            
-            VStack{
-                List{
-                                ForEach(sselectedRoute, id: \.self) { item in
-                                    OptionalRouteViewer(title: item)
-                                    {}
-                                    
+                        Spacer()
+                        
+                        HStack{
+                            Spacer().frame(width: 20, height: 0)
+                            Text("Routes").bold().font(.body)
+                                .fontWeight(.bold).foregroundColor(Color(hex: 0xF7B500, alpha: 1)).padding(.bottom, 1)
+                            Spacer()
+                        }
+                        
+                        MapView(locationmanager: self.$locationManager, MeetingPoint: self.MeetingPoint, LocationToBeVisited: self.getLocationData(origin: self.eventMeetingPoint, locationName: self.sselectedRoute, destination: self.eventDestinastion).location, LocationToBeVisitedName: self.getLocationData(origin: self.eventMeetingPoint, locationName: self.sselectedRoute, destination: self.eventDestinastion).nameOfLocation, totaltime: self.$saveRouteDetail.totaltime, totaldistance: self.$saveRouteDetail.totaldistance)
+                            .frame(width: g.size.width - 20, height: 400, alignment: .center)
+                            .padding()
+                        
+                        
+                        HStack{
+                            Spacer().frame(width: 20, height: 0)
+                            Text("Additional Routes").bold().font(.body)
+                                .fontWeight(.bold).foregroundColor(Color(hex: 0xF7B500, alpha: 1)).padding(.bottom, 1)
+                            Spacer()
+                        }
+                        
+                        VStack{
+                            List{
+                                ForEach(self.sselectedRoute, id: \.self) { item in
+                                                OptionalRouteViewer(title: item)
+                                                {}
+                                                
+                                }
+                            }.frame(width: g.size.width - 20, height: 400, alignment: .center)
+                        }
+             
+                        
                     }
+                    
+                    // End of Navigation View
+                    
+                                .navigationBarTitle("Event Information", displayMode: .inline)
+                               .navigationBarItems(
+                            trailing:
+                        
+                        ZStack {
+                            NavigationLink(
+                                 // MARK: - Next Page
+                                               destination: EventInformationInviteFriends(popToHome: self.$popToHome)
+                            ){
+                                
+                                HStack{
+                                Text("Next")
+                                .font(.body)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                                Image(systemName: "chevron.right")
+                                .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
+                                
+                            }
+                            // End of Next Page
+                        }
+
+                            
+                        }
+                    )
+                    
                 }
-            }
- 
-//            HStack{
-//                Spacer()
-//                NavigationLink(destination: EventInformationInviteFriends(popToHome: self.$popToHome))
-//                {
-//                    Text("Next")
-//                        .font(.body)
-//                        .fontWeight(.bold)
-//                        .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
-//                }
-//            }.padding()
-            
         }
         
-        // End of Navigation View
-        
-                    .navigationBarTitle("Event Information", displayMode: .inline)
-                   .navigationBarItems(
-                trailing:
-            
-            ZStack {
-                NavigationLink(
-                     // MARK: - Next Page
-                                   destination: EventInformationInviteFriends(popToHome: self.$popToHome)
-                ){
-                    
-                    HStack{
-                    Text("Next")
-                    .font(.body)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color("baseColor").opacity(1))
-                    Image(systemName: "chevron.right")
-                    .foregroundColor(Color("baseColor").opacity(1))
-                    
-                }
-                // End of Next Page
-            }
-
-                
-            }
-        )
-        
-//    }
     }
     
-    func getLocationData(locationName: [String]) -> (location: [CLLocation], nameOfLocation: [String])
+    func getLocationData(origin: String, locationName: [String]?, destination: String) -> (location: [CLLocation], nameOfLocation: [String])
     {
         var temp: [ExploreRevised] = []
         var returnData: [CLLocation] = []
         var returnNameLocation: [String] = []
-//        for index in exploreData
-//        {
-//            if locationName.contains(index.name)
-//            {
-//                temp.append(index)
-//                returnData.append(CLLocation(latitude: index.latitude, longitude: index.longitude))
-//                returnNameLocation.append(index.name)
-//            }
-//        }
-    
-        for index in locationName{
+        for index in exploreData{
+            if origin == index.name
+            {
+                temp.append(index)
+                returnData.append(CLLocation(latitude: index.latitude, longitude: index.longitude))
+                returnNameLocation.append(index.name)
+            }
+        }
+        
+        
+        for index in locationName!{
             for index2 in exploreData
             {
                 if index == index2.name
@@ -210,6 +198,15 @@ struct EventInformationView: View {
                     returnData.append(CLLocation(latitude: index2.latitude, longitude: index2.longitude))
                     returnNameLocation.append(index2.name)
                 }
+            }
+        }
+        
+        for index in exploreData{
+            if destination == index.name
+            {
+                temp.append(index)
+                returnData.append(CLLocation(latitude: index.latitude, longitude: index.longitude))
+                returnNameLocation.append(index.name)
             }
         }
         return (returnData, returnNameLocation)
@@ -248,7 +245,7 @@ extension ExploreRevised: Reorderable {
 //EOF
 // struct Event_Information_Previews: PreviewProvider {
 //     static var previews: some View {
-//         Event_Information(eventName: "Pertamina Jatiasih -> Lot 9 Bintaro", MeetingPoint: CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469), LocationToBeVisited: [CLLocation(latitude: -6.3298786, longitude: 106.9439469), CLLocation(latitude: -6.258080, longitude: 106.808391), CLLocation(latitude: -6.2808073, longitude: 106.7122415)], LocationToBeVisitedName: ["Pertamina Jatiasih", "Moto Village", "Lot 9 Bintaro"])
+//        EventInformationView(popToHome: true, eventName: "Pertamina Jatiasih -> Lot 9 Bintaro", MeetingPoint: CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469), LocationToBeVisited: [CLLocation(latitude: -6.3298786, longitude: 106.9439469), CLLocation(latitude: -6.258080, longitude: 106.808391), CLLocation(latitude: -6.2808073, longitude: 106.7122415)], LocationToBeVisitedName: ["Pertamina Jatiasih", "Moto Village", "Lot 9 Bintaro"])
 //     }
 // }
 
