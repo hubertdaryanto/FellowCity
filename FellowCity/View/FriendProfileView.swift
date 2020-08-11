@@ -172,7 +172,7 @@ struct FriendProfileView: View {
                 }
                 Spacer()
                 }.padding()
-            .navigationBarTitle(Text("Create Event"), displayMode: .inline)
+            .navigationBarTitle(Text("\(name)"), displayMode: .inline)
             
 //        }
         
@@ -189,7 +189,7 @@ struct FriendProfileView: View {
        }
     
     func checkRideLevel(numofRide : Int) -> Int {
-        if numofRide == 0 {
+        if numofRide >= 0 && numofRide < 10 {
             return 0
         }
         if numofRide >= 10 && numofRide < 20 {

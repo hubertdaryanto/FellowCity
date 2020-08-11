@@ -27,6 +27,7 @@
 		572F32FA24D11D3000F24A6E /* MyEventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32F924D11D3000F24A6E /* MyEventDetailsView.swift */; };
 		572F32FC24D1238000F24A6E /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32FB24D1238000F24A6E /* EventDetailsView.swift */; };
 		572F32FE24D1243F00F24A6E /* EventItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572F32FD24D1243F00F24A6E /* EventItemView.swift */; };
+		57B6E25C24E2F91A001DEDB2 /* DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B6E25B24E2F919001DEDB2 /* DismissKeyboard.swift */; };
 		57D256A724DBB89600B53E37 /* LevelItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D256A624DBB89600B53E37 /* LevelItemView.swift */; };
 		57D256A924DBBE9400B53E37 /* LevelRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D256A824DBBE9400B53E37 /* LevelRowView.swift */; };
 		57E39A5324E1C69600E348BE /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E39A5224E1C69600E348BE /* UserSettings.swift */; };
@@ -99,6 +100,7 @@
 		572F32F924D11D3000F24A6E /* MyEventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventDetailsView.swift; sourceTree = "<group>"; };
 		572F32FB24D1238000F24A6E /* EventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsView.swift; sourceTree = "<group>"; };
 		572F32FD24D1243F00F24A6E /* EventItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItemView.swift; sourceTree = "<group>"; };
+		57B6E25B24E2F919001DEDB2 /* DismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissKeyboard.swift; sourceTree = "<group>"; };
 		57D256A624DBB89600B53E37 /* LevelItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelItemView.swift; sourceTree = "<group>"; };
 		57D256A824DBBE9400B53E37 /* LevelRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelRowView.swift; sourceTree = "<group>"; };
 		57E39A5224E1C69600E348BE /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				571ED2BA24DC1F1100C89B55 /* ColorSetting.swift */,
 				571430CC24E1636C00E851E8 /* ViewRouter.swift */,
 				57E39A5224E1C69600E348BE /* UserSettings.swift */,
+				57B6E25B24E2F919001DEDB2 /* DismissKeyboard.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD79826F24D10AF200EA93F1 /* HistoryItemView.swift in Sources */,
+				57B6E25C24E2F91A001DEDB2 /* DismissKeyboard.swift in Sources */,
 				571430C924E0FC2F00E851E8 /* PageViewController.swift in Sources */,
 				CD75738A24CFDE9100EABFC9 /* EventInformationInviteFriends.swift in Sources */,
 				57E39A5524E1D39C00E348BE /* FriendProfileView.swift in Sources */,

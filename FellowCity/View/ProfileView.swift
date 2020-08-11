@@ -160,7 +160,7 @@ struct ProfileView: View {
     }
     
     func checkRideLevel(numofRide : Int) -> Int {
-        if numofRide == 0 {
+        if numofRide >= 0 && numofRide < 10 {
             return 0
         }
         if numofRide >= 10 && numofRide < 20 {

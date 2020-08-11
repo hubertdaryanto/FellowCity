@@ -68,27 +68,19 @@ struct MainEvent: View {
                                 ZStack{
                                     
                                     Rectangle()
-                                        
-                                    .frame(width: 350, height: 80)
-                                        
-                                        .foregroundColor(Color(.white))
-//                                    .cornerRadius(40)
-
-                                    .background(Color.white)
+                                    .frame( height: 80)
+                                    .foregroundColor(Color(.white))
                                     .cornerRadius(40)
                                     .overlay(RoundedRectangle(cornerRadius: 40)
                                         .stroke(Color("baseColor"), lineWidth: 2))
-//                                        .shadow(radius: 1)
                                     .shadow(radius: 1, x: 1, y: 1)
+                                    
                                     
                                     
                                     NavigationLink(destination:
                                         // Go to EventInformationView
                                         MyDetailsView(allMyEvent: index, eventDate: self.eventDate, eventName: self.eventName, eventMeetingPoint: self.eventMeetingPoint, eventDestinastion: self.eventDestinastion, sselectedRoute: self.sselectedRoute,
                                                              MeetingPoint: self.MeetingPoint, LocationToBeVisited: self.LocationToBeVisited, LocationToBeVisitedName: self.LocationToBeVisitedName)
-                                        
-                                        
-                                        //
                                         
                                     ){
                                         EmptyView()
@@ -122,8 +114,9 @@ struct MainEvent: View {
                                             .foregroundColor(Color(.black).opacity(1))
                                             .frame(width: 10, height: 10, alignment: .center)
 //                                        Spacer()
-                                        }.padding(15)
-                                .frame(width: 350, height: 80)
+                                        }
+                                    .padding(15)
+                                .frame(height: 80)
                                     
                                 }
                                     

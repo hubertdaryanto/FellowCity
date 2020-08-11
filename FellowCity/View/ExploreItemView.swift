@@ -106,9 +106,9 @@ struct ExploreItemView: View {
 //            }
             
                                     }
-            //.padding()
+            .padding()
             
-            .padding(.bottom)
+//            .padding(.bottom)
             
         }
 
