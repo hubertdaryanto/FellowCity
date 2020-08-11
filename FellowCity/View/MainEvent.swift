@@ -166,13 +166,14 @@ struct MainEvent: View {
                         self.showProfileView.toggle()
                     }) {
                         Image("\(userSettings.imageName)")
-                            .resizable()
-                            .renderingMode(.original)
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 36, height: 36)
-                            .clipShape(Circle())
-                            .overlay(RoundedRectangle(cornerRadius: 40)
-                                .stroke(Color.gray, lineWidth: 2))
+                        .resizable()
+                        .renderingMode(.original)
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 36, height: 36)
+                        .clipShape(Circle())
+                        //                                .background(Color.white)
+                        .overlay(RoundedRectangle(cornerRadius: 40)
+                            .stroke(Color("baseColor"), lineWidth: 2))
                     }
             )
                 .sheet(isPresented: $showProfileView) {

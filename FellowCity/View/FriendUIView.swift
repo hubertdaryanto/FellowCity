@@ -104,7 +104,8 @@ struct FriendUIView: View {
                 .navigationBarTitle(
                     Text("Friends"), displayMode: .inline)
                     .navigationBarItems(
-//                        leading:
+                        leading:
+                        EditButton()
 //                        HStack() {
 //                            VStack(alignment: .leading) {
 //                                HStack{
@@ -114,10 +115,10 @@ struct FriendUIView: View {
 //                                .frame(height: 50, alignment: .leading)
 //                            }
 //                        }
-//                        ,
+                        ,
                         trailing:
                         HStack{
-                            EditButton()
+                            
                             Button(action: {
                                 self.showProfileView.toggle()
                             }) {
@@ -129,7 +130,7 @@ struct FriendUIView: View {
                                     .clipShape(Circle())
                                     //                                .background(Color.white)
                                     .overlay(RoundedRectangle(cornerRadius: 40)
-                                        .stroke(Color.gray, lineWidth: 2))
+                                        .stroke(Color("baseColor"), lineWidth: 2))
                             }
                         }
                 )
