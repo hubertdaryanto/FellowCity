@@ -129,7 +129,7 @@ struct CreateEventView: View {
 //                        .padding(.bottom)
                     }.padding(.bottom)
                     //DatePicker("", selection: $eventDate,, in: ...Date() displayedComponents: [.date, .hourAndMinute]){
-                    DatePicker(selection: $eventDate, in: ...Date(), displayedComponents: [.date, .hourAndMinute]) {
+                    DatePicker(selection: $eventDate, in: Date()..., displayedComponents: [.date, .hourAndMinute]) {
                         Text("")
                     }.frame(height: 120, alignment: .center)
                 }
