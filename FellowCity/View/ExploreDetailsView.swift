@@ -125,39 +125,47 @@ struct ExploreDetailsView: View {
             
             Spacer()
             
+
+            ZStack {
             NavigationLink(destination:
                 CreateEventView(popToHome: self.$popToHome, eventDestinastion: explore.name)
                 ,isActive: self.$popToHome
 //                AppView()
                 )
             {
-                HStack{
+                HStack {
                     Spacer()
-//                    Text("Join").foregroundColor(Color.black)
-//
-//                        .frame(width: 100, height: 50, alignment: .center).cornerRadius(50)
-//
-//                        .background(Color.yellow)
-                    
                     Text("Join").foregroundColor(Color.black)
                         .font(.system(size: 15)).fontWeight(.heavy)
                     .frame(minWidth: 0, maxWidth: 120, maxHeight: 40)
-                    
+
 //                    .background(Color.yellow)
                     .background(Color("baseColor").opacity(1))
                     .cornerRadius(15)
-                    
-
-                        
                     Spacer()
                 }
             }.isDetailLink(false)
+            }
+            
+//            ZStack {
+//                NavigationLink(
+//                    // MARK: - popToHome
+//                    destination: CreateEventView(popToHome: self.$popToHome),
+//                    isActive: self.$popToHome
+//                ){
+//
+//                    Image(systemName: "plus.circle.fill").resizable().foregroundColor(Color("baseColor").opacity(1)).frame(width: 58, height: 58, alignment: .center)
+//                        .shadow(radius: 1, x: 1, y: 1)
+//
+//                }.isDetailLink(false)
+//                // End of popToHome
+//            }
             
             Spacer()
         }
         
         
-        
+        .navigationBarTitle(Text("Join"), displayMode: .inline)
         
     }
 }

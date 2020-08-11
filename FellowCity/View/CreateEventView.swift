@@ -168,6 +168,7 @@ struct CreateEventView: View {
                                     .font(.body)
                                     .fontWeight(.bold)
                                     .foregroundColor(Color("baseColor").opacity(1))
+                                Spacer()
                                 Image(systemName: "chevron.right")
                                     .foregroundColor(Color("baseColor").opacity(1))
                                 
@@ -179,6 +180,7 @@ struct CreateEventView: View {
                     }
                     
             )
+            
             Group {
             VStack{
                 AddLocationAlertView(isShown: $isMeetingPointAlert, onAdd: { text in

@@ -55,7 +55,7 @@ struct OnboardingCardView: View {
                                 Spacer()
                                 }
                                 }
-                            }.frame(width: reader.frame(in: .global).width * 0.98 )
+                            }.frame(width: reader.frame(in: .global).width * 0.95 )
                             
 
 

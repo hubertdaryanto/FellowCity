@@ -32,6 +32,9 @@ struct EventInformationInviteFriends: View {
    
     @State var invitedFriends:[String] = []
     
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(entity: FriendLists.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \FriendLists.name, ascending: true)]) var myFriends: FetchedResults<FriendLists>
+    
     var body: some View {
 //        NavigationView{
             VStack{
