@@ -32,6 +32,7 @@
 		57E39A5324E1C69600E348BE /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E39A5224E1C69600E348BE /* UserSettings.swift */; };
 		57E39A5524E1D39C00E348BE /* FriendProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E39A5424E1D39C00E348BE /* FriendProfileView.swift */; };
 		57F7339D24E20BC700347DD5 /* ListParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F7339C24E20BC700347DD5 /* ListParticipantView.swift */; };
+		57F7339F24E247E600347DD5 /* EventRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F7339E24E247E600347DD5 /* EventRowView.swift */; };
 		57FA285124E1F20C00EBF3B5 /* ReviewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FA285024E1F20C00EBF3B5 /* ReviewItemView.swift */; };
 		57FA285324E206B700EBF3B5 /* MyDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FA285224E206B700EBF3B5 /* MyDetailsView.swift */; };
 		CD585D3124D1636D00B89C8C /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD585D3024D1636D00B89C8C /* RatingView.swift */; };
@@ -103,6 +104,7 @@
 		57E39A5224E1C69600E348BE /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		57E39A5424E1D39C00E348BE /* FriendProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileView.swift; sourceTree = "<group>"; };
 		57F7339C24E20BC700347DD5 /* ListParticipantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListParticipantView.swift; sourceTree = "<group>"; };
+		57F7339E24E247E600347DD5 /* EventRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRowView.swift; sourceTree = "<group>"; };
 		57FA285024E1F20C00EBF3B5 /* ReviewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewItemView.swift; sourceTree = "<group>"; };
 		57FA285224E206B700EBF3B5 /* MyDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetailsView.swift; sourceTree = "<group>"; };
 		CD585D3024D1636D00B89C8C /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				CD75735F24CFDE9100EABFC9 /* ExploreItemView.swift */,
 				572F32F724D119E800F24A6E /* ExploreDetailsView.swift */,
 				572F32FB24D1238000F24A6E /* EventDetailsView.swift */,
+				57F7339E24E247E600347DD5 /* EventRowView.swift */,
 				572F32FD24D1243F00F24A6E /* EventItemView.swift */,
 				57FA285024E1F20C00EBF3B5 /* ReviewItemView.swift */,
 				57D8DC5824D908BE001C4B8A /* Notification */,
@@ -479,6 +482,7 @@
 				571430CB24E100D500E851E8 /* PageControl.swift in Sources */,
 				CD75739D24CFDE9100EABFC9 /* RidingLocation.swift in Sources */,
 				57FA285324E206B700EBF3B5 /* MyDetailsView.swift in Sources */,
+				57F7339F24E247E600347DD5 /* EventRowView.swift in Sources */,
 				CDC4890224D7B4AD0001C2A4 /* MapView.swift in Sources */,
 				57052FA224DAD67F001199F5 /* FellowCity.xcdatamodeld in Sources */,
 				571430C324DCEC6D00E851E8 /* OnboardingOffsetAnimationView.swift in Sources */,

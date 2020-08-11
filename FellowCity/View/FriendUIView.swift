@@ -69,6 +69,10 @@ struct FriendUIView: View {
                                         Text("Available To Ride").foregroundColor(.gray)
                                             .fontWeight(.light)
                                             .font(.caption)
+                                    } else {
+                                        Text("Busy").foregroundColor(.gray)
+                                        .fontWeight(.light)
+                                        .font(.caption)
                                     }
                                 }
                                 Spacer()

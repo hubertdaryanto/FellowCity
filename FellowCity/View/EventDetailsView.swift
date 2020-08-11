@@ -35,8 +35,9 @@ struct EventDetailsView: View {
                     Image(allPublicEvent.eventImageName)
                         .resizable()
                         .renderingMode(.original)
-                        .aspectRatio(contentMode: .fill)
-                        .frame(height: 200)
+                        .frame(height: 250)
+                        .aspectRatio(contentMode: .fit)
+                        
                     
                     //            .cornerRadius(10)
                     //            .shadow(radius: 5)

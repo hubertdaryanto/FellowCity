@@ -13,6 +13,7 @@ import SwiftUI
 struct ExploreView: View {
     
     var explore:ExploreRevised
+     var allPublicEvent:AllEvent
     var categories:[String:[ExploreRevised]] {
         .init(
             grouping: exploreData,
@@ -65,7 +66,8 @@ struct ExploreView: View {
 //                    .frame(alignment: .leading)
                 } else  {
                     List {
-                        EventItemView(allPublicEvent: publicEvents[0])
+//                        EventItemView(allPublicEvent: allPublicEvent)
+                        EventRowView(categoryName: "Indoor", allPublicEvent: publicEvents)
                     }
 
                     
@@ -105,7 +107,7 @@ struct ExploreView: View {
 
 struct ExploreView_Previews: PreviewProvider {
     static var previews: some View {
-        ExploreView(explore: exploreData[0])
+        ExploreView(explore: exploreData[0], allPublicEvent: publicEvents[0])
     }
 }
 
