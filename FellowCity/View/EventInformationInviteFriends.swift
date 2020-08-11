@@ -32,6 +32,14 @@ struct EventInformationInviteFriends: View {
    
     @State var invitedFriends:[String] = []
     
+    //from EventInformationView.swift
+    @State var eventDate = Date()
+    @State var eventName: String = ""
+    @State var eventMeetingPoint: String = ""
+    @State var eventDestinastion: String = ""
+    @State var sselectedRoute:[String] = []
+    @State var eventCategory: String
+    @State var eventImage: String
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(entity: FriendLists.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \FriendLists.name, ascending: true)]) var myFriends: FetchedResults<FriendLists>
     
@@ -92,6 +100,7 @@ struct EventInformationInviteFriends: View {
                 Button(action: {
 
                     self.popToHome = false
+                    myEvents.append(AllEvent(creatorEvent: UserSettings().name, eventName: self.eventName, eventImageName: self.eventImage, eventMeetingPoint: self.sselectedRoute, eventDestination: [self.eventDestinastion], eventDate: self.eventDate, AdditionalRoutes: [self.sselectedRoute], description: "", review: [""], maximumPeople: 100, rating: 0.0, category: self.eventCategory, isPublic: self.isPublic, participant: self.invitedFriends))
 
                 }) {
                     Text("Finish")
@@ -128,8 +137,8 @@ struct EventInformationInviteFriends: View {
 }
 
 
-struct EventInformationInviteFriends_Previews: PreviewProvider {
-    static var previews: some View {
-        EventInformationInviteFriends(popToHome: .constant(false))
-    }
-}
+//struct EventInformationInviteFriends_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EventInformationInviteFriends(popToHome: .constant(false))
+//    }
+//}

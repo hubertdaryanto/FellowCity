@@ -49,15 +49,17 @@ struct EventInformationView: View {
     
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
-    
     //FROM CreateEventView.swift
     @State var eventDate = Date()
     @State var eventName: String = ""
     @State var eventMeetingPoint: String = ""
     @State var eventDestinastion: String = ""
     
+    //from this .swift
     @State var selectedRoute: [SelectedRoute] = []
     @State var MeetingPoint: CLLocationCoordinate2D
+    @State var eventCategory: String = ""
+    @State var eventImage: String = ""
 //    @State var LocationToBeVisited: [CLLocation] = get
 //    @State var LocationToBeVisitedName: [String]
     
@@ -86,7 +88,7 @@ struct EventInformationView: View {
                                 
                                 
                                 //                Text("\(saveRouteDetail.totaltime) Mins")
-                                Text("\(String(format: "%.2f", self.saveRouteDetail.totaltime)) Mins")
+                                Text("\(String(format: "%.0f", self.saveRouteDetail.totaltime)) Mins")
                             }
                         }.padding()
                         
@@ -144,7 +146,7 @@ struct EventInformationView: View {
                             Spacer()
                             NavigationLink(
                                 //                            Event_Information()
-                                destination: EventInformationInviteFriends(popToHome: self.$popToHome)
+                                destination: EventInformationInviteFriends(popToHome: self.$popToHome, eventDate: self.eventDate, eventName: self.eventName, eventMeetingPoint: self.eventMeetingPoint, eventDestinastion: self.eventDestinastion, sselectedRoute: self.sselectedRoute, eventCategory: self.getLocationData(origin: self.eventMeetingPoint, locationName: self.sselectedRoute, destination: self.eventDestinastion).category!, eventImage: self.getLocationData(origin: self.eventMeetingPoint, locationName: self.sselectedRoute, destination: self.eventDestinastion).imageName!)
                                 )
                             {
                                Text("Next")
@@ -193,7 +195,7 @@ struct EventInformationView: View {
         
     }
     
-    func getLocationData(origin: String, locationName: [String]?, destination: String) -> (location: [CLLocation], nameOfLocation: [String])
+    func getLocationData(origin: String, locationName: [String]?, destination: String) -> (location: [CLLocation], nameOfLocation: [String], category: String?, imageName: String?)
     {
         var temp: [ExploreRevised] = []
         var returnData: [CLLocation] = []
@@ -224,11 +226,13 @@ struct EventInformationView: View {
             if destination == index.name
             {
                 temp.append(index)
+//                self.eventCategory = index.category.rawValue
+//                self.eventImage = index.imageName
                 returnData.append(CLLocation(latitude: index.latitude, longitude: index.longitude))
                 returnNameLocation.append(index.name)
             }
         }
-        return (returnData, returnNameLocation)
+        return (returnData, returnNameLocation, temp.last?.category.rawValue, temp.last?.imageName)
     }
 }
 
