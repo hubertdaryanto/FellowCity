@@ -23,7 +23,7 @@ struct OnboardingView: View {
     var subviews = [
         UIHostingController(rootView: OnboardingCardView(imagename: "flag.circle.fill", title: "Create Events", subtitle: "Create your personal events where you can invite your friends and pick custom routes")),
         UIHostingController(rootView: OnboardingCardView(imagename: "arrow.right.arrow.left.circle", title: "Ride", subtitle: "Explore and join events that recommended by us or created by other riders!")),
-        UIHostingController(rootView: OnboardingCardView(imagename: "person.3.fill", title: "Join Community", subtitle: "Increase your connection and networking by adding friends and joining public events")),
+        UIHostingController(rootView: OnboardingCardView(imagename: "person.crop.circle.fill.badge.plus", title: "Join Community", subtitle: "Increase your connection and networking by adding friends and joining public events")),
         UIHostingController(rootView: OnboardingCardView(imagename: "clock.fill", title: "Level Up", subtitle: "Increase your achievement based on your riding activity"))
     ]
     

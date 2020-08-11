@@ -29,30 +29,55 @@ struct FriendProfileView: View {
     
     var body: some View {
 //        NavigationView {
-            List{
-                VStack(alignment: .leading){
-                    Spacer()
-                    HStack{
-                        Spacer()
-                        ZStack{
-                        Image("\(allUsers[checkIndexofUser(name: name)].imageName)")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 82, height: 82)
-                            .clipShape(Circle())
-                            
-                        Circle()
-                            .frame(width: 20, height:20)
-                            .offset(x: 30, y: 30)
-                            .foregroundColor(allUsers[checkIndexofUser(name: name)].isAvailableToRide ? .green : .gray)
+            ScrollView{
+                Spacer()
+                    VStack(alignment: .leading){
+                        
+    //                    Spacer()
+                        
+                        Group{
+                        HStack{
+                            Spacer()
+                            ZStack{
+                            Image("\(allUsers[checkIndexofUser(name: name)].imageName)")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 82, height: 82)
+                                .clipShape(Circle())
+                                
+                            Circle()
+                                .frame(width: 20, height:20)
+                                .offset(x: 30, y: 30)
+                                .foregroundColor(allUsers[checkIndexofUser(name: name)].isAvailableToRide ? .green : .gray)
+                            }
+                            Spacer()
                         }
+                        }
+                        
                         Spacer()
-                    }
-                    VStack{
-                        LevelRowView(rideLevel: rideLevels, currentLevel: checkRideLevel(numofRide: allUsers[checkIndexofUser(name: name)].numOfRide))
-                    }
-                    
-                    //            Spacer()
+                        
+                        Group{
+                        HStack{
+                            Spacer()
+                            Text("Number of Rides: \(allUsers[checkIndexofUser(name: name)].numOfRide)")
+                            .font(.subheadline)
+                            //                    .fontWeight(.bold)
+                            .foregroundColor(Color("foregroundGrey").opacity(1))
+                            Spacer()
+                        }
+                        }
+                        
+                        Spacer()
+                        
+                        Group{
+                        VStack{
+                            LevelRowView(rideLevel: rideLevels, currentLevel: checkRideLevel(numofRide: allUsers[checkIndexofUser(name: name)].numOfRide))
+                        }
+                        }
+                        
+                    }.padding(.top)
+                 VStack(alignment: .leading){
+                                Spacer()
                     
                     // Name
                     VStack(alignment: .leading){
@@ -75,6 +100,9 @@ struct FriendProfileView: View {
                         
                     }
                     
+                    Spacer()
+                    
+                    Group{
                     VStack(alignment: .leading){
                         Text("ID")
                             .font(.title)
@@ -91,8 +119,11 @@ struct FriendProfileView: View {
                         //                    .textFieldStyle(RoundedBorderTextFieldStyle())
                         Divider()
                     }
+                    }
                     
+                    Spacer()
                     
+                    Group{
                     VStack(alignment: .leading){
                         Text("Contact")
                             .font(.title)
@@ -107,7 +138,8 @@ struct FriendProfileView: View {
 //                        TextField("Your Contact Number...", text: $userSettings.contact)
                         //                .modifier(ClearButton(text: $contact))
                         //                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                        Divider()
+//                        Divider()
+                    }
                     }
                     
 //                    VStack(alignment: .leading){
@@ -138,7 +170,8 @@ struct FriendProfileView: View {
 //                    }.frame(height: 130)
                     
                 }
-            }
+                Spacer()
+                }.padding()
             .navigationBarTitle(Text("Create Event"), displayMode: .inline)
             
 //        }

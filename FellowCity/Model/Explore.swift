@@ -49,6 +49,8 @@ struct Explore: Hashable, Codable, Identifiable {
 
 
 struct ExploreRevised: Hashable, Codable, Identifiable {
+    
+    
     var id: Int
     var name:String
     var province:String

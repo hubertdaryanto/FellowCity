@@ -75,10 +75,11 @@ struct MainEvent: View {
 //                                    .cornerRadius(40)
 
                                     .background(Color.white)
-                                    .cornerRadius(30)
-                                    .overlay(RoundedRectangle(cornerRadius: 30)
-                                        .stroke(Color.yellow, lineWidth: 1))
-                                    
+                                    .cornerRadius(40)
+                                    .overlay(RoundedRectangle(cornerRadius: 40)
+                                        .stroke(Color("baseColor"), lineWidth: 2))
+//                                        .shadow(radius: 1)
+                                    .shadow(radius: 1, x: 1, y: 1)
                                     
                                     
                                     NavigationLink(destination:
@@ -99,9 +100,10 @@ struct MainEvent: View {
                                             .resizable()
                                             .frame(width: 60, height: 60)
                                             .clipShape(Circle())
-                                            .overlay(RoundedRectangle(cornerRadius: 40)
-                                                .stroke(Color.gray, lineWidth: 2))
-                                        Spacer()
+                                            .overlay(RoundedRectangle(cornerRadius: 60)
+                                                .stroke(Color("baseColor"), lineWidth: 2))
+//                                        Spacer()
+                                        
                                         VStack(alignment: .leading){
                                             Text(index.eventName).font(.body)
                                                 .foregroundColor(.black)
@@ -120,8 +122,8 @@ struct MainEvent: View {
                                             .foregroundColor(Color(.black).opacity(1))
                                             .frame(width: 10, height: 10, alignment: .center)
 //                                        Spacer()
-                                    }
-                                .frame(width: 300, height: 80)
+                                        }.padding(15)
+                                .frame(width: 350, height: 80)
                                     
                                 }
                                     
@@ -146,8 +148,15 @@ struct MainEvent: View {
                                         isActive: self.$popToHome
                                     ){
                                         
-                                        Image(systemName: "plus.circle.fill").resizable().foregroundColor(Color("baseColor").opacity(1)).frame(width: 58, height: 58, alignment: .center)
-                                            .shadow(radius: 1, x: 1, y: 1)
+                                        Image(systemName: "calendar.badge.plus")
+
+                                        
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 60, height: 60)
+                                            .foregroundColor(Color("baseColor").opacity(1))
+                                          .shadow(radius: 1, x: 1, y: 1)
+//
                                         
                                     }.isDetailLink(false)
                                     // End of popToHome
@@ -172,8 +181,9 @@ struct MainEvent: View {
                         .frame(width: 36, height: 36)
                         .clipShape(Circle())
                         //                                .background(Color.white)
-                        .overlay(RoundedRectangle(cornerRadius: 40)
+                        .overlay(RoundedRectangle(cornerRadius: 36)
                             .stroke(Color("baseColor"), lineWidth: 2))
+                        .shadow(radius: 1, x: 1, y: 1)
                     }
             )
                 .sheet(isPresented: $showProfileView) {

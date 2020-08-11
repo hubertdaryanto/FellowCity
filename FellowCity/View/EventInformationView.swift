@@ -107,7 +107,7 @@ struct EventInformationView: View {
                             Spacer()
                         }.padding()
 
-                        Spacer()
+//                        Spacer()
                         
                         HStack{
                             Spacer().frame(width: 20, height: 0)
@@ -117,7 +117,7 @@ struct EventInformationView: View {
                         }
                         
                         MapView(locationmanager: self.$locationManager, MeetingPoint: self.MeetingPoint, LocationToBeVisited: self.getLocationData(origin: self.eventMeetingPoint, locationName: self.sselectedRoute, destination: self.eventDestinastion).location, LocationToBeVisitedName: self.getLocationData(origin: self.eventMeetingPoint, locationName: self.sselectedRoute, destination: self.eventDestinastion).nameOfLocation, totaltime: self.$saveRouteDetail.totaltime, totaldistance: self.$saveRouteDetail.totaldistance)
-                            .frame(width: g.size.width - 20, height: 400, alignment: .center)
+                            .frame(width: g.size.width - 20, height: 300, alignment: .center)
                             .padding()
                         
                         
@@ -135,39 +135,58 @@ struct EventInformationView: View {
                                                 {}
                                                 
                                 }
-                            }.frame(width: g.size.width - 20, height: 400, alignment: .center)
+                            }
+                            .frame(width: g.size.width - 20, height: 100, alignment: .center)
                         }
              
+                        
+                        HStack{
+                            Spacer()
+                            NavigationLink(
+                                //                            Event_Information()
+                                destination: EventInformationInviteFriends(popToHome: self.$popToHome)
+                                )
+                            {
+                               Text("Next")
+                                .font(.body)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color("baseColor").opacity(1))
+                                Image(systemName: "chevron.right")
+                                .foregroundColor(Color("baseColor").opacity(1))
+                            }
+                        }.padding()
+                        
+                        Spacer()
                         
                     }
                     
                     // End of Navigation View
                     
                                 .navigationBarTitle("Event Information", displayMode: .inline)
-                               .navigationBarItems(
-                            trailing:
-                        
-                        ZStack {
-                            NavigationLink(
-                                 // MARK: - Next Page
-                                               destination: EventInformationInviteFriends(popToHome: self.$popToHome)
-                            ){
-                                
-                                HStack{
-                                Text("Next")
-                                .font(.body)
-                                .fontWeight(.bold)
-                                .foregroundColor(Color("baseColor").opacity(1))
-                                Image(systemName: "chevron.right")
-                                .foregroundColor(Color("baseColor").opacity(1))
-                                
-                            }
-                            // End of Next Page
-                        }
-
-                            
-                        }
-                    )
+//                               .navigationBarItems(
+//                            trailing:
+//                        
+//                        ZStack {
+//                            NavigationLink(
+//                                 // MARK: - Next Page
+//                                               destination: EventInformationInviteFriends(popToHome: self.$popToHome)
+//                            ){
+//                                
+//                                HStack{
+//                                Text("Next")
+//                                .font(.body)
+//                                .fontWeight(.bold)
+//                                .foregroundColor(Color("baseColor").opacity(1))
+//                                Image(systemName: "chevron.right")
+//                                .foregroundColor(Color("baseColor").opacity(1))
+//                                
+//                            }
+//                            // End of Next Page
+//                        }
+//
+//                            
+//                        }
+//                    )
                     
                 }
         }
@@ -262,3 +281,11 @@ struct OptionalRouteViewer: View {
         }
     }
 }
+//
+//struct EventInformationView_Previews: PreviewProvider {
+//    @State var MeetingPoint: CLLocationCoordinate2D
+//    
+//    static var previews: some View {
+//        EventInformationView(popToHome: .constant(false), MeetingPoint: CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469))
+//    }
+//}

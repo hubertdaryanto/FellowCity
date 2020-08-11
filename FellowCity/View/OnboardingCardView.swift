@@ -37,9 +37,23 @@ struct OnboardingCardView: View {
                                 
                             VStack(spacing: 0) {
                                 Spacer()
-                                Image(systemName: self.imagename).resizable()
+                                Image(systemName: self.imagename)
+//                                    .resizable()
+//                                    .foregroundColor(Color(.white))
+//                                    .frame(width: 70, height: 70, alignment: .center)
+                                
+                                .resizable()
+                                    
+//                                .renderingMode(.original)
+                                .aspectRatio(contentMode: .fill)
+                                    
+                                .frame(width: 70, height: 70)
                                     .foregroundColor(Color(.white))
-                                    .frame(width: 70, height: 70, alignment: .center)
+//                                .clipShape(Circle())
+                                //                                .background(Color.white)
+//                                .overlay(RoundedRectangle(cornerRadius: 36)
+//                                    .stroke(Color("baseColor"), lineWidth: 1))
+//                                .shadow(radius: 1, x: 1, y: 1)
                                     
                                 //                        .shadow(radius: 1, x: 1, y: 1)
                                 Spacer()

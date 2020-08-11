@@ -23,8 +23,8 @@ struct ListParticipantView: View {
                 .resizable()
                 .frame(width: 60, height: 60)
                 .clipShape(Circle())
-//                .overlay(RoundedRectangle(cornerRadius: 40)
-//                    .stroke(Color.gray, lineWidth: 2))
+                .overlay(RoundedRectangle(cornerRadius: 40)
+                    .stroke(Color("baseColor"), lineWidth: 2))
 //            ZStack {
 //                Rectangle()
 //                .foregroundColor(.white)

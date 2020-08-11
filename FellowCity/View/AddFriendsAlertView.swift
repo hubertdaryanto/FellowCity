@@ -40,8 +40,8 @@ struct AddFriendsAlertView: View {
                 Text("Increase your riding buddies!")
                     .font(.footnote)
 
-                TextField("Friend Name", text: $userID)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+//                TextField("Friend Name", text: $userID)
+//                    .textFieldStyle(RoundedBorderTextFieldStyle())
             
                 SearchBarList(textSearch: $searchTerm, placeholder: "Search here...")
             
@@ -49,7 +49,7 @@ struct AddFriendsAlertView: View {
                 
                 ForEach(self.nameArrayOfAllRideUsers.filter {
 //                    ForEach(self.myFriends.filter {
-                    self.searchTerm.isEmpty ? true : $0.localizedStandardContains(self.searchTerm)
+                    self.searchTerm.isEmpty ? false : $0.localizedStandardContains(self.searchTerm)
                         
 //                        Using Dummy Data | self.nameArrayOfAllRideUsers.filter
 //                        $0.localizedCaseInsensitiveContains(self.searchTerm)
@@ -61,7 +61,8 @@ struct AddFriendsAlertView: View {
                 { index in
                     Button(action: {
                         //Using Dummy Data
-                        self.userID = index
+                        self.searchTerm = index
+//                        self.userID = index
                         // Using Core Data
                         //self.userID = index.name!
                     }) {
@@ -71,14 +72,14 @@ struct AddFriendsAlertView: View {
                         // Text("\(index.name!)")
                     }
                 }
-            }.frame(height: 150)
+            }.frame(height: 200)
             Divider()
                 HStack{
                     Spacer()
                     Button("Cancel"){
                         self.isShown = false
                         self.onCancel()
-                    }
+                    }.frame(width: 80, height: 60)
                     Group {
                         Spacer()
                         Divider()
@@ -86,8 +87,9 @@ struct AddFriendsAlertView: View {
                     }
                     Button("Add"){
                         
-                        
+                        self.userID = self.searchTerm
                         self.onAdd(self.userID)
+//                        self.onAdd(self.userID)
                         
                         // Add Friends to List in Core Data
                         let myFriends = FriendLists(context: self.managedObjectContext)
@@ -101,7 +103,7 @@ struct AddFriendsAlertView: View {
                         // Move Alert to Background
                         self.isShown = false
                         
-                    }
+                    }.frame(width: 80, height: 60)
                     Spacer()
                 }
             
@@ -111,7 +113,7 @@ struct AddFriendsAlertView: View {
         .frame(width: screenSize.width * 0.8, height: screenSize.height * 0.45)
         .background(Color("backgroundGrey").opacity(1))
         .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-        .offset(y: isShown ? 0 : screenSize.height)
+        .offset(y: isShown ? -60 : screenSize.height)
         .animation(.spring())
         .shadow(radius: 1, x: 1, y: 1)
         

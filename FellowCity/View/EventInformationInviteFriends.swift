@@ -86,40 +86,44 @@ struct EventInformationInviteFriends: View {
                     
                 }.padding()
                 
-//                // Tombol Finish Kanan Bawah
-//                HStack{
-//                    Spacer()
-//                Button(action: {
-//
-//                    self.popToHome = false
-//
-//                }) {
-//                    Text("Finish").foregroundColor(Color(red: 0.96484375, green: 0.7421875, blue: 0)).padding(20)
-//                }
-//                }
+                // Tombol Finish Kanan Bawah
+                HStack{
+                    Spacer()
+                Button(action: {
+
+                    self.popToHome = false
+
+                }) {
+                    Text("Finish")
+                    .font(.body)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color("baseColor").opacity(1))
+                    
+                }
+                }.padding()
                 
                 Spacer()
             }
             
 //                //End of NavigationView
             .navigationBarTitle("Invite Friends", displayMode: .inline)
-        .navigationBarItems(
-                trailing:
-            
-            HStack{
-                                Spacer()
-                            Button(action: {
-                                
-            //                self.popToHome.homeIsActive = false
-                                self.popToHome = false
-            //                    self.showing = .finish
-            //                    self.mode.wrappedValue.dismiss()
-            //                    AppView()
-                            }) {
-                                Text("Finish").foregroundColor(Color("baseColor").opacity(1)).padding(20)
-                            }
-                            }
-        )
+//        .navigationBarItems(
+//                trailing:
+//
+//            HStack{
+//                                Spacer()
+//                            Button(action: {
+//
+//            //                self.popToHome.homeIsActive = false
+//                                self.popToHome = false
+//            //                    self.showing = .finish
+//            //                    self.mode.wrappedValue.dismiss()
+//            //                    AppView()
+//                            }) {
+//                                Text("Finish").foregroundColor(Color("baseColor").opacity(1)).padding(20)
+//                            }
+//                            }
+//        )
     }
 }
 

@@ -22,7 +22,7 @@ struct LevelItemView: View {
             //.fill(Color(hex: 0xF7B500, alpha: 1))
             .frame(width: 30, height: 30)
             
-                Text("\(self.rideLevel.numOfRide) Rides")
+                Text("Level \(self.rideLevel.level)")
                 .font(.system(size: 15))
             //.foregroundColor(Color(hex: 0xF7B500, alpha: 1))
     

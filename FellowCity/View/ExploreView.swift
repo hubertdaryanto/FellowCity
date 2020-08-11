@@ -44,10 +44,16 @@ struct ExploreView: View {
                             .fontWeight(.semibold).tag(index)
                     }
                 }
-                .pickerStyle(SegmentedPickerStyle())
-                .background(Color("baseColor").opacity(1))
-                .padding()
-//                .frame(height: 28)
+                
+                               .pickerStyle(SegmentedPickerStyle())
+                //                .background(Color("baseColor"))
+                //                .roundedCorner(20)
+                                    .background(Color("baseColor").opacity(1))
+                                    .cornerRadius(10)
+                //                    .lineSpacing(16)
+                                    .foregroundColor(Color.black)
+                                    
+                                .padding(10)
                         
                     
                     }
@@ -92,8 +98,9 @@ struct ExploreView: View {
                     .frame(width: 36, height: 36)
                     .clipShape(Circle())
                     //                                .background(Color.white)
-                    .overlay(RoundedRectangle(cornerRadius: 40)
-                        .stroke(Color("baseColor"), lineWidth: 2))
+                    .overlay(RoundedRectangle(cornerRadius: 36)
+                        .stroke(Color("baseColor"), lineWidth: 1))
+                    .shadow(radius: 1, x: 1, y: 1)
                 }
             )
                 .sheet(isPresented: $showProfileView) {

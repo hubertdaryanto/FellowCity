@@ -17,34 +17,56 @@ struct ProfileView: View {
     
     var rideLevel: [RideLevel]
     @State var currentLevel = 0
-//    @State var name = ""
-//    @State var motorcycle: String = "Yamaha YZR M1"
-//    @State var userID: String = "VR46"
-//    @State var contact: String = "+628178912345"
-//    
-//    @State var isAvailable: Bool = false
-
-
+    //    @State var name = ""
+    //    @State var motorcycle: String = "Yamaha YZR M1"
+    //    @State var userID: String = "VR46"
+    //    @State var contact: String = "+628178912345"
+    //
+    //    @State var isAvailable: Bool = false
+    
+    
     
     var body: some View {
         NavigationView {
             List{
                 VStack(alignment: .leading){
                     Spacer()
+                    
                     HStack{
                         Spacer()
-                        Image("\(userSettings.imageName)")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 82, height: 82)
-                            .clipShape(Circle())
+                        ZStack{
+                            Image("\(userSettings.imageName)")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 82, height: 82)
+                                .clipShape(Circle())
+                            
+                            Circle()
+                                .frame(width: 20, height:20)
+                                .offset(x: 30, y: 30)
+                                .foregroundColor(self.userSettings.isAvailableToRide ? .green : .gray)
+                        }
                         Spacer()
                     }
+                    
+                   
+                    
+                    HStack{
+                        Spacer()
+                        Text("Number of Rides: \(self.userSettings.numOfRide)")
+                        .font(.subheadline)
+                        //                    .fontWeight(.bold)
+                        .foregroundColor(Color("foregroundGrey").opacity(1))
+                        Spacer()
+                    }
+                    
                     VStack{
                         LevelRowView(rideLevel: rideLevels, currentLevel: checkRideLevel(numofRide: userSettings.numOfRide))
                     }
+//                    .frame(height: 100)
                     
                     //            Spacer()
+                    
                     
                     // Name
                     VStack(alignment: .leading){
@@ -64,9 +86,9 @@ struct ProfileView: View {
                         //                            .textFieldStyle(RoundedBorderTextFieldStyle())
                         Divider()
                         
-                    }
-                    
-                    VStack(alignment: .leading){
+//                    }
+//
+//                    VStack(alignment: .leading){
                         Text("ID")
                             .font(.title)
                             //                    .fontWeight(.bold)
@@ -81,10 +103,10 @@ struct ProfileView: View {
                         
                         //                    .textFieldStyle(RoundedBorderTextFieldStyle())
                         Divider()
-                    }
-                    
-                    
-                    VStack(alignment: .leading){
+//                    }
+//
+//
+//                    VStack(alignment: .leading){
                         Text("Contact")
                             .font(.title)
                             //                    .fontWeight(.bold)
@@ -123,9 +145,10 @@ struct ProfileView: View {
                                     .labelsHidden()
                             }
                         }
-                        Divider()
+//                        Divider()
                         
-                    }.frame(height: 130)
+                    }
+                    .frame(height: 130)
                     
                 }
             }
@@ -137,29 +160,29 @@ struct ProfileView: View {
     }
     
     func checkRideLevel(numofRide : Int) -> Int {
-           if numofRide == 0 {
-               return 0
-           }
-           if numofRide >= 10 && numofRide < 20 {
-               return  1
-           }
-           if numofRide >= 20 && numofRide < 30 {
-               return  2
-           }
-           if numofRide >= 30 && numofRide < 40 {
-               return  3
-           }
-           if numofRide >= 40 && numofRide < 50 {
-               return  4
-           }
-           if numofRide >= 50 && numofRide < 100 {
-               return  5
-           }
-           if numofRide >= 100 {
-               return  6
-           }
+        if numofRide == 0 {
+            return 0
+        }
+        if numofRide >= 10 && numofRide < 20 {
+            return  1
+        }
+        if numofRide >= 20 && numofRide < 30 {
+            return  2
+        }
+        if numofRide >= 30 && numofRide < 40 {
+            return  3
+        }
+        if numofRide >= 40 && numofRide < 50 {
+            return  4
+        }
+        if numofRide >= 50 && numofRide < 100 {
+            return  5
+        }
+        if numofRide >= 100 {
+            return  6
+        }
         return self.currentLevel
-       }
+    }
     
     
 }

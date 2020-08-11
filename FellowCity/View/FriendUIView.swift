@@ -95,8 +95,12 @@ struct FriendUIView: View {
                                 self.isPresented = true
                             })
                             {
-                                Image(systemName: "plus.circle.fill").resizable().foregroundColor(Color("baseColor").opacity(1)).frame(width: 58, height: 58, alignment: .center)
-                                    .shadow(radius: 1, x: 1, y: 1)
+                                Image(systemName: "person.crop.circle.fill.badge.plus")
+                                    .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 60, height: 60)
+                                    .foregroundColor(Color("baseColor").opacity(1))
+                                  .shadow(radius: 1, x: 1, y: 1)
                             }
                         }}.padding(30)
                 }
@@ -123,14 +127,15 @@ struct FriendUIView: View {
                                 self.showProfileView.toggle()
                             }) {
                                 Image("\(userSettings.imageName)")
-                                    .resizable()
-                                    .renderingMode(.original)
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 36, height: 36)
-                                    .clipShape(Circle())
-                                    //                                .background(Color.white)
-                                    .overlay(RoundedRectangle(cornerRadius: 40)
-                                        .stroke(Color("baseColor"), lineWidth: 2))
+                                .resizable()
+                                .renderingMode(.original)
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 36, height: 36)
+                                .clipShape(Circle())
+                                //                                .background(Color.white)
+                                .overlay(RoundedRectangle(cornerRadius: 36)
+                                    .stroke(Color("baseColor"), lineWidth: 1))
+                                .shadow(radius: 1, x: 1, y: 1)
                             }
                         }
                 )

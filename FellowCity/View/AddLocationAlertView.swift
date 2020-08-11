@@ -45,15 +45,15 @@ struct AddLocationAlertView: View {
                 Text("or pick our recomended places below")
                     .font(.footnote)
 
-                TextField("Location Name", text: $locationName)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+//                TextField("Location Name", text: $locationName)
+//                    .textFieldStyle(RoundedBorderTextFieldStyle())
             
                 SearchBarList(textSearch: $searchTerm, placeholder: "Search here...")
             
             List {
                 
                 ForEach(self.explores.filter {
-                    self.searchTerm.isEmpty ? true :
+                    self.searchTerm.isEmpty ? false :
                         
 //                        Using Dummy Data | self.nameArrayOfAllRideUsers.filter
                         $0.name.contains(self.searchTerm)
@@ -64,19 +64,19 @@ struct AddLocationAlertView: View {
                     }, id: \.self)
                 { index in
                     Button(action: {
-                        self.locationName = index.name
+                        self.searchTerm = index.name
                     }) {
                         Text("\(index.name)")
                     }
                 }
-            }.frame(height: 150)
+            }.frame(height: 200)
             Divider()
                 HStack{
                     Spacer()
                     Button("Cancel"){
                         self.isShown = false
                         self.onCancel()
-                    }
+                    }.frame(width: 80, height: 60)
                     Group {
                         Spacer()
                         Divider()
@@ -84,7 +84,7 @@ struct AddLocationAlertView: View {
                     }
                     Button("Add"){
                         
-                        
+                        self.locationName = self.searchTerm
                         self.onAdd(self.locationName)
                         
 //                        // Add Friends to List in Core Data
@@ -99,7 +99,7 @@ struct AddLocationAlertView: View {
                         // Move Alert to Background
                         self.isShown = false
                         
-                    }
+                    }.frame(width: 80, height: 60)
                     Spacer()
                 }
             
@@ -109,7 +109,7 @@ struct AddLocationAlertView: View {
         .frame(width: screenSize.width * 0.8, height: screenSize.height * 0.45)
         .background(Color("backgroundGrey").opacity(1))
         .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-        .offset(y: isShown ? 0 : screenSize.height)
+        .offset(y: isShown ? -60 : screenSize.height)
         .animation(.spring())
         .shadow(radius: 1, x: 1, y: 1)
         

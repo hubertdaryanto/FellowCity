@@ -42,6 +42,7 @@ struct CreateEventOptionalRouteView: View {
         //            NavigationView{
         VStack(alignment: .leading){
             Spacer()
+            
             Text("Select Your Additional Routes")
                 .font(.title)
                 .fontWeight(.bold)
@@ -50,13 +51,17 @@ struct CreateEventOptionalRouteView: View {
             
             List {
                 
-                ForEach(deleteSelectedExploreData(exploreData: exploreData), id: \.self) { item in
+                ForEach(
+                    deleteSelectedExploreData(exploreData: exploreData).sorted(by: { $0.name < $1.name })
+//                , id: \.self
+                ) { item in
                     MultipleSelectionRow(title: item.name, isSelected: self.sselectedRoute.contains(item.name)) {
                         if self.sselectedRoute.contains(item.name) {
                             self.sselectedRoute.removeAll(where: { $0 == item.name })
                             self.LocationToBeVisitedName.removeAll(where: { $0 == item.name })
                             
                         }
+                        
                         else {
                             if self.sselectedRoute.isEmpty
                             {
@@ -68,6 +73,7 @@ struct CreateEventOptionalRouteView: View {
                             self.LocationToBeVisited.append(CLLocation(latitude: item.latitude, longitude: item.longitude))
                             self.LocationToBeVisitedName.append(item.name)
                             //                                                                        print(self.selectedRoute)
+                        
                         }
                     }
                 }
@@ -79,49 +85,51 @@ struct CreateEventOptionalRouteView: View {
             
             
             
-//            HStack{
-//                Spacer()
-//                NavigationLink(destination:
-//                    //                            Event_Information()
-//                    EventInformationView(popToHome: self.$popToHome, eventDate: eventDate, eventName: eventName, eventMeetingPoint: eventMeetingPoint, eventDestinastion: eventDestinastion,
-//                                      MeetingPoint: MeetingPoint, sselectedRoute: sselectedRoute)
-//                    )
-//                {
-//                    Text("Next")
-//                        .font(.body)
-//                        .fontWeight(.bold)
-//                        .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
-//                }
-//            }.padding()
-            Spacer()
-        }
-            //                        End of NavigationView
-            .navigationBarTitle(Text("Additional Routes"), displayMode: .inline)
-        .navigationBarItems(
-                trailing:
-            
-            ZStack {
+            HStack{
+                Spacer()
                 NavigationLink(
-                     // MARK: - Next Page
-                                   destination: EventInformationView(popToHome: self.$popToHome, eventDate: eventDate, eventName: eventName, eventMeetingPoint: eventMeetingPoint, eventDestinastion: eventDestinastion,
-                                   MeetingPoint: MeetingPoint, sselectedRoute: sselectedRoute)
-                ){
-                    
-                    HStack{
+                    //                            Event_Information()
+                    destination: EventInformationView(popToHome: self.$popToHome, eventDate: eventDate, eventName: eventName, eventMeetingPoint: eventMeetingPoint, eventDestinastion: eventDestinastion,
+                    MeetingPoint: MeetingPoint, sselectedRoute: sselectedRoute)
+                    )
+                {
                     Text("Next")
                     .font(.body)
                     .fontWeight(.bold)
                     .foregroundColor(Color("baseColor").opacity(1))
                     Image(systemName: "chevron.right")
                     .foregroundColor(Color("baseColor").opacity(1))
-                    
                 }
-                // End of Next Page
-            }
-
-                
-            }
-        )
+            }.padding()
+            Spacer()
+        }
+            //                        End of NavigationView
+            .navigationBarTitle(Text("Additional Routes"), displayMode: .inline)
+//        .navigationBarItems(
+//                trailing:
+//            
+//            ZStack {
+//                NavigationLink(
+//                     // MARK: - Next Page
+//                                   destination: EventInformationView(popToHome: self.$popToHome, eventDate: eventDate, eventName: eventName, eventMeetingPoint: eventMeetingPoint, eventDestinastion: eventDestinastion,
+//                                   MeetingPoint: MeetingPoint, sselectedRoute: sselectedRoute)
+//                ){
+//                    
+//                    HStack{
+//                    Text("Next")
+//                    .font(.body)
+//                    .fontWeight(.bold)
+//                    .foregroundColor(Color("baseColor").opacity(1))
+//                    Image(systemName: "chevron.right")
+//                    .foregroundColor(Color("baseColor").opacity(1))
+//                    
+//                }
+//                // End of Next Page
+//            }
+//
+//                
+//            }
+//        )
         
     }
     

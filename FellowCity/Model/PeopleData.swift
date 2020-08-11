@@ -54,17 +54,17 @@ struct User: Hashable, Identifiable{
 //]
 
 var allUsers: [User] = [
-    User(name: "Anastasia Vityukova", imageName: "", userID: "anastasia38", contact: "+6281567838829", isAvailableToRide: false, numOfRide: 20),
-    User(name: "Arshad Khan", imageName: "arshad-khan", userID: "arshad87", contact: "+6281567838778", isAvailableToRide: true, numOfRide: 20),
-    User(name: "Austin Wade", imageName: "austin-wade", userID: "Austin_10", contact: "+628156783255859", isAvailableToRide: true, numOfRide: 20),
-    User(name: "Craig Mckay", imageName: "craig-mckay", userID: "craigMC", contact: "+6281563538243", isAvailableToRide: false, numOfRide: 20),
-    User(name: "Ethan Hoover", imageName: "ethan-hoover", userID: "EthanWay", contact: "+62812355329", isAvailableToRide: true, numOfRide: 20),
+    User(name: "Anastasia Vityukova", imageName: "anastasia-vityukova", userID: "anastasia38", contact: "+6281567838829", isAvailableToRide: false, numOfRide: 21),
+    User(name: "Arshad Khan", imageName: "arshad-khan", userID: "arshad87", contact: "+6281567838778", isAvailableToRide: true, numOfRide: 22),
+    User(name: "Austin Wade", imageName: "austin-wade", userID: "Austin_10", contact: "+628156783255859", isAvailableToRide: true, numOfRide: 29),
+    User(name: "Craig Mckay", imageName: "craig-mckay", userID: "craigMC", contact: "+6281563538243", isAvailableToRide: false, numOfRide: 16),
+    User(name: "Ethan Hoover", imageName: "ethan-hoover", userID: "EthanWay", contact: "+62812355329", isAvailableToRide: true, numOfRide: 11),
     User(name: "Goh Ryan", imageName: "goh-ryan", userID: "goh7567", contact: "+6281809038843", isAvailableToRide: false, numOfRide: 5),
-    User(name: "Harishan Kobalasingam", imageName: "harishan-kobalasingam", userID: "harishan90", contact: "+628113436459", isAvailableToRide: false, numOfRide: 20),
-    User(name: "Jonathan Cooper", imageName: "jonathan-cooper", userID: "JCooper", contact: "+6281903017483", isAvailableToRide: true, numOfRide: 10),
-    User(name: "Kal Visuals", imageName: "kal-visuals", userID: "kalVee", contact: "+6281238190304", isAvailableToRide: false, numOfRide: 20),
-    User(name: "Lucas Sankey", imageName: "lucas-sankey", userID: "Luckey", contact: "+628183819247894", isAvailableToRide: true, numOfRide: 20),
-    User(name: "Sergio De Paula", imageName: "sergio-de-paula", userID: "SergiDP", contact: "+6281738192564", isAvailableToRide: true, numOfRide: 20)
+    User(name: "Harishan Kobalasingam", imageName: "harishan-kobalasingam", userID: "harishan90", contact: "+628113436459", isAvailableToRide: false, numOfRide: 17),
+    User(name: "Jonathan Cooper", imageName: "jonathan-cooper", userID: "JCooper", contact: "+6281903017483", isAvailableToRide: true, numOfRide: 5),
+    User(name: "Kal Visuals", imageName: "kal-visuals", userID: "kalVee", contact: "+6281238190304", isAvailableToRide: false, numOfRide: 7),
+    User(name: "Lucas Sankey", imageName: "lucas-sankey", userID: "Luckey", contact: "+628183819247894", isAvailableToRide: true, numOfRide: 23),
+    User(name: "Sergio De Paula", imageName: "sergio-de-paula", userID: "SergiDP", contact: "+6281738192564", isAvailableToRide: true, numOfRide: 33)
 ]
 
 //Name    String

@@ -135,51 +135,53 @@ struct CreateEventView: View {
                 }
                 
                 Spacer()
-                //            VStack(alignment: .leading){
-                //                HStack{
-                //                    Spacer()
-                //                    //                        NavigationLink(destination: CreateEventOptionalRouteView())
-                //                    NavigationLink(destination: CreateEventOptionalRouteView(popToHome: self.$popToHome, eventDate: eventDate, eventName: eventName, eventMeetingPoint: eventMeetingPoint, eventDestinastion: eventDestinastion))
-                //                    {
-                //                        Text("Next")
-                //                            .font(.body)
-                //                            .fontWeight(.bold)
-                //                            .foregroundColor(Color(hex: 0xF7B500, alpha: 1))
-                //                    }
-                //                }.padding()
-                //
-                //            }
+                            VStack(alignment: .leading){
+                                HStack{
+                                    Spacer()
+                                    //                        NavigationLink(destination: CreateEventOptionalRouteView())
+                                    NavigationLink(destination: CreateEventOptionalRouteView(popToHome: self.$popToHome, eventDate: self.eventDate, eventName: self.eventName, eventMeetingPoint: self.eventMeetingPoint, eventDestinastion: self.eventDestinastion))
+                                    {
+                                        Text("Next")
+                                            .font(.body)
+                                            .fontWeight(.bold)
+                                            .foregroundColor(Color("baseColor").opacity(1))
+                                        Image(systemName: "chevron.right")
+                                        .foregroundColor(Color("baseColor").opacity(1))
+                                    }
+                                }.padding()
+                
+                            }
                 
             }
             .padding()
                 //End of NavigationView
                 .navigationBarTitle(Text("Create Event"), displayMode: .inline)
-                .navigationBarItems(
-                    trailing:
-                    
-                    ZStack {
-                        NavigationLink(
-                            // MARK: - Next Page
-                            destination: CreateEventOptionalRouteView(popToHome: self.$popToHome, eventDate: self.eventDate, eventName: self.eventName, eventMeetingPoint: self.eventMeetingPoint, eventDestinastion: self.eventDestinastion)
-                        ){
-                            
-                            HStack{
-                                Text("Next")
-                                    .font(.body)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(Color("baseColor").opacity(1))
-                                Spacer()
-                                Image(systemName: "chevron.right")
-                                    .foregroundColor(Color("baseColor").opacity(1))
-                                
-                            }
-                            // End of Next Page
-                        }
-                        
-                        
-                    }
-                    
-            )
+//                .navigationBarItems(
+//                    trailing:
+//
+//                    ZStack {
+//                        NavigationLink(
+//                            // MARK: - Next Page
+//                            destination: CreateEventOptionalRouteView(popToHome: self.$popToHome, eventDate: self.eventDate, eventName: self.eventName, eventMeetingPoint: self.eventMeetingPoint, eventDestinastion: self.eventDestinastion)
+//                        ){
+//
+//                            HStack{
+//                                Text("Next")
+//                                    .font(.body)
+//                                    .fontWeight(.bold)
+//                                    .foregroundColor(Color("baseColor").opacity(1))
+//                                Spacer()
+//                                Image(systemName: "chevron.right")
+//                                    .foregroundColor(Color("baseColor").opacity(1))
+//
+//                            }
+//                            // End of Next Page
+//                        }
+//
+//
+//                    }
+//
+//            )
             
             Group {
             VStack{
