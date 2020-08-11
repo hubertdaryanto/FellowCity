@@ -13,30 +13,29 @@ import SwiftUI
 
 struct NotificationView: View {
     @State var showProfileView = false
+    
+    // List All User
+    @State var allRideUser:[User]
+    
     // User Setting
     @ObservedObject var userSettings = UserSettings()
     @State var FriendInvitationsList = [
-        FriendInvitation(name: "Claudelnr", mutualFriend: 3),
-        FriendInvitation(name: "Hubert", mutualFriend: 3),
-        FriendInvitation(name: "Kevin", mutualFriend: 7),
-        FriendInvitation(name: "Raka", mutualFriend: 4),
-        FriendInvitation(name: "Feri", mutualFriend: 5)
+        User(name: "Jonathan Cooper", imageName: "jonathan-cooper", userID: "JCooper", contact: "+6281903017483", isAvailableToRide: true, numOfRide: 10),
+        User(name: "Kal Visuals", imageName: "kal-visuals", userID: "kalVee", contact: "+6281238190304", isAvailableToRide: false, numOfRide: 20),
+        User(name: "Lucas Sankey", imageName: "lucas-sankey", userID: "Luckey", contact: "+628183819247894", isAvailableToRide: true, numOfRide: 20),
+        User(name: "Sergio De Paula", imageName: "sergio-de-paula", userID: "SergiDP", contact: "+6281738192564", isAvailableToRide: true, numOfRide: 20)
     ]
     
     @State var EventInvitationsList = [
-        Event(name: "Claudelnr", origin: "GOP", destination: "Kalimalang"),
-        Event(name: "Raka", origin: "Bekasi", destination: "VespaPark"),
-        Event(name: "Kevin", origin: "Bekasi", destination: "Senayan"),
-        Event(name: "Stanford", origin: "Sate Taichan", destination: "Lot 9"),
-        Event(name: "Hubert", origin: "BSD", destination: "TMII"),
+        Event(name: "Arshad Khan", origin: "Setu Babakan", destination: "Indonesia National Monument"),
+        Event(name: "Austin Wade", origin: "Kopilot Coffee House and Kitchen", destination: "First Crack Coffee")
     ]
+
     
     @State var EventRequestsList = [
-        Event(name: "Claudelnr", origin: "Bekasi", destination: "Kota Tua"),
-        Event(name: "Hubert", origin: "BSD", destination: "Kemang"),
-        Event(name: "Stanford", origin: "Bekasi", destination: "Monas"),
-        Event(name: "Raka", origin: "Bekasi", destination: "Kemang"),
-        Event(name: "Kevin", origin: "BSD", destination: "Bandung"),
+        Event(name: "Arshad Khan", origin: "Setu Babakan", destination: "Indonesia National Monument"),
+        Event(name: "Ethan Hoover", origin: "Setu Babakan", destination: "Indonesia National Monument"),
+        Event(name: "Jonathan Cooper", origin: "Setu Babakan", destination: "Indonesia National Monument")
     ]
     
     
@@ -52,7 +51,7 @@ struct NotificationView: View {
                     //                .font(.footnote)
                     .foregroundColor(Color("baseColor").opacity(1))
                 
-                Text("- ( \(FriendInvitationsList.count) )")
+                Text("(\(FriendInvitationsList.count))")
                     .font(.subheadline)
                     .foregroundColor(Color("foregroundGrey").opacity(1))
                 }
@@ -81,17 +80,21 @@ struct NotificationView: View {
                     ForEach(FriendInvitationsList) { index in
                         GeometryReader { geometry in
                             HStack {
-                                Image(systemName: "person.3.fill")
+//                                Image(systemName: "person.3.fill")
+                                Image(index.imageName)
                                     .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 45, height: 45)
+                                    .frame(width: 40, height: 40)
                                     .clipShape(Circle())
-                                    .background(Color.yellow)
-                                    .cornerRadius(40)
-                                    .frame(minWidth: 0, maxWidth: geometry.size.width * 0.5 / 4, minHeight: 0, maxHeight: 50)
+                                    .overlay(RoundedRectangle(cornerRadius: 60)
+                                        .stroke(Color("baseColor"), lineWidth: 2))
+//                                    .frame(minWidth: 0, maxWidth: geometry.size.width * 0.5 / 4, minHeight: 0, maxHeight: 50)
                                 
                                 ZStack {
-                                    NavigationLink(destination: TabFriendsView()) {
+                                    NavigationLink(destination:
+                                        
+                                        FriendProfileView(name: index.name, allRideUser: allUsers)
+                                    
+                                    ) {
                                         EmptyView()
                                     }.hidden()
                                     
@@ -101,7 +104,8 @@ struct NotificationView: View {
                                             //                                .font(.body)
                                             .fontWeight(.bold)
                                             .frame(maxWidth: 200, alignment: .leading)
-                                        Text("\(index.mutualFriend) Mutual Friend ")
+//                                        Text("\(index.mutualFriend) Mutual Friend ")
+                                            Text("\(Int.random(in: 1..<10)) Mutual Friend ")
                                             //                                .font(.caption)
                                             .font(.system(size: 12))
                                             //                                .font(.body)
@@ -153,16 +157,17 @@ struct NotificationView: View {
                 }
                 .onAppear { UITableView.appearance().separatorStyle = .none }
 //                .onDisappear { UITableView.appearance().separatorStyle = .singleLine }
-                
+            
                 Spacer()
-                
+                Divider()
+                // Event Invitation List, Tampilkan Detail Event yang dicreate oleh orang dan kita diinvite sam mereka
                 HStack{
                 Text("Event Invitation")
                     .font(.system(size: 22)).fontWeight(.bold)
                     //                .font(.footnote)
                     .foregroundColor(Color("baseColor").opacity(1))
                     
-                    Text("- ( \(EventInvitationsList.count) )")
+                    Text("(\(EventInvitationsList.count))")
                         .font(.subheadline)
                         .foregroundColor(Color("foregroundGrey").opacity(1))
                     }
@@ -172,17 +177,19 @@ struct NotificationView: View {
                     ForEach(EventInvitationsList) { index in
                         GeometryReader { geometry in
                             HStack {
-                                Image(systemName: "person.3.fill")
+                                Image(allUsers[self.checkIndexofUser(name: index.name)].imageName)
                                     .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 45, height: 45)
+                                    .frame(width: 40, height: 40)
                                     .clipShape(Circle())
-                                    .background(Color.yellow)
-                                    .cornerRadius(40)
-                                    .frame(minWidth: 0, maxWidth: geometry.size.width * 0.5 / 4, minHeight: 0, maxHeight: 50)
+                                    .overlay(RoundedRectangle(cornerRadius: 60)
+                                        .stroke(Color("baseColor"), lineWidth: 2))
                                 
                                 ZStack {
-                                    NavigationLink(destination: TabFriendsView()) {
+                                    NavigationLink(destination:
+                                    
+                                        EventDetailsView(isJoinShown: false, allPublicEvent: publicEvents[0])
+                                    
+                                    ) {
                                         EmptyView()
                                     }.hidden()
                                     
@@ -193,12 +200,15 @@ struct NotificationView: View {
                                             .fontWeight(.bold)
                                             .frame(maxWidth: 200, alignment: .leading)
                                         Text("\(index.origin) -> \(index.destination) ")
+                                            
                                             .font(.caption)
                                             .font(.system(size: 12))
                                             //                                .font(.body)
-                                            .fontWeight(.light)
+//                                            .fontWeight(.light)
                                             .foregroundColor(.gray)
-                                            .frame(maxWidth: 200, alignment: .leading)
+//                                            .frame(maxWidth: 200, alignment: .leading)
+                                            .fixedSize(horizontal: false, vertical: true)
+                                            
                                     }
                                 }.frame(minWidth: 0, maxWidth: geometry.size.width * 2 / 4, minHeight: 0, maxHeight: 50, alignment: .leading)
                                 
@@ -241,17 +251,19 @@ struct NotificationView: View {
                     
                 }
                 .onAppear { UITableView.appearance().separatorStyle = .none }
-                .onDisappear { UITableView.appearance().separatorStyle = .singleLine }
+//                .onDisappear { UITableView.appearance().separatorStyle = .singleLine }
                 
                 Spacer()
                 
+                Divider()
+                // Event Request List, Tampilkan Detail User yang mau request ke Event yang kita create
                 HStack{
                 Text("Event Request")
                     .font(.system(size: 22)).fontWeight(.bold)
                     //                .font(.footnote)
                     .foregroundColor(Color("baseColor").opacity(1))
                     
-                    Text("- ( \(EventRequestsList.count) )")
+                    Text("(\(EventRequestsList.count))")
                         .font(.subheadline)
                         .foregroundColor(Color("foregroundGrey").opacity(1))
                     }
@@ -261,17 +273,19 @@ struct NotificationView: View {
                     ForEach(EventRequestsList) { index in
                         GeometryReader { geometry in
                             HStack {
-                                Image(systemName: "person.3.fill")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 45, height: 45)
-                                    .clipShape(Circle())
-                                    .background(Color.yellow)
-                                    .cornerRadius(40)
-                                    .frame(minWidth: 0, maxWidth: geometry.size.width * 0.5 / 4, minHeight: 0, maxHeight: 50)
+                                Image(allUsers[self.checkIndexofUser(name: index.name)].imageName)
+                                .resizable()
+                                .frame(width: 40, height: 40)
+                                .clipShape(Circle())
+                                .overlay(RoundedRectangle(cornerRadius: 60)
+                                    .stroke(Color("baseColor"), lineWidth: 2))
                                 
                                 ZStack {
-                                    NavigationLink(destination: TabFriendsView()) {
+                                    NavigationLink(destination:
+                                        
+                                        FriendProfileView(name: index.name, allRideUser: allUsers)
+                                        
+                                        ) {
                                         EmptyView()
                                     }.hidden()
                                     
@@ -331,26 +345,26 @@ struct NotificationView: View {
                     //                            .lineSpacing(10)
                 }
                 .onAppear { UITableView.appearance().separatorStyle = .none }
-                .onDisappear { UITableView.appearance().separatorStyle = .singleLine }
+//                .onDisappear { UITableView.appearance().separatorStyle = .singleLine }
                 
             }
             .navigationBarTitle(Text("Notification"), displayMode: .inline)
-            .navigationBarItems(trailing:
-                Button(action: {
-                    self.showProfileView.toggle()
-                }) {
-                    Image("\(userSettings.imageName)")
-                    .resizable()
-                    .renderingMode(.original)
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 36, height: 36)
-                    .clipShape(Circle())
-                    //                                .background(Color.white)
-                    .overlay(RoundedRectangle(cornerRadius: 36)
-                        .stroke(Color("baseColor"), lineWidth: 1))
-                    .shadow(radius: 1, x: 1, y: 1)
-                }
-            )
+//            .navigationBarItems(trailing:
+//                Button(action: {
+//                    self.showProfileView.toggle()
+//                }) {
+//                    Image("\(userSettings.imageName)")
+//                    .resizable()
+//                    .renderingMode(.original)
+//                    .aspectRatio(contentMode: .fill)
+//                    .frame(width: 36, height: 36)
+//                    .clipShape(Circle())
+//                    //                                .background(Color.white)
+//                    .overlay(RoundedRectangle(cornerRadius: 36)
+//                        .stroke(Color("baseColor"), lineWidth: 1))
+//                    .shadow(radius: 1, x: 1, y: 1)
+//                }
+//            )
                 .sheet(isPresented: $showProfileView) {
                     ProfileView(rideLevel: rideLevels)
             }
@@ -370,6 +384,15 @@ struct NotificationView: View {
         EventRequestsList.remove(at: index)
     }
     
+    func checkIndexofUser(name : String) -> Int {
+    //           let index = allRideUser.index { $0 == "\(name)" } ?? 0
+            guard let index = allRideUser.firstIndex(where: { $0.name == "\(name)" })
+                else { //
+                return 0
+            }
+            return index
+           }
+    
     
 }
 
@@ -377,7 +400,7 @@ struct NotificationView: View {
 
 struct NotificationView_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationView()
+        NotificationView(allRideUser: allUsers)
     }
 }
 

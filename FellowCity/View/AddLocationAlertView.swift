@@ -76,6 +76,7 @@ struct AddLocationAlertView: View {
                     Button("Cancel"){
                         self.isShown = false
                         self.onCancel()
+                        self.hideKeyboard()
                     }.frame(width: 80, height: 60)
                     Group {
                         Spacer()
@@ -98,7 +99,7 @@ struct AddLocationAlertView: View {
                         
                         // Move Alert to Background
                         self.isShown = false
-                        
+                        self.hideKeyboard()
                     }.frame(width: 80, height: 60)
                     Spacer()
                 }

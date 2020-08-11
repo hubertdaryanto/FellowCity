@@ -10,11 +10,11 @@ import SwiftUI
 
 struct AppView: View {
     
-    @State private var selection = 1
+    @State var selection = 1
 
     var body: some View {
         
-        TabView(selection:$selection) {
+        TabView(selection: $selection) {
             
             MainEvent(allMyEvent: myEvents)
                 .tabItem {
@@ -27,25 +27,27 @@ struct AppView: View {
                     Image(systemName: "person.3.fill")
                     Text("Friends")
             }.tag(2)
-            
+
             ExploreView(explore: exploreData[0], allPublicEvent: publicEvents[0])
                 .tabItem {
                     Image(systemName: "arrow.right.arrow.left.circle.fill")
                     Text("Ride")
             }.tag(3)
-            
-            NotificationView()
+
+            NotificationView(allRideUser: allUsers)
                 .tabItem {
                     Image(systemName: "bell.fill")
                     Text("Notification")
             }.tag(4)
             
+            
+
             TabHistoryView()
                 .tabItem {
                     Image(systemName: "clock.fill")
                     Text("History")
             }.tag(5)
-            
+
         }.accentColor(Color("baseColor").opacity(1))
     }
 }

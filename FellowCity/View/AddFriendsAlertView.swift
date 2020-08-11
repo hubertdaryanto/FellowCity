@@ -45,6 +45,7 @@ struct AddFriendsAlertView: View {
             
                 SearchBarList(textSearch: $searchTerm, placeholder: "Search here...")
             
+            
             List {
                 
                 ForEach(self.nameArrayOfAllRideUsers.filter {
@@ -79,12 +80,14 @@ struct AddFriendsAlertView: View {
                     Button("Cancel"){
                         self.isShown = false
                         self.onCancel()
+                        self.hideKeyboard()
                     }.frame(width: 80, height: 60)
                     Group {
                         Spacer()
                         Divider()
                         Spacer()
                     }
+                    
                     Button("Add"){
                         
                         self.userID = self.searchTerm
@@ -102,8 +105,10 @@ struct AddFriendsAlertView: View {
                         
                         // Move Alert to Background
                         self.isShown = false
+                        self.hideKeyboard()
                         
                     }.frame(width: 80, height: 60)
+                    
                     Spacer()
                 }
             

@@ -19,7 +19,7 @@ struct EventItemView: View {
     var body: some View {
 //        ZStack {
                                 NavigationLink(destination:
-                                    EventDetailsView(allPublicEvent: self.allPublicEvent)
+                                    EventDetailsView(isJoinShown: true, allPublicEvent: self.allPublicEvent)
 //                                    ExploreDetailsView()
                                     )
                                 {

@@ -10,6 +10,9 @@ import SwiftUI
 struct EventDetailsView: View {
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
+    
+    @State var isJoinShown:Bool
+    
     //    var explore:ExploreRevised
     var allPublicEvent:AllEvent
     
@@ -42,8 +45,8 @@ struct EventDetailsView: View {
                     //            .cornerRadius(10)
                     //            .shadow(radius: 5)
                 }
-                .padding(.top, 20)
-                .padding(.bottom, 25)
+                .padding(10)
+                .padding(.bottom, 5)
                 
                 Spacer()
                 
@@ -53,7 +56,7 @@ struct EventDetailsView: View {
                         .fontWeight(.bold)
                         .foregroundColor(Color("baseColor").opacity(1))
                     
-                    Text(allPublicEvent.creatorEvent)
+                    Text("@\(allPublicEvent.creatorEvent)")
                         .font(.system(size: 16))
                         .fontWeight(.thin)
                     //                .foregroundColor(Color.gray)
@@ -164,6 +167,8 @@ struct EventDetailsView: View {
                         self.mode.wrappedValue.dismiss()
                     })
                     {
+                        
+                        if self.isJoinShown {
                         Text("Join").foregroundColor(Color.black)
                             .font(.system(size: 15)).fontWeight(.heavy)
                             .frame(minWidth: 0, maxWidth: 120, maxHeight: 40)
@@ -171,6 +176,9 @@ struct EventDetailsView: View {
                             //                    .background(Color.yellow)
                             .background(Color("baseColor").opacity(1))
                             .cornerRadius(15)
+                        } else {
+                            EmptyView()
+                        }
                     }
                     
                     //                                            Text("Join").foregroundColor(Color.black)
@@ -203,6 +211,6 @@ struct EventDetailsView: View {
 
 struct EventDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        EventDetailsView(allPublicEvent: publicEvents[0])
+        EventDetailsView(isJoinShown: true, allPublicEvent: publicEvents[0])
     }
 }
