@@ -18,12 +18,21 @@ struct MainEvent: View {
     @State var popToHome : Bool = false
     @State var showProfileView = false
     
-    
+   private let dateFormatter: DateFormatter = {
+       let formatter = DateFormatter()
+       formatter.dateStyle = .long
+       formatter.timeStyle = .short
+       return formatter
+   }()
     
     // MARK: - Variable for Dummy Data
     
     //User Setting
     @ObservedObject var userSettings = UserSettings()
+    
+    // Using Dummy List Event
+    var allMyEvent: [AllEvent]
+//    var allPublicEvent:AllEvent
     
     var attendedEventList: [AttendEventList] = [AttendEventList(id: 1, name: "Pertamina Jatiasih -> Lot 9 Bintaro", date: "04/08/2020", time: "7:00")]
     
@@ -44,7 +53,7 @@ struct MainEvent: View {
                 Group {
                     List{
                         Section(header: HStack {
-                            Text("MY EVENTS - \(self.attendedEventList.count)")
+                            Text("MY EVENTS - \(myEvents.count)")
                                 .font(.footnote)
                                 .foregroundColor(Color("foregroundGrey").opacity(0.6))
                                 .padding()
@@ -54,15 +63,30 @@ struct MainEvent: View {
                             .background(Color("backgroundGrey").opacity(1))
                         .listRowInsets(EdgeInsets(top: 0,leading: 0,bottom: 0,trailing: 0))
                         ){
-                            ForEach(self.attendedEventList) { index in
+//                            ForEach(self.attendedEventList) { index in
+                                ForEach(self.allMyEvent, id: \.self) { index in
                                 ZStack{
+                                    
+                                    Rectangle()
+                                        
+                                    .frame(width: 350, height: 80)
+                                        
+                                        .foregroundColor(Color(.white))
+//                                    .cornerRadius(40)
+
+                                    .background(Color.white)
+                                    .cornerRadius(30)
+                                    .overlay(RoundedRectangle(cornerRadius: 30)
+                                        .stroke(Color.yellow, lineWidth: 1))
                                     
                                     
                                     
                                     NavigationLink(destination:
                                         // Go to EventInformationView
-                                        ListEventDetailsView(eventDate: self.eventDate, eventName: self.eventName, eventMeetingPoint: self.eventMeetingPoint, eventDestinastion: self.eventDestinastion, sselectedRoute: self.sselectedRoute,
+                                        MyDetailsView(allMyEvent: index, eventDate: self.eventDate, eventName: self.eventName, eventMeetingPoint: self.eventMeetingPoint, eventDestinastion: self.eventDestinastion, sselectedRoute: self.sselectedRoute,
                                                              MeetingPoint: self.MeetingPoint, LocationToBeVisited: self.LocationToBeVisited, LocationToBeVisitedName: self.LocationToBeVisitedName)
+                                        
+                                        
                                         //
                                         
                                     ){
@@ -70,23 +94,34 @@ struct MainEvent: View {
                                     }.hidden()
 
                                     HStack{
+//                                        Spacer()
+                                        Image(index.eventImageName)
+                                            .resizable()
+                                            .frame(width: 60, height: 60)
+                                            .clipShape(Circle())
+                                            .overlay(RoundedRectangle(cornerRadius: 40)
+                                                .stroke(Color.gray, lineWidth: 2))
+                                        Spacer()
                                         VStack(alignment: .leading){
-                                            Text(index.name).font(.body)
+                                            Text(index.eventName).font(.body)
+                                                .foregroundColor(.black)
                                             HStack{
-                                                Text(index.date).font(.subheadline)
-                                                    .foregroundColor(.gray)
-                                                Text("-").font(.subheadline)
-                                                    .foregroundColor(.gray)
-                                                Text(index.time).font(.subheadline)
-                                                    .foregroundColor(.gray)
+                                                Text("\(self.dateFormatter.string(from: index.eventDate))").font(.subheadline)
+                                                    .foregroundColor(.black)
+//                                                Text("-").font(.subheadline)
+//                                                    .foregroundColor(.gray)
+//                                                Text(index.time).font(.subheadline)
+//                                                    .foregroundColor(.gray)
                                             }
                                         }
                                         Spacer()
                                         
-                                        Image(systemName: "info.circle").resizable()
-                                            .foregroundColor(Color("baseColor").opacity(1))
-                                            .frame(width: 25, height: 25, alignment: .center)
+                                        Image(systemName: "chevron.right").resizable()
+                                            .foregroundColor(Color(.black).opacity(1))
+                                            .frame(width: 10, height: 10, alignment: .center)
+//                                        Spacer()
                                     }
+                                .frame(width: 300, height: 80)
                                     
                                 }
                                     
@@ -147,13 +182,14 @@ struct MainEvent: View {
         //        .statusBar(hidden: true)
     }
     
+    
 }
 
 
 
 struct MainEvent_Previews: PreviewProvider {
     static var previews: some View {
-        MainEvent()
+        MainEvent(allMyEvent: myEvents)
     }
 }
 

@@ -12,6 +12,7 @@ struct ExploreItemView: View {
     
     var explore:ExploreRevised
     
+    
     var body: some View {
 //        ZStack {
 //        GeometryReader { geometry in

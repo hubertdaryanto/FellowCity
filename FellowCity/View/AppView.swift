@@ -16,7 +16,7 @@ struct AppView: View {
         
         TabView(selection:$selection) {
             
-            MainEvent()
+            MainEvent(allMyEvent: myEvents)
                 .tabItem {
                     Image(systemName: "flag.circle.fill")
                     Text("My Events")

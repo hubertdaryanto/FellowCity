@@ -9,7 +9,11 @@ import SwiftUI
 import MapKit
 
 
-struct ListEventDetailsView: View {
+struct MyEventDetailsView: View {
+    
+    var allMyEvent:AllEvent
+    
+    
     @State var locationManager = CLLocationManager()
     @ObservedObject var saveRouteDetail = SaveRouteDetail()
     
@@ -28,6 +32,7 @@ struct ListEventDetailsView: View {
     @State var MeetingPoint: CLLocationCoordinate2D
     @State var LocationToBeVisited: [CLLocation]
     @State var LocationToBeVisitedName: [String]
+    
     var body: some View {
 //        NavigationView{
             VStack{
@@ -38,7 +43,7 @@ struct ListEventDetailsView: View {
                             .fontWeight(.bold).foregroundColor(Color("baseColor").opacity(1)).padding(.bottom, 1)
                         //                Text("\(saveRouteDetail.totaldistance) Km")
 //                        Text("\(String(format: "%.2f", saveRouteDetail.totaldistance)) Km")
-                        Text("60 Km")
+                        Text("60 km")
                     }
                     
                     CenterLine().stroke().frame(width: 100, height: 75)
@@ -85,7 +90,7 @@ struct ListEventDetailsView: View {
                     //                Spacer().frame(width: 20, height: 0)
                     VStack(alignment: .leading){
 //                        Text(eventInfo.eventName)
-                        Text(eventName).bold().font(.body)
+                        Text("\(myEvents[0].eventName)").bold().font(.body)
                         .fontWeight(.bold).foregroundColor(Color("baseColor").opacity(1)).padding(.bottom, 1)
 //                        Text(formatter.string(from: eventInfo.startDate))
                         Text(formatter.string(from: eventDate)).font(.body)
@@ -120,8 +125,15 @@ struct ListEventDetailsView: View {
                     Spacer()
                 }
                 
-                MapView(locationmanager: $locationManager, MeetingPoint: MeetingPoint, LocationToBeVisited: LocationToBeVisited, LocationToBeVisitedName: LocationToBeVisitedName, totaltime: self.$saveRouteDetail.totaltime, totaldistance: self.$saveRouteDetail.totaldistance)
-                .padding()
+                MapView(locationmanager: $locationManager, MeetingPoint: CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469), LocationToBeVisited: LocationToBeVisited, LocationToBeVisitedName: LocationToBeVisitedName, totaltime: self.$saveRouteDetail.totaltime, totaldistance: self.$saveRouteDetail.totaldistance)
+                
+//                MapView(locationmanager: $locationManager, MeetingPoint: MeetingPoint, LocationToBeVisited: LocationToBeVisited, LocationToBeVisitedName: LocationToBeVisitedName, totaltime: self.$saveRouteDetail.totaltime, totaldistance: self.$saveRouteDetail.totaldistance)
+//                .padding()
+//
+                
+//MyEventDetailsView(allMyEvent: myEvents[0], eventName: "Pertamina Jatiasih -> Lot 9 Bintaro", MeetingPoint: CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469), LocationToBeVisited: [CLLocation(latitude: -6.3298786, longitude: 106.9439469), CLLocation(latitude: -6.258080, longitude: 106.808391), CLLocation(latitude: -6.2808073, longitude: 106.7122415)], LocationToBeVisitedName: ["Pertamina Jatiasih", "Moto Village", "Lot 9 Bintaro"])
+                
+                
                 
 //                List(RouteInfoDummy) { index in
 //                    Text(index.place)
@@ -180,8 +192,8 @@ struct ListEventDetailsView: View {
     }
 }
 
-struct ListEventDetailsView_Previews: PreviewProvider {
+struct MyEventDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        ListEventDetailsView(eventName: "Pertamina Jatiasih -> Lot 9 Bintaro", MeetingPoint: CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469), LocationToBeVisited: [CLLocation(latitude: -6.3298786, longitude: 106.9439469), CLLocation(latitude: -6.258080, longitude: 106.808391), CLLocation(latitude: -6.2808073, longitude: 106.7122415)], LocationToBeVisitedName: ["Pertamina Jatiasih", "Moto Village", "Lot 9 Bintaro"])
+        MyEventDetailsView(allMyEvent: myEvents[0], eventName: "Pertamina Jatiasih -> Lot 9 Bintaro", MeetingPoint: CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469), LocationToBeVisited: [CLLocation(latitude: -6.3298786, longitude: 106.9439469), CLLocation(latitude: -6.258080, longitude: 106.808391), CLLocation(latitude: -6.2808073, longitude: 106.7122415)], LocationToBeVisitedName: ["Pertamina Jatiasih", "Moto Village", "Lot 9 Bintaro"])
     }
 }
