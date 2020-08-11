@@ -7,6 +7,8 @@
 //
 
 import SwiftUI
+import Combine
+import UIKit
 
 struct CustomTextFieldStyle: TextFieldStyle{
     func _body(configuration: TextField<_Label>) -> some View {
@@ -48,6 +50,7 @@ struct HistoryReview: View {
                 VStack{
                     TextField("Enter your review", text: self.$reviewText).textFieldStyle(CustomTextFieldStyle()).font(.custom("SFProDisplay-Light", size: 14))
                 }.frame(height: geometry.size.height * 0.1)
+                
                 //            Spacer()
                 Button(action: {
                     //ini buat nambahin list review ke dalam data list event / tempat tujuan
@@ -64,8 +67,10 @@ struct HistoryReview: View {
                 }.padding()
                     .frame(height: geometry.size.height * 0.2, alignment: .bottom)
                 //            Spacer()
+                
             }
         }.navigationBarTitle("Review")
+        .keyboardAdaptive()
     }
 }
 
