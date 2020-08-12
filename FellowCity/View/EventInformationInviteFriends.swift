@@ -40,6 +40,7 @@ struct EventInformationInviteFriends: View {
     @State var sselectedRoute:[String] = []
     @State var eventCategory: String
     @State var eventImage: String
+    @State var eventMaximumPeople: Int
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(entity: FriendLists.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \FriendLists.name, ascending: true)]) var myFriends: FetchedResults<FriendLists>
     
@@ -60,13 +61,13 @@ struct EventInformationInviteFriends: View {
 //                }
                 
                 List {
-                    ForEach(friendList, id: \.self) { item in
-                        MultipleSelectionRow(title: item.name, isSelected: self.invitedFriends.contains(item.name)) {
-                            if self.invitedFriends.contains(item.name) {
+                    ForEach(myFriends, id: \.self) { (item: FriendLists) in
+                        MultipleSelectionRow(title: item.name ?? "", isSelected: self.invitedFriends.contains(item.name ?? "")) {
+                            if self.invitedFriends.contains(item.name ?? "") {
                                 self.invitedFriends.removeAll(where: { $0 == item.name })
                             }
                             else {
-                                self.invitedFriends.append(item.name)
+                                self.invitedFriends.append(item.name ?? "")
                                 //                                    print(self.selectedRoute)
                             }
                         }
@@ -77,9 +78,17 @@ struct EventInformationInviteFriends: View {
                     VStack(alignment: .leading)
                         {
                             Text("Public Event")
-                            Text("Maximum 15 people to \(eventInfo.eventName)")
+                             Text("Maximum \(self.eventMaximumPeople) people to ").font(.caption)
+                             .foregroundColor(Color("foregroundGrey").opacity(0.6))
+                            HStack{
+                                Text("\(self.eventMeetingPoint)")
+                                                               .font(.caption)
+                                                               .foregroundColor(Color("foregroundGrey").opacity(0.6))
+                                Image(systemName: "arrow.right")
+                                Text(" \(self.eventDestinastion)")
                                 .font(.caption)
                                 .foregroundColor(Color("foregroundGrey").opacity(0.6))
+                            }
                             
                     }
 //                    .frame(width: 200)
@@ -100,7 +109,7 @@ struct EventInformationInviteFriends: View {
                 Button(action: {
 
                     self.popToHome = false
-                    myEvents.append(AllEvent(creatorEvent: UserSettings().name, eventName: self.eventName, eventImageName: self.eventImage, eventMeetingPoint: self.sselectedRoute, eventDestination: [self.eventDestinastion], eventDate: self.eventDate, AdditionalRoutes: [self.sselectedRoute], description: "", review: [""], maximumPeople: 100, rating: 0.0, category: self.eventCategory, isPublic: self.isPublic, participant: self.invitedFriends))
+                    myEvents.append(AllEvent(creatorEvent: UserSettings().name, eventName: self.eventName, eventImageName: self.eventImage, eventMeetingPoint: self.sselectedRoute, eventDestination: [self.eventDestinastion], eventDate: self.eventDate, AdditionalRoutes: [self.sselectedRoute], description: "", review: [""], maximumPeople: self.eventMaximumPeople, rating: 0.0, category: self.eventCategory, isPublic: self.isPublic, participant: self.invitedFriends))
 
                 }) {
                     Text("Finish")

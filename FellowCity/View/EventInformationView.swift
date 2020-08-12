@@ -39,6 +39,8 @@ var RouteInfoDummy: [RouteInformation] = [RouteInformation(id: 1, place: "Pertam
                                           RouteInformation(id: 2, place: "Kemang"),
                                           RouteInformation(id: 3, place: "Pondok Indah"),
                                           RouteInformation(id: 4, place: "Lot 9 Bintaro")]
+
+
 struct EventInformationView: View {
     
 //    @EnvironmentObject var popToHome:PopToHome
@@ -60,6 +62,7 @@ struct EventInformationView: View {
     @State var MeetingPoint: CLLocationCoordinate2D
     @State var eventCategory: String = ""
     @State var eventImage: String = ""
+//    @State var processSaver: LocationData = getLocationData(<#T##self: EventInformationView##EventInformationView#>)
 //    @State var LocationToBeVisited: [CLLocation] = get
 //    @State var LocationToBeVisitedName: [String]
     
@@ -146,7 +149,7 @@ struct EventInformationView: View {
                             Spacer()
                             NavigationLink(
                                 //                            Event_Information()
-                                destination: EventInformationInviteFriends(popToHome: self.$popToHome, eventDate: self.eventDate, eventName: self.eventName, eventMeetingPoint: self.eventMeetingPoint, eventDestinastion: self.eventDestinastion, sselectedRoute: self.sselectedRoute, eventCategory: self.getLocationData(origin: self.eventMeetingPoint, locationName: self.sselectedRoute, destination: self.eventDestinastion).category!, eventImage: self.getLocationData(origin: self.eventMeetingPoint, locationName: self.sselectedRoute, destination: self.eventDestinastion).imageName!)
+                                destination: EventInformationInviteFriends(popToHome: self.$popToHome, eventDate: self.eventDate, eventName: self.eventName, eventMeetingPoint: self.eventMeetingPoint, eventDestinastion: self.eventDestinastion, sselectedRoute: self.sselectedRoute, eventCategory: self.getLocationData(origin: self.eventMeetingPoint, locationName: self.sselectedRoute, destination: self.eventDestinastion).category!, eventImage: self.getLocationData(origin: self.eventMeetingPoint, locationName: self.sselectedRoute, destination: self.eventDestinastion).imageName!, eventMaximumPeople: self.getLocationData(origin: self.eventMeetingPoint, locationName: self.sselectedRoute, destination: self.eventDestinastion).minMaximumPeople)
                                 )
                             {
                                Text("Next")
@@ -195,15 +198,19 @@ struct EventInformationView: View {
         
     }
     
-    func getLocationData(origin: String, locationName: [String]?, destination: String) -> (location: [CLLocation], nameOfLocation: [String], category: String?, imageName: String?)
+    func getLocationData(origin: String, locationName: [String]?, destination: String) -> (location: [CLLocation], nameOfLocation: [String], category: String?, imageName: String?, minMaximumPeople: Int)
     {
         var temp: [ExploreRevised] = []
         var returnData: [CLLocation] = []
         var returnNameLocation: [String] = []
+        var minMaxPeopleValue: Int = 100
         for index in exploreData{
             if origin == index.name
             {
                 temp.append(index)
+                if index.maximumPeople < minMaxPeopleValue{
+                    minMaxPeopleValue = index.maximumPeople
+                }
                 returnData.append(CLLocation(latitude: index.latitude, longitude: index.longitude))
                 returnNameLocation.append(index.name)
             }
@@ -216,6 +223,9 @@ struct EventInformationView: View {
                 if index == index2.name
                 {
                     temp.append(index2)
+                    if index2.maximumPeople < minMaxPeopleValue{
+                        minMaxPeopleValue = index2.maximumPeople
+                    }
                     returnData.append(CLLocation(latitude: index2.latitude, longitude: index2.longitude))
                     returnNameLocation.append(index2.name)
                 }
@@ -226,14 +236,25 @@ struct EventInformationView: View {
             if destination == index.name
             {
                 temp.append(index)
+                if index.maximumPeople < minMaxPeopleValue{
+                    minMaxPeopleValue = index.maximumPeople
+                }
 //                self.eventCategory = index.category.rawValue
 //                self.eventImage = index.imageName
                 returnData.append(CLLocation(latitude: index.latitude, longitude: index.longitude))
                 returnNameLocation.append(index.name)
             }
         }
-        return (returnData, returnNameLocation, temp.last?.category.rawValue, temp.last?.imageName)
+        return (returnData, returnNameLocation, temp.last?.category.rawValue, temp.last?.imageName, minMaxPeopleValue)
     }
+}
+
+struct locationData{
+    var location: [CLLocation]
+    var nameOfLocation: [String]
+    var category: String?
+    var imageName: String?
+    var minMaximumPeople: Int
 }
 
 
