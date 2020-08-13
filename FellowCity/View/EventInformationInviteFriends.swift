@@ -62,7 +62,7 @@ struct EventInformationInviteFriends: View {
                 
                 List {
                     ForEach(myFriends, id: \.self) { (item: FriendLists) in
-                        MultipleSelectionRow(title: item.name ?? "", isSelected: self.invitedFriends.contains(item.name ?? "")) {
+                        MultipleSelectionRow2(title: item.name ?? "", isSelected: self.invitedFriends.contains(item.name ?? "")) {
                             if self.invitedFriends.contains(item.name ?? "") {
                                 self.invitedFriends.removeAll(where: { $0 == item.name })
                             }

@@ -35,6 +35,8 @@ struct CreateEventOptionalRouteView: View {
     @State var MeetingPoint: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469)
     @State var LocationToBeVisited: [CLLocation] = [CLLocation(latitude: -6.3298786, longitude: 106.9439469), CLLocation(latitude: -6.258080, longitude: 106.808391), CLLocation(latitude: -6.2808073, longitude: 106.7122415)]
     @State var LocationToBeVisitedName: [String] = ["Pertamina Jatiasih", "Moto Village", "Lot 9 Bintaro"]
+    @State var order: Int = 0
+    
     
     var body: some View {
         
@@ -50,12 +52,11 @@ struct CreateEventOptionalRouteView: View {
                 .padding()
             
             List {
-                
                 ForEach(
-                    deleteSelectedExploreData(exploreData: exploreData).sorted(by: { $0.name < $1.name })
+                    deleteAdditionalSelectedRouteData(exploreData: exploreData).sorted(by: { $0.name < $1.name })
 //                , id: \.self
                 ) { item in
-                    MultipleSelectionRow(title: item.name, isSelected: self.sselectedRoute.contains(item.name)) {
+                    MultipleSelectionRow(title: item.name, isSelected: self.sselectedRoute.contains(item.name), order: self.sselectedRoute.count) {
                         if self.sselectedRoute.contains(item.name) {
                             self.sselectedRoute.removeAll(where: { $0 == item.name })
                             self.LocationToBeVisitedName.removeAll(where: { $0 == item.name })
@@ -133,7 +134,7 @@ struct CreateEventOptionalRouteView: View {
         
     }
     
-    func deleteSelectedExploreData(exploreData: [ExploreRevised]) -> [ExploreRevised]
+    func deleteAdditionalSelectedRouteData(exploreData: [ExploreRevised]) -> [ExploreRevised]
     {
         var temp: [ExploreRevised] = []
         for item in exploreData{
@@ -177,8 +178,46 @@ struct SelectedRoute: Identifiable, Equatable {
 struct MultipleSelectionRow: View {
     var title: String
     var isSelected: Bool
+    var order: Int
+    var action: () -> Void
+    
+    
+//    func getOrder(order: Int) -> Int
+//    {
+//        var newOrder = order + 1
+//        return newOrder
+//    }
+    
+    func incrementorder()
+    {
+        
+    }
+    
+    var body: some View {
+        Button(action: self.action) {
+            HStack {
+                Text(self.title)
+                if self.isSelected {
+                    
+                    Spacer()
+//                    Image(systemName: "checkmark").foregroundColor(Color("baseColor").opacity(1))
+                    
+                    Text(String(self.order)).onAppear(){
+                        
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+struct MultipleSelectionRow2: View {
+    var title: String
+    var isSelected: Bool
     var action: () -> Void
     var order: Int = 0
+    
     
     var body: some View {
         Button(action: self.action) {
@@ -188,10 +227,13 @@ struct MultipleSelectionRow: View {
                     
                     Spacer()
                     Image(systemName: "checkmark").foregroundColor(Color("baseColor").opacity(1))
-                    //                    Text(String(order))
+                    
+//                    Text(String(self.order)).onAppear(){
+//                        self.order = self.getOrder(order: self.order)
+//                    }
+                    
                 }
             }
         }
     }
 }
-
