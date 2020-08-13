@@ -62,15 +62,18 @@ struct CreateEventView: View {
                 VStack(alignment: .leading){
                     
                     HStack {
-                        Button(action: {
-                            self.isMeetingPointAlert = true
-                            //                        print(self.isPresented)
-                            
-                        })
-                        {
-                            Image(systemName: "magnifyingglass").resizable().foregroundColor(Color("baseColor").opacity(1)).frame(width: 20, height: 20, alignment: .center)
-                                .shadow(radius: 1, x: 1, y: 1)
-                        }
+                        Image(systemName: "mappin.and.ellipse").resizable().foregroundColor(Color("baseColor").opacity(1)).frame(width: 20, height: 20, alignment: .center)
+                                                        .shadow(radius: 1, x: 1, y: 1)
+                        
+//                        Button(action: {
+//                            self.isMeetingPointAlert = true
+//                            //                        print(self.isPresented)
+//
+//                        })
+//                        {
+//                            Image(systemName: "magnifyingglass").resizable().foregroundColor(Color("baseColor").opacity(1)).frame(width: 20, height: 20, alignment: .center)
+//                                .shadow(radius: 1, x: 1, y: 1)
+//                        }
                         
                         
                         Text("Meeting Point")
@@ -81,7 +84,7 @@ struct CreateEventView: View {
                     }
                     
                     
-                    
+                    ZStack {
                     TextField("Your Meeting Point...", text: $eventMeetingPoint, onEditingChanged: { (changed) in
                         print("Username onEditingChanged - \(changed)")
                     }) {
@@ -89,32 +92,77 @@ struct CreateEventView: View {
                     }
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     
+                        HStack{
+                            Spacer()
+                            Button(action: {
+                                   self.isMeetingPointAlert = true
+                                   //                        print(self.isPresented)
+                                   
+                               })
+                               {
+                                   Image(systemName: "magnifyingglass").resizable().foregroundColor(Color("baseColor").opacity(1)).frame(width: 20, height: 20, alignment: .center)
+                                       .shadow(radius: 1, x: 1, y: 1)
+                               }
+                            .padding(.trailing)
+                        }
+                        
+                    
+                    }
+                    
+                    
                     
                     
                 }
                 Spacer()
                 VStack(alignment: .leading){
                     HStack {
-                    Button(action: {
-                        self.isDestinationAlert = true
-                        //                        print(self.isPresented)
+                        Image(systemName: "location").resizable().foregroundColor(Color("baseColor").opacity(1)).frame(width: 20, height: 20, alignment: .center)
+                            .rotationEffect(.degrees(0))
+                        .shadow(radius: 1, x: 1, y: 1)
                         
-                    })
-                    {
-                        Image(systemName: "magnifyingglass").resizable().foregroundColor(Color("baseColor").opacity(1)).frame(width: 20, height: 20, alignment: .center)
-                            .shadow(radius: 1, x: 1, y: 1)
-                    }
+//                    Button(action: {
+//                        self.isDestinationAlert = true
+//                        //                        print(self.isPresented)
+//
+//                    })
+//                    {
+//                        Image(systemName: "magnifyingglass").resizable().foregroundColor(Color("baseColor").opacity(1)).frame(width: 20, height: 20, alignment: .center)
+//                            .shadow(radius: 1, x: 1, y: 1)
+//                    }
                     Text("Destination")
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(Color("baseColor").opacity(1))
                     }
+                    
+                    ZStack{
                     TextField("Your Destination...", text: $eventDestinastion, onEditingChanged: { (changed) in
                         print("Username onEditingChanged - \(changed)")
                     }) {
                         print("Username onCommit")
                     }
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                    
+                        HStack{
+                            Spacer()
+                            Button(action: {
+                                                   self.isDestinationAlert = true
+                                                   //                        print(self.isPresented)
+                                                   
+                                               })
+                                               {
+                                                   Image(systemName: "magnifyingglass").resizable().foregroundColor(Color("baseColor").opacity(1)).frame(width: 20, height: 20, alignment: .center)
+                                                       .shadow(radius: 1, x: 1, y: 1)
+                                               }
+                            .padding(.trailing)
+                            
+                        }
+                        
+                    }
+                    
+                    
+                    
+                    
                 }
                 Spacer()
                 VStack(alignment: .leading){
