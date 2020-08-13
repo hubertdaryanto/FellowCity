@@ -14,6 +14,10 @@ struct ProfileView: View {
     
     @ObservedObject var userSettings = UserSettings()
     
+    @State private var showImagePicker : Bool = false
+    
+    @State private var image : Image?
+    
     
     var rideLevel: [RideLevel]
     @State var currentLevel = 0
@@ -35,11 +39,45 @@ struct ProfileView: View {
                     HStack{
                         Spacer()
                         ZStack{
-                            Image("\(userSettings.imageName)")
+//                            Image("\(userSettings.imageName)")
+                            
+                            if image == nil {
+                                
+                                Image("\(self.userSettings.imageName)")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 82, height: 82)
                                 .clipShape(Circle())
+                                }
+                            else {
+                            
+                            image?
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 82, height: 82)
+                                .clipShape(Circle())
+                                
+                            }
+                            
+                            Button(action: {
+                                                self.showImagePicker = true
+                                            }) {
+                                                Image(systemName: "camera.circle")
+                                                .resizable()
+                                                .renderingMode(.original)
+                                                .aspectRatio(contentMode: .fill)
+                                                .frame(width: 30, height: 30)
+                                                .clipShape(Circle())
+                                                    
+                                                //                                .background(Color.white)
+                                                .overlay(RoundedRectangle(cornerRadius: 36)
+                                                    .stroke(Color("baseColor"), lineWidth: 2))
+                            //                    .shadow(radius: 1, x: 1, y: 1)
+                                                .opacity(0)
+                                                
+                                            }
+                            //                .offset(x: 30, y: 30)
+                            
                             
                             Circle()
                                 .frame(width: 20, height:20)
@@ -151,6 +189,11 @@ struct ProfileView: View {
                     .frame(height: 130)
                     
                 }
+                
+                .sheet(isPresented: self.$showImagePicker){
+                    PhotoCaptureView(showImagePicker: self.$showImagePicker, image: self.$image)
+                }
+                
             }
             .navigationBarTitle(Text("Create Event"), displayMode: .inline)
             

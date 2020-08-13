@@ -32,6 +32,8 @@
 		57B6E26024E303BD001DEDB2 /* KeyboardHeightPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B6E25F24E303BD001DEDB2 /* KeyboardHeightPublisher.swift */; };
 		57D256A724DBB89600B53E37 /* LevelItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D256A624DBB89600B53E37 /* LevelItemView.swift */; };
 		57D256A924DBBE9400B53E37 /* LevelRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D256A824DBBE9400B53E37 /* LevelRowView.swift */; };
+		57D2B4AC24E5061E007D010D /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D2B4AB24E5061E007D010D /* ImagePicker.swift */; };
+		57D2B4AE24E50642007D010D /* PhotoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D2B4AD24E50642007D010D /* PhotoCapture.swift */; };
 		57E39A5324E1C69600E348BE /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E39A5224E1C69600E348BE /* UserSettings.swift */; };
 		57E39A5524E1D39C00E348BE /* FriendProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E39A5424E1D39C00E348BE /* FriendProfileView.swift */; };
 		57F7339D24E20BC700347DD5 /* ListParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F7339C24E20BC700347DD5 /* ListParticipantView.swift */; };
@@ -107,6 +109,8 @@
 		57B6E25F24E303BD001DEDB2 /* KeyboardHeightPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHeightPublisher.swift; sourceTree = "<group>"; };
 		57D256A624DBB89600B53E37 /* LevelItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelItemView.swift; sourceTree = "<group>"; };
 		57D256A824DBBE9400B53E37 /* LevelRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelRowView.swift; sourceTree = "<group>"; };
+		57D2B4AB24E5061E007D010D /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		57D2B4AD24E50642007D010D /* PhotoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCapture.swift; sourceTree = "<group>"; };
 		57E39A5224E1C69600E348BE /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		57E39A5424E1D39C00E348BE /* FriendProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileView.swift; sourceTree = "<group>"; };
 		57F7339C24E20BC700347DD5 /* ListParticipantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListParticipantView.swift; sourceTree = "<group>"; };
@@ -321,6 +325,8 @@
 				57B6E25B24E2F919001DEDB2 /* DismissKeyboard.swift */,
 				57B6E25D24E30391001DEDB2 /* UIResponder.swift */,
 				57B6E25F24E303BD001DEDB2 /* KeyboardHeightPublisher.swift */,
+				57D2B4AB24E5061E007D010D /* ImagePicker.swift */,
+				57D2B4AD24E50642007D010D /* PhotoCapture.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -485,6 +491,7 @@
 				57052F9F24D9CC6F001199F5 /* AddFriendsAlertView.swift in Sources */,
 				CD75738724CFDE9100EABFC9 /* ExploreItemView.swift in Sources */,
 				57FA285124E1F20C00EBF3B5 /* ReviewItemView.swift in Sources */,
+				57D2B4AE24E50642007D010D /* PhotoCapture.swift in Sources */,
 				CD79827124D141F900EA93F1 /* HistoryReview.swift in Sources */,
 				57E39A5324E1C69600E348BE /* UserSettings.swift in Sources */,
 				CD79826B24D1088C00EA93F1 /* HistoryUIView.swift in Sources */,
@@ -511,6 +518,7 @@
 				2CCE0AC024D13D3100E53BCD /* Structure.swift in Sources */,
 				CD75739B24CFDE9100EABFC9 /* FriendInvitation.swift in Sources */,
 				CD75738C24CFDE9100EABFC9 /* NotificationView.swift in Sources */,
+				57D2B4AC24E5061E007D010D /* ImagePicker.swift in Sources */,
 				CD75739F24CFDE9100EABFC9 /* Explore.swift in Sources */,
 				CD79826924D1044800EA93F1 /* FriendUIView.swift in Sources */,
 				572F32FC24D1238000F24A6E /* EventDetailsView.swift in Sources */,
