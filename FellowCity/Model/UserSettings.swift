@@ -49,9 +49,9 @@ class UserSettings: ObservableObject {
     //public var ringtones = ["Chimes", "Signal", "Waves"]
     
     init() {
-        self.name = UserDefaults.standard.object(forKey: "name") as? String ?? "John Richard"
-        self.imageName = UserDefaults.standard.object(forKey: "imageName") as? String ?? "oleg-yeltsov"
-        self.userID = UserDefaults.standard.object(forKey: "userID") as? String ?? "JRD46"
+        self.name = UserDefaults.standard.object(forKey: "name") as? String ?? "Bagus Utama"
+        self.imageName = UserDefaults.standard.object(forKey: "imageName") as? String ?? "bagus"
+        self.userID = UserDefaults.standard.object(forKey: "userID") as? String ?? "BU1945"
         self.contact = UserDefaults.standard.object(forKey: "contact") as? String ?? "+6281235328879"
         self.isAvailableToRide = UserDefaults.standard.object(forKey: "isAvailableToRide") as? Bool ?? false
         self.numOfRide = UserDefaults.standard.object(forKey: "numOfRide") as? Int ?? 20
