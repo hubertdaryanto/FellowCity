@@ -76,23 +76,6 @@ struct MainEvent: View {
                                         .stroke(Color("baseColor"), lineWidth: 2))
                                     .shadow(radius: 1, x: 1, y: 1)
                                     
-                                    
-                                    
-                                    NavigationLink(destination:
-                                         //Go to EventInformationView
-                                        MyDetailsView(
-                                            allMyEvent: index,
-                                            eventDate: self.eventDate,
-                                            eventName: self.eventName,
-                                            eventMeetingPoint: self.eventMeetingPoint, eventDestinastion: self.eventDestinastion, sselectedRoute: self.sselectedRoute,
-                                                             MeetingPoint: self.MeetingPoint, LocationToBeVisited: self.LocationToBeVisited, LocationToBeVisitedName: self.LocationToBeVisitedName)
-//
-//                                        MyDetailsView(allMyEvent: myEvents, MeetingPoint: CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469), LocationToBeVisited: CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469), LocationToBeVisitedName: [CLLocation(latitude: -6.3298786, longitude: 106.9439469), CLLocation(latitude: -6.258080, longitude: 106.808391), CLLocation(latitude: -6.2808073, longitude: 106.7122415)])
-                                        
-                                    ){
-                                        EmptyView()
-                                    }.hidden()
-
                                     HStack{
 //                                        Spacer()
                                         Image(index.eventImageName)
@@ -124,6 +107,23 @@ struct MainEvent: View {
                                         }
                                     .padding(15)
                                 .frame(height: 80)
+                                    
+                                    NavigationLink(destination:
+                                         //Go to EventInformationView
+                                        MyDetailsView(
+                                            allMyEvent: index,
+                                            eventDate: self.eventDate,
+                                            eventName: self.eventName,
+                                            eventMeetingPoint: self.eventMeetingPoint, eventDestinastion: self.eventDestinastion, sselectedRoute: self.sselectedRoute,
+                                                             MeetingPoint: self.MeetingPoint, LocationToBeVisited: self.LocationToBeVisited, LocationToBeVisitedName: self.LocationToBeVisitedName)
+//
+//                                        MyDetailsView(allMyEvent: myEvents, MeetingPoint: CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469), LocationToBeVisited: CLLocationCoordinate2D(latitude: -6.3298786, longitude: 106.9439469), LocationToBeVisitedName: [CLLocation(latitude: -6.3298786, longitude: 106.9439469), CLLocation(latitude: -6.258080, longitude: 106.808391), CLLocation(latitude: -6.2808073, longitude: 106.7122415)])
+                                        
+                                    ){
+                                        EmptyView()
+                                    }
+
+                                    
                                     
                                 }
                                     

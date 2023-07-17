@@ -49,8 +49,8 @@ struct MyDetailsView: View {
                     Text("Total Distance").bold().font(.body)
                         .fontWeight(.bold).foregroundColor(Color("baseColor").opacity(1)).padding(.bottom, 1)
                     //                Text("\(saveRouteDetail.totaldistance) Km")
-                    //                        Text("\(String(format: "%.2f", saveRouteDetail.totaldistance)) Km")
-                    Text("60 km")
+                                            Text("\(String(format: "%.0f", saveRouteDetail.totaldistance)) Km")
+//                    Text("60 km")
                 }
                 
                 CenterLine().stroke().frame(width: 100, height: 75)
@@ -61,8 +61,8 @@ struct MyDetailsView: View {
                     
                     
                     //                Text("\(saveRouteDetail.totaltime) Mins")
-                    //                        Text("\(String(format: "%.2f", saveRouteDetail.totaltime)) Mins")
-                    Text("66 Mins")
+                                            Text("\(String(format: "%.0f", saveRouteDetail.totaltime)) Mins")
+//                    Text("66 Mins")
                 }
             }.padding()
             
@@ -102,7 +102,9 @@ struct MyDetailsView: View {
                         .fontWeight(.bold).foregroundColor(Color("baseColor").opacity(1)).padding(.bottom, 1)
                         .foregroundColor(.black)
                     
-                    
+                    Text("\("Pertamina Jatiasih") -> \("Lot 9 Bintaro")").font(.subheadline)
+                        .foregroundColor(.black)
+                        .font(.body).bold()
                     Text("\(self.dateFormatter.string(from: self.allMyEvent.eventDate))").font(.subheadline)
                         .foregroundColor(.black)
                         .font(.body)
@@ -164,7 +166,7 @@ struct MyDetailsView: View {
             
             HStack{
                 Spacer().frame(width: 20, height: 0)
-                Text("Selected Routes").bold().font(.body)
+                Text("Additional Routes").bold().font(.body)
                     .fontWeight(.bold).foregroundColor(Color("baseColor").opacity(1)).padding(.bottom, 1)
                 Spacer()
             }
@@ -201,7 +203,7 @@ struct MyDetailsView: View {
             //                    }
             //                }.padding()
             
-        }
+        }.navigationTitle("Event Detail")
         
         // End of Navigation View
         

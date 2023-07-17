@@ -92,8 +92,8 @@ struct MapView: UIViewRepresentable {
                 guard let response = response else { return }//show response not available in an alert
                 self.isDirected = false
                 for route in response.routes {
-                    if route.advisoryNotices .isEmpty
-                    {
+//                    if route.advisoryNotices .isEmpty
+//                    {
                         if !self.isDirected
                         {
                             
@@ -122,7 +122,7 @@ struct MapView: UIViewRepresentable {
                             self.totaltime +=  time / 60
                             self.isDirected = true
                         }
-                    }
+//                    }
                 }
                 
                 
